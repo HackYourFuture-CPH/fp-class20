@@ -2,47 +2,28 @@
 
 ## Setup instructions
 
-You can either choose to install the project using a Docker container that comes prepared with the project or you can install your database manually:
+Before you install the project make sure that you have installed NPM and YARN with the following versions:
 
-### With Docker
-1. Install Docker from docker.com .
-2. Clone this repository and cd into the `/packages/server` folder.
-3. Copy and rename the `.env.example` file so it is calle `.env`: `cp .env.example .env`.
-4. (Optional) update the credentials in the newly created `.env`. If you skip this step everything should work, but your database will have a generic name and user.
-5. Run this command to build a database with Docker: `docker compose up -d`. The database will be built based on the values in `.env`.
-6. Run `yarn db:setup` to run example migrations and seeds.
-7. Run `yarn dev` to start the server in development mode.
-8. Navigate to http://localhost:5000/api/exampleResources to verify that the API works and you can read data from the database.
+```“yarn”: “= 1.19.1"```,  
+```“node”: “= 17.3.0"```
 
-### Or without Docker
-1. Install Mysql manually and set up a database dedicated to the project.
-2. Clone this repository and cd into the `/packages/server` folder.
-3. Copy and rename the `.env.example` file so it is calle `.env`: `cp .env.example .env`.
-4. Update the credentials in the newly created `.env` and make sure everything matches with the credentials for the database you set up in step (1).
-5. Run `yarn db:setup` to run example migrations and seeds.
-6. Run `yarn dev` to start the server in development mode.
-7. Navigate to http://localhost:5000/api/exampleResources to verify that the API works and you can read data from the database.
+Please run ```node -v``` and ```yarn -v``` and check if the versions match, if not then you will need to change them and make sure it matches the versions above.
 
-## Yarn commands
+Plus you should have installed **MySQL Workbench**, **Docker**, **VSCode** and **Postman** because we will use them over the project. Make sure that all of these applications are updated and running so that you save time before the project starts.
 
-NPM commands are replaced with Yarn which provides a faster experience and better organisation of dependencies. Avoid running any `npm` commands. Below are the most frequently used commands with `yarn`.
+After the steps stated above you should be ready to install and set the project in your machine, please follow the steps by the stated order:
 
-The project is organised as a mono-repository, meaning there is a single project containing a root and two projects (client and server). Remember to keep in mind where you are when running these commands.
+1. Git clone this project
+2. Go to the project folder locally and run ```yarn``` - this command will install ```node_modules``` on the root of the project, on the ```packages/client``` and on ```packages/server```
+3. To test the client you can run ```yarn workspace client start``` on the root of the project - it should open a browser with http://localhost:3000
+4. To test storybook you can run ```yarn workspace client storybook``` on the root of the project - it should open a browser with http://localhost:6006/?path=/story/example-button--small
+5. To test the server you will need to:
+* set the ```.env``` file, please go to ```packages/server``` and run ```cp .env.example .env```
+* start the docker container, please run ```docker compose up -d```
+* Create the DB with data by running ```yarn db:setup``` which will run migrations and seeds
+* Finally, run ```yarn dev``` to start the server in development mode.
+* Check if the if a browser opens with http://localhost:5000/api/exampleResources
+* And you should also test Swagger by opening http://localhost:5000/api/documentation
 
-| Command                                | Description                                                                                             | Scope                | Example                       |   |
-|----------------------------------------|---------------------------------------------------------------------------------------------------------|----------------------|-------------------------------|---|
-| `yarn workspaces [command]`            | Run a given command in all workspaces.                                                                  | root                 | `yarn workspaces start`       |   |
-| `yarn workspace [workspace] [command]` | Run a given command in a dedicated workspace.                                                           | root                 | `yarn workspace client start` |   |
-| `yarn` or `yarn install`               | Equivalent to `npm install`                                                                             | all                  |                               |   |
-| `yarn add [package]`                   | Equivalent to `npm install [package]`                                                                   | all                  |                               |   |
-| `yarn validate`                        | Will check if prettier and eslint have been applied correctly to all workspaces.                        | root                 |                               |   |
-| `yarn format`                          | Will run Prettier with the write flag. Only works in the root scope.                                    | root                 |                               |   |
-| `yarn format:check`                    | Will run Prettier non-destructively and verify if changes have been applied correctly.                  |                      |                               |   |
-| `yarn lint`                            | Will run Eslint. Can be run in all scopes.                                                              | root, client, server |                               |   |
-| `yarn knex`                            | Allows you to run knex commands. Can be run from root or server, but will always operate on the server. | root, server         |                               |   |
-| `yarn storybook`                       | Runs storybook.                                                                                         | client               |                               |   |
-| `yarn start`                           | Will start either the client or the server.                                                             | client, server       |                               |   |
-| `yarn build`                           | Will build a production ready React project.                                                            | client               |                               |   |
-| `yarn storybook-build`                 | Will build a production ready Storybook project.                                                        | client               |                               |   |
-|                                        |                                                                                                         |                      |                               |   |
-
+  
+ 
