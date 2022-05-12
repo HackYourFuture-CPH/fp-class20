@@ -1,4 +1,4 @@
-# HYF Final project boilerplate
+# HYF Final project for Class20
 
 ## Setup instructions
 
