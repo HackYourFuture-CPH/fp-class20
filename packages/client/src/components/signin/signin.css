@@ -1,0 +1,13 @@
+.sign-in-icon {
+  width: 20%;
+  padding-right: 5%;
+}
+.sign-in {
+  background-color: rgb(10, 10, 10);
+  max-width: 10%;
+  font-family: monospace;
+}
+.sign-in-tag {
+  color: white;
+  text-decoration: none;
+}

@@ -1,0 +1,13 @@
+.favourite {
+  background-color: rgb(10, 10, 10);
+  max-width: 15%;
+  font-family: monospace;
+  padding-left: 2%;
+}
+.favourite-icon {
+  width: 10%;
+}
+.favourite-tag {
+  color: white;
+  text-decoration: none;
+}
