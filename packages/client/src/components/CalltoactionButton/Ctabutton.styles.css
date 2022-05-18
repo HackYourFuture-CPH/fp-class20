@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+.button-shop {
+  position: absolute;
+  width: 14rem;
+  height: 2.5rem;
+  background: rgba(35, 28, 22, 0.9);
+  color: #ffffff;
+  font-family: 'Montserrat';
+  font-style: normal;
+
+  font-size: 1.3rem;
+  border: 2px solid #ffffff;
+  text-align: center;
+}
