@@ -1,0 +1,161 @@
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  height: 12.5rem;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+.footerContainerTotall {
+  background-color: #231c16;
+}
+iframe {
+  height: 10rem;
+  width: 14rem;
+}
+
+h3 {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-style: SemiBold;
+  line-height: 16px;
+  font-weight: 600;
+}
+h5 {
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 0.0125rem;
+  font-weight: 400;
+  color: white;
+}
+
+.coporateInfo,
+.Contact {
+  background-color: #342f2b;
+  width: 19%;
+  padding-left: 2rem;
+  line-height: 0.1rem;
+}
+img,
+span {
+  align-items: center;
+  vertical-align: middle;
+}
+.coporateInfo {
+  margin-right: 1rem;
+}
+.phone {
+  width: 28px;
+  height: 26px;
+  margin-right: 1rem;
+}
+.envelop {
+  width: 28px;
+  height: 17px;
+  margin-right: 1rem;
+}
+.smallMapIcon {
+  width: 25px;
+  height: 30px;
+}
+
+.googleMap,
+.mapInfo {
+  width: 31%;
+  background-color: #342f2b;
+}
+.googleMap img {
+  padding-top: 0.1rem;
+  width: 100%;
+}
+.adress {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+}
+.adressContainer {
+  display: flex;
+  flex-direction: row;
+  padding-left: 2rem;
+  align-items: center;
+}
+h3 {
+  padding-left: 0.1rem;
+  letter-spacing: 0.2rem;
+}
+
+.mapIn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mapIn img {
+  margin-right: 2rem;
+}
+.mapInfo {
+  display: flex;
+  flex-direction: column;
+}
+.logoOfSimplySpices {
+  width: 70%;
+  margin-top: 1rem;
+}
+.bottomText {
+  color: white;
+  text-align: end;
+  margin-right: 15%;
+  padding-bottom: 1rem;
+  padding-top: 0.1rem;
+}
+.bottomText span {
+  color: white;
+}
+@media screen and (max-width: 540px) {
+  .footerContainerTotall {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(37, 39, 38);
+  }
+  .footerContainer {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  h3 {
+    padding: 0;
+  }
+  .mapInfo {
+    align-items: center;
+  }
+
+  .coporateInfo,
+  .Contact,
+  .googleMap,
+  .mapInfo {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  .coporateInfo {
+    margin-bottom: 1rem;
+  }
+  .bottomText {
+    text-align: center;
+    margin-top: 85vh;
+    color: white;
+    background-color: #111010;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+  .bottomText span {
+    color: white;
+  }
+  .googleMap img {
+    width: 100%;
+    margin: 0;
+  }
+}
