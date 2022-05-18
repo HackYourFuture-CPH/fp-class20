@@ -1,7 +1,9 @@
 {
   "root": true,
   "extends": ["eslint:recommended", "airbnb", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
+    "prettier/prettier": "error",
     "arrow-body-style": "off",
     "arrow-parens": "off",
     "camelcase": "warn",
