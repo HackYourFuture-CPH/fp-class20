@@ -1,15 +1,32 @@
+.footerContainerTotall {
+  background-color: black;
+}
 .footerContainer {
   display: flex;
   flex-direction: row;
   color: white;
   height: 12.5rem;
-  width: 70%;
+  /* width: 70%; */
   margin: 0 auto;
-  padding-top: 1rem;
-}
-.footerContainerTotall {
   background-color: #231c16;
 }
+.coporateInfo,
+.Contact {
+  background-color: #201c19;
+  width: 12%;
+  padding-left: 2rem;
+  line-height: 0.1rem;
+}
+.googleMap,
+.mapInfo {
+  width: 20%;
+  background-color: #201c19;
+}
+.coporateInfo {
+  margin-left: 15%;
+  margin-right: 1rem;
+}
+
 iframe {
   height: 10rem;
   width: 14rem;
@@ -20,33 +37,26 @@ h3 {
   padding-top: 1rem;
   font-size: 16px;
   font-family: Montserrat;
-  font-style: SemiBold;
+  /* font-style: SemiBold; */
   line-height: 16px;
   font-weight: 600;
 }
 h5 {
   font-family: Montserrat;
-  font-size: 16px;
-  line-height: 0.0125rem;
+  font-size: 16sp;
+  /* line-height: 0.0125rem; */
   font-weight: 400;
   color: white;
 }
 
-.coporateInfo,
-.Contact {
-  background-color: #342f2b;
-  width: 19%;
-  padding-left: 2rem;
-  line-height: 0.1rem;
-}
 img,
 span {
   align-items: center;
   vertical-align: middle;
 }
-.coporateInfo {
+/* .coporateInfo {
   margin-right: 1rem;
-}
+} */
 .phone {
   width: 28px;
   height: 26px;
@@ -62,19 +72,14 @@ span {
   height: 30px;
 }
 
-.googleMap,
-.mapInfo {
-  width: 31%;
-  background-color: #342f2b;
-}
 .googleMap img {
   padding-top: 0.1rem;
   width: 100%;
 }
 .adress {
   font-family: Montserrat;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 16sp;
+  font-style: Medium;
 }
 .adressContainer {
   display: flex;
@@ -98,10 +103,11 @@ h3 {
 .mapInfo {
   display: flex;
   flex-direction: column;
+  padding-left: 1rem;
 }
 .logoOfSimplySpices {
   width: 70%;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .bottomText {
   color: white;
@@ -131,7 +137,10 @@ h3 {
   .mapInfo {
     align-items: center;
   }
-
+  .coporateInfo {
+    padding: 0;
+    margin: 0;
+  }
   .coporateInfo,
   .Contact,
   .googleMap,
