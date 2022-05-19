@@ -7,11 +7,14 @@ module.exports = {
     connection: {
       host: process.env.DB_HOST,
       port: process.env.MYSQL_PORT,
-      user: process.env.MYSQL_USER,
-      password: process.env.MYSQL_PASSWORD,
+      user: 'root',
+      password: 'root',
       database: process.env.MYSQL_DATABASE,
     },
     pool: { min: 0, max: 7 },
+    migrations: {
+      directory: './migrations',
+    },
     seeds: {
       directory: path.join(__dirname, '/seeds/development'),
     },
