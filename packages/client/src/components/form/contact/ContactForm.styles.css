@@ -40,8 +40,9 @@
 label {
   flex: 1;
   display: flex;
-  white-space: nowrap;
+  flex-shrink: 1;
   justify-content: right;
+  text-align: right;
 }
 
 button {

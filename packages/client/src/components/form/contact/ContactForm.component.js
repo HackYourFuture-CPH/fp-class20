@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './Contact.style.css';
-import simplySpices from '../../assets/SimplySpices.png';
-import Vector192 from '../../assets/Vector192.png';
+import './ContactForm.styles.css';
+import contactPageMainImage from '../../assets/SimplySpices.png';
+import contactPageSwirlDecoration from '../../assets/Vector192.png';
 
-export const Contact = ({ text, label }) => {
-  const [user, setUser] = useState({
+export const ContactForm = ({ text, label, handleSubmit }) => {
+  const [formState, SetFormState] = useState({
     name: '',
     email: '',
     message: '',
@@ -18,42 +18,58 @@ export const Contact = ({ text, label }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
+    SetFormState({ ...formState, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleValidation = (e) => {
     e.preventDefault();
-    // const errors = validation;
-    const errors = JSON.parse(JSON.stringify(validation));
-    const values = Number(user.name);
-    if (!user.name.trim()) {
+
+    const errors = { ...validation };
+    // eslint-disable-next-line
+
+    const nameValidation = /^[0-9\b]+$/;
+
+    if (!formState.name.trim()) {
       errors.name = ' Name is required';
-    } else if (NaN(+values) === true) {
+    } else if (formState.name.match(nameValidation)) {
       errors.name = 'name can not be integer';
     } else {
       errors.name = '';
     }
 
-    // email validation
     const emailValidation =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (!user.email.trim()) {
+    if (!formState.email.trim()) {
       errors.email = 'Email is required';
-    } else if (!user.email.match(emailValidation)) {
+    } else if (!formState.email.match(emailValidation)) {
       errors.email = 'Please enter a valid email address';
     } else {
       errors.email = '';
     }
-    return setValidation(errors);
+
+    if (formState.message.trim() === '') {
+      errors.message = 'Message is required';
+    } else {
+      errors.message = '';
+    }
+
+    if (errors.name === '' && errors.email === '' && errors.message === '') {
+      handleSubmit(
+        formState.name.trim(),
+        formState.email.trim(),
+        formState.message.trim(),
+      );
+    }
+    setValidation(errors);
   };
 
   return (
     <div>
       <div className="contact-form-container">
         <div className="contactHead">
-          <img alt="simply spices" src={simplySpices} />
-          <img alt="simply spices" src={Vector192} />
+          <img alt="simply spices" src={contactPageMainImage} />
+          <img alt="simply spices" src={contactPageSwirlDecoration} />
         </div>
 
         <div className="wrapper-outer">
@@ -62,12 +78,7 @@ export const Contact = ({ text, label }) => {
             customer service for all general enquiries. We respond withing
             maximum 2 working days.
           </p>
-          <form
-            id="contactForm"
-            action="/"
-            method="POST"
-            onSubmit={handleSubmit}
-          >
+          <form id="contactForm">
             <div className="wrapper">
               {validation.name && <p>{validation.name}</p>}
               {validation.email && <p>{validation.email}</p>}
@@ -78,7 +89,7 @@ export const Contact = ({ text, label }) => {
                   type="text"
                   id="name"
                   name="name"
-                  value={user.name}
+                  value={formState.name}
                   placeholder="type your name"
                   onChange={(e) => handleChange(e)}
                   minLength="5"
@@ -92,7 +103,7 @@ export const Contact = ({ text, label }) => {
                   type="email"
                   id="email"
                   name="email"
-                  value={user.email}
+                  value={formState.email}
                   placeholder="type your email"
                   onChange={(e) => handleChange(e)}
                   required
@@ -104,7 +115,7 @@ export const Contact = ({ text, label }) => {
                 <textarea
                   id="textarea"
                   name="message"
-                  value={user.message}
+                  value={formState.message}
                   placeholder="type your message"
                   onChange={(e) => handleChange(e)}
                   maxLength="200"
@@ -113,7 +124,7 @@ export const Contact = ({ text, label }) => {
               </div>
 
               <div className="form-row">
-                <button type="submit" label={label}>
+                <button type="button" label={label} onClick={handleValidation}>
                   {text}
                 </button>
               </div>
@@ -134,11 +145,16 @@ export const Contact = ({ text, label }) => {
   );
 };
 
-Contact.propTypes = {
+ContactForm.propTypes = {
   text: PropTypes.string,
   label: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func,
 };
 
-Contact.defaultProps = {
+ContactForm.defaultProps = {
   text: null,
+  handleSubmit: () => {
+    // eslint-disable-next-line
+    console.log('button clicked');
+  },
 };
