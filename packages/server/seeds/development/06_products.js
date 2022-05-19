@@ -3,7 +3,6 @@
  * @returns { Promise<void> }
  */
 exports.seed = async function (knex) {
-  // Deletes ALL existing entries
   await knex('products').del();
   await knex('products').insert([
     {
@@ -14,7 +13,7 @@ exports.seed = async function (knex) {
       size: 'm',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/caraway.jpeg',
+      picture: './spice-pictures/caraway.jpeg',
       stock_amount: 50,
     },
     {
@@ -25,8 +24,7 @@ exports.seed = async function (knex) {
       size: 'xxl',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture:
-        '../../../client/public/assets/spice-pictures/capsicum-chinense.jpeg',
+      picture: './spice-pictures/capsicum-chinense.jpeg',
       stock_amount: 50,
     },
     {
@@ -37,8 +35,7 @@ exports.seed = async function (knex) {
       size: 'l',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture:
-        '../../../client/public/assets/spice-pictures/Capsicum_frutescens.jpeg',
+      picture: './spice-pictures/Capsicum_frutescens.jpeg',
       stock_amount: 50,
     },
     {
@@ -49,7 +46,7 @@ exports.seed = async function (knex) {
       size: 'xl',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/allspice.jpeg',
+      picture: './spice-pictures/allspice.jpeg',
       stock_amount: 50,
     },
     {
@@ -60,7 +57,7 @@ exports.seed = async function (knex) {
       size: 's',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/cumin.jpeg',
+      picture: './spice-pictures/cumin.jpeg',
       stock_amount: 50,
     },
     {
@@ -71,7 +68,7 @@ exports.seed = async function (knex) {
       size: 's',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/fenugreek.jpeg',
+      picture: './spice-pictures/fenugreek.jpeg',
       stock_amount: 50,
     },
     {
@@ -82,8 +79,7 @@ exports.seed = async function (knex) {
       size: 'm',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture:
-        '../../../client/public/assets/spice-pictures/sichuan_pepper.jpeg',
+      picture: './spice-pictures/sichuan_pepper.jpeg',
       stock_amount: 50,
     },
     {
@@ -94,8 +90,7 @@ exports.seed = async function (knex) {
       size: 'l',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture:
-        '../../../client/public/assets/spice-pictures/thai-long-pepper.jpeg',
+      picture: './spice-pictures/thai-long-pepper.jpeg',
       stock_amount: 50,
     },
     {
@@ -106,7 +101,7 @@ exports.seed = async function (knex) {
       size: 'xxl',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/pandan.jpeg',
+      picture: './spice-pictures/pandan.jpeg',
       stock_amount: 50,
     },
     {
@@ -117,7 +112,7 @@ exports.seed = async function (knex) {
       size: 'xl',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/wasabi.jpeg',
+      picture: './spice-pictures/wasabi.jpeg',
       stock_amount: 50,
     },
     {
@@ -128,7 +123,7 @@ exports.seed = async function (knex) {
       size: 's',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/black-pepper.jpeg',
+      picture: './spice-pictures/black-pepper.jpeg',
       stock_amount: 50,
     },
     {
@@ -139,8 +134,7 @@ exports.seed = async function (knex) {
       size: 's',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture:
-        '../../../client/public/assets/spice-pictures/grains-of-Paradis.jpeg',
+      picture: './spice-pictures/grains-of-Paradis.jpeg',
       stock_amount: 50,
     },
     {
@@ -151,7 +145,7 @@ exports.seed = async function (knex) {
       size: 'l',
       status: 'in_stock',
       created_at: knex.fn.now(),
-      picture: '../../../client/public/assets/spice-pictures/cinnamon.jpeg',
+      picture: './spice-pictures/cinnamon.jpeg',
       stock_amount: 50,
     },
   ]);
