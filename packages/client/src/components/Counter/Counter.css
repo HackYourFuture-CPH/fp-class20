@@ -8,7 +8,7 @@
   left: 1011px;
   justify-content: space-between;
 }
-.decrement-quantity {
+.decrement-quantity-button {
   width: 14px;
   height: 23px;
   left: 1017px;
@@ -23,7 +23,7 @@
   text-shadow: 2px 2px 4px #231016;
   margin-top: 5px;
 }
-.quantity {
+.quantity-button {
   width: 23px;
   height: 23px;
   left: 1035px;
@@ -39,7 +39,7 @@
   text-shadow: 2px 2px 4px #231016;
   margin-top: 5px;
 }
-.increment-quantity {
+.increment-quantity-button {
   width: 31px;
   height: 23px;
   left: 1057px;

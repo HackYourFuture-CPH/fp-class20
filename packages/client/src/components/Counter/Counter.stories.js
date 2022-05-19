@@ -6,8 +6,6 @@ export default {
   title: 'counter',
   component: Counter,
   argTypes: {
-    variantColor: { control: 'text' },
-    width: { control: number },
     height: { control: number },
     onClick: { action: 'clicked' },
   },
@@ -17,7 +15,6 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   variant: 'primary',
-  variantColor: 'green',
   width: 79,
   height: 37,
 };
