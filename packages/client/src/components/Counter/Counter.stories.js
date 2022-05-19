@@ -3,7 +3,7 @@ import React from 'react';
 import Counter from './Counter';
 
 export default {
-  title: 'counter',
+  title: 'Buttons/counter',
   component: Counter,
   argTypes: {
     height: { control: number },
