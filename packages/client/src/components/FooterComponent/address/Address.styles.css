@@ -1,16 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
 .Address_info {
-<<<<<<< HEAD
-  width: 36%;
-  line-height: 20px;
-=======
   width: 38%;
   background-color: rgba(35, 28, 22, 0.6);
   line-height: 1.5rem;
   padding-top: 2rem;
   align-items: center;
->>>>>>> 9cb80bf (chenged the adress component to text)
   padding-left: 1.5rem;
   color: white;
 }
@@ -23,14 +18,6 @@
   flex-direction: row;
   align-items: center;
 }
-<<<<<<< HEAD
-.logoOfSimplySpices {
-  width: 90%;
-  margin: 0 auto;
-}
-.mapIn img {
-  margin-right: 2rem;
-=======
 
 .simplySpices {
   margin-top: -0.5rem;
@@ -41,7 +28,6 @@
   letter-spacing: 0.08em;
   text-align: left;
   margin-bottom: 1rem;
->>>>>>> 9cb80bf (chenged the adress component to text)
 }
 
 .smallMapIcon {
@@ -56,15 +42,12 @@
 }
 @media screen and (max-width: 460px) {
   .Address_info {
-<<<<<<< HEAD
-=======
     width: 90%;
     margin-top: 1rem;
     align-items: center;
     margin: 0 auto;
   }
   .mapIn {
->>>>>>> 9cb80bf (chenged the adress component to text)
     width: 100%;
     padding-left: 3rem;
     margin-top: 1rem;
