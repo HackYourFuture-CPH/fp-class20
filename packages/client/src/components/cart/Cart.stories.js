@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Cart from '../Cart.component';
+import Cart from './Cart.component';
 
 export default {
   title: 'Main Header/cart',

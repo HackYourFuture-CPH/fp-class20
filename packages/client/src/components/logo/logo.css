@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lato&family=Licorice&family=Montserrat:wght@100&display=swap');
+
 h2 {
   background: #000000;
   color: white;
@@ -7,6 +9,4 @@ h2 {
   font-family: 'Fredericka the Great', sans-serif;
   font-size: 40px;
   letter-spacing: -2%;
-  text-shadow: -1px 0 white, 0 1px rgb(240, 5, 5),
-    1px 0 rgb(238, 10, 10) 0 -1px rgb(241, 5, 5);
 }
