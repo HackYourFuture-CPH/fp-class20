@@ -20,7 +20,7 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'ADD TO CARD',
+  label: 'Button',
 };
 
 export const Secondary = Template.bind({});

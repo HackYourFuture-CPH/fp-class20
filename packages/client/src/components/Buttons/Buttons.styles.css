@@ -1,0 +1,125 @@
+/* Buttons Style */
+.storybook-buttons {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.storybook-button--submit {
+  width: 345px;
+  height: 66px;
+  background: #53742a;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.storybook-button--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+
+.add-to-cart-svg {
+  width: 20px;
+  height: 20px;
+  padding-left: 10px;
+}
+
+.storybook-button--submitSecondary {
+  width: 345px;
+  height: 66px;
+  background: #231c16;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 30px;
+}
+.storybook-button--shop {
+  width: 345px;
+  height: 66px;
+  background: #231c16;
+  border: 1px solid #ffffff;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.storybook-button--editDetails {
+  width: 192.92px;
+  height: 37px;
+  color: #ffffff;
+  border: 1px solid #ffffffd3;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+  background-color: #2c251e;
+}
+
+.storybook-button--continueShopping {
+  width: 213px;
+  height: 37px;
+  background: rgba(35, 28, 22, 0.9);
+  border: 1px solid #ffffff;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.storybook-button--continueShoppingSecondary {
+  width: 192.92px;
+  height: 37px;
+  background: rgba(35, 28, 22, 0.9);
+  border: 1px solid #ffffff;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  padding: 0px;
+}
+
+.storybook-button--reviewOrderDetails {
+  width: 192.92px;
+  height: 37px;
+  background: rgba(35, 28, 22, 0.9);
+  border: 1px solid #ffffff;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  padding: 0px;
+}
+
+.storybook-button--checkout {
+  width: 213px;
+  height: 37px;
+  background: #53742a;
+  border: 1px solid #ffffff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.storybook-button--addToCard {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  width: 213px;
+  height: 37px;
+  background: #53742a;
+  color: #ffffff;
+  border: 1px solid #ffffffd3;
+  text-align: center;
+  padding-left: 25px;
+}
