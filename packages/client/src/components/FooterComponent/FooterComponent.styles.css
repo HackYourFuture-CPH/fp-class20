@@ -1,0 +1,20 @@
+.footer_container{
+   background-color: black;
+   color: white;
+}
+.FooterComponent_info{
+    width: 65%;
+    display: flex;
+    margin: 0 auto;
+}
+.copyRight{
+    width: 100%;
+    padding-left:70%;
+}
+@media screen and (max-width: 420px) {
+.FooterComponent_info {
+    width: 100%;
+    display: flex;
+   flex-direction: column;
+}
+}
