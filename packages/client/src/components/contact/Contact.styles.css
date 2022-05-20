@@ -1,0 +1,34 @@
+.Contact_info {
+   background-color: rgba(35, 28, 22, 0.6);
+  width: 20%;
+  /* padding-left: 1rem; */
+  padding-bottom: 1.5rem;
+}
+.text_big {
+  display: block;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-style: SemiBold;
+  line-height: 16px;
+  font-weight: 600;
+  color: white;
+}
+.text_small {
+  display: block;
+  font-family: Montserrat;
+  font-size: 16sp;
+  line-height: 20px;
+  font-weight: 400;
+  color: white;
+}
+.phone_text {
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 420px) {
+.Contact_info{
+    width: 100%;
+   text-align: center;
+}
+}

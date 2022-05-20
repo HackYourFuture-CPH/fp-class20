@@ -1,0 +1,32 @@
+.corporate_info {
+  background-color: rgba(35, 28, 22, 0.6);
+  width: 20%;
+  /* padding-left: 2rem; */
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+}
+.text_big {
+  display: block;
+  padding-top: 1rem;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-style: SemiBold;
+  line-height: 16px;
+  font-weight: 600;
+  color: white;
+}
+.text_small {
+  display: block;
+  font-family: Montserrat;
+  font-size: 16sp;
+  line-height: 20px;
+  font-weight: 400;
+  color: white;
+}
+@media screen and (max-width: 420px) {
+.corporate_info{
+    width: 100%;
+   text-align: center;
+ 
+}
+}
