@@ -1,18 +1,35 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import './cart.styles.css';
 
-import CartIcon from '../assets/CartIcon.png';
+import CartIcon from '../../../public/assets/CartIcon.png';
 
-const Cart = () => {
+const Cart = ({ label, onClick }) => {
   return (
-    <div className="cart">
-      <a className="cart-tag" href="#cartpage">
-        <img className="cart-icon" src={CartIcon} alt="cart-icon" />{' '}
-        <span className="number"> 0 </span> Cart
-      </a>
+    <div className="cart-container">
+      <div className="cart">
+        <img className="cart-icon" src={CartIcon} alt="cart-icon" />
+        <span className="number">0</span> <span>Cart</span>
+        {/* <button type="button" onClick={onClick}>
+          {label}
+        </button> */}
+      </div>
     </div>
   );
 };
 
 export default Cart;
+
+Cart.propTypes = {
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
+
+Cart.defaultProps = {
+  onClick: () => {
+    // eslint-disable-next-line
+    console.log('button clicked');
+  },
+};

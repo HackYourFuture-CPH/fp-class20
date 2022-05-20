@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from './Header';
+
+import Header from './Header.component';
 
 export default {
-  title: 'Header',
+  title: 'Main Header/Header',
   component: Header,
 };
-export const header = () => <Header />;
+export const headerLink = () => <Header />;

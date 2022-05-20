@@ -1,30 +1,23 @@
-.header {
-  background: black;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka the Great:wght@100&family=Work+Sans:wght@100&display=swap');
+
+.main-container {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  height: 3.75rem;
+  width: 80rem;
+  justify-content: space-evenly;
+  font-weight: 400;
+  align-items: center;
 }
 .container {
   display: flex;
   flex-direction: row;
-  position: relative;
-  left: 50%;
+  justify-content: space-evenly;
   color: white;
-}
-
-.logo {
-  font-size: 1rem;
-  margin-left: 10%;
+  background-color: transparent;
   margin-top: 1%;
-}
-.cart-img {
-  width: 20%;
-  margin-right: 3%;
-  padding-bottom: 10%;
-}
-
-.sign-in-icon {
-  width: 20%;
-}
-.favourite-icon {
-  position: relative;
-  bottom: 120%;
-  max-width: 15%;
+  margin-left: 20px;
+  width: auto;
 }

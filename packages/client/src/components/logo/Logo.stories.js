@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Logo from './Logo';
+import Logo from './Logo.component';
 
 export default {
-  title: 'Logo',
+  title: 'Main Header/Logo',
   component: Logo,
 };
-export const header = () => <Logo />;
+export const mainLogo = () => <Logo />;
