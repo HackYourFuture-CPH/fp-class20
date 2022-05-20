@@ -1,26 +1,29 @@
 .footerContainerTotall {
-  background-color: black;
+  background-color: #231c16;
 }
 .footerContainer {
   display: flex;
   flex-direction: row;
   color: white;
   height: 12.5rem;
-  /* width: 70%; */
   margin: 0 auto;
-  background-color: #231c16;
+  background-color: rgba(255, 255, 255, 0.02);
 }
 .coporateInfo,
 .Contact {
-  background-color: #201c19;
+  background-color: rgba(35, 28, 22, 0.6);
   width: 12%;
   padding-left: 2rem;
-  line-height: 0.1rem;
+  line-height: 20px;
+}
+.Contact {
+  padding-right: 1rem;
 }
 .googleMap,
 .mapInfo {
   width: 20%;
-  background-color: #201c19;
+  background-color: rgba(35, 28, 22, 0.6);
+  line-height: 20px;
 }
 .coporateInfo {
   margin-left: 15%;
@@ -32,19 +35,21 @@ iframe {
   width: 14rem;
 }
 
-h3 {
+.text_big {
+  display: block;
   margin-bottom: 2rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   font-size: 16px;
   font-family: Montserrat;
-  /* font-style: SemiBold; */
+  font-style: SemiBold;
   line-height: 16px;
   font-weight: 600;
 }
-h5 {
+.text_small {
+  display: block;
   font-family: Montserrat;
   font-size: 16sp;
-  /* line-height: 0.0125rem; */
+  line-height: 20px;
   font-weight: 400;
   color: white;
 }
@@ -54,22 +59,22 @@ span {
   align-items: center;
   vertical-align: middle;
 }
-/* .coporateInfo {
-  margin-right: 1rem;
-} */
+.phone_text {
+  margin-bottom: 1rem;
+}
 .phone {
-  width: 28px;
-  height: 26px;
+  width: 24px;
+  height: 22px;
   margin-right: 1rem;
 }
 .envelop {
-  width: 28px;
-  height: 17px;
+  width: 24px;
+  height: 18px;
   margin-right: 1rem;
 }
 .smallMapIcon {
-  width: 25px;
-  height: 30px;
+  width: 34px;
+  height: 32px;
 }
 
 .googleMap img {
@@ -87,7 +92,7 @@ span {
   padding-left: 2rem;
   align-items: center;
 }
-h3 {
+.text_big {
   padding-left: 0.1rem;
   letter-spacing: 0.2rem;
 }
@@ -119,7 +124,7 @@ h3 {
 .bottomText span {
   color: white;
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 640px) {
   .footerContainerTotall {
     display: flex;
     flex-direction: column;
@@ -131,9 +136,15 @@ h3 {
     width: 100%;
   }
 
-  h3 {
+  .text_big {
     padding: 0;
+    margin-bottom: 15px;
+    margin-top: 1rem;
   }
+  .text_small {
+    line-height: 1.5rem;
+  }
+
   .mapInfo {
     align-items: center;
   }
@@ -154,7 +165,7 @@ h3 {
   }
   .bottomText {
     text-align: center;
-    margin-top: 85vh;
+    margin-top: 74vh;
     color: white;
     background-color: #111010;
     width: 100%;
