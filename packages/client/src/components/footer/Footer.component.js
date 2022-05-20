@@ -1,9 +1,9 @@
 import React from 'react';
 import './Footer.styles.css';
-import phone from '../footerPicture/phone-call.png';
-import envelop from '../footerPicture/envelope.png';
-import map from '../footerPicture/mapLogo.png';
-import simplySpices from '../footerPicture/SimplySpices.png';
+import phone from '../../../public/assets/phone-call.png';
+import envelop from '../../../public/assets/envelope.png';
+import map from '../../../public/assets/mapLogo.png';
+import simplySpices from '../../../public/assets/SimplySpices.png';
 
 export const Footer = () => {
   return (
@@ -11,24 +11,24 @@ export const Footer = () => {
       <div className="footerContainer">
         {/* first div */}
         <div className="coporateInfo">
-          <h3>Coporate info</h3>
-          <h5>About us</h5>
-          <h5>Our partnes</h5>
-          <h5>Sustainability</h5>
-          <h5>Terms of Service</h5>
+          <span className="text_big">Coporate info</span>
+          <span className="text_small">About us</span>
+          <span className="text_small">Our partnes</span>
+          <span className="text_small">Sustainability</span>
+          <span className="text_small">Terms of Service</span>
         </div>
 
         {/* second div */}
         <div className="Contact">
-          <h3>Contact us</h3>
-          <h5>
+          <span className="text_big ">Contact us</span>
+          <span className="text_small phone_text">
             <img src={phone} alt="Canvas phone Logo" className="phone" />
             +45 666 555
-          </h5>
-          <h5>
+          </span>
+          <span className="text_small">
             <img src={envelop} alt="Canvas envelop Logo" className="envelop" />{' '}
             spice@kbh.dk
-          </h5>
+          </span>
         </div>
 
         {/* third div */}
