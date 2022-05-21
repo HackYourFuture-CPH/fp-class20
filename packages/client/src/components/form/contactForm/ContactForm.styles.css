@@ -8,6 +8,9 @@
   background-color: #251f19;
   margin: 0 auto;
 }
+.requiredStar {
+  color: rgb(255, 0, 0);
+}
 .contactHead {
   text-align: center;
 }

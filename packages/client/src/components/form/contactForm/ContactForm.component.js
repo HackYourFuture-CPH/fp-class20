@@ -89,7 +89,9 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
 
               <p className="successMsg">{messageSent}</p>
               <div className="form-row">
-                <label htmlFor="name">Name *</label>
+                <label htmlFor="name">
+                  Name <span className="requiredStar">*</span>
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -103,7 +105,9 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
               </div>
 
               <div className="form-row">
-                <label htmlFor="email">Email *</label>
+                <label htmlFor="email">
+                  Email <span className="requiredStar">*</span>
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -116,7 +120,10 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
               </div>
 
               <div className="form-row">
-                <label htmlFor="textarea"> Your message *</label>
+                <label htmlFor="textarea">
+                  {' '}
+                  Your message <span className="requiredStar">*</span>
+                </label>
                 <textarea
                   id="textarea"
                   name="message"
