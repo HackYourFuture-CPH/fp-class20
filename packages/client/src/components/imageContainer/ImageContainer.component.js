@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ImageContainer.styles.css';
-import fruitImage from '../assets/dried_juniper_berries.jpeg';
+import fruitImage from '../../../public/assets/dried_juniper_berries.png';
 
 export const ImageContainer = ({ url, altText, ...props }) => {
   return <img className="image-fruit" src={url} alt={altText} />;

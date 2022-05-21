@@ -4,9 +4,9 @@ import './ProductTitleText.styles.css';
 
 export const ProductTitleText = ({ heading, info, ...props }) => {
   return (
-    <div className="title-text">
-      <h2 className="top">{heading}</h2>
-      <p className="bottom"> {info}</p>
+    <div className="title-main">
+      <h2 className="product-title">{heading}</h2>
+      <p className="product-info"> {info}</p>
     </div>
   );
 };

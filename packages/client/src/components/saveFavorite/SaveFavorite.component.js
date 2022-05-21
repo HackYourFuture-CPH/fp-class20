@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SaveFavorite.styles.css';
-import heartIcon from '../assets/heart-icon.png';
-import heartIcon1 from '../assets/heart_icon_white.png';
+import heartIcon from '../../../public/assets/heart_icon.png';
+import heartIcon1 from '../../../public/assets/heart_icon_white.png';
 
 export const SaveFavorite = () => {
   const [selected, setSelected] = useState(false);
@@ -30,24 +30,3 @@ export const SaveFavorite = () => {
     </div>
   );
 };
-
-// import React from 'react';
-// import './SaveFavorite.styles.css';
-// import heartIcon from '../assets/heart-icon.png';
-
-// export const SaveFavorite = () => {
-//   return (
-//     <div className="save-favorite">
-//       <span>save to favorites</span>
-//       <img src={heartIcon} alt="heart icon" />
-//     </div>
-//   );
-// };
-
-// ProductTitleText.propTypes = {
-//   label: PropTypes.string,
-// };
-
-// ProductTitleText.defaultProps = {
-//   label: 'save to favorite',
-// };

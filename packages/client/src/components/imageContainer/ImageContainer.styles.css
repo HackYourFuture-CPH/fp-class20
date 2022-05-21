@@ -1,4 +1,18 @@
 .image-fruit {
-  height: 400px;
-  width: 400px;
+  height: 18rem;
+  width: 18rem;
+}
+
+@media screen and (max-width: 600px) {
+  .image-fruit {
+    width: 13rem;
+    height: 13rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .image-fruit {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
 }

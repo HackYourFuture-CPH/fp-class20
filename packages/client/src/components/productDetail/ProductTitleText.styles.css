@@ -1,24 +1,44 @@
-.title-text {
+.title-main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   line-height: 0%;
+  color: #ffffff;
 }
 
-.top {
+.product-title {
   font-family: Montserrat;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 500;
-  line-height: 37px;
+  line-height: 2rem;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 0;
 }
 
-.bottom {
+.product-info {
   font-family: Montserrat;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.25rem;
   letter-spacing: 0em;
   text-align: left;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 600px) {
+  .product-title {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 0.37rem;
+  }
+
+  .product-info {
+    font-family: Montserrat;
+    font-size: 0.5rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0em;
+    text-align: left;
+  }
 }
