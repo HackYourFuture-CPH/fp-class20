@@ -4,7 +4,8 @@
   align-items: center;
   text-align: center;
   height: 170px;
-  padding-top: 2rem;
+  padding-top: 1rem;
+  
 }
 .text_samll {
   font-family: Montserrat;
@@ -13,6 +14,7 @@
   line-height: 30px;
   letter-spacing: 0em;
   text-align: center;
+  display: block;
 }
 .text_big {
   font-family: Montserrat;
@@ -21,4 +23,5 @@
   line-height: 85px;
   letter-spacing: 0em;
   text-align: center;
+  display:block;
 }

@@ -1,8 +1,6 @@
 .SortBy_item,
 .sort_list {
   background-color: rgba(52, 47, 43, 1);
-  margin-top: -3rem;
-
   color: white;
   width: 104px;
   margin-left: 70%;
@@ -62,5 +60,5 @@
   }
   .sort_list {
     margin-top: 0;
-  }
+  } 
 }

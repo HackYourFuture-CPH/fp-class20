@@ -5,4 +5,4 @@ export default {
   title: 'SortBy/SortBy',
   component: SortBy,
 };
-export const SortBya = () => <SortBy />;
+export const SortByab = () => <SortBy />;

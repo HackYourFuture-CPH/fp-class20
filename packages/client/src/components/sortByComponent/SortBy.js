@@ -3,6 +3,7 @@ import './SortBy.styles.css';
 
 export const SortBy = () => {
   const [dropDown, setDropDown] = useState(true);
+
   const display = () => {
     dropDown ? setDropDown(false) : setDropDown(true);
   };
