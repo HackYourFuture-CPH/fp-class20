@@ -1,6 +1,7 @@
 .PageNotFoundContainer {
   color: #232516;
 }
-.PageNotFoundContainer > a {
+.PageNotFoundContainer > a,
+.PageNotFoundContainer > a:visited {
   color: rgb(249, 11, 11);
 }

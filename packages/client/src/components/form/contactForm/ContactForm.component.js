@@ -25,8 +25,8 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
     e.preventDefault();
 
     const errors = { ...validation };
-    // eslint-disable-next-line
 
+    setMessageSent('');
     const nameValidation = /^[a-zA-Z\s]+$/;
 
     if (!formState.name.trim()) {
@@ -81,10 +81,13 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
           </p>
           <form id="contactForm">
             <div className="wrapper">
-              {validation.name && <p>{validation.name}</p>}
-              {validation.email && <p>{validation.email}</p>}
-              {validation.message && <p>{validation.message}</p>}
-              <p>{messageSent}</p>
+              <div className="errorMsg">
+                {validation.name && <p>{validation.name}</p>}
+                {validation.email && <p>{validation.email}</p>}
+                {validation.message && <p>{validation.message}</p>}
+              </div>
+
+              <p className="successMsg">{messageSent}</p>
               <div className="form-row">
                 <label htmlFor="name">Name *</label>
                 <input
@@ -140,16 +143,15 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
             Customer Service : + 45 11 22 33 11 <br /> Sales Representative: +45
             12 34 56 87
           </p>
-          <p>
-            + 45 87654321 or press + 45 87654321 or press
-            <a
-              href="https://www.hackyourfuture.dk/volunteer"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @simplyspices.dk
-            </a>
-          </p>
+
+          <span>+ 45 87654321 or press</span>
+          <a
+            href="https://www.hackyourfuture.dk/volunteer"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @simplyspices.dk
+          </a>
         </div>
       </div>
     </div>
