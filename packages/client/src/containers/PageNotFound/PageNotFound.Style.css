@@ -1,0 +1,6 @@
+.PageNotFoundContainer {
+  color: #232516;
+}
+.PageNotFoundContainer > a {
+  color: rgb(249, 11, 11);
+}

@@ -1,0 +1,30 @@
+.navigationTop {
+  display: flex;
+  background-color: #29231e;
+  color: #ffffff;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+}
+nav {
+  display: flex;
+  background-color: #000000;
+  color: #ffffff;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  gap: 4rem;
+}
+li a,
+a:visited {
+  color: #ffffff;
+}
+li a:hover {
+  color: #a46363;
+}

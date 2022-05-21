@@ -1,0 +1,14 @@
+footer {
+  background-color: #2e2823;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  height: 10rem;
+}
+.footerDown {
+  background-color: #231c16;
+  color: #ffffff;
+  height: 1rem;
+  font-size: x-small;
+}

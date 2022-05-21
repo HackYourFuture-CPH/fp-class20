@@ -1,0 +1,7 @@
+main {
+  height: 20rem;
+  text-align: center;
+  background-color: #45403c;
+  display: flex;
+  justify-content: center;
+}
