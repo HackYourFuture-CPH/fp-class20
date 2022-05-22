@@ -1,12 +1,12 @@
 import React from 'react';
-import { ImageContainer } from './ImageContainer.component';
+import { ProductImage } from './ProductImage.component';
 
 export default {
   title: 'Product-component/ImageContainer',
-  component: ImageContainer.component,
+  component: ProductImage.component,
 };
 
-const Template = (args) => <ImageContainer {...args} />;
+const Template = (args) => <ProductImage {...args} />;
 
 // 👇 Each story then reuses that template
 export const url = Template.bind({});

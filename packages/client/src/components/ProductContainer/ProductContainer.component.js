@@ -1,8 +1,8 @@
 import React from 'react';
 import './ProductContainer.styles.css';
-import { SaveFavorite } from '../SaveFavorite/SaveFavorite.component';
-import { ImageContainer } from '../ImageContainer/ImageContainer.component';
-import { ProductTitleText } from '../ProductDetail/ProductTitleText.component';
+import { SaveFavorite } from '../saveFavorite/SaveFavorite.component';
+import { ProductImage } from '../productImage/ProductImage.component';
+import { ProductTitleText } from '../productDetail/ProductTitleText.component';
 import { Button } from '../Button.component';
 // import { RadioButton } from '../RadioButton/RadioButton.component';
 
@@ -14,7 +14,7 @@ export const ProductContainer = () => {
       </div>
       <div className="product-detail">
         <div className="product-image">
-          <ImageContainer />
+          <ProductImage className="image-product" />
         </div>
         <div className="product-detail-right">
           <ProductTitleText />
