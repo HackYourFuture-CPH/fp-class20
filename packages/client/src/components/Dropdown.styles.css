@@ -8,6 +8,8 @@
   font-family: Montserrat;
   font-size: 20px;
   font-weight: 500;
+  margin-left: 10rem;
+  padding: 1rem 0;
 }
 .display {
   background-color: #342f2b;
@@ -25,19 +27,27 @@ span {
   flex-direction: row;
   padding-bottom: 1.25rem;
 }
-h3 {
+.main-heading {
   margin-left: 10rem;
   padding-top: 3rem;
+  padding-bottom: 3rem;
   font-family: Montserrat;
   font-size: 30px;
   font-weight: 500;
 }
-h4 {
+.spice-names {
   font-family: Montserrat;
   font-size: 20px;
   font-weight: 500;
 }
+.showAllSpices {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 1.5rem;
+}
 p {
+  padding-bottom: 0.5rem;
   font-family: Montserrat;
   font-size: 20px;
   font-weight: 300;
@@ -45,9 +55,12 @@ p {
   letter-spacing: 0em;
   text-align: left;
 }
+.block-height {
+  height: 6rem;
+}
 .left-container,
 .right-container {
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -79,7 +92,7 @@ p {
   .itemsContanier {
     flex-direction: column;
   }
-  h3 {
+  .main-heading {
     margin: 0px;
     padding: 5px;
     text-align: center;

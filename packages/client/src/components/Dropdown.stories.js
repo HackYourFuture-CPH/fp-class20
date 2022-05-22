@@ -11,7 +11,6 @@ export default {
 
 // 👇 We create a “template”
 const Template = () => <Dropdown />;
-
 // 👇 Each story then reuses that template
 export const Primary = Template.bind({});
 Primary.args = {

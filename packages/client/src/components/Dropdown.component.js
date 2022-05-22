@@ -8,7 +8,7 @@ function Dropdown() {
   const display = () => {
     setDropDown(!dropDown);
     if (dropDown) {
-      // States for Arrow down
+      // States for Arrow Up
       setDropDownList('display');
       setTriangle('arrow-up');
     } else {
@@ -30,33 +30,33 @@ function Dropdown() {
         />
       </div>
       <div className={dropDownList}>
-        <h3>Browser spices by plant part</h3>
+        <span className="main-heading">Browser spices by plant part</span>
         <div className="itemsContanier">
           <div className="left-container">
-            <div>
-              <h4>BUD/FLOWER</h4>
+            <div className="block-height">
+              <span className="spice-names">BUD/FLOWER</span>
               <p>(clove, caper, saffron and more)</p>
             </div>
-            <div>
-              <h4>ROOT/RHIZOME/BARK</h4>
+            <div className="block-height">
+              <span className="spice-names">ROOT/RHIZOME/BARK</span>
               <p>(turmeric, ginger, cinnamon and more)</p>
             </div>
-            <div>
-              <h4>FRUIT/BERRY</h4>
+            <div className="block-height">
+              <span className="spice-names">FRUIT/BERRY</span>
               <p>(chili, cardamon, black pepper and more)</p>
             </div>
           </div>
           <div className="right-container">
-            <div>
-              <h4>LEAF</h4>
+            <div className="block-height">
+              <span className="spice-names">LEAF</span>
               <p>(mint, oregano, thyme, bayleaf and more herbs)</p>
             </div>
-            <div>
-              <h4>SEED</h4>
+            <div className="block-height">
+              <span className="spice-names">SEED</span>
               <p>(cummin, coriander,fennel, poppy and more)</p>
             </div>
-            <div>
-              <h4>SHOW ALL SPICES</h4>
+            <div className="showAllSpices">
+              <span>SHOW ALL SPICES</span>
             </div>
           </div>
         </div>
