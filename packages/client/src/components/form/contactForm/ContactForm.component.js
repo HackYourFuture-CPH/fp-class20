@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.styles.css';
 import contactPageMainImage from '../../assets/SimplySpices.png';
@@ -15,7 +15,19 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
     email: '',
     message: '',
   });
+
+  const [isFormValidated, setIsFormValidated] = useState(false);
+
+  useEffect(() => {
+    if (formState.name && formState.email && formState.message) {
+      setIsFormValidated(true);
+    } else {
+      setIsFormValidated(false);
+    }
+  }, [formState]);
+
   const [messageSent, setMessageSent] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     SetFormState({ ...formState, [name]: value });
@@ -60,6 +72,7 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
         formState.email.trim(),
         formState.message.trim(),
       );
+
       setMessageSent('Your message is sent');
     }
     setValidation(errors);
@@ -92,6 +105,7 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
                 <label htmlFor="name">
                   Name <span className="requiredStar">*</span>
                 </label>
+
                 <input
                   type="text"
                   id="name"
@@ -108,6 +122,7 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
                 <label htmlFor="email">
                   Email <span className="requiredStar">*</span>
                 </label>
+
                 <input
                   type="email"
                   id="email"
@@ -121,9 +136,9 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
 
               <div className="form-row">
                 <label htmlFor="textarea">
-                  {' '}
                   Your message <span className="requiredStar">*</span>
                 </label>
+
                 <textarea
                   id="textarea"
                   name="message"
@@ -136,7 +151,12 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
               </div>
 
               <div className="form-row">
-                <button type="button" label={label} onClick={handleValidation}>
+                <button
+                  className={isFormValidated ? 'readyButton' : 'normalButton'}
+                  type="button"
+                  label={label}
+                  onClick={handleValidation}
+                >
                   {text}
                 </button>
               </div>

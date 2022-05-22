@@ -8,8 +8,19 @@
   background-color: #251f19;
   margin: 0 auto;
 }
+.readyButton {
+  background-color: green;
+}
 .requiredStar {
   color: rgb(255, 0, 0);
+}
+
+input:focus {
+  outline: none;
+}
+textarea:focus {
+  outline: none;
+  border: 0.1rem solid rgb(255, 0, 0);
 }
 .contactHead {
   text-align: center;
