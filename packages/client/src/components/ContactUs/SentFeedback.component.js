@@ -2,9 +2,9 @@ import React from 'react';
 
 import './SentFeedback.styles.css';
 
-import logoHeading from '../assets/Simply Spices.svg';
+import logoStyle from '../../../public/assets/Vector 192.svg';
 
-import logoStyle from '../assets/Vector 192.svg';
+import logoHeading from '../../../public/assets/Simply Spices.svg';
 
 export const SentFeedback = () => {
   return (
