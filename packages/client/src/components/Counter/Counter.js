@@ -1,12 +1,12 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import './Counter.css';
+import PropTypes from 'prop-types';
 
-function Counter() {
-  const [count, setCount] = useState(1);
+// count and setCound are props from the container component; the parent component
+function Counter({ count, setCount }) {
   const decrement = () => {
-    setCount(count - 1);
-    if (count === 1) {
-      setCount(1);
+    if (count > 1) {
+      setCount(count - 1);
     }
   };
   const increment = () => {
@@ -22,11 +22,11 @@ function Counter() {
         onKeyUp={decrement}
         className="decrement-quantity-button"
       >
+        {' '}
         -
       </span>
 
       <span className="quantity-button">{count}</span>
-
       <span
         role="button"
         tabIndex={-1}
@@ -39,5 +39,15 @@ function Counter() {
     </div>
   );
 }
+
+Counter.defaultProps = {
+  count: 1,
+  setCount: () => {},
+};
+
+Counter.propTypes = {
+  count: PropTypes.number,
+  setCount: PropTypes.func,
+};
 
 export default Counter;
