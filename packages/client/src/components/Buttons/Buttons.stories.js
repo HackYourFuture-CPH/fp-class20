@@ -50,7 +50,7 @@ EditDetails.args = {
 export const ContinueShoppingt = Template.bind({});
 ContinueShoppingt.args = {
   continueShopping: true,
-  label: 'CONTIBUE SHOPPING',
+  label: 'CONTINUE SHOPPING',
   // eslint-disable-next-line react/jsx-no-useless-fragment
   icon: <></>,
 };

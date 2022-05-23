@@ -16,11 +16,11 @@
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 
 .storybook-button--small {
-  font-size: 12px;
+  font-size: 0.75rem;
   padding: 10px 16px;
 }
 
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 .storybook-button--shop {
   width: 345px;
@@ -47,7 +47,7 @@
   background: #231c16;
   border: 1px solid #ffffff;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 
 .storybook-button--editDetails {
@@ -57,7 +57,7 @@
   border: 1px solid #ffffffd3;
   text-align: center;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.875rem;
   background-color: #2c251e;
 }
 
@@ -67,7 +67,7 @@
   background: rgba(35, 28, 22, 0.9);
   border: 1px solid #ffffff;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.938rem;
   text-align: center;
   color: #ffffff;
 }
@@ -78,7 +78,7 @@
   background: rgba(35, 28, 22, 0.9);
   border: 1px solid #ffffff;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.938rem;
   line-height: 18px;
   text-align: center;
   color: #ffffff;
@@ -91,7 +91,7 @@
   background: rgba(35, 28, 22, 0.9);
   border: 1px solid #ffffff;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.938rem;
   line-height: 18px;
   text-align: center;
   color: #ffffff;
@@ -104,7 +104,7 @@
   background: #53742a;
   border: 1px solid #ffffff;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 24px;
   text-align: center;
   color: #ffffff;
@@ -113,7 +113,7 @@
 .storybook-button--addToCard {
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 0.938rem;
   line-height: 18px;
   width: 213px;
   height: 37px;
