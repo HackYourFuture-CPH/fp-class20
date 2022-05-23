@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.styles.css';
-import phone from '../../../public/assets/phone-call.png';
-import envelop from '../../../public/assets/envelope.png';
+import phone from '../../../../public/assets/phone-call.png';
+import envelop from '../../../../public/assets/envelope.png';
 
 export const Contact = () => {
   return (

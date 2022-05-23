@@ -1,7 +1,7 @@
 import React from 'react';
 import './Address.styles.css';
-import simplySpices from '../../../public/assets/SimplySpices.png';
-import map from '../../../public/assets/mapLogo.png';
+import simplySpices from '../../../../public/assets/SimplySpices.png';
+import map from '../../../../public/assets/mapLogo.png';
 
 export const Address = () => {
   return (
