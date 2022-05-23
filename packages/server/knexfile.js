@@ -1,6 +1,10 @@
 const path = require('path');
 require('dotenv').config();
 
+const { attachPaginate } = require('knex-paginate');
+
+attachPaginate();
+
 module.exports = {
   development: {
     client: 'mysql2',
