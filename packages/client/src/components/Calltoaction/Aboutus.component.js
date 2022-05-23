@@ -1,16 +1,20 @@
 import React from 'react';
 
-import './Heading.styles.css';
+import './Aboutus.styles.css';
 
-import logoHeading from '../../../public/logoHeading.svg';
+import logoStyle from '../../../public/assets/logoStyle.svg';
 
-import logoStyle from '../../../public/logoStyle.svg';
-
-export const Heading = () => {
+export const Aboutus = () => {
   return (
-    <div className="heading">
-      <img src={logoHeading} alt="logo heading" className="logo" />
-      <img src={logoStyle} alt="logo style" className="style" />
+    <div className="aboutus-section">
+      <div>
+        <h1 className="simple-spices-heading">Simply Spices</h1>
+        <img
+          src={logoStyle}
+          alt="logo style"
+          className="main-slogan-vector-style"
+        />
+      </div>
       <div className="aboutus-description">
         <h3 className="aboutheading">About us</h3>
         <div className="description">
