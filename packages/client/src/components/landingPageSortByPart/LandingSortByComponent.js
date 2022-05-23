@@ -1,6 +1,6 @@
 import React from 'react';
 import './LandingSortByComponent.styles.css';
-import { SortBy } from '../sortByComponent/SortBy';
+import { SortBy } from './sortByComponent/SortBy';
 
 export const LandingSortByComponent = () => {
   return (
