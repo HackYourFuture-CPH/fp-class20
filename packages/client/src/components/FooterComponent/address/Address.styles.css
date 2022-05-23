@@ -1,23 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 .Address_info {
-  width: 30%;
+  width: 38%;
   background-color: rgba(35, 28, 22, 0.6);
   line-height: 1.5rem;
   padding-top: 2rem;
+  align-items: center;
   padding-left: 1.5rem;
   color: white;
+}
+.adress_text_logo {
+  display: flex;
+  align-items: center;
 }
 .mapIn {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.logoOfSimplySpices{
-  width: 90%;
-  margin: 0 auto;
+
+.simplySpices {
+  margin-top: -0.5rem;
+  font-family: Fredericka the Great;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.08em;
+  text-align: left;
+  margin-bottom: 1rem;
 }
-.mapIn img {
-  margin-right: 2rem;
-}
+
 .smallMapIcon {
   width: 2.125rem;
   height: 2rem;
@@ -26,6 +38,7 @@
   font-family: Montserrat;
   font-size: 16sp;
   font-style: Medium;
+  padding-left: 1rem;
 }
 @media screen and (max-width: 560px) {
   .Address_info {
@@ -34,7 +47,7 @@
     align-items: center;
     margin: 0 auto;
   }
-  .mapIn{
+  .mapIn {
     width: 100%;
   }
 }
