@@ -1,34 +1,45 @@
 .Contact_info {
    background-color: rgba(35, 28, 22, 0.6);
   width: 20%;
-  /* padding-left: 1rem; */
+  padding-left: 1rem;
   padding-bottom: 1.5rem;
+  padding-right: .5rem;
 }
-.text_big {
+.Contact_info img{
+  padding-right: .5rem;
+    /* padding-top: 1rem; */
+}
+
+.Contact_info .text_big {
   display: block;
   margin-bottom: 2rem;
   padding-top: 2rem;
-  font-size: 16px;
+  font-size:1rem;
   font-family: Montserrat;
   font-style: SemiBold;
-  line-height: 16px;
+  line-height:1rem;
   font-weight: 600;
   color: white;
 }
-.text_small {
-  display: block;
+.Contact_info .text_small {
+  display: flex;
   font-family: Montserrat;
   font-size: 16sp;
-  line-height: 20px;
+  line-height:1.5rem;
   font-weight: 400;
   color: white;
+  align-items: center;
+
 }
-.phone_text {
+.Contact_info .phone_text {
   margin-bottom: 1rem;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 560px) {
 .Contact_info{
-    width: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
    text-align: center;
+   align-items: center;
 }
 }

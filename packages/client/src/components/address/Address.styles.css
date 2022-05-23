@@ -1,7 +1,8 @@
 .Address_info {
-  width: 35%;
-   /* background-color: rgba(35, 28, 22, 0.6); */
-  line-height: 20px;
+  width: 30%;
+  background-color: rgba(35, 28, 22, 0.6);
+  line-height: 1.5rem;
+  padding-top: 2rem;
   padding-left: 1.5rem;
   color: white;
 }
@@ -10,22 +11,30 @@
   flex-direction: row;
   align-items: center;
 }
+.logoOfSimplySpices{
+  width: 90%;
+  margin: 0 auto;
+}
 .mapIn img {
   margin-right: 2rem;
 }
 .smallMapIcon {
-  width: 34px;
-  height: 32px;
+  width: 2.125rem;
+  height: 2rem;
 }
 .adress {
   font-family: Montserrat;
   font-size: 16sp;
   font-style: Medium;
 }
-@media screen and (max-width: 420px) {
-.Address_info{
+@media screen and (max-width: 560px) {
+  .Address_info {
+    width: 90%;
+    margin-top: 1rem;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .mapIn{
     width: 100%;
- padding-left: 3rem;
- margin-top: 1rem;
-}
+  }
 }
