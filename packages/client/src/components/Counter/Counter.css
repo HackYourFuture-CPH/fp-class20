@@ -1,56 +1,56 @@
 .counter {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ffffff;
+  border: 16rem solid #ffffff;
   background-color: #867572;
-  height: 37px;
-  width: 79px;
-  left: 1011px;
+  height: 2.3125rem;
+  width: 4.938rem;
+  left: 63.188rem;
   justify-content: space-between;
 }
 .decrement-quantity-button {
-  width: 14px;
-  height: 23px;
-  left: 1017px;
-  top: 838px;
+  width: 0.875rem;
+  height: 1.438rem;
+  left: 63.563rem;
+  top: 52.375rem;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 0.938rem;
+  line-height: 1.125rem;
   text-align: center;
   color: #ffffff;
-  text-shadow: 2px 2px 4px #231016;
-  margin-top: 5px;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
+  margin-top: 0.313rem;
 }
 .quantity-button {
-  width: 23px;
-  height: 23px;
-  left: 1035px;
-  top: 838px;
+  width: 1.438rem;
+  height: 1.438rem;
+  left: 6.438rem;
+  top: 52.375rem;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 0.938rem;
+  line-height: 1.125rem;
   text-align: center;
   color: #ffffff;
   mix-blend-mode: normal;
-  text-shadow: 2px 2px 4px #231016;
-  margin-top: 5px;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
+  margin-top: 0.313rem;
 }
 .increment-quantity-button {
-  width: 31px;
-  height: 23px;
-  left: 1057px;
-  top: 838px;
+  width: 1.938rem;
+  height: 1.438rem;
+  left: 66.063rem;
+  top: 52.375rem;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 0.938rem;
+  line-height: 1.125rem;
   text-align: center;
   color: #ffffff;
-  text-shadow: 2px 2px 4px #231016;
-  margin-top: 5px;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
+  margin-top: 0.313rem;
 }
