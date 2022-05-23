@@ -8,12 +8,10 @@ module.exports = {
     client: 'mysql2',
     connection: {
       host: process.env.DB_HOST,
-      migration
       port: process.env.MYSQL_PORT,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.MYSQL_DATABASE,
-      develop
     },
     pool: { min: 0, max: 7 },
     migrations: {
