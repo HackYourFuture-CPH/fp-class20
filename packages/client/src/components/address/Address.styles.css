@@ -1,6 +1,5 @@
 .Address_info {
-  width: 35%;
-   /* background-color: rgba(35, 28, 22, 0.6); */
+  width: 36%;
   line-height: 20px;
   padding-left: 1.5rem;
   color: white;
@@ -22,10 +21,10 @@
   font-size: 16sp;
   font-style: Medium;
 }
-@media screen and (max-width: 420px) {
-.Address_info{
+@media screen and (max-width: 460px) {
+  .Address_info {
     width: 100%;
- padding-left: 3rem;
- margin-top: 1rem;
-}
+    padding-left: 3rem;
+    margin-top: 1rem;
+  }
 }
