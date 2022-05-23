@@ -2,7 +2,7 @@ import React from 'react';
 import { SortBy } from './SortBy';
 
 export default {
-  title: 'SortBy/SortBy',
+  title: 'LandingSortByComponent/LandingSortByComponent',
   component: SortBy,
 };
 export const SortByab = () => <SortBy />;

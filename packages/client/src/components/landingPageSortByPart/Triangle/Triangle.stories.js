@@ -2,7 +2,7 @@ import React from 'react';
 import { Triangle } from './Triangle';
 
 export default {
-  title: 'Triangle/Triangle',
+  title: 'LandingSortByComponent/LandingSortByComponent',
   component: Triangle,
 };
 

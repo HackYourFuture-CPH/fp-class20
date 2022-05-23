@@ -13,12 +13,12 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 8px solid rgb(20, 20, 20);
+  border-top: 8px solid white;
 }
 .triangle_up {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid rgb(27, 26, 26);
+  border-bottom: 8px solid white;
 }
