@@ -10,9 +10,7 @@ const Cart = ({ label, onClick }) => {
   return (
     <div className="cart-container">
       <img className="cart-icon" src={CartIcon} alt="cart-icon" />
-
       <span className="number">0</span>
-
       <span className="cart-text">Cart</span>
     </div>
   );
