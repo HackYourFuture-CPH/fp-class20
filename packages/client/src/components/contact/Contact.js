@@ -9,11 +9,11 @@ export const Contact = () => {
       <span className="text_big ">Contact us</span>
       <span className="text_small phone_text">
         <img src={phone} alt="Canvas phone Logo" className="phone" />
-        +45 666 555
+        <span>+45 666 555</span>
       </span>
       <span className="text_small">
         <img src={envelop} alt="Canvas envelop Logo" className="envelop" />
-        spice@kbh.dk
+        <span>spice @ kbh.dk</span>
       </span>
     </div>
   );
