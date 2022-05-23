@@ -4,25 +4,25 @@
  */
 exports.up = function (knex) {
   return knex.schema
-    .createTable('users', (table) => {
+    .createTable('Users', (table) => {
       table.increments('');
-      table.varchar('full_name').notNullable();
+      table.varchar('fullName').notNullable();
       table.varchar('email').notNullable();
       table.varchar('address').notNullable();
-      table.varchar('zipcode').notNullable();
+      table.varchar('zipCode').notNullable();
       table.varchar('city').notNullable();
       table.varchar('country').notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('catagories', (table) => {
+    .createTable('Catagories', (table) => {
       table.increments();
       table.varchar('name').notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('products', (table) => {
+    .createTable('Products', (table) => {
       table.increments();
-      table.integer('catagory_id').unsigned();
-      table.foreign('catagory_id').references('id').inTable('catagories');
+      table.integer('catagoryId').unsigned();
+      table.foreign('catagoryId').references('id').inTable('Catagories');
       table.varchar('name').notNullable();
       table.integer('price').notNullable();
       table
@@ -30,31 +30,31 @@ exports.up = function (knex) {
         .notNullable();
       table.enum('size', ['s', 'm', 'l', 'xl', 'xxl']).notNullable();
       table
-        .enum('status', ['out_of_stock', 'in_stock', 'running_low'])
+        .enum('status', ['outOfStock', 'inStock', 'runningLow'])
         .notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
-      table.varchar('picture_url').notNullable();
-      table.integer('stock_amount');
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
+      table.varchar('pictureUrl').notNullable();
+      table.integer('stockAmount');
     })
-    .createTable('orders', (table) => {
+    .createTable('Orders', (table) => {
       table.increments();
-      table.integer('user_id').unsigned();
-      table.foreign('user_id').references('id').inTable('users');
+      table.integer('userId').unsigned();
+      table.foreign('userId').references('id').inTable('Users');
       table.enum('status', ['created', 'confirmed', 'payed']).notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('favorites', (table) => {
-      table.integer('user_id').unsigned();
-      table.foreign('user_id').references('id').inTable('users');
-      table.integer('product_id').unsigned();
-      table.foreign('product_id').references('id').inTable('products');
-      table.timestamp('created_at').defaultTo(knex.fn.now());
+    .createTable('Favorites', (table) => {
+      table.integer('userId').unsigned();
+      table.foreign('userId').references('id').inTable('Users');
+      table.integer('productId').unsigned();
+      table.foreign('productId').references('id').inTable('Products');
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('order_items', (table) => {
-      table.integer('order_id').unsigned();
-      table.foreign('order_id').references('id').inTable('orders');
-      table.integer('product_id').unsigned();
-      table.foreign('product_id').references('id').inTable('products');
+    .createTable('OrderItems', (table) => {
+      table.integer('orderId').unsigned();
+      table.foreign('orderId').references('id').inTable('Orders');
+      table.integer('productId').unsigned();
+      table.foreign('productId').references('id').inTable('Products');
       table.integer('quantity').notNullable();
     });
 };
@@ -65,10 +65,10 @@ exports.up = function (knex) {
  */
 exports.down = function (knex) {
   return knex.schema
-    .dropTable('order_items')
-    .dropTable('favorites')
-    .dropTable('orders')
-    .dropTable('products')
-    .dropTable('catagories')
-    .dropTable('users');
+    .dropTable('OrderItems')
+    .dropTable('Favorites')
+    .dropTable('Orders')
+    .dropTable('Products')
+    .dropTable('Catagories')
+    .dropTable('Users');
 };
