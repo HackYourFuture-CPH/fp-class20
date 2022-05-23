@@ -1,23 +1,23 @@
 .Contact_info {
-   background-color: rgba(35, 28, 22, 0.6);
-  width: 20%;
+  background-color: rgba(35, 28, 22, 0.6);
+  width: 19%;
   padding-left: 1rem;
   padding-bottom: 1.5rem;
-  padding-right: .5rem;
+  padding-right: 1rem;
 }
-.Contact_info img{
-  padding-right: .5rem;
-    /* padding-top: 1rem; */
+.Contact_info img {
+  padding-right: 0.5rem;
+  /* padding-top: 1rem; */
 }
 
 .Contact_info .text_big {
   display: block;
   margin-bottom: 2rem;
   padding-top: 2rem;
-  font-size:1rem;
+  font-size: 1rem;
   font-family: Montserrat;
   font-style: SemiBold;
-  line-height:1rem;
+  line-height: 1rem;
   font-weight: 600;
   color: white;
 }
@@ -25,21 +25,17 @@
   display: flex;
   font-family: Montserrat;
   font-size: 16sp;
-  line-height:1.5rem;
+  line-height: 2rem;
   font-weight: 400;
   color: white;
   align-items: center;
-
 }
 .Contact_info .phone_text {
   margin-bottom: 1rem;
 }
-@media screen and (max-width: 560px) {
-.Contact_info{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-   text-align: center;
-   align-items: center;
-}
+@media screen and (max-width: 460px) {
+  .Contact_info {
+    width: 100%;
+    text-align: center;
+  }
 }

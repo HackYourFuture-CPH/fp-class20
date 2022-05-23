@@ -1,8 +1,6 @@
 .Address_info {
-  width: 30%;
-  background-color: rgba(35, 28, 22, 0.6);
-  line-height: 1.5rem;
-  padding-top: 2rem;
+  width: 36%;
+  line-height: 20px;
   padding-left: 1.5rem;
   color: white;
 }
@@ -11,7 +9,7 @@
   flex-direction: row;
   align-items: center;
 }
-.logoOfSimplySpices{
+.logoOfSimplySpices {
   width: 90%;
   margin: 0 auto;
 }
@@ -27,14 +25,10 @@
   font-size: 16sp;
   font-style: Medium;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 460px) {
   .Address_info {
-    width: 90%;
-    margin-top: 1rem;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .mapIn{
     width: 100%;
+    padding-left: 3rem;
+    margin-top: 1rem;
   }
 }
