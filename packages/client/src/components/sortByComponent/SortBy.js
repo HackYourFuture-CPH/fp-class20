@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './SortBy.styles.css';
+// import { Triangle } from '../Triangle/Triangle';
 
 export const SortBy = () => {
   const [dropDown, setDropDown] = useState(true);
-
   const display = () => {
-    dropDown ? setDropDown(false) : setDropDown(true);
+    setDropDown(!dropDown);
   };
   return (
     <>
       <div className="SortBy_item">
-        <span className="sort_item">SORT BY</span>
+        <span className="sort_item-text">SORT BY</span>
+        {/* <Triangle /> */}
         {/* show differnt triangel */}
         {dropDown ? (
           <span
@@ -30,15 +31,16 @@ export const SortBy = () => {
           />
         )}
       </div>
+
       {/* dispaly or not dispaly the sort list */}
-      {!dropDown ? (
+      {!dropDown && (
         <div className="sort_list">
           <span className="A_Z">A-Z</span>
           <span>Lowest price</span>
           <span>New arrivals</span>
           <span>Category</span>
         </div>
-      ) : null}
+      )}
     </>
   );
 };

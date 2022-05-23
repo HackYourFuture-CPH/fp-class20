@@ -2,53 +2,51 @@
 .sort_list {
   background-color: rgba(52, 47, 43, 1);
   color: white;
-  width: 104px;
+  width: 7rem;
   margin-left: 70%;
   display: flex;
-  flex-wrap: wrap;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
+}
+.SortBy_item {
+  align-items: center;
+  flex-direction: row;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .sort_list {
-  line-height: 26px;
+  line-height: 0.825rem;
+  flex-direction: column;
   padding-bottom: 2rem;
-  margin-top: 0rem;
-}
-.A_Z {
-  padding-top: 2rem;
-}
-.sort_item {
-  font-size: 16px;
-  font-weight: 200;
   font-family: Inter;
-  vertical-align: middle;
-}
-.SortBy_item span {
-  color: white;
-  margin-right: 0.6rem;
-}
-.sort_list span {
-  color: white;
-  font-family: Inter;
-  font-size: 16px;
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.5rem;
   letter-spacing: 0em;
   text-align: left;
+}
+.A_Z {
+  padding-top: 1rem;
+}
+.sort_item-text {
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 200;
+  font-family: Inter;
 }
 
 .triangle_down {
   width: 0;
   height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid white;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
 }
 .triangle_up {
   width: 0;
   height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid white;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
 }
 
 @media screen and (max-width: 620px) {
@@ -56,9 +54,5 @@
   .sort_list {
     margin-left: 60%;
     margin-top: 1.25rem;
-    text-align: center;
   }
-  .sort_list {
-    margin-top: 0;
-  } 
 }
