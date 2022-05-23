@@ -1,23 +1,17 @@
 .footer_container {
   background-color: black;
   color: white;
-  /* display: flex; */
 }
 .FooterComponent_info {
-  width: 65%;
+  width: 70%;
   display: flex;
   margin: 0 auto;
 }
 .copyRight {
-  width: 90%;
+  width: 100%;
   padding-left: 70%;
 }
-@media screen and (max-width: 960px) {
-  .FooterComponent_info {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 420px) {
   .FooterComponent_info {
     width: 100%;
     display: flex;
