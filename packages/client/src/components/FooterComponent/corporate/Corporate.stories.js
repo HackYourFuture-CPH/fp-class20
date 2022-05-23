@@ -2,7 +2,7 @@ import React from 'react';
 import { Corporate } from './Corporate';
 
 export default {
-  title: 'Corporate/Corporate',
+  title: 'FooterComponent/FooterComponent',
   component: Corporate,
 };
 export const CorporateInfo = () => <Corporate />;

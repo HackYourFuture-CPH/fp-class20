@@ -2,7 +2,7 @@ import React from 'react';
 import { Address } from './Address';
 
 export default {
-  title: 'Address/Address',
+  title: 'FooterComponent/FooterComponent',
   component: Address,
 };
 export const AddressInfo = () => <Address />;
