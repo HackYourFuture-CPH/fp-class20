@@ -6,7 +6,7 @@ import './favourite.css';
 
 const Favourites = () => {
   return (
-    <div className="container">
+    <div className="favourite-container">
       <img
         className="favourite-icon"
         src={favouriteIcon}

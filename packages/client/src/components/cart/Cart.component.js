@@ -9,13 +9,11 @@ import CartIcon from '../../../public/assets/CartIcon.png';
 const Cart = ({ label, onClick }) => {
   return (
     <div className="cart-container">
-      <div className="cart">
-        <img className="cart-icon" src={CartIcon} alt="cart-icon" />
-        <span className="number">0</span> <span>Cart</span>
-        {/* <button type="button" onClick={onClick}>
-          {label}
-        </button> */}
-      </div>
+      <img className="cart-icon" src={CartIcon} alt="cart-icon" />
+
+      <span className="number">0</span>
+
+      <span className="cart-text">Cart</span>
     </div>
   );
 };

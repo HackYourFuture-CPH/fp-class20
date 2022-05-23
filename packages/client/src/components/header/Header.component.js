@@ -7,14 +7,16 @@ import Cart from '../cart/Cart.component';
 
 const Header = () => {
   return (
-    <div className="main-container">
-      <div className="logo">
-        <Logo />
-      </div>
-      <div className="container">
-        <SignIn />
-        <Favourites />
-        <Cart />
+    <div className="header-back-ground">
+      <div className="main-container">
+        <div className="logo">
+          <Logo />
+        </div>
+        <div className="right-container">
+          <SignIn />
+          <Favourites />
+          <Cart />
+        </div>
       </div>
     </div>
   );

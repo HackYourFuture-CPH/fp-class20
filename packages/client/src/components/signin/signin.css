@@ -1,11 +1,14 @@
 .sign-in span {
   font-size: 1rem;
 }
-.sign-in {
-  background-color: transparent;
-}
+
 .sign-in-icon {
-  height: 1rem;
-  width: 1rem;
+  width: 1.2rem;
   margin-right: 5px;
+}
+.sign-in-container {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  width: 30%;
 }
