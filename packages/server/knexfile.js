@@ -1,6 +1,8 @@
 const path = require('path');
 require('dotenv').config();
 
+/* based on .env */
+
 module.exports = {
   development: {
     client: 'mysql2',
