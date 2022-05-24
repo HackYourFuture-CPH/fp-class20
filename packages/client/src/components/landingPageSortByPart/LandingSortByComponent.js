@@ -7,7 +7,9 @@ export const LandingSortByComponent = () => {
     <div className="LandingSortByComponent_info">
       <span className="text_samll">Simply Spices / All Spices</span>
       <span className="text_big">All Spices</span>
-      <SortBy />
+      <div className="sort-by-container">
+        <SortBy />
+      </div>
     </div>
   );
 };

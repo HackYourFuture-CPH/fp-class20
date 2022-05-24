@@ -1,19 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Work+Sans:wght@100&display=swap');
+
 .SortBy_item,
 .sort_list {
-  background-color: rgba(52, 47, 43, 1);
   color: white;
   width: 7rem;
   margin-left: 80%;
   display: flex;
   padding-left: 1.5rem;
 }
+
 .SortBy_item {
+  margin-top: 1.25rem;
   align-items: center;
   flex-direction: row;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: .25rem;
+
 }
 .sort_list {
+  background-color: rgba(35, 28, 22,.9);
   line-height: 0.825rem;
   flex-direction: column;
   padding-bottom: 2rem;
@@ -23,14 +27,15 @@
   line-height: 1.5rem;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: .25rem;
 }
 .A_Z {
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 .sort_item-text {
   margin-right: 1rem;
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 500;
   font-family: Inter;
 }
 
@@ -49,10 +54,18 @@
   border-bottom: 8px solid white;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 1024px) {
   .SortBy_item,
   .sort_list {
     margin-left: 60%;
-    margin-top: 1.25rem;
+    margin-top:2rem;
   }
+   .SortBy_item{
+     margin-bottom: 0;
+     margin-top: 1rem;
+   
+   }
+   .sort_list {
+     margin-top: .5rem;
+   }
 }

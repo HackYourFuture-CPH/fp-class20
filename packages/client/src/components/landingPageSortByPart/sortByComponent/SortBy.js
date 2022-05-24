@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './SortBy.styles.css';
-// import { Triangle } from '../Triangle/Triangle';
 
 export const SortBy = () => {
   const [dropDown, setDropDown] = useState(true);
@@ -11,7 +10,7 @@ export const SortBy = () => {
     <>
       <div className="SortBy_item">
         <span className="sort_item-text">SORT BY</span>
-        {/* <Triangle /> */}
+
         {/* show differnt triangel */}
         {dropDown ? (
           <span
