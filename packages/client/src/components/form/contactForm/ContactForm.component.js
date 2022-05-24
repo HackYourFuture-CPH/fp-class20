@@ -82,7 +82,8 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
     <div>
       <div className="contact-form-container">
         <div className="contactHead">
-          <img alt="simply spices" src={contactPageMainImage} />
+          <h1 className="simplySpices"> Simply Spices</h1>
+          {/* <img alt="simply spices" src={contactPageMainImage} /> */}
           <img alt="simply spices" src={contactPageSwirlDecoration} />
         </div>
 

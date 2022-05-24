@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 .contact-form-container {
   width: 50%;
   padding: 1% 5%;
@@ -81,6 +83,13 @@ input {
 }
 .successMsg {
   color: rgb(4, 255, 4);
+}
+.simplySpices {
+  font-family: Fredericka the Great;
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
