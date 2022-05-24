@@ -6,6 +6,7 @@ exports.seed = async function (knex) {
   await knex('Products').del();
   await knex('Products').insert([
     {
+      id: 1,
       categoryId: 3,
       name: 'caraway',
       price: 50.0,
@@ -17,6 +18,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 2,
       categoryId: 2,
       name: 'Chili pepper Capsicum chinense',
       price: 50.0,
@@ -28,6 +30,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 3,
       categoryId: 2,
       name: 'Chili pepper Capsicum frutescens',
       price: 50.0,
@@ -39,6 +42,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 4,
       categoryId: 2,
       name: 'Allspice',
       price: 50.0,
@@ -50,6 +54,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 5,
       categoryId: 3,
       name: 'Cumin',
       price: 50.0,
@@ -61,6 +66,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 6,
       categoryId: 3,
       name: 'Fenugreek',
       price: 50.0,
@@ -72,6 +78,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 6,
       categoryId: 3,
       name: 'Sichuan pepper',
       price: 50.0,
@@ -83,6 +90,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 7,
       categoryId: 2,
       name: 'Thai long pepper',
       price: 50.0,
@@ -94,6 +102,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 8,
       categoryId: 5,
       name: 'Pandan',
       price: 50.0,
@@ -105,6 +114,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 9,
       categoryId: 4,
       name: 'Wasabi',
       price: 50.0,
@@ -116,6 +126,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 10,
       categoryId: 2,
       name: 'Black pepper',
       price: 50.0,
@@ -127,6 +138,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 11,
       categoryId: 3,
       name: 'Grains of Paradise',
       price: 50.0,
@@ -138,6 +150,7 @@ exports.seed = async function (knex) {
       stockAmount: 50,
     },
     {
+      id: 12,
       categoryId: 4,
       name: 'Cinnamon',
       price: 50.0,

@@ -13,6 +13,7 @@ exports.seed = async function (knex) {
       city: 'Cauday',
       country: 'Peru',
       zipcode: 1239,
+      createdAt: knex.fn.now(),
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ exports.seed = async function (knex) {
       city: 'Nemby',
       country: 'Paraguay',
       zipcode: 2349,
+      createdAt: knex.fn.now(),
     },
     {
       id: 3,
@@ -31,6 +33,7 @@ exports.seed = async function (knex) {
       city: 'Potosí',
       country: 'Colombia',
       zipcode: 3459,
+      createdAt: knex.fn.now(),
     },
     {
       id: 4,
@@ -40,6 +43,7 @@ exports.seed = async function (knex) {
       city: 'Guarapuava',
       country: 'Brazil',
       zipcode: 4569,
+      createdAt: knex.fn.now(),
     },
     {
       id: 5,
@@ -49,6 +53,7 @@ exports.seed = async function (knex) {
       city: 'Villa Nueva',
       country: 'Argentina',
       zipcode: 5679,
+      createdAt: knex.fn.now(),
     },
     {
       id: 6,
@@ -58,6 +63,7 @@ exports.seed = async function (knex) {
       city: 'Cahuacho',
       country: 'Peru',
       zipcode: 6789,
+      createdAt: knex.fn.now(),
     },
     {
       id: 7,
@@ -67,6 +73,7 @@ exports.seed = async function (knex) {
       city: 'Shanjiao',
       country: 'China',
       zipcode: 7890,
+      createdAt: knex.fn.now(),
     },
     {
       id: 8,
@@ -76,6 +83,7 @@ exports.seed = async function (knex) {
       city: 'Pojok',
       country: 'Indonesia',
       zipcode: 8901,
+      createdAt: knex.fn.now(),
     },
     {
       id: 9,
@@ -85,6 +93,7 @@ exports.seed = async function (knex) {
       city: 'Bayog',
       country: 'Philippines',
       zipcode: 9021,
+      createdAt: knex.fn.now(),
     },
     {
       id: 10,
@@ -94,6 +103,7 @@ exports.seed = async function (knex) {
       city: 'Chunoyar',
       country: 'Russia',
       zipcode: 1230,
+      createdAt: knex.fn.now(),
     },
   ]);
 };
