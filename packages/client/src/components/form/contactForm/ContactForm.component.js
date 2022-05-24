@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.styles.css';
-import contactPageMainImage from '../../assets/SimplySpices.png';
-import contactPageSwirlDecoration from '../../assets/Vector192.png';
+
+import contactPageSwirlDecoration from '../../../../public/assets/Vector192.png';
 
 export const ContactForm = ({ text, label, handleSubmit }) => {
   const [formState, SetFormState] = useState({
@@ -82,8 +82,7 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
     <div>
       <div className="contact-form-container">
         <div className="contactHead">
-          <h1 className="simplySpices"> Simply Spices</h1>
-          {/* <img alt="simply spices" src={contactPageMainImage} /> */}
+          <p className="simplySpices"> Simply Spices</p>
           <img alt="simply spices" src={contactPageSwirlDecoration} />
         </div>
 

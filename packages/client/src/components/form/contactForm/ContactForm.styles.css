@@ -32,7 +32,6 @@ textarea:focus {
 }
 .wrapper-outer {
   width: 80%;
-
   justify-content: center;
   margin: 0 auto;
 }
@@ -86,10 +85,12 @@ input {
 }
 .simplySpices {
   font-family: Fredericka the Great;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 @media only screen and (max-width: 600px) {
