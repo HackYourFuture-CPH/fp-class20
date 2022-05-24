@@ -3,17 +3,17 @@
  * @returns { Promise<void> }
  */
 exports.seed = async function (knex) {
-  await knex('order_items').del();
-  await knex('order_items').insert([
-    { order_items: 1, product_id: 10, quantity: 1 },
-    { order_items: 2, product_id: 9, quantity: 2 },
-    { order_items: 3, product_id: 8, quantity: 3 },
-    { order_items: 4, product_id: 7, quantity: 1 },
-    { order_items: 5, product_id: 6, quantity: 2 },
-    { order_items: 6, product_id: 5, quantity: 3 },
-    { order_items: 7, product_id: 4, quantity: 1 },
-    { order_items: 8, product_id: 3, quantity: 2 },
-    { order_items: 9, product_id: 2, quantity: 3 },
-    { order_items: 10, product_id: 1, quantity: 1 },
+  await knex('OrderItems').del();
+  await knex('OrderItems').insert([
+    { orderId: 1, productId: 10, quantity: 1 },
+    { orderId: 2, productId: 9, quantity: 2 },
+    { orderId: 3, productId: 8, quantity: 3 },
+    { orderId: 4, productId: 7, quantity: 1 },
+    { orderId: 5, productId: 6, quantity: 2 },
+    { orderId: 6, productId: 5, quantity: 3 },
+    { orderId: 7, productId: 4, quantity: 1 },
+    { orderId: 8, productId: 3, quantity: 2 },
+    { orderId: 9, productId: 2, quantity: 3 },
+    { orderId: 10, productId: 1, quantity: 1 },
   ]);
 };

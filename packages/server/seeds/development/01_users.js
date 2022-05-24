@@ -3,11 +3,11 @@
  * @returns { Promise<void> }
  */
 exports.seed = async function (knex) {
-  await knex('users').del();
-  await knex('users').insert([
+  await knex('Users').del();
+  await knex('Users').insert([
     {
       id: 1,
-      full_name: 'Violetta Juden',
+      fullName: 'Violetta Juden',
       email: 'vjuden0@youku.com',
       address: '692 Spaight Avenue',
       city: 'Cauday',
@@ -16,7 +16,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 2,
-      full_name: 'Thorstein Mangeon',
+      fullName: 'Thorstein Mangeon',
       email: 'tmangeon1@wp.com',
       address: '201 Dottie Court',
       city: 'Nemby',
@@ -25,7 +25,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 3,
-      full_name: 'Morgen Allewell',
+      fullName: 'Morgen Allewell',
       email: 'mallewell2@eepurl.com',
       address: '6 Clove Trail',
       city: 'Potosí',
@@ -34,7 +34,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 4,
-      full_name: 'Erick Fitzpatrick',
+      fullName: 'Erick Fitzpatrick',
       email: 'efitzpatrick3@theguardian.com',
       address: '3752 Granby Terrace',
       city: 'Guarapuava',
@@ -43,7 +43,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 5,
-      full_name: 'Courtney Borrett',
+      fullName: 'Courtney Borrett',
       email: 'cborrett4@ucoz.ru',
       address: '2 Bluestem Way',
       city: 'Villa Nueva',
@@ -52,7 +52,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 6,
-      full_name: 'Morley Papps',
+      fullName: 'Morley Papps',
       email: 'mpapps5@tiny.cc',
       address: '40580 Old Gate Terrace',
       city: 'Cahuacho',
@@ -61,7 +61,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 7,
-      full_name: 'Annmaria Dalman',
+      fullName: 'Annmaria Dalman',
       email: 'adalman6@ovh.net',
       address: '492 Fair Oaks Pass',
       city: 'Shanjiao',
@@ -70,7 +70,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 8,
-      full_name: 'Pepita Bodham',
+      fullName: 'Pepita Bodham',
       email: 'pbodham7@mysql.com',
       address: '13448 Sullivan Trail',
       city: 'Pojok',
@@ -79,7 +79,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 9,
-      full_name: 'Sebastiano Jarmyn',
+      fullName: 'Sebastiano Jarmyn',
       email: 'sjarmyn8@bbb.org',
       address: '76 Cottonwood Plaza',
       city: 'Bayog',
@@ -88,7 +88,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 10,
-      full_name: 'Paxon Ranby',
+      fullName: 'Paxon Ranby',
       email: 'pranby9@earthlink.net',
       address: '712 Mccormick Place',
       city: 'Chunoyar',

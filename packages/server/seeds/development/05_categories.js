@@ -3,12 +3,12 @@
  * @returns { Promise<void> }
  */
 exports.seed = async function (knex) {
-  await knex('categories').del();
-  await knex('categories').insert([
-    { id: 1, name: 'Bud/Flower', created_at: knex.fn.now() },
-    { id: 2, name: 'Fruit/Berry', created_at: knex.fn.now() },
-    { id: 3, name: 'Seed', created_at: knex.fn.now() },
-    { id: 4, name: 'Root/Rhizome/Bark', created_at: knex.fn.now() },
-    { id: 5, name: 'Leaf', created_at: knex.fn.now() },
+  await knex('Categories').del();
+  await knex('Categories').insert([
+    { id: 1, name: 'Bud/Flower', createdAt: knex.fn.now() },
+    { id: 2, name: 'Fruit/Berry', createdAt: knex.fn.now() },
+    { id: 3, name: 'Seed', createdAt: knex.fn.now() },
+    { id: 4, name: 'Root/Rhizome/Bark', createdAt: knex.fn.now() },
+    { id: 5, name: 'Leaf', createdAt: knex.fn.now() },
   ]);
 };
