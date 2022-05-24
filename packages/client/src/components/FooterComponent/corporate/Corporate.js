@@ -4,7 +4,6 @@ import './Corporate.styles.css';
 export const Corporate = () => {
   return (
     <div className="corporate_info">
-      {/* first div */}
       <span className="text_big">Coporate info</span>
       <span className="text_small">About us</span>
       <span className="text_small">Our partnes</span>
