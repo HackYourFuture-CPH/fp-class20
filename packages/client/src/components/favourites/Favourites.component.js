@@ -1,6 +1,6 @@
 import React from 'react';
 
-import favouriteIcon from '../../../public/assets/Vector.png';
+import favouriteIcon from '../../../public/assets/heartShapeVector.png';
 
 import './favourite.css';
 

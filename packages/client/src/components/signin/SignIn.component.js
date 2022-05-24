@@ -1,6 +1,6 @@
 import React from 'react';
 
-import signIn from '../../../public/assets/sign_in_ffffff.png';
+import signIn from '../../../public/assets/sign_in_image.png';
 
 import './signin.css';
 
