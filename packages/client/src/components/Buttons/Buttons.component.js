@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Buttons.styles.css';
-import { ReactComponent as AddToCardSVGIcon } from '../../../public/assets/326700_cart_shopping_icon.svg';
+import { ReactComponent as AddToCardSVGIcon } from '../../../public/assets/icon_shopping_cart_white.svg';
 
 /**
  * Primary UI component for user interaction
