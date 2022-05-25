@@ -5,23 +5,19 @@ import { OptionsPack } from './OptionsPack.component';
 export default {
   title: 'OptionPack/Radio button',
   component: OptionsPack,
-  argTypes: {
-    height: { control: number },
-    onClick: { action: 'clicked' },
-  },
 };
 
 const Template = (args) => {
-  const [selected, setSelected] = useState(0);
-  const price1 = 'DKK 350';
-  const price2 = 'DKK 100';
+  const [firstSelected, setfirstSelected] = useState('DKK 350');
+  const [secondSelectedChoice, setsecondSelectedChoise] = useState('DKK 350');
 
   return (
     <OptionsPack
       {...args}
-      price1={price1}
-      setSelected={setSelected}
-      price2={price2}
+      price1={firstSelected}
+      setfirstSelected={setfirstSelected}
+      price2={secondSelectedChoice}
+      setsecondSelectedChoise={setsecondSelectedChoise}
     />
   );
 };

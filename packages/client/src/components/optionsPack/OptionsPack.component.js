@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './OptionsPack.styles.css';
 
-export const OptionsPack = ({ price1, price2, setSelected }) => {
+export const OptionsPack = ({
+  price1,
+  setfirstSelected,
+  price2,
+  setsecondSelectedChoise,
+}) => {
   return (
     <div className="radio-button">
       <div className="first-button">
@@ -10,7 +15,7 @@ export const OptionsPack = ({ price1, price2, setSelected }) => {
           type="radio"
           value="250g glass jar"
           name="product"
-          onClick={() => setSelected(price1)}
+          onClick={() => setfirstSelected(price1)}
         />
         <div>
           <span className="first-button-value"> 250g glass jar</span>
@@ -22,7 +27,7 @@ export const OptionsPack = ({ price1, price2, setSelected }) => {
           type="radio"
           value="100g flatpack"
           name="product"
-          onClick={() => setSelected(price2)}
+          onClick={() => setsecondSelectedChoise(price2)}
         />
         <div>
           <span className="second-button-value">100g flatpack</span>
@@ -35,11 +40,13 @@ export const OptionsPack = ({ price1, price2, setSelected }) => {
 OptionsPack.propTypes = {
   price1: PropTypes.string,
   price2: PropTypes.string,
-  setSelected: PropTypes.func,
+  setfirstSelected: PropTypes.func,
+  setsecondSelectedChoise: PropTypes.func,
 };
 
 OptionsPack.defaultProps = {
   price1: null,
   price2: null,
-  setSelected: () => {},
+  setfirstSelected: () => {},
+  setsecondSelectedChoise: () => {},
 };

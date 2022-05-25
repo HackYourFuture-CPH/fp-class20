@@ -5,6 +5,7 @@ body {
   line-height: 1.25rem;
   letter-spacing: 0em;
   text-align: left;
+  background: #867572;
 }
 .radio-button {
   display: flex;
