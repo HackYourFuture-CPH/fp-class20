@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
+.footer_container {
+  background-color: black;
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+.FooterComponent_info {
+  display: flex;
+}
+.copyRight {
+  margin-left: 85%;
+  padding-bottom: .1rem;
+}
+@media screen and (max-width: 960px) {
+   .footer_container{
+    width: 100%;
+  }
+  .FooterComponent_info {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .footer_container{
+    width: 100%;
+  }
+  .FooterComponent_info {
+    display: flex;
+    flex-direction: column;
+  }
+  .copyRight{
+ margin-left: 50%;
+  }
+}
