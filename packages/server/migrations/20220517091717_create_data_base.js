@@ -5,7 +5,7 @@
 exports.up = function (knex) {
   return knex.schema
     .createTable('Users', (table) => {
-      table.increments('');
+      table.increments();
       table.varchar('fullName').notNullable();
       table.varchar('email').notNullable();
       table.varchar('address').notNullable();
@@ -24,7 +24,7 @@ exports.up = function (knex) {
       table.integer('categoryId').unsigned();
       table.foreign('categoryId').references('id').inTable('Categories');
       table.varchar('name').notNullable();
-      table.integer('price').notNullable();
+      table.decimal('price').notNullable();
       table.enum('size', ['100', '250']).notNullable();
       table
         .enum('status', ['outOfStock', 'inStock', 'runningLow'])
