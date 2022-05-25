@@ -3,8 +3,8 @@
  * @returns { Promise<void> }
  */
 exports.seed = async function (knex) {
-  await knex('Categories').del();
-  await knex('Categories').insert([
+  await knex('Catagories').del();
+  await knex('Catagories').insert([
     { id: 1, name: 'Bud/Flower', createdAt: knex.fn.now() },
     { id: 2, name: 'Fruit/Berry', createdAt: knex.fn.now() },
     { id: 3, name: 'Seed', createdAt: knex.fn.now() },
