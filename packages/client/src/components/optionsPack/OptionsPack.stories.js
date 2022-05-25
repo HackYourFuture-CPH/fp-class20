@@ -1,4 +1,3 @@
-import { number } from 'prop-types';
 import React, { useState } from 'react';
 import { OptionsPack } from './OptionsPack.component';
 
@@ -8,18 +7,9 @@ export default {
 };
 
 const Template = (args) => {
-  const [firstSelected, setfirstSelected] = useState('DKK 350');
-  const [secondSelectedChoice, setsecondSelectedChoise] = useState('DKK 350');
+  const [select, setSelect] = useState('');
 
-  return (
-    <OptionsPack
-      {...args}
-      price1={firstSelected}
-      setfirstSelected={setfirstSelected}
-      price2={secondSelectedChoice}
-      setsecondSelectedChoise={setsecondSelectedChoise}
-    />
-  );
+  return <OptionsPack {...args} select={select} setSelect={setSelect} />;
 };
 export const Primary = Template.bind({});
 

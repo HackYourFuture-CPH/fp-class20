@@ -2,51 +2,46 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './OptionsPack.styles.css';
 
-export const OptionsPack = ({
-  price1,
-  setfirstSelected,
-  price2,
-  setsecondSelectedChoise,
-}) => {
+const options = [
+  {
+    weight: '250g glass jar',
+    price: 'DKK 350',
+  },
+  {
+    weight: '100g flat pack',
+    price: 'DKK 100',
+  },
+];
+
+export const OptionsPack = ({ select, setSelect }) => {
   return (
-    <div className="radio-button">
-      <div className="first-button">
-        <input
-          type="radio"
-          value="250g glass jar"
-          name="product"
-          onClick={() => setfirstSelected(price1)}
-        />
-        <div>
-          <span className="first-button-value"> 250g glass jar</span>
-          <span>{price1}</span>
-        </div>
-      </div>
-      <div className="second-button">
-        <input
-          type="radio"
-          value="100g flatpack"
-          name="product"
-          onClick={() => setsecondSelectedChoise(price2)}
-        />
-        <div>
-          <span className="second-button-value">100g flatpack</span>
-          <span>{price2}</span>
-        </div>
-      </div>
+    <div className="ProductChoose">
+      <ul>
+        {options.map((option) => (
+          <li>
+            <label>
+              <input
+                type="radio"
+                name="product"
+                value={option.weight}
+                onChange={(e) => setSelect(e.target.value)}
+              />
+              <span className="product-weight">{option.weight}</span>
+              {option.price}
+            </label>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
+
 OptionsPack.propTypes = {
-  price1: PropTypes.string,
-  price2: PropTypes.string,
-  setfirstSelected: PropTypes.func,
-  setsecondSelectedChoise: PropTypes.func,
+  select: PropTypes.func,
+  setSelect: PropTypes.func,
 };
 
 OptionsPack.defaultProps = {
-  price1: null,
-  price2: null,
-  setfirstSelected: () => {},
-  setsecondSelectedChoise: () => {},
+  select: () => {},
+  setSelect: () => {},
 };
