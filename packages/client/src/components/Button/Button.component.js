@@ -42,7 +42,7 @@ export const Button = ({
         'storybook-button',
         `storybook-button--${type}`,
         `storybook-button--${size}`,
-        type == '' ? mode : (mode = ''),
+        type === '' ? mode : (mode = ''),
       ].join(' ')}
       style={backgroundColor && { backgroundColor }}
       {...props}
