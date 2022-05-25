@@ -14,21 +14,18 @@ exports.up = function (knex) {
       table.varchar('country').notNullable();
       table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('Catagories', (table) => {
+    .createTable('Categories', (table) => {
       table.increments();
       table.varchar('name').notNullable();
       table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
     .createTable('Products', (table) => {
       table.increments();
-      table.integer('catagoryId').unsigned();
-      table.foreign('catagoryId').references('id').inTable('Catagories');
+      table.integer('categoryId').unsigned();
+      table.foreign('categoryId').references('id').inTable('Categories');
       table.varchar('name').notNullable();
       table.integer('price').notNullable();
-      table
-        .enum('color', ['red', 'yellow', 'borwns', 'white', 'black'])
-        .notNullable();
-      table.enum('size', ['s', 'm', 'l', 'xl', 'xxl']).notNullable();
+      table.enum('size', ['100', '250']).notNullable();
       table
         .enum('status', ['outOfStock', 'inStock', 'runningLow'])
         .notNullable();
@@ -69,6 +66,6 @@ exports.down = function (knex) {
     .dropTable('Favorites')
     .dropTable('Orders')
     .dropTable('Products')
-    .dropTable('Catagories')
+    .dropTable('Categories')
     .dropTable('Users');
 };
