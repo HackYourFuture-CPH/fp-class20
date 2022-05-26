@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const ProductTitleText = ({ heading, info }) => {
+export const ProductTitleText = ({ heading, info, ...args }) => {
   return (
     <div className="title-main">
       <h2 className="product-title">{heading}</h2>
