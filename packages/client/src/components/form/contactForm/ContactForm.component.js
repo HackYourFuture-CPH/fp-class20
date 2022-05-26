@@ -4,6 +4,12 @@ import './ContactForm.styles.css';
 
 import contactPageSwirlDecoration from '../../../../public/assets/Vector192.png';
 
+const regEx = {
+  nameRegEx: /^[a-zA-Z\s]+$/,
+  emailRegEx:
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+};
+
 export const ContactForm = ({ text, label, handleSubmit }) => {
   const [formState, SetFormState] = useState({
     name: '',
@@ -39,41 +45,47 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
     const errors = { ...validation };
 
     setMessageSent('');
-    const nameValidation = /^[a-zA-Z\s]+$/;
 
-    if (!formState.name.trim()) {
-      errors.name = ' Name is required';
-    } else if (!formState.name.match(nameValidation)) {
-      errors.name = 'Name should only include letters ';
+    const trimmed = {};
+    Object.keys(formState).forEach((key) => {
+      trimmed[key] = formState[key].trim();
+    });
+
+    const errorMessage = {
+      empty: 'is required',
+      regExNotMatched: {
+        name: 'Name can not include Number',
+        email: 'Please enter a valid email address: example@domain.com',
+        message: 'Message is required',
+      },
+      success: 'Your message is sent',
+    };
+
+    if (!trimmed.name) {
+      errors.name = `Name ${errorMessage.empty}`;
+    } else if (!trimmed.name.match(regEx.nameRegEx)) {
+      errors.name = errorMessage.regExNotMatched.name;
     } else {
       errors.name = '';
     }
 
-    const emailValidation =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (!formState.email.trim()) {
-      errors.email = 'Email is required';
-    } else if (!formState.email.match(emailValidation)) {
-      errors.email = 'Please enter a valid email address: example@domain.com';
+    if (!trimmed.email) {
+      errors.email = `Email ${errorMessage.empty}`;
+    } else if (!trimmed.email.match(regEx.emailRegEx)) {
+      errors.email = errorMessage.regExNotMatched.email;
     } else {
       errors.email = '';
     }
 
     if (!formState.message.trim()) {
-      errors.message = 'Message is required';
+      errors.message = errorMessage.regExNotMatched.message;
     } else {
       errors.message = '';
     }
 
     if (errors.name === '' && errors.email === '' && errors.message === '') {
-      handleSubmit(
-        formState.name.trim(),
-        formState.email.trim(),
-        formState.message.trim(),
-      );
-
-      setMessageSent('Your message is sent');
+      handleSubmit(trimmed.name, trimmed.email, trimmed.message);
+      setMessageSent(errorMessage.success);
     }
     setValidation(errors);
   };
