@@ -9,7 +9,27 @@ export default {
 const Template = (args) => {
   const [select, setSelect] = useState('');
 
-  return <OptionsPack {...args} select={select} setSelect={setSelect} />;
+  const options = [
+    {
+      id: 1,
+      weight: '250g glass jar',
+      price: 'DKK 350',
+    },
+    {
+      id: 2,
+      weight: '100g flat pack',
+      price: 'DKK 100',
+    },
+  ];
+
+  return (
+    <OptionsPack
+      {...args}
+      options={options}
+      select={select}
+      setSelect={setSelect}
+    />
+  );
 };
 export const Primary = Template.bind({});
 

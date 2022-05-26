@@ -2,32 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './OptionsPack.styles.css';
 
-const options = [
-  {
-    weight: '250g glass jar',
-    price: 'DKK 350',
-  },
-  {
-    weight: '100g flat pack',
-    price: 'DKK 100',
-  },
-];
+export const OptionsPack = ({ select, setSelect, options }) => {
+  const handleSelect = (e) => {
+    setSelect(e.target.value);
+  };
 
-export const OptionsPack = ({ select, setSelect }) => {
   return (
     <div className="ProductChoose">
       <ul>
         {options.map((option) => (
-          <li>
+          <li key={option.id}>
+            <input
+              type="radio"
+              name="product"
+              value={option.weight}
+              onChange={handleSelect}
+            />
             <label>
-              <input
-                type="radio"
-                name="product"
-                value={option.weight}
-                onChange={(e) => setSelect(e.target.value)}
-              />
               <span className="product-weight">{option.weight}</span>
-              {option.price}
+              <span>{option.price}</span>
             </label>
           </li>
         ))}
@@ -39,9 +32,11 @@ export const OptionsPack = ({ select, setSelect }) => {
 OptionsPack.propTypes = {
   select: PropTypes.func,
   setSelect: PropTypes.func,
+  options: PropTypes.func,
 };
 
 OptionsPack.defaultProps = {
   select: () => {},
   setSelect: () => {},
+  options: () => {},
 };
