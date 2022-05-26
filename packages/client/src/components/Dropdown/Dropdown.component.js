@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import './Dropdown.styles.css';
 
 function Dropdown() {
-  const [dropDown, setDropDown] = useState(false);
-  const [dropDownList, setDropDownList] = useState('noDisplay');
-  const [triangle, setTriangle] = useState('arrow-down');
+  const [dropDownExpanded, setDropDownExpanded] = useState(false);
+  const dropDownList = dropDownExpanded ? 'display' : 'noDisplay';
+  const triangle = dropDownExpanded ? 'arrow-up' : 'arrow-down';
   const display = () => {
-    setDropDown(!dropDown);
-    if (dropDown) {
-      // States for Arrow Up
-      setDropDownList('display');
-      setTriangle('arrow-up');
-    } else {
-      // States for Arrow down
-      setDropDownList('noDisplay');
-      setTriangle('arrow-down');
-    }
+    setDropDownExpanded(!dropDownExpanded);
   };
   return (
     <div>
@@ -37,11 +28,11 @@ function Dropdown() {
               <span className="spice-names">BUD/FLOWER</span>
               <p>(clove, caper, saffron and more)</p>
             </div>
-            <div className="block-height">
+            <div>
               <span className="spice-names">ROOT/RHIZOME/BARK</span>
               <p>(turmeric, ginger, cinnamon and more)</p>
             </div>
-            <div className="block-height">
+            <div>
               <span className="spice-names">FRUIT/BERRY</span>
               <p>(chili, cardamon, black pepper and more)</p>
             </div>
@@ -51,7 +42,7 @@ function Dropdown() {
               <span className="spice-names">LEAF</span>
               <p>(mint, oregano, thyme, bayleaf and more herbs)</p>
             </div>
-            <div className="block-height">
+            <div>
               <span className="spice-names">SEED</span>
               <p>(cummin, coriander,fennel, poppy and more)</p>
             </div>
