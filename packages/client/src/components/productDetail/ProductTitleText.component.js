@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ProductTitleText.styles.css';
 
-export const ProductTitleText = ({ heading, info, ...props }) => {
+export const ProductTitleText = ({ heading, info }) => {
   return (
     <div className="title-main">
       <h2 className="product-title">{heading}</h2>
@@ -17,6 +16,6 @@ ProductTitleText.propTypes = {
 };
 
 ProductTitleText.defaultProps = {
-  heading: 'Juniper Berries',
-  info: 'Adored by chefs for their clear, sharp scent, juniper berries are essential for marinades and stewing. Add them to your cold gin and tonic. Enjoy !',
+  heading: null,
+  info: null,
 };

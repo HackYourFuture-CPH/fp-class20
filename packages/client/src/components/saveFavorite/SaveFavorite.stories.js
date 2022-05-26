@@ -2,7 +2,7 @@ import React from 'react';
 import { SaveFavorite } from './SaveFavorite.component';
 
 export default {
-  title: 'Product-component/SaveFavorite',
+  title: 'SaveFavorite',
   component: SaveFavorite.component,
 };
 

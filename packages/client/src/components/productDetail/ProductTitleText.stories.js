@@ -2,14 +2,14 @@ import React from 'react';
 import { ProductTitleText } from './ProductTitleText.component';
 
 export default {
-  title: 'Product-Component/detail',
-  component: ProductTitleText,
+  title: 'ProductTitleText',
+  component: ProductTitleText.component,
 };
 
-// 👇 We create a “template” of how args map to rendering
 const Template = (args) => <ProductTitleText {...args} />;
 
-// 👇 Each story then reuses that template
-export const heading = Template.bind({});
-
-export const info = Template.bind({});
+export const Primary = Template.bind({});
+Primary.args = {
+  heading: 'this is heading',
+  info: 'this is info',
+};

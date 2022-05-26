@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductImage } from './ProductImage.component';
 
 export default {
-  title: 'Product-component/ImageContainer',
+  title: 'PProductImage',
   component: ProductImage.component,
 };
 
