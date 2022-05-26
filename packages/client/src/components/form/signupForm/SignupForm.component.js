@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './SignupForm.styles.css';
 
 export const SignupForm = ({ text, label, handleSubmit }) => {
-  const [formState, SetFormState] = useState({
+  const [formState, setFormState] = useState({
     name: '',
     email: '',
     mobile: '',
@@ -40,7 +40,7 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    SetFormState({ ...formState, [name]: value });
+    setFormState({ ...formState, [name]: value });
   };
 
   const handleValidation = (e) => {
@@ -50,56 +50,65 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
 
     setMessageSent('');
 
-    const nameValidation = /^[a-zA-Z\s]+$/;
-    if (!formState.name.trim()) {
+    const regEx = {
+      nameRegEx: /^[a-zA-Z\s]+$/,
+      emailRegEx:
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      mobileRegEx: /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/,
+      streetRegEx: /^((.){1,}(\d){1,}(.){0,})$/,
+      zipCodeRegEx: /^[D-d][K-k]( |-)[1-9]{1}[0-9]{3}$/,
+    };
+
+    const trimmedName = formState.name.trim();
+    const trimmedEmail = formState.email.trim();
+    const trimmedMobile = formState.mobile.trim();
+    const trimmedStreetName = formState.streetName.trim();
+    const trimmedCity = formState.city.trim();
+    const trimmedZipcode = formState.zipCode.trim();
+
+    if (!trimmedName) {
       errors.name = ' Name is required';
-    } else if (!formState.name.match(nameValidation)) {
-      errors.name = 'Name should only include letters ';
+    } else if (!trimmedName.match(regEx.nameRegEx)) {
+      errors.name = 'Name should only include letters';
     } else {
       errors.name = '';
     }
 
-    const emailValidation =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!formState.email.trim()) {
+    if (!trimmedEmail) {
       errors.email = 'Email is required';
-    } else if (!formState.email.match(emailValidation)) {
+    } else if (!trimmedEmail.match(regEx.emailRegEx)) {
       errors.email = 'Please enter a valid email address: example@domain.com';
     } else {
       errors.email = '';
     }
 
-    const mobileValidation =
-      /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/;
-    if (!formState.mobile.trim()) {
+    if (!trimmedMobile) {
       errors.mobile = 'Mobile number is required';
-    } else if (!formState.mobile.match(mobileValidation)) {
+    } else if (!trimmedMobile.match(regEx.mobileRegEx)) {
       errors.mobile =
         'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535  ';
     } else {
       errors.mobile = '';
     }
 
-    const streetNameValidation = /^((.){1,}(\d){1,}(.){0,})$/;
-    if (!formState.streetName.trim()) {
+    if (!trimmedStreetName) {
       errors.streetName = 'Street name is required';
-    } else if (!formState.streetName.match(streetNameValidation)) {
+    } else if (!trimmedStreetName.match(regEx.streetRegEx)) {
       errors.streetName =
         'Please enter a valid address: Teststreet 32 | Tørststræde 4 | Tørststræde 24 1. tv';
     } else {
       errors.streetName = '';
     }
 
-    if (!formState.city.trim()) {
+    if (!trimmedCity) {
       errors.city = 'City name is required';
     } else {
       errors.city = '';
     }
 
-    const zipCodeValidation = /^[D-d][K-k]( |-)[1-9]{1}[0-9]{3}$/;
-    if (!formState.zipCode.trim()) {
+    if (!trimmedZipcode) {
       errors.zipCode = 'Zip code is required';
-    } else if (!formState.zipCode.match(zipCodeValidation)) {
+    } else if (!trimmedZipcode.match(regEx.zipCodeRegEx)) {
       errors.zipCode =
         'Please enter a valid zipCode: DK-1234|||dk 1234|||Dk-1234';
     } else {
@@ -115,12 +124,12 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
       errors.zipCode === ''
     ) {
       handleSubmit(
-        formState.name.trim(),
-        formState.email.trim(),
-        formState.mobile.trim(),
-        formState.streetName.trim(),
-        formState.city.trim(),
-        formState.zipCode.trim(),
+        trimmedName,
+        trimmedEmail,
+        trimmedMobile,
+        trimmedStreetName,
+        trimmedCity,
+        trimmedZipcode,
       );
       setMessageSent('Your details is registered');
     }
