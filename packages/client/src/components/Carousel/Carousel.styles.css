@@ -1,0 +1,59 @@
+.carousel-container {
+  width: 100%;
+  position: relative;
+  background-color: #f6f8eb;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-inner {
+  display: flex;
+  width: 95%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.carousel-content {
+  display: flex;
+  transition: all 250ms linear;
+  -ms-overflow-style: none;
+  /* hide scrollbar in IE and Edge */
+  scrollbar-width: none;
+  /* hide scrollbar in Firefox */
+  width: 33%;
+}
+
+.right-arrow {
+  position: absolute;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  right: 0%;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+.left-arrow {
+  position: absolute;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  left: 0%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.product-container {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
+}
