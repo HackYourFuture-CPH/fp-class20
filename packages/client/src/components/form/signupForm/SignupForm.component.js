@@ -64,51 +64,63 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
       trimmed[key] = formState[key].trim();
     });
 
+    const errorMessage = {
+      empty: 'is required',
+      regExNotMatched: {
+        name: 'Name can not include Number',
+        email: 'Please enter a valid email address: example@domain.com',
+        mobile:
+          'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535',
+        streetName:
+          'Please enter a valid address: Teststreet 32 | Tørststræde 4 | Tørststræde 24 1. tv',
+        city: 'City name is required',
+        zipCode: 'Please enter a valid zipCode: DK-1234|||dk 1234|||Dk-1234',
+      },
+      success: 'Your details is registered',
+    };
+
     if (!trimmed.name) {
-      errors.name = ' Name is required';
+      errors.name = `Name ${errorMessage.empty}`;
     } else if (!trimmed.name.match(regEx.nameRegEx)) {
-      errors.name = 'Name should only include letters';
+      errors.name = errorMessage.regExNotMatched.name;
     } else {
       errors.name = '';
     }
 
     if (!trimmed.email) {
-      errors.email = 'Email is required';
+      errors.email = `Email ${errorMessage.empty}`;
     } else if (!trimmed.email.match(regEx.emailRegEx)) {
-      errors.email = 'Please enter a valid email address: example@domain.com';
+      errors.email = errorMessage.regExNotMatched.email;
     } else {
       errors.email = '';
     }
 
     if (!trimmed.mobile) {
-      errors.mobile = 'Mobile number is required';
+      errors.mobile = `Mobile ${errorMessage.empty}`;
     } else if (!trimmed.mobile.match(regEx.mobileRegEx)) {
-      errors.mobile =
-        'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535  ';
+      errors.mobile = errorMessage.regExNotMatched.email;
     } else {
       errors.mobile = '';
     }
 
     if (!trimmed.streetName) {
-      errors.streetName = 'Street name is required';
+      errors.streetName = `Street ${errorMessage.empty}`;
     } else if (!trimmed.streetName.match(regEx.streetRegEx)) {
-      errors.streetName =
-        'Please enter a valid address: Teststreet 32 | Tørststræde 4 | Tørststræde 24 1. tv';
+      errors.streetName = errorMessage.regExNotMatched.streetName;
     } else {
       errors.streetName = '';
     }
 
     if (!trimmed.city) {
-      errors.city = 'City name is required';
+      errors.city = `City name ${errorMessage.empty}`;
     } else {
       errors.city = '';
     }
 
     if (!trimmed.zipCode) {
-      errors.zipCode = 'Zip code is required';
+      errors.zipCode = `Zip-code ${errorMessage.empty}`;
     } else if (!trimmed.zipCode.match(regEx.zipCodeRegEx)) {
-      errors.zipCode =
-        'Please enter a valid zipCode: DK-1234|||dk 1234|||Dk-1234';
+      errors.zipCode = errorMessage.regExNotMatched.zipCode;
     } else {
       errors.zipCode = '';
     }
@@ -129,7 +141,7 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
         trimmed.city,
         trimmed.zipcode,
       );
-      setMessageSent('Your details is registered');
+      setMessageSent(errorMessage.success);
     }
     setValidation(errors);
   };
