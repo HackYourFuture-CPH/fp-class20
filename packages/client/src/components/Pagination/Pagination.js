@@ -23,6 +23,7 @@ function Pagination({
   return (
     <div className="list-page-number">
       <img
+        className="arrow-icon"
         src={back}
         alt="next-page-arrow-icon"
         onClick={() => previousPage(currentPage, numberOfPages)}
@@ -37,6 +38,7 @@ function Pagination({
         </p>
       ))}
       <img
+        className="arrow-icon"
         src={next}
         alt="next-page-arrow-icon"
         onClick={() => nextPage(currentPage, numberOfPages)}
