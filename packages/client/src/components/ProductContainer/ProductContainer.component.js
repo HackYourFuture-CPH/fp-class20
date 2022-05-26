@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProductContainer.styles.css';
 import { SaveFavorite } from '../saveFavorite/SaveFavorite.component';
 import { ProductImage } from '../productImage/ProductImage.component';
 import { ProductTitleText } from '../productDetail/ProductTitleText.component';
 import '../productDetail/ProductTitleText.styles.css';
 import { Button } from '../Button.component';
+import Counter from '../Counter/Counter';
 
 export const ProductContainer = () => {
+  const [count, setCount] = useState(1);
   return (
     <div className="product-container">
       <div className="favorite-icon">
@@ -35,7 +37,9 @@ export const ProductContainer = () => {
           <div className="counter-cart-button">
             {/* These two Buttons are just dummy,  one for Counter component and another for Add to cart component 
               which are under development with other team mates. Once they are finalized, it will be placed here */}
-            <Button label="- 1 +" className="counter-button" />
+            <div className="counter-button">
+              <Counter count={count} setCount={setCount} />
+            </div>
             <Button
               backgroundColor="green"
               label="Add to cart "
