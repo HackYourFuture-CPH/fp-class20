@@ -4,9 +4,9 @@
  */
 exports.up = function (knex) {
   return knex.schema
-    .createTable('users', (table) => {
-      table.increments('id');
-      table.varchar('full_name').notNullable();
+    .createTable('Users', (table) => {
+      table.increments();
+      table.varchar('fullName').notNullable();
       table.varchar('email').notNullable();
       table.varchar('address').notNullable();
       table.varchar('zipCode').notNullable();
@@ -14,47 +14,44 @@ exports.up = function (knex) {
       table.varchar('country').notNullable();
       table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('catagories', (table) => {
+    .createTable('Categories', (table) => {
       table.increments();
       table.varchar('name').notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('products', (table) => {
+    .createTable('Products', (table) => {
       table.increments();
-      table.integer('catagory_id').unsigned();
-      table.foreign('catagory_id').references('id').inTable('catagories');
+      table.integer('categoryId').unsigned();
+      table.foreign('categoryId').references('id').inTable('Categories');
       table.varchar('name').notNullable();
-      table.integer('price').notNullable();
+      table.decimal('price').notNullable();
+      table.enum('size', ['100', '250']).notNullable();
       table
-        .enum('color', ['red', 'yellow', 'borwns', 'white', 'black'])
+        .enum('status', ['outOfStock', 'inStock', 'runningLow'])
         .notNullable();
-      table.enum('size', ['s', 'm', 'l', 'xl', 'xxl']).notNullable();
-      table
-        .enum('status', ['out_of_stock', 'in_stock', 'running_low'])
-        .notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
-      table.varchar('picture_url').notNullable();
-      table.integer('stock_amount');
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
+      table.varchar('pictureUrl').notNullable();
+      table.integer('stockAmount');
     })
-    .createTable('orders', (table) => {
+    .createTable('Orders', (table) => {
       table.increments();
-      table.integer('user_id').unsigned();
-      table.foreign('user_id').references('id').inTable('users');
+      table.integer('userId').unsigned();
+      table.foreign('userId').references('id').inTable('Users');
       table.enum('status', ['created', 'confirmed', 'payed']).notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('favorites', (table) => {
-      table.integer('user_id').unsigned();
-      table.foreign('user_id').references('id').inTable('users');
-      table.integer('product_id').unsigned();
-      table.foreign('product_id').references('id').inTable('products');
-      table.timestamp('created_at').defaultTo(knex.fn.now());
+    .createTable('Favorites', (table) => {
+      table.integer('userId').unsigned();
+      table.foreign('userId').references('id').inTable('Users');
+      table.integer('productId').unsigned();
+      table.foreign('productId').references('id').inTable('Products');
+      table.timestamp('createdAt').defaultTo(knex.fn.now());
     })
-    .createTable('order_items', (table) => {
-      table.integer('order_id').unsigned();
-      table.foreign('order_id').references('id').inTable('orders');
-      table.integer('product_id').unsigned();
-      table.foreign('product_id').references('id').inTable('products');
+    .createTable('OrderItems', (table) => {
+      table.integer('orderId').unsigned();
+      table.foreign('orderId').references('id').inTable('Orders');
+      table.integer('productId').unsigned();
+      table.foreign('productId').references('id').inTable('Products');
       table.integer('quantity').notNullable();
     });
 };
@@ -65,10 +62,10 @@ exports.up = function (knex) {
  */
 exports.down = function (knex) {
   return knex.schema
-    .dropTable('order_items')
-    .dropTable('favorites')
-    .dropTable('orders')
-    .dropTable('products')
-    .dropTable('catagories')
-    .dropTable('users');
+    .dropTable('OrderItems')
+    .dropTable('Favorites')
+    .dropTable('Orders')
+    .dropTable('Products')
+    .dropTable('Categories')
+    .dropTable('Users');
 };

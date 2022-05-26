@@ -40,7 +40,7 @@
   font-style: Medium;
   padding-left: 1rem;
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .Address_info {
     width: 90%;
     margin-top: 1rem;
@@ -49,7 +49,5 @@
   }
   .mapIn {
     width: 100%;
-    padding-left: 3rem;
-    margin-top: 1rem;
   }
 }

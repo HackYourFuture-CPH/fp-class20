@@ -3,7 +3,7 @@
   width: 20%;
   padding-left: 1rem;
   padding-bottom: 1rem;
-  margin-right: 1rem;
+  margin-right:1rem;
 }
 .corporate_info .text_big {
   display: block;
@@ -12,21 +12,21 @@
   font-family: Montserrat;
   font-style: SemiBold;
   line-height: 3rem;
-  font-weight: 300;
+  font-weight: 600;
   color: white;
 }
 .corporate_info .text_small {
   display: block;
   font-family: Montserrat;
   font-size: 16sp;
-  /* line-height: 2rem; */
-  font-weight: 200;
+  line-height: 1.5rem;
+  font-weight: 400;
   color: white;
-  letter-spacing: 0.01rem;
+  letter-spacing: .01rem;
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 560px) {
   .corporate_info {
-    width: 100%;
+    width: 90%;
     text-align: center;
   }
 }
