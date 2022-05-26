@@ -46,7 +46,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: './spice-pictures/allspice.jpeg',
+      pictureUrl: './spice-pictures/Allspice.jpeg',
       stockAmount: 50,
     },
     {
@@ -57,7 +57,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: './spice-pictures/cumin.jpeg',
+      pictureUrl: './spice-pictures/blak_cumin_seeds.jpeg',
       stockAmount: 50,
     },
     {
@@ -123,7 +123,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: './spice-pictures/black-pepper.jpeg',
+      pictureUrl: './spice-pictures/black_pepper_berries.jpeg',
       stockAmount: 50,
     },
     {
@@ -145,7 +145,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: './spice-pictures/cinnamon.jpeg',
+      pictureUrl: './spice-pictures/cinnamon_sticks.jpeg',
       stockAmount: 50,
     },
   ]);
