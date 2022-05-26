@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SaveFavorite.styles.css';
-import heartIcon from '../../../public/assets/heart_icon.png';
-import heartIcon1 from '../../../public/assets/heart_icon_white.png';
+import heartIcon from '../../../public/assets/heart_icon.svg';
+import heartIcon1 from '../../../public/assets/heart_icon_white.svg';
 
 export const SaveFavorite = () => {
   const [selected, setSelected] = useState(false);
