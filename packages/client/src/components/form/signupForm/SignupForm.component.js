@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './SignupForm.styles.css';
 
+const regEx = {
+  nameRegEx: /^[a-zA-Z\s]+$/,
+  emailRegEx:
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  mobileRegEx: /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/,
+  streetRegEx: /^((.){1,}(\d){1,}(.){0,})$/,
+  zipCodeRegEx: /^[D-d][K-k]( |-)[1-9]{1}[0-9]{3}$/,
+};
+
 export const SignupForm = ({ text, label, handleSubmit }) => {
   const [formState, setFormState] = useState({
     name: '',
@@ -50,65 +59,54 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
 
     setMessageSent('');
 
-    const regEx = {
-      nameRegEx: /^[a-zA-Z\s]+$/,
-      emailRegEx:
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      mobileRegEx: /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/,
-      streetRegEx: /^((.){1,}(\d){1,}(.){0,})$/,
-      zipCodeRegEx: /^[D-d][K-k]( |-)[1-9]{1}[0-9]{3}$/,
-    };
+    const trimmed = {};
+    Object.keys(formState).forEach((key) => {
+      trimmed[key] = formState[key].trim();
+    });
 
-    const trimmedName = formState.name.trim();
-    const trimmedEmail = formState.email.trim();
-    const trimmedMobile = formState.mobile.trim();
-    const trimmedStreetName = formState.streetName.trim();
-    const trimmedCity = formState.city.trim();
-    const trimmedZipcode = formState.zipCode.trim();
-
-    if (!trimmedName) {
+    if (!trimmed.name) {
       errors.name = ' Name is required';
-    } else if (!trimmedName.match(regEx.nameRegEx)) {
+    } else if (!trimmed.name.match(regEx.nameRegEx)) {
       errors.name = 'Name should only include letters';
     } else {
       errors.name = '';
     }
 
-    if (!trimmedEmail) {
+    if (!trimmed.email) {
       errors.email = 'Email is required';
-    } else if (!trimmedEmail.match(regEx.emailRegEx)) {
+    } else if (!trimmed.email.match(regEx.emailRegEx)) {
       errors.email = 'Please enter a valid email address: example@domain.com';
     } else {
       errors.email = '';
     }
 
-    if (!trimmedMobile) {
+    if (!trimmed.mobile) {
       errors.mobile = 'Mobile number is required';
-    } else if (!trimmedMobile.match(regEx.mobileRegEx)) {
+    } else if (!trimmed.mobile.match(regEx.mobileRegEx)) {
       errors.mobile =
         'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535  ';
     } else {
       errors.mobile = '';
     }
 
-    if (!trimmedStreetName) {
+    if (!trimmed.streetName) {
       errors.streetName = 'Street name is required';
-    } else if (!trimmedStreetName.match(regEx.streetRegEx)) {
+    } else if (!trimmed.streetName.match(regEx.streetRegEx)) {
       errors.streetName =
         'Please enter a valid address: Teststreet 32 | Tørststræde 4 | Tørststræde 24 1. tv';
     } else {
       errors.streetName = '';
     }
 
-    if (!trimmedCity) {
+    if (!trimmed.city) {
       errors.city = 'City name is required';
     } else {
       errors.city = '';
     }
 
-    if (!trimmedZipcode) {
+    if (!trimmed.zipCode) {
       errors.zipCode = 'Zip code is required';
-    } else if (!trimmedZipcode.match(regEx.zipCodeRegEx)) {
+    } else if (!trimmed.zipCode.match(regEx.zipCodeRegEx)) {
       errors.zipCode =
         'Please enter a valid zipCode: DK-1234|||dk 1234|||Dk-1234';
     } else {
@@ -124,12 +122,12 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
       errors.zipCode === ''
     ) {
       handleSubmit(
-        trimmedName,
-        trimmedEmail,
-        trimmedMobile,
-        trimmedStreetName,
-        trimmedCity,
-        trimmedZipcode,
+        trimmed.name,
+        trimmed.email,
+        trimmed.mobile,
+        trimmed.streetName,
+        trimmed.city,
+        trimmed.zipcode,
       );
       setMessageSent('Your details is registered');
     }
