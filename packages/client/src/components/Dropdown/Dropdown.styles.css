@@ -1,4 +1,5 @@
-.spicesButton {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
+.button-for-spices {
   background-color: #342f2b;
   color: white;
 }
@@ -22,7 +23,7 @@ span {
   display: inline-block;
   color: white;
 }
-.itemsContanier {
+.items-contanier {
   display: flex;
   flex-direction: row;
   padding-bottom: 1.25rem;
@@ -40,7 +41,7 @@ span {
   font-size: 1.25rem;
   font-weight: 500;
 }
-.showAllSpices {
+.show-all-spices {
   font-family: Montserrat;
   font-size: 1.25rem;
   font-weight: 500;
@@ -55,8 +56,11 @@ p {
   letter-spacing: 0em;
   text-align: left;
 }
-.block-height {
+/* .block-height {
   height: 6rem;
+} */
+.left-container {
+  padding-left: 10rem;
 }
 .left-container,
 .right-container {
@@ -65,14 +69,14 @@ p {
   flex-direction: column;
   align-items: stretch;
   vertical-align: baseline;
-  padding-left: 10rem;
   font-size: 1rem;
   font-weight: lighter;
   letter-spacing: 0.063rem;
 }
-.left-container,
+.left-container > div,
 .right-container > div {
   line-height: 0.1rem;
+  margin-bottom: 1rem;
 }
 .arrow-down {
   width: 0;
@@ -88,23 +92,34 @@ p {
   border-right: 0.63rem solid transparent;
   border-bottom: 0.63rem solid white;
 }
-@media screen and (max-width: 25rem) {
-  .itemsContanier {
+@media screen and (max-width: 660px) {
+  .items-contanier {
     flex-direction: column;
   }
+  .items-contanier > div {
+    margin-bottom: 2rem;
+  }
   .main-heading {
-    margin: 0rem;
+    margin: 1rem;
     padding: 0.31rem;
     text-align: center;
   }
   .right-container {
-    padding: 0rem;
-    width: 100%;
-    text-align: center;
+    padding-left: 1.5rem;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+
+    /* align-items: center; */
   }
   .left-container {
-    padding: 0rem;
-    text-align: center;
-    width: 100%;
+    padding-left: 1.5rem;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  .show-all-spices {
+    padding-top: 0rem;
   }
 }

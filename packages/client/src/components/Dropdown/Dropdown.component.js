@@ -19,7 +19,7 @@ function Dropdown() {
   };
   return (
     <div>
-      <div className="spicesButton">
+      <div className="button-for-spices">
         <span className="spices-button">SPICES</span>
         <span
           className={triangle}
@@ -31,7 +31,7 @@ function Dropdown() {
       </div>
       <div className={dropDownList}>
         <span className="main-heading">Browser spices by plant part</span>
-        <div className="itemsContanier">
+        <div className="items-contanier">
           <div className="left-container">
             <div className="block-height">
               <span className="spice-names">BUD/FLOWER</span>
@@ -55,7 +55,7 @@ function Dropdown() {
               <span className="spice-names">SEED</span>
               <p>(cummin, coriander,fennel, poppy and more)</p>
             </div>
-            <div className="showAllSpices">
+            <div className="show-all-spices">
               <span>SHOW ALL SPICES</span>
             </div>
           </div>
