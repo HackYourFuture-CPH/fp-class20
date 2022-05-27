@@ -35,7 +35,7 @@ export default function Carousel({ products, coarse }) {
           className={`carousel-content show-${coarse}`}
           style={{
             // transform: `translateX(-${currentIndex * (100 / coarse)}%)`,
-            transform: `translateX(-${currentIndex * 75}%)`,
+            transform: `translateX(-${currentIndex * 50}%)`,
           }}
         >
           {products.map(({ picture, name, price }) => (
