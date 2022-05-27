@@ -32,7 +32,7 @@ function Pagination({
         <p
           className="page-number"
           key={number}
-          style={currentPage === number ? { backgroundColor: 'grey' } : {}}
+          style={currentPage === number ? { backgroundColor: '#382f2e' } : {}}
         >
           {number}
         </p>

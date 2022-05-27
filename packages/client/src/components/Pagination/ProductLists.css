@@ -1,6 +1,6 @@
 .product-pages{
   
-     background: #867572;;
+     background: #403b37;;
     width: 70%;
     margin: 5em 5em;
 }
@@ -13,7 +13,7 @@
 
 }
 .list-page-number{
-    background-color: rgb(51, 51, 51);
+    background-color: #403b37;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,14 +22,14 @@
    
 }
 .product-cards{
-    background-color: rgb(51, 51, 51);
+    background-color: #393430;
     width: 20em;
     height: 100px;
     margin: 3%;
     
 }
 .pagination-footer{
-    background-color: rgb(51, 51, 51);
+    background-color: #403b37;
     display: flex;
     justify-content: center;
     align-items: center;
