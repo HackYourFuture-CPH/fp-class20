@@ -34,7 +34,7 @@ export const SortBy = () => {
       {/* dispaly or not dispaly the sort list */}
       {!dropDown && (
         <div className="sort_list">
-          <span className="A_Z">A-Z</span>
+          <span>A-Z</span>
           <span>Lowest price</span>
           <span>New arrivals</span>
           <span>Category</span>
