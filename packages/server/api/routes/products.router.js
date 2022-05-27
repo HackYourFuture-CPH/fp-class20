@@ -17,6 +17,12 @@ const productsController = require('../controllers/products.controller');
  *    description:
  *      Will return all Products with a 10 page limit pagination.
  *    produces: application/json
+ * parameters:
+ *     - in: page
+ *       name: query
+ *       schema:
+ *         type: Query Parameters
+ *         description: The page of the product to be paginated
  *    responses:
  *      200:
  *        description: Successful request
