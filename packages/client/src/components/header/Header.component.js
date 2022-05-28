@@ -1,18 +1,18 @@
 import React from 'react';
-import './header.css';
-import Logo from '../logo/Logo.component';
-import SignIn from '../signin/SignIn.component';
-import Favourites from '../favourites/Favourites.component';
-import Cart from '../cart/Cart.component';
+import './Header.css';
+import Logo from '../Logo/Logo.component';
+import SignIn from '../Signin/SignIn.component';
+import Favourites from '../Favourites/Favourites.component';
+import Cart from '../Cart/Cart.component';
 
 const Header = () => {
   return (
     <div className="top-nav-background">
-      <div className="main-container">
-        <div className="logo">
+      <div className="top-nav-main-container">
+        <div className="logo-container">
           <Logo />
         </div>
-        <div className="right-container">
+        <div className="top-nav-right-container">
           <SignIn />
           <Favourites />
           <Cart />

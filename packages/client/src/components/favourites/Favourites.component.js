@@ -2,7 +2,7 @@ import React from 'react';
 
 import favouriteIcon from '../../../public/assets/heartShapeVector.png';
 
-import './favourite.css';
+import './Favourite.css';
 
 const Favourites = () => {
   return (
@@ -12,7 +12,7 @@ const Favourites = () => {
         src={favouriteIcon}
         alt="favourite-icon"
       />{' '}
-      <span>Favourites </span>
+      <span className="favourites-text">Favourites </span>
     </div>
   );
 };

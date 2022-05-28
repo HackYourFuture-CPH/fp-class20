@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import './cart.styles.css';
+import './Cart.styles.css';
 
 import CartIcon from '../../../public/assets/CartIcon.png';
 
