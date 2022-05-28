@@ -1,8 +1,8 @@
 import React from 'react';
 import './FooterComponent.styles.css';
-import { Corporate } from './corporate/Corporate';
-import { Contact } from './contact/Contact';
-import { Map } from './map/Map';
+import { Corporate } from './Corporate/Corporate.component';
+import { Contact } from './Contact/Contact.component';
+import { Map } from './Map/Map.component';
 import { Address } from './Address/Address.component';
 
 export const FooterComponent = () => {

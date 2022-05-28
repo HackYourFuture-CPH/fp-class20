@@ -12,7 +12,9 @@
   font-family: Montserrat;
   font-style: SemiBold;
   line-height: 3rem;
-	@@ -18,15 +18,16 @@
+  font-weight: 600;
+  color: white;
+}
 .corporate_info .text_small {
   display: block;
   font-family: Montserrat;
