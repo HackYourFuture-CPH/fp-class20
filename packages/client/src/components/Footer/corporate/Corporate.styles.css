@@ -19,14 +19,14 @@
   display: block;
   font-family: Montserrat;
   font-size: 0.8rem;
-  line-height: 1.5rem;
+  /* line-height: 1rem; */
   font-weight: 400;
   color: white;
   letter-spacing: 0.01rem;
 }
 @media screen and (max-width: 560px) {
   .corporate_info {
-    width: 40%;
+    width: 50%;
     text-align: start;
     margin: 0 auto;
   }

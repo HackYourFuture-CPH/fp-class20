@@ -10,7 +10,7 @@
 }
 
 .Contact_info .text_big {
-  display: block;
+  /* display: block; */
   margin-bottom: 2rem;
   padding-top: 2rem;
   font-size: 0.8rem;
@@ -29,8 +29,8 @@
   color: white;
   align-items: center;
 }
-.phone,
-.envelop {
+.phone_logo,
+.envelop_logo {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -39,7 +39,7 @@
 }
 @media screen and (max-width: 560px) {
   .Contact_info {
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
   }
 }

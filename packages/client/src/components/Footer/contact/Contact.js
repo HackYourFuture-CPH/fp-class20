@@ -6,13 +6,13 @@ import envelop from '../../../../public/assets/vectors/vector_envelope.svg';
 export const Contact = () => {
   return (
     <div className="Contact_info">
-      <span className="text_big ">Contact us</span>
+      <h2 className="text_big ">Contact us</h2>
       <span className="text_small phone_text">
-        <img src={phone} alt="Canvas phone Logo" className="phone" />
+        <img className="phone_logo" src={phone} alt="Canvas phone Logo" />
         <span>+45 666 555</span>
       </span>
       <span className="text_small">
-        <img src={envelop} alt="Canvas envelop Logo" className="envelop" />
+        <img className="envelop_logo" src={envelop} alt="Canvas envelop Logo" />
         <span>spice@kbh.dk</span>
       </span>
     </div>

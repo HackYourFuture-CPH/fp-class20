@@ -14,7 +14,7 @@ export const FooterComponent = () => {
         <Map />
         <Address />
       </div>
-      <div className="copyRight">
+      <div className="copy_right_text">
         <p>Copyright info...</p>
       </div>
     </div>
