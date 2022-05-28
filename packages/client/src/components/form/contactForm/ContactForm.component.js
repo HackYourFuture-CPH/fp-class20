@@ -5,89 +5,66 @@ import './ContactForm.styles.css';
 import contactPageSwirlDecoration from '../../../../public/assets/Vector192.png';
 
 const regEx = {
-  nameRegEx: /^[a-zA-Z\s]+$/,
-  emailRegEx:
+  name: /^[a-zA-Z\s]+$/,
+  email:
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 };
 
-export const ContactForm = ({ text, label, handleSubmit }) => {
+const errorMessage = {
+  required: 'is required',
+  name: 'Name can not include Number',
+  email: 'Please enter a valid email address: example@domain.com',
+  message: 'message is required',
+};
+
+export const ContactForm = ({ text, label, handlePost }) => {
   const [formState, SetFormState] = useState({
     name: '',
     email: '',
     message: '',
   });
-  const [validation, setValidation] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
 
-  const [isFormValidated, setIsFormValidated] = useState(false);
-
-  useEffect(() => {
-    if (formState.name && formState.email && formState.message) {
-      setIsFormValidated(true);
-    } else {
-      setIsFormValidated(false);
-    }
-  }, [formState]);
-
-  const [messageSent, setMessageSent] = useState('');
+  const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isAllInputFilledOut, setIsAllInputFilledOut] = useState(false);
+  const [errorState, setErrorState] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    SetFormState({ ...formState, [name]: value });
+    SetFormState({ ...formState, [name]: value.trim() });
   };
 
-  const handleValidation = (e) => {
+  useEffect(() => {
+    if (formState.name && formState.email && formState.message) {
+      setIsAllInputFilledOut(true);
+    } else {
+      setIsAllInputFilledOut(false);
+    }
+  }, [formState]);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const errors = { ...validation };
-
-    setMessageSent('');
-
-    const trimmed = {};
-    Object.keys(formState).forEach((key) => {
-      trimmed[key] = formState[key].trim();
+    let errors = [];
+    errors = Object.keys(formState).map((key) => {
+      const error = {
+        message: '',
+      };
+      if (!formState[key]) {
+        error.message = `${[key]} ${errorMessage.required}`;
+      } else if (Object.prototype.hasOwnProperty.call(regEx, `${key}`)) {
+        if (!formState[key].match(regEx[key])) {
+          error.message = errorMessage[key];
+        }
+      }
+      return error;
     });
 
-    const errorMessage = {
-      empty: 'is required',
-      regExNotMatched: {
-        name: 'Name can not include Number',
-        email: 'Please enter a valid email address: example@domain.com',
-        message: 'Message is required',
-      },
-      success: 'Your message is sent',
-    };
-
-    if (!trimmed.name) {
-      errors.name = `Name ${errorMessage.empty}`;
-    } else if (!trimmed.name.match(regEx.nameRegEx)) {
-      errors.name = errorMessage.regExNotMatched.name;
-    } else {
-      errors.name = '';
+    if (errors.filter((err) => err.message !== '').length === 0) {
+      handlePost(formState.name, formState.email, formState.message);
+      setIsMessageSent(true);
     }
 
-    if (!trimmed.email) {
-      errors.email = `Email ${errorMessage.empty}`;
-    } else if (!trimmed.email.match(regEx.emailRegEx)) {
-      errors.email = errorMessage.regExNotMatched.email;
-    } else {
-      errors.email = '';
-    }
-
-    if (!formState.message.trim()) {
-      errors.message = errorMessage.regExNotMatched.message;
-    } else {
-      errors.message = '';
-    }
-
-    if (errors.name === '' && errors.email === '' && errors.message === '') {
-      handleSubmit(trimmed.name, trimmed.email, trimmed.message);
-      setMessageSent(errorMessage.success);
-    }
-    setValidation(errors);
+    setErrorState(errors);
   };
 
   return (
@@ -106,13 +83,15 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
           </p>
           <form id="contactForm">
             <div className="wrapper">
-              <div className="errorMsg">
-                {validation.name && <p>{validation.name}</p>}
-                {validation.email && <p>{validation.email}</p>}
-                {validation.message && <p>{validation.message}</p>}
-              </div>
-
-              <p className="successMsg">{messageSent}</p>
+              {isMessageSent ? (
+                <p className="successMsg">Message Sent</p>
+              ) : (
+                <div className="errorMsg">
+                  {errorState.map((error) => (
+                    <p>{error.message}</p>
+                  ))}
+                </div>
+              )}
               <div className="form-row">
                 <label htmlFor="name">
                   Name <span className="requiredStar">*</span>
@@ -125,7 +104,6 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
                   value={formState.name}
                   placeholder="type your name"
                   onChange={(e) => handleChange(e)}
-                  minLength="5"
                   required
                 />
               </div>
@@ -164,10 +142,12 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
 
               <div className="form-row">
                 <button
-                  className={isFormValidated ? 'readyButton' : 'normalButton'}
+                  className={
+                    isAllInputFilledOut ? 'readyButton' : 'normalButton'
+                  }
                   type="button"
                   label={label}
-                  onClick={handleValidation}
+                  onClick={handleSubmit}
                 >
                   {text}
                 </button>
@@ -200,13 +180,10 @@ export const ContactForm = ({ text, label, handleSubmit }) => {
 ContactForm.propTypes = {
   text: PropTypes.string,
   label: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func,
+  handlePost: PropTypes.func,
 };
 
 ContactForm.defaultProps = {
   text: null,
-  handleSubmit: () => {
-    // eslint-disable-next-line
-    console.log('button clicked');
-  },
+  handlePost: () => {},
 };
