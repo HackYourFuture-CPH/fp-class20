@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './SignupForm.styles.css';
 
-const regEx = {
+const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
   email:
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -68,8 +68,10 @@ export const SignupForm = ({ text, label, handlePost }) => {
       };
       if (!formState[key]) {
         error.message = `${[key]} ${errorMessage.required}`;
-      } else if (Object.prototype.hasOwnProperty.call(regEx, `${key}`)) {
-        if (!formState[key].match(regEx[key])) {
+      } else if (
+        Object.prototype.hasOwnProperty.call(validationPatterns, `${key}`)
+      ) {
+        if (!formState[key].match(validationPatterns[key])) {
           error.message = errorMessage[key];
         }
       }
@@ -116,7 +118,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                   name="name"
                   value={formState.name}
                   placeholder="type your name"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -131,7 +133,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                   name="email"
                   value={formState.email}
                   placeholder="type your email"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -146,7 +148,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                   name="mobile"
                   value={formState.mobile}
                   placeholder="type your mobile"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -163,7 +165,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                   name="streetName"
                   value={formState.streetName}
                   placeholder="type your street name"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -178,7 +180,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                   name="city"
                   value={formState.city}
                   placeholder="type your city name"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -193,7 +195,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                   name="zipCode"
                   value={formState.zipCode}
                   placeholder="type your zip-code"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -228,8 +230,5 @@ SignupForm.propTypes = {
 
 SignupForm.defaultProps = {
   text: null,
-  handlePost: () => {
-    // eslint-disable-next-line
-    console.log('default props data ');
-  },
+  handlePost: () => {},
 };

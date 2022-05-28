@@ -3,7 +3,7 @@ import React from 'react';
 import { SignupForm } from './SignupForm.component';
 
 export default {
-  label: 'Contact Us',
+  label: 'Sign Up/Edit Form',
   component: SignupForm,
 };
 
@@ -12,7 +12,7 @@ const Template = (args) => <SignupForm {...args} />;
 export const SignUpFormStandard = Template.bind({});
 SignUpFormStandard.args = {
   text: 'SUBMIT',
-  label: ' contact form',
+  label: ' SignUp/Edit Form',
 
   handlePost: (name, email, message) =>
     // eslint-disable-next-line no-console
