@@ -2,14 +2,14 @@
 .footer_container {
   background-color: black;
   color: white;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 .FooterComponent_info {
   display: flex;
 }
 .copyRight {
-  margin-left: 85%;
+  margin-left: 80%;
   padding-bottom: .1rem;
 }
 @media screen and (max-width: 960px) {

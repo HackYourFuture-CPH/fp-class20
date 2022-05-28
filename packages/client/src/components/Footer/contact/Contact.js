@@ -13,7 +13,7 @@ export const Contact = () => {
       </span>
       <span className="text_small">
         <img src={envelop} alt="Canvas envelop Logo" className="envelop" />
-        <span>spice @ kbh.dk</span>
+        <span>spice@kbh.dk</span>
       </span>
     </div>
   );

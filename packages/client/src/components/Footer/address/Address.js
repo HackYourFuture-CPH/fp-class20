@@ -11,7 +11,7 @@ export const Address = () => {
         <p className="adress">
           Norrebrogade 666
           <br />
-          2200 Norrebro
+          2200 Norrebroz
           <br />
           Copenhagen
         </p>
