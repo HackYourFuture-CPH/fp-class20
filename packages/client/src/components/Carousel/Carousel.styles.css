@@ -14,6 +14,7 @@
   margin: 0 auto;
   justify-content: space-between;
   width: 90%;
+  background: rgba(255, 249, 238, 0.1);
 }
 
 .carousel-content {
@@ -27,28 +28,25 @@
 }
 
 .right-arrow {
-  position: absolute;
+  position: relative;
   align-items: center;
   color: white;
   cursor: pointer;
   right: 0%;
-  padding-right: 2%;
-  padding-left: 2%;
+  margin: 2%;
 }
 
 .left-arrow {
-  position: absolute;
+  position: relative;
   align-items: center;
   color: white;
   cursor: pointer;
   left: 0%;
-  padding-left: 2%;
-  padding-right: 2%;
+  margin: 2%;
 }
 
 .product-container {
-  padding-left: 2%;
-  padding-right: 2%;
+  margin: 4%;
 }
 
 @media (hover: none) and (pointer: coarse) {

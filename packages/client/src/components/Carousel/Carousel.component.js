@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-// import Product from '../../Helpers/CarouselHelper';
 import './Carousel.styles.css';
 import PropTypes from 'prop-types';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
-export default function Carousel({ products, coarse }) {
+export default function Carousel({ products, show }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const next = () => {
-    if (currentIndex < products.length - coarse) {
-      setCurrentIndex((prevState) => prevState + 1);
+    if (currentIndex < products.length - show) {
+      setCurrentIndex((prevState) => prevState + show);
     }
   };
 
   const prev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex((prevState) => prevState - 1);
+      setCurrentIndex((prevState) => prevState - show);
     }
   };
 
@@ -27,15 +27,15 @@ export default function Carousel({ products, coarse }) {
           'linear-gradient(180deg, #231C16 0%, rgba(35, 28, 22, 0.75) 100%',
       }}
     >
-      {currentIndex >= 0 && (
+      {currentIndex >= -1 && (
         <ArrowBackIosIcon className="left-arrow" onClick={prev} />
       )}
       <div className="carousel-inner">
         <div
-          className={`carousel-content show-${coarse}`}
+          className={`carousel-content show-${show}`}
           style={{
             // transform: `translateX(-${currentIndex * (100 / coarse)}%)`,
-            transform: `translateX(-${currentIndex * 50}%)`,
+            transform: `translateX(-${currentIndex * 33}%)`,
           }}
         >
           {products.map(({ picture, name, price }) => (
@@ -51,7 +51,7 @@ export default function Carousel({ products, coarse }) {
           ))}
         </div>
       </div>
-      {currentIndex <= products.length - coarse && (
+      {currentIndex <= products.length - 1 && (
         <ArrowForwardIosIcon className="right-arrow" onClick={next} />
       )}
     </div>
@@ -61,10 +61,10 @@ export default function Carousel({ products, coarse }) {
 Carousel.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   products: PropTypes.array,
-  coarse: PropTypes.number,
+  show: PropTypes.number,
 };
 
 Carousel.defaultProps = {
   products: [],
-  coarse: 1,
+  show: 1,
 };
