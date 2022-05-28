@@ -1,13 +1,12 @@
 import React from 'react';
 import Carousel from './Carousel.component';
-// import { Products } from '../../Helpers/CarouselHelper';
-import Blackcuminseeds from '../../../public/assets/spice-pictures/black_cumin_seeds.jpeg';
-import Blackpepperberries from '../../../public/assets/spice-pictures/black_pepper_berries.jpeg';
-import Pinkpeppercorn from '../../../public/assets/spice-pictures/pink_peppercorn.jpeg';
-import Chilipepperpowder from '../../../public/assets/spice-pictures/chilipepper_powder.jpeg';
-import Driedbayleaves from '../../../public/assets/spice-pictures/dried_bay_leaves.jpeg';
-import Cinnamonsticks from '../../../public/assets/spice-pictures/cinnamon_sticks.jpeg';
-import Saffronpowder from '../../../public/assets/spice-pictures/saffron_powder.jpeg';
+import Blackcuminseeds from '../../../public/assets/images/spices_square/black_cumin_seeds.jpeg';
+import Blackpepperberries from '../../../public/assets/images/spices_square/black_pepper_berries.jpeg';
+import Pinkpeppercorn from '../../../public/assets/images/spices_square/chilipepper_powder.jpeg';
+import Chilipepperpowder from '../../../public/assets/images/spices_square/cinnamon_sticks.jpeg';
+import Driedbayleaves from '../../../public/assets/images/spices_square/dried_saffron.jpeg';
+import Cinnamonsticks from '../../../public/assets/images/spices_square/dried_rosemary.jpeg';
+import Saffronpowder from '../../../public/assets/images/spices_square/star_anise.jpeg';
 
 const Products = [
   {
