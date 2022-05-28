@@ -2,7 +2,7 @@ import React from 'react';
 
 import signIn from '../../../public/assets/sign_in_image.png';
 
-import './Signin.css';
+import './Signin.styles.css';
 
 const SignIn = () => {
   return (

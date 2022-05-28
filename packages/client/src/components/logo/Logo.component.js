@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Logo.css';
+import './Logo.styles.css';
 
 const Logo = () => {
   return <h2> Simply Spices</h2>;

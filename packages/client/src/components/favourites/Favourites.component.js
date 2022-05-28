@@ -2,7 +2,7 @@ import React from 'react';
 
 import favouriteIcon from '../../../public/assets/heartShapeVector.png';
 
-import './Favourite.css';
+import './Favourite.styles.css';
 
 const Favourites = () => {
   return (

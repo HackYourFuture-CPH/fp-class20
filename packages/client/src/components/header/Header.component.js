@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import './Header.styles.css';
 import Logo from '../Logo/Logo.component';
 import SignIn from '../Signin/SignIn.component';
 import Favourites from '../Favourites/Favourites.component';
