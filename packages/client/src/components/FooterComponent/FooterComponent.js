@@ -3,7 +3,7 @@ import './FooterComponent.styles.css';
 import { Corporate } from './corporate/Corporate';
 import { Contact } from './contact/Contact';
 import { Map } from './map/Map';
-import { Address } from './address/Address';
+import { Address } from './Address/Address.component';
 
 export const FooterComponent = () => {
   return (
