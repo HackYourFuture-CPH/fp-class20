@@ -1,17 +1,7 @@
-/* .counter {
-  display: flex;
-  flex-direction: row;
-  border: 16rem solid #ffffff;
-  background-color: #867572;
-  /* height: 2.3125rem;
-  width: 4.938rem;
-  left: 63.188rem;
-  justify-content: space-between; 
-} */
 .counter {
   height: 2.3125rem;
   width: 4.938rem;
-  border: 0.1rem solid #ffffff;
+  border: 0.05rem solid #ffffff;
   display: flex;
   justify-content: space-around;
 }

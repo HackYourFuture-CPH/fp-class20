@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SaveFavorite.styles.css';
-import heartIcon from '../../../public/assets/heart_icon.svg';
-import heartIcon1 from '../../../public/assets/heart_icon_white.svg';
+import heartIcon from '../../../public/assets/vectors/vector_heart_empty.svg';
+import heartIcon1 from '../../../public/assets/vectors/vector_heart_full.svg';
+import PropTypes from 'prop-types';
 
-export const SaveFavorite = () => {
-  const [selected, setSelected] = useState(false);
-
+export const SaveFavorite = ({
+  name,
+  selectedIcon,
+  setSelectedIcon,
+  ...args
+}) => {
   const handleClick = () => {
-    setSelected(!selected);
+    setSelectedIcon(!selectedIcon);
   };
   return (
     <div>
-      <span>save to favorites</span>
-      {!selected ? (
+      <span>save to favorites{name}</span>
+      {!selectedIcon ? (
         <img
           onClick={handleClick}
           src={heartIcon}
@@ -29,4 +33,16 @@ export const SaveFavorite = () => {
       )}
     </div>
   );
+};
+
+SaveFavorite.propTypes = {
+  name: PropTypes.string,
+  selectedIcon: PropTypes.func,
+  setSelectedIcon: PropTypes.func,
+};
+
+SaveFavorite.defaultProps = {
+  name: null,
+  selectedIcon: () => {},
+  setSelectedIcon: () => {},
 };

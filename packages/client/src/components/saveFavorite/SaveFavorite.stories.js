@@ -6,4 +6,9 @@ export default {
   component: SaveFavorite.component,
 };
 
-export const label = () => <SaveFavorite />;
+const Template = (args) => <SaveFavorite {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  name: 'save to favorites',
+};

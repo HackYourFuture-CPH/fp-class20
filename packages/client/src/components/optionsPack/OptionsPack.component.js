@@ -15,7 +15,7 @@ export const OptionsPack = ({ select, setSelect, options }) => {
             <input
               type="radio"
               name="product"
-              value={option.weight}
+              value={option}
               onChange={handleSelect}
             />
             <label>
