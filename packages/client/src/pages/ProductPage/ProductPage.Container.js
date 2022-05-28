@@ -4,7 +4,7 @@ import './ProductPage.Style.css';
 export const ProductPage = () => {
   return (
     <div className="ProductPageContainer">
-      <h1>Product Page </h1>
+      <span>Product Page </span>
     </div>
   );
 };

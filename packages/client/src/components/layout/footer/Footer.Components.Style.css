@@ -5,6 +5,8 @@ footer {
   align-items: center;
   color: #ffffff;
   height: 10rem;
+  display: flex;
+  flex-direction: column;
 }
 .footerDown {
   background-color: #231c16;

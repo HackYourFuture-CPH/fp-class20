@@ -5,15 +5,17 @@
   height: 2rem;
   align-items: center;
   justify-content: center;
-  font-size: small;
+  width: 100%;
 }
 nav {
+  margin-top: 1rem;
   display: flex;
   background-color: #000000;
   color: #ffffff;
   height: 4rem;
   align-items: center;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 ul {

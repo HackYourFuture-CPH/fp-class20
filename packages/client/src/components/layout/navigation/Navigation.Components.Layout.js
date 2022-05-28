@@ -2,33 +2,36 @@ import React from 'react';
 
 import { NavLink, Link } from 'react-router-dom';
 import './Navigation.Components.Style.css';
-// import searchIcon from '../../assets/si.png';
+import { NavigationTop } from './NavigationTop.Components.Layout';
 
 export function Navigation() {
   return (
     <nav>
-      <ul>
-        <select>
-          <option> SPICES</option>
+      <NavigationTop />
+      <section className="navigationMain">
+        <ul>
+          <select>
+            <option> not ready</option>
 
-          <option> Nepali Herbs</option>
+            <option> not ready</option>
 
-          <option>
-            <Link to="/"> Himalaya Herbs </Link>
-          </option>
-        </select>
+            <option>
+              <Link to="/"> not ready </Link>
+            </option>
+          </select>
+          <li>
+            <NavLink to="/about-us">ABOUT US </NavLink>
+          </li>
 
-        <NavLink to="/aboutUs">
-          <li>ABOUT US</li>
-        </NavLink>
-        <NavLink to="/contactUs">
-          <li>CONTACT US</li>
-        </NavLink>
+          <li>
+            <NavLink to="/contact-us">CONTACT US </NavLink>
+          </li>
 
-        <li>
-          <input type="text" placeholder="..search spices" />
-        </li>
-      </ul>
+          <li>
+            <input type="text" placeholder="..search spices" />
+          </li>
+        </ul>
+      </section>
     </nav>
   );
 }
