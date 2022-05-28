@@ -7,7 +7,7 @@ export const Address = () => {
     <div className="Address_info">
       <span className="simplySpices">Simply Spices</span>
       <div className="adress_text_logo">
-        <img className="smallMapIcon" src={map} alt="Canvas map Logo" />
+        <img className="small_map_icon" src={map} alt="Canvas map Logo" />
         <p className="adress">
           Norrebrogade 666
           <br />
