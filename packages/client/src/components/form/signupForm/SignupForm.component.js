@@ -3,15 +3,27 @@ import PropTypes from 'prop-types';
 import './SignupForm.styles.css';
 
 const regEx = {
-  nameRegEx: /^[a-zA-Z\s]+$/,
-  emailRegEx:
+  name: /^[a-zA-Z\s]+$/,
+  email:
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-  mobileRegEx: /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/,
-  streetRegEx: /^((.){1,}(\d){1,}(.){0,})$/,
-  zipCodeRegEx: /^[D-d][K-k]( |-)[1-9]{1}[0-9]{3}$/,
+  mobile: /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/,
+  street: /^((.){1,}(\d){1,}(.){0,})$/,
+  zipCode: /^[D-d][K-k]( |-)[1-9]{1}[0-9]{3}$/,
 };
 
-export const SignupForm = ({ text, label, handleSubmit }) => {
+const errorMessage = {
+  required: 'is required',
+  name: 'Name can not include Number',
+  email: 'Please enter a valid email address: example@domain.com',
+  mobile:
+    'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535',
+  streetName:
+    'Please enter a valid address: Teststreet 32 | Tørststræde 4 | Tørststræde 24 1. tv',
+  city: 'City name is required',
+  zipCode: 'Please enter a valid zipCode: DK-1234|||dk 1234|||Dk-1234',
+};
+
+export const SignupForm = ({ text, label, handlePost }) => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -20,17 +32,10 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
     city: '',
     zipCode: '',
   });
-  const [validation, setValidation] = useState({
-    name: '',
-    email: '',
-    mobile: '',
-    streetName: '',
-    city: '',
-    zipCode: '',
-  });
 
-  const [messageSent, setMessageSent] = useState('');
-  const [isMessageValidate, setIsMessageValidate] = useState(false);
+  const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isAllInputProvided, setIsAllInputProvided] = useState(false);
+  const [errorState, setErrorState] = useState([]);
 
   useEffect(() => {
     if (
@@ -41,109 +46,48 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
       formState.city &&
       formState.zipCode
     ) {
-      setIsMessageValidate(true);
+      setIsAllInputProvided(true);
     } else {
-      setIsMessageValidate(false);
+      setIsAllInputProvided(false);
     }
   }, [formState]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormState({ ...formState, [name]: value });
+    setFormState({ ...formState, [name]: value.trim() });
   };
 
-  const handleValidation = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const errors = { ...validation };
-
-    setMessageSent('');
-
-    const trimmed = {};
-    Object.keys(formState).forEach((key) => {
-      trimmed[key] = formState[key].trim();
+    let errors = [];
+    errors = Object.keys(formState).map((key) => {
+      const error = {
+        field: key,
+        message: '',
+      };
+      if (!formState[key]) {
+        error.message = `${[key]} ${errorMessage.required}`;
+      } else if (Object.prototype.hasOwnProperty.call(regEx, `${key}`)) {
+        if (!formState[key].match(regEx[key])) {
+          error.message = errorMessage[key];
+        }
+      }
+      return error;
     });
 
-    const errorMessage = {
-      empty: 'is required',
-      regExNotMatched: {
-        name: 'Name can not include Number',
-        email: 'Please enter a valid email address: example@domain.com',
-        mobile:
-          'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535',
-        streetName:
-          'Please enter a valid address: Teststreet 32 | Tørststræde 4 | Tørststræde 24 1. tv',
-        city: 'City name is required',
-        zipCode: 'Please enter a valid zipCode: DK-1234|||dk 1234|||Dk-1234',
-      },
-      success: 'Your details is registered',
-    };
-
-    if (!trimmed.name) {
-      errors.name = `Name ${errorMessage.empty}`;
-    } else if (!trimmed.name.match(regEx.nameRegEx)) {
-      errors.name = errorMessage.regExNotMatched.name;
-    } else {
-      errors.name = '';
-    }
-
-    if (!trimmed.email) {
-      errors.email = `Email ${errorMessage.empty}`;
-    } else if (!trimmed.email.match(regEx.emailRegEx)) {
-      errors.email = errorMessage.regExNotMatched.email;
-    } else {
-      errors.email = '';
-    }
-
-    if (!trimmed.mobile) {
-      errors.mobile = `Mobile ${errorMessage.empty}`;
-    } else if (!trimmed.mobile.match(regEx.mobileRegEx)) {
-      errors.mobile = errorMessage.regExNotMatched.email;
-    } else {
-      errors.mobile = '';
-    }
-
-    if (!trimmed.streetName) {
-      errors.streetName = `Street ${errorMessage.empty}`;
-    } else if (!trimmed.streetName.match(regEx.streetRegEx)) {
-      errors.streetName = errorMessage.regExNotMatched.streetName;
-    } else {
-      errors.streetName = '';
-    }
-
-    if (!trimmed.city) {
-      errors.city = `City name ${errorMessage.empty}`;
-    } else {
-      errors.city = '';
-    }
-
-    if (!trimmed.zipCode) {
-      errors.zipCode = `Zip-code ${errorMessage.empty}`;
-    } else if (!trimmed.zipCode.match(regEx.zipCodeRegEx)) {
-      errors.zipCode = errorMessage.regExNotMatched.zipCode;
-    } else {
-      errors.zipCode = '';
-    }
-
-    if (
-      errors.name === '' &&
-      errors.email === '' &&
-      errors.mobile === '' &&
-      errors.streetName === '' &&
-      errors.city === '' &&
-      errors.zipCode === ''
-    ) {
-      handleSubmit(
-        trimmed.name,
-        trimmed.email,
-        trimmed.mobile,
-        trimmed.streetName,
-        trimmed.city,
-        trimmed.zipcode,
+    if (!errorState.length < 1) {
+      handlePost(
+        formState.name,
+        formState.email,
+        formState.mobile,
+        formState.streetName,
+        formState.city,
+        formState.zipCode,
       );
-      setMessageSent(errorMessage.success);
+      setIsMessageSent(true);
     }
-    setValidation(errors);
+    setErrorState(errors);
   };
 
   return (
@@ -152,16 +96,16 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
         <div className="wrapper-outer">
           <form id="signupForm">
             <div className="wrapper">
-              <div className="errorMsg">
-                {validation.name && <p>{validation.name}</p>}
-                {validation.email && <p>{validation.email}</p>}
-                {validation.mobile && <p>{validation.mobile}</p>}
-                {validation.streetName && <p>{validation.streetName}</p>}
-                {validation.city && <p>{validation.city}</p>}
-                {validation.zipCode && <p>{validation.zipCode}</p>}
-              </div>
+              {isMessageSent ? (
+                <p className="successMsg">Yor data submitted</p>
+              ) : (
+                <div className="errorMsg">
+                  {errorState.map((error) => (
+                    <p>{error.message}</p>
+                  ))}
+                </div>
+              )}
 
-              <p className="successMsg">{messageSent}</p>
               <div className="form-row">
                 <label htmlFor="name">
                   name <span className="requiredStar">*</span>
@@ -173,7 +117,6 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
                   value={formState.name}
                   placeholder="type your name"
                   onChange={(e) => handleChange(e)}
-                  minLength="5"
                   required
                 />
               </div>
@@ -258,11 +201,13 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
               <div className="form-row">
                 <button
                   className={
-                    isMessageValidate ? 'messageValidate' : 'notMessageValidate'
+                    isAllInputProvided
+                      ? 'allInputProvided'
+                      : 'notAllInputProvided'
                   }
                   type="button"
                   label={label}
-                  onClick={handleValidation}
+                  onClick={handleSubmit}
                 >
                   {text}
                 </button>
@@ -278,13 +223,13 @@ export const SignupForm = ({ text, label, handleSubmit }) => {
 SignupForm.propTypes = {
   text: PropTypes.string,
   label: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func,
+  handlePost: PropTypes.func,
 };
 
 SignupForm.defaultProps = {
   text: null,
-  handleSubmit: () => {
+  handlePost: () => {
     // eslint-disable-next-line
-    console.log('button clicked');
+    console.log('default props data ');
   },
 };

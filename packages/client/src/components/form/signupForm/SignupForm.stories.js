@@ -14,7 +14,7 @@ SignUpFormStandard.args = {
   text: 'SUBMIT',
   label: ' contact form',
 
-  handleSubmit: (name, email, message) =>
+  handlePost: (name, email, message) =>
     // eslint-disable-next-line no-console
-    console.log('i am clicked,', name, email, message),
+    console.log('props data summitted :', name, email, message),
 };

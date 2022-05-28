@@ -7,7 +7,7 @@
   background-color: #38332e;
   margin: 0 auto;
 }
-.messageValidate {
+.allInputProvided {
   background-color: rgb(0, 147, 0);
 }
 input:focus {
