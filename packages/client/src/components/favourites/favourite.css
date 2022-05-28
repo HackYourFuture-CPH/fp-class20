@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 .favourite-icon {
   height: 1.5rem;
-  width: 1.5rem;
+  margin: 0 0.3rem 0 0;
 }
 
 .favourite-container {
   align-items: center;
-  text-align: center;
   display: flex;
-  width: 40%;
+  padding: 0 0 0 3rem;
+  font-family: Montserrat, sans-serif;
+}
+span {
+  font-size: 1.3rem;
+  padding: 0.2rem;
 }

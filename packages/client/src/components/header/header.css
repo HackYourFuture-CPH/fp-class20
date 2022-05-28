@@ -1,39 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredericka the Great:wght@100&family=Work+Sans:wght@100&display=swap');
 
 .main-container {
-  background-color: black;
+  background-color: transparent;
   display: flex;
   flex-direction: row;
-  height: 3.75rem;
-  width: 80%;
-  justify-content: space-around;
-  font-weight: 400;
+  height: 3rem;
+  width: 60vw;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
 }
-.logo {
-  line-height: 0.5%;
+.top-nav-background {
+  background-color: black;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  height: 3rem;
 }
+
 .right-container {
   display: flex;
+  justify-content: flex-end;
+  line-height: 1.5rem;
   color: white;
   padding: 1%;
-  width: 30%;
+  width: auto;
   align-items: center;
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1225px) {
   .main-container {
     flex-direction: column;
-    height: auto;
+    height: 10rem;
+    width: 100vw;
+    align-items: flex-start;
+    background-color: tomato;
   }
-  .logo {
+}
+/* .logo {
     width: 100%;
     align-items: center;
     text-align: center;
-  }
-  .right-container {
+  } */
+/* .right-container {
     width: 100%;
     padding-bottom: 2rem;
-  }
-}
+  } */

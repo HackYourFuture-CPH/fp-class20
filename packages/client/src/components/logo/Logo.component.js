@@ -3,10 +3,6 @@ import React from 'react';
 import './logo.css';
 
 const Logo = () => {
-  return (
-    <div>
-      <h2> Simply Spices</h2>
-    </div>
-  );
+  return <h2> Simply Spices</h2>;
 };
 export default Logo;
