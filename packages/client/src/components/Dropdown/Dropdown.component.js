@@ -3,24 +3,18 @@ import './Dropdown.styles.css';
 
 function Dropdown() {
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
-  const dropDownList = dropDownExpanded ? 'display' : 'noDisplay';
-  const triangle = dropDownExpanded ? 'arrow-up' : 'arrow-down';
-  const display = () => {
+  const displayMode = dropDownExpanded ? 'display' : 'noDisplay';
+  const toggleIcon = dropDownExpanded ? 'arrow-up' : 'arrow-down';
+  const toggle = () => {
     setDropDownExpanded(!dropDownExpanded);
   };
   return (
     <div>
       <div className="button-for-spices">
         <span className="spices-button">SPICES</span>
-        <span
-          className={triangle}
-          onClick={() => {
-            display();
-          }}
-          aria-hidden="true"
-        />
+        <span className={toggleIcon} onClick={toggle} aria-hidden="true" />
       </div>
-      <div className={dropDownList}>
+      <div className={displayMode}>
         <span className="main-heading">Browser spices by plant part</span>
         <div className="items-contanier">
           <div className="left-container">
