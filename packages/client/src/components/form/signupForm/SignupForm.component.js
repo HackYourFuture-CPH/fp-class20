@@ -75,8 +75,9 @@ export const SignupForm = ({ text, label, handlePost }) => {
       }
       return error;
     });
+    setErrorState(errors);
 
-    if (!errorState.length < 1) {
+    if (errorState.filter((err) => err.message !== '').length === 0) {
       handlePost(
         formState.name,
         formState.email,
@@ -87,7 +88,6 @@ export const SignupForm = ({ text, label, handlePost }) => {
       );
       setIsMessageSent(true);
     }
-    setErrorState(errors);
   };
 
   return (
