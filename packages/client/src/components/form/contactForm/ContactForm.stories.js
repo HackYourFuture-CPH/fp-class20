@@ -12,7 +12,7 @@ const Template = (args) => <ContactForm {...args} />;
 export const ContactFormStandard = Template.bind({});
 ContactFormStandard.args = {
   text: 'SUBMIT',
-  label: ' contact form',
+  label: ' Contact Form',
 
   handlePost: (name, email, message) =>
     // eslint-disable-next-line no-console

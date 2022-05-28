@@ -4,7 +4,7 @@ import './ContactForm.styles.css';
 
 import contactPageSwirlDecoration from '../../../../public/assets/Vector192.png';
 
-const regEx = {
+const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
   email:
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -18,7 +18,7 @@ const errorMessage = {
 };
 
 export const ContactForm = ({ text, label, handlePost }) => {
-  const [formState, SetFormState] = useState({
+  const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: '',
@@ -30,7 +30,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    SetFormState({ ...formState, [name]: value.trim() });
+    setFormState({ ...formState, [name]: value.trim() });
   };
 
   useEffect(() => {
@@ -51,8 +51,10 @@ export const ContactForm = ({ text, label, handlePost }) => {
       };
       if (!formState[key]) {
         error.message = `${[key]} ${errorMessage.required}`;
-      } else if (Object.prototype.hasOwnProperty.call(regEx, `${key}`)) {
-        if (!formState[key].match(regEx[key])) {
+      } else if (
+        Object.prototype.hasOwnProperty.call(validationPatterns, `${key}`)
+      ) {
+        if (!formState[key].match(validationPatterns[key])) {
           error.message = errorMessage[key];
         }
       }
@@ -63,7 +65,6 @@ export const ContactForm = ({ text, label, handlePost }) => {
       handlePost(formState.name, formState.email, formState.message);
       setIsMessageSent(true);
     }
-
     setErrorState(errors);
   };
 
@@ -103,7 +104,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   name="name"
                   value={formState.name}
                   placeholder="type your name"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -119,7 +120,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   name="email"
                   value={formState.email}
                   placeholder="type your email"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -134,7 +135,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   name="message"
                   value={formState.message}
                   placeholder="type your message"
-                  onChange={(e) => handleChange(e)}
+                  onChange={handleChange}
                   maxLength="200"
                   required
                 />
