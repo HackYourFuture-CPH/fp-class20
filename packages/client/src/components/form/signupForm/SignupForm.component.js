@@ -77,7 +77,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
     });
     setErrorState(errors);
 
-    if (errorState.filter((err) => err.message !== '').length === 0) {
+    if (errors.filter((err) => err.message !== '').length === 0) {
       handlePost(
         formState.name,
         formState.email,
