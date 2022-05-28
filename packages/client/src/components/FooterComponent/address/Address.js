@@ -1,6 +1,6 @@
 import React from 'react';
 import './Address.styles.css';
-import map from '../../../../public/assets/mapLogo.png';
+import map from '../../../../public/assets/vectors/vector_location.svg';
 
 export const Address = () => {
   return (
