@@ -89,6 +89,14 @@ export const SignupForm = ({ text, label, handlePost }) => {
         formState.zipCode,
       );
       setIsMessageSent(true);
+      setFormState({
+        name: '',
+        email: '',
+        mobile: '',
+        streetName: '',
+        city: '',
+        zipCode: '',
+      });
     }
   };
 
@@ -143,7 +151,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                   mobile <span className="requiredStar">*</span>
                 </label>
                 <input
-                  type="text"
+                  type="tel"
                   id="mobile"
                   name="mobile"
                   value={formState.mobile}
@@ -207,7 +215,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                       ? 'allInputProvided'
                       : 'notAllInputProvided'
                   }
-                  type="button"
+                  type="submit"
                   label={label}
                   onClick={handleSubmit}
                 >
