@@ -5,10 +5,10 @@
   width: 60%;
   margin: 0 auto;
 }
-.FooterComponent_info {
+.Footer_info {
   display: flex;
 }
-.copyRight {
+.copyright {
   margin-left: 80%;
   padding-bottom: 0.1rem;
 }
@@ -16,7 +16,7 @@
   .footer_container {
     width: 100%;
   }
-  .FooterComponent_info {
+  .Footer_info {
     width: 100%;
   }
 }
@@ -24,11 +24,11 @@
   .footer_container {
     width: 100%;
   }
-  .FooterComponent_info {
+  .Footer_info {
     display: flex;
     flex-direction: column;
   }
-  .copyRight {
+  .copyright {
     margin-left: 50%;
   }
 }
