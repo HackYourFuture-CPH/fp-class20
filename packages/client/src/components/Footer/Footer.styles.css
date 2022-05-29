@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
-.footer_container {
+.footer-container {
   background-color: black;
   color: white;
   width: 60%;
   margin: 0 auto;
 }
-.Footer_info {
+.footer-info {
   display: flex;
 }
 .copyright {
@@ -13,18 +13,18 @@
   padding-bottom: 0.1rem;
 }
 @media screen and (max-width: 960px) {
-  .footer_container {
+  .footer-container {
     width: 100%;
   }
-  .Footer_info {
+  .footer-info {
     width: 100%;
   }
 }
 @media screen and (max-width: 560px) {
-  .footer_container {
+  .footer-container {
     width: 100%;
   }
-  .Footer_info {
+  .footer-info {
     display: flex;
     flex-direction: column;
   }

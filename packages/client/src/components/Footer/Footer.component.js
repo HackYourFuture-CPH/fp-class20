@@ -7,8 +7,8 @@ import { Address } from './Address/Address.component';
 
 export const Footer = () => {
   return (
-    <div className="footer_container">
-      <div className="Footer_info">
+    <div className="footer-container">
+      <div className="footer-info">
         <Corporate />
         <Contact />
         <Map />
