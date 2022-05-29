@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
+.feedback-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feedback-message-section {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+  width: 60%;
+  height: 60%;
+
+  background: rgba(35, 28, 22, 0.9);
+  text-align: center;
+}
+.simple-spices-heading {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 3rem;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 1.4rem;
+  margin-bottom: 0.1rem;
+}
+
+.main-slogan-vector-style {
+  width: 50%;
+}
+.feedback-message {
+  font-family: 'Montserrat';
+  font-style: normal;
+  width: 55%;
+
+  font-size: 1rem;
+  line-height: 1.2rem;
+  margin: auto;
+
+  color: #ffffff;
+}
+.thank-you {
+  font-size: 1.5rem;
+}
