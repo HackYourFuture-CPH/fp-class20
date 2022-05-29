@@ -3,7 +3,7 @@ import React from 'react';
 import { SignupForm } from './SignupForm.component';
 
 export default {
-  label: 'Sign Up/Edit Form',
+  title: 'components/Sign Up/Edit Form',
   component: SignupForm,
 };
 
