@@ -55,6 +55,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormState({ ...formState, [name]: value.trim() });
+    setIsMessageSent(false);
   };
 
   const handleSubmit = (e) => {
@@ -215,7 +216,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                       ? 'allInputProvided'
                       : 'notAllInputProvided'
                   }
-                  type="submit"
+                  type="button"
                   label={label}
                   onClick={handleSubmit}
                 >
