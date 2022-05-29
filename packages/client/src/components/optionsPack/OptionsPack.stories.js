@@ -7,18 +7,15 @@ export default {
 };
 
 const Template = (args) => {
-  const [select, setSelect] = useState('');
+  const [selectPackage, setSelectPackage] = useState('');
 
   const options = [
     {
       id: 1,
-      weight: '250g glass jar',
-      price: 'DKK 350',
-    },
-    {
-      id: 2,
-      weight: '100g flat pack',
-      price: 'DKK 100',
+      weightOne: '250',
+      priceOne: '350',
+      weightTwo: '100',
+      priceTwo: '100',
     },
   ];
 
@@ -26,8 +23,8 @@ const Template = (args) => {
     <OptionsPack
       {...args}
       options={options}
-      select={select}
-      setSelect={setSelect}
+      selectPackage={selectPackage}
+      setSelectPackage={setSelectPackage}
     />
   );
 };
@@ -35,6 +32,4 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   variant: 'primary',
-  width: 79,
-  height: 37,
 };
