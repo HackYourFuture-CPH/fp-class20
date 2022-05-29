@@ -152,7 +152,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   className={
                     isAllInputFilledOut ? 'readyButton' : 'normalButton'
                   }
-                  type="submit"
+                  type="button"
                   label={label}
                   onClick={handleSubmit}
                 >
