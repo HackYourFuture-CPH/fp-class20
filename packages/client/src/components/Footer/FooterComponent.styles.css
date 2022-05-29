@@ -10,10 +10,12 @@
 }
 .copy_right_text {
   margin-left: 80%;
-  padding-bottom: .1rem;
+  padding-bottom: 0.1rem;
+  font-family: Montserrat;
+  font-size: 0.8rem;
 }
 @media screen and (max-width: 960px) {
-   .footer_container{
+  .footer_container {
     width: 100%;
   }
   .FooterComponent_info {
@@ -21,14 +23,14 @@
   }
 }
 @media screen and (max-width: 560px) {
-  .footer_container{
+  .footer_container {
     width: 100%;
   }
   .FooterComponent_info {
     display: flex;
     flex-direction: column;
   }
-  .copy_right_text{
- margin-left: 50%;
+  .copy_right_text {
+    margin-left: 50%;
   }
 }
