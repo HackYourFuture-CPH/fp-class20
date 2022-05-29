@@ -1,5 +1,5 @@
 import { React } from 'react';
-import './Counter.css';
+import './Counter.styles.css';
 import PropTypes from 'prop-types';
 
 // count and setCound are props from the container component; the parent component

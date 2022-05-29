@@ -3,7 +3,7 @@ import React from 'react';
 import { ContactUsFeedback } from './ContactUsFeedback.component';
 
 export default {
-  title: 'contact-us-sent-feedback/ConatactUsFeedback',
+  title: 'components/ContactUsFeedback',
   component: ContactUsFeedback.component,
 };
 

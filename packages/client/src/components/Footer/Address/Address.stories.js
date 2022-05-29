@@ -1,8 +1,8 @@
 import React from 'react';
-import { Address } from './Address';
+import { Address } from './Address.component';
 
 export default {
-  title: 'FooterComponent/FooterComponent',
+  title: 'components/Footer',
   component: Address,
 };
 export const AddressInfo = () => <Address />;

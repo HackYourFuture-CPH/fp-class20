@@ -2,7 +2,7 @@ import React from 'react';
 
 import './AboutUs.styles.css';
 
-import logoStyle from '../../../public/assets/logoStyle.svg';
+import logoStyle from '../../../public/assets/vectors/vector_logo_underline.svg';
 
 export const AboutUs = () => {
   return (

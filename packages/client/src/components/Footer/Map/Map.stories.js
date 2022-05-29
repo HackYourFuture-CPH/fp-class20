@@ -1,8 +1,8 @@
 import React from 'react';
-import { Map } from './Map';
+import { Map } from './Map.component';
 
 export default {
-  title: 'FooterComponent/FooterComponent',
+  title: 'components/Footer',
   component: Map,
 };
 export const MapInfo = () => <Map />;

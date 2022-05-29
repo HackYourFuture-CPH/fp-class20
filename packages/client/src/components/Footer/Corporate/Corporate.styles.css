@@ -1,32 +1,33 @@
-.corporate_info {
+.corporate-info {
   background-color: rgba(35, 28, 22, 0.6);
   width: 20%;
   padding-left: 1rem;
   padding-bottom: 1rem;
-  margin-right:1rem;
+  margin-right: 1rem;
 }
-.corporate_info .text_big {
+.corporate-info .text_big {
   display: block;
   padding-top: 1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: Montserrat;
   font-style: SemiBold;
   line-height: 3rem;
   font-weight: 600;
   color: white;
 }
-.corporate_info .text_small {
+.corporate-info .text-small {
   display: block;
   font-family: Montserrat;
-  font-size: 16sp;
+  font-size: 0.8rem;
   line-height: 1.5rem;
   font-weight: 400;
   color: white;
-  letter-spacing: .01rem;
+  letter-spacing: 0.01rem;
 }
 @media screen and (max-width: 560px) {
-  .corporate_info {
-    width: 90%;
-    text-align: center;
+  .corporate-info {
+    width: 40%;
+    text-align: start;
+    margin: 0 auto;
   }
 }

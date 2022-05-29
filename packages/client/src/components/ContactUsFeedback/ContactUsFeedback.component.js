@@ -2,7 +2,7 @@ import React from 'react';
 
 import './ContactUsFeedback.styles.css';
 
-import logoStyle from '../../../public/assets/logoStyle.svg';
+import logoStyle from '../../../public/assets/vectors/vector_logo_underline.svg';
 
 export const ContactUsFeedback = () => {
   return (
