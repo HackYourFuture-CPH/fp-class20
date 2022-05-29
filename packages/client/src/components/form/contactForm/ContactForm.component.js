@@ -31,6 +31,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormState({ ...formState, [name]: value.trim() });
+    setIsMessageSent(false);
   };
 
   useEffect(() => {
@@ -64,6 +65,11 @@ export const ContactForm = ({ text, label, handlePost }) => {
     if (errors.filter((err) => err.message !== '').length === 0) {
       handlePost(formState.name, formState.email, formState.message);
       setIsMessageSent(true);
+      setFormState({
+        name: '',
+        email: '',
+        message: '',
+      });
     }
     setErrorState(errors);
   };
@@ -146,7 +152,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   className={
                     isAllInputFilledOut ? 'readyButton' : 'normalButton'
                   }
-                  type="button"
+                  type="submit"
                   label={label}
                   onClick={handleSubmit}
                 >
