@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Counter from './Counter.component';
 
 export default {
-  title: 'Counter/Counter',
+  title: 'components/Counter',
   component: Counter,
 };
 const Template = (args) => {

@@ -3,7 +3,7 @@ import React from 'react';
 import { AboutUs } from './AboutUs.component';
 
 export default {
-  title: 'AboutUs/Aboutus',
+  title: 'components/About Us',
   component: AboutUs.component,
 };
 
