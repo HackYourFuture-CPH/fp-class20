@@ -108,7 +108,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
           <form id="signupForm">
             <div className="wrapper">
               {isMessageSent ? (
-                <p className="successMsg">Yor data submitted</p>
+                <p className="successMsg">Your data submitted</p>
               ) : (
                 <div className="errorMsg">
                   {errorState.map((error) => (
