@@ -1,8 +1,8 @@
 import React from 'react';
-import { Contact } from './Contact';
+import { Contact } from './Contact.component';
 
 export default {
-  title: 'FooterComponent/FooterComponent',
+  title: 'components/Footer',
   component: Contact,
 };
 export const ContactInfo = () => <Contact />;
