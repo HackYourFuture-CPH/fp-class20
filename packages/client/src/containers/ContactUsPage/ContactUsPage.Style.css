@@ -1,0 +1,9 @@
+.ContactUsPageContainer {
+  background-color: #3b3733;
+  padding: 1rem 0;
+  background-size: contain;
+  background-position: top;
+  background: cover;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
