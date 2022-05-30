@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.styles.css';
 
-import contactPageSwirlDecoration from '../../../../public/assets/Vector192.png';
+import contactPageSwirlDecoration from '../../../../public/assets/vectors/vector_logo_underline.svg';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
