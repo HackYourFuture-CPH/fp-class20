@@ -46,7 +46,24 @@ router.get('/', (req, res, next) => {
  *         type: string
  *         required: true
  *         description: The spice category name.
- *
+ *     - in: query
+ *       name: name
+ *       schema:
+ *         type: string
+ *         required: true
+ *         description: This will return all products in alphabetical order.
+ *     - in: query
+ *       name: newest
+ *       schema:
+ *         type: string
+ *         required: true
+ *         description: This will return all products recently created.
+ *     - in: query
+ *       name: lowestPrice
+ *       schema:
+ *         type: string
+ *         required: true
+ *         description: This will return all products with the lowest price.
  *    responses:
  *      200:
  *        description: Successful request
@@ -56,7 +73,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/:category', (req, res, next) => {
   getProductByCategory
-    .getProductByCategory(req.params.category)
+    .getProductByCategory(req.params.category, req.query)
     .then((result) => res.json(result))
     .catch(next);
 });
