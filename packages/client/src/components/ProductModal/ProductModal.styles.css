@@ -1,0 +1,38 @@
+body {
+  font-family: 'Montserrat';
+  font-style: normal;
+}
+.outer-container {
+  background-color: #867572;
+  padding: 0.5rem 1.5rem;
+}
+.main-container {
+  background-color: #231c16;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+  padding: 1rem 3rem 2rem;
+}
+.total-item {
+  color: red;
+}
+.total-info {
+  line-height: 0;
+  margin: 1rem 0 0;
+}
+.close-modal {
+  display: flex;
+  font-size: 2rem;
+  display: flex;
+  align-items: 0;
+  justify-content: flex-end;
+}
+.buttons {
+  margin-top: 1.5rem;
+}
