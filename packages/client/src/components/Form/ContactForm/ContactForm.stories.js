@@ -3,6 +3,7 @@ import React from 'react';
 import { ContactForm } from './ContactForm.component';
 
 export default {
+  title: 'component/contact us',
   label: 'Contact Us',
   component: ContactForm,
 };
