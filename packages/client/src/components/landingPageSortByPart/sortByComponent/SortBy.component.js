@@ -24,16 +24,20 @@ const SortBy = () => {
           <option value="2" disabled>
             {' '}
           </option>
+
+          <option value="A-Z">A - Z</option>
           <option value="3" disabled>
             {' '}
           </option>
-          <option value="A-Z">A - Z</option>
           <option value="Lowest price">Lowest price</option>
-          <option value="New arrivals">New arrivals</option>
           <option value="4" disabled>
             {' '}
           </option>
+          <option value="New arrivals">New arrivals</option>
           <option value="5" disabled>
+            {' '}
+          </option>
+          <option value="6" disabled>
             {' '}
           </option>
         </select>
