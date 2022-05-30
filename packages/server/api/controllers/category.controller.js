@@ -8,6 +8,7 @@ const getCategory = async () => {
 const getProductByCategory = async (category) => {
   const capitalizeCategory =
     category[0].toUpperCase() + category.slice(1).toLowerCase();
+
   const productByCategory = await knex('Categories')
     .join('Products', 'Categories.id', 'Products.categoryId')
     .where('Categories.name', 'like', `${capitalizeCategory}%`);
@@ -15,6 +16,7 @@ const getProductByCategory = async (category) => {
   if (productByCategory.length === 0) {
     throw new HttpError('No product under this category', 404);
   }
+
   return productByCategory;
 };
 

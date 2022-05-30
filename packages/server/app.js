@@ -16,16 +16,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(`/api/`, router);
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   if (err instanceof HttpError) {
     res.status(err.httpStatus);
-    if (err.body) {
-      return res.json(err.body);
-    }
+
     return res.send({ error: err.message });
   }
-
-  res.status(500).send({ error: err });
+  res.status(500).send({ error: "There's server issue going on right now." });
+  next();
 });
 
 module.exports = app;
