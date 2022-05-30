@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Navigation } from './components/layout/navigation/Navigation.Components.Layout';
+import { Navigation } from './components/Layout/Navigation/Navigation.Components.Layout';
 
 import { AboutUsPage } from './pages/AboutUsPage/AboutUsPage.Container';
 import { CategoryPage } from './pages/CategoryPage/CategoryPage.Container';
@@ -10,7 +10,7 @@ import { LandingPage } from './pages/LandingPage/LandingPage.Container';
 import { PageNotFound } from './pages/PageNotFound/PageNotFound.Container';
 import { ProductPage } from './pages/ProductPage/ProductPage.Container';
 
-import { Footer } from './components/layout/footer/Footer.Components.Layout';
+import { Footer } from './components/Layout/Footer/Footer.Components.Layout';
 
 function App() {
   return (
