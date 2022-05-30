@@ -1,8 +1,8 @@
 import React from 'react';
-import { SortBy } from './SortBy';
+import SortBy from './SortBy.component';
 
 export default {
-  title: 'LandingSortByComponent/LandingSortByComponent',
+  title: 'LandingSortByComponent/sortby',
   component: SortBy,
 };
 export const SortByab = () => <SortBy />;

@@ -1,8 +1,8 @@
 import React from 'react';
-import './LandingSortByComponent.styles.css';
-import { SortBy } from './sortByComponent/SortBy';
+import './LandingSortBy.styles.css';
+import SortBy from './SortByComponent/SortBy.component';
 
-export const LandingSortByComponent = () => {
+export const LandingSortBy = () => {
   return (
     <div className="LandingSortByComponent_info">
       <span className="text_samll">Simply Spices / All Spices</span>
