@@ -37,7 +37,6 @@ const SortBy = () => {
             {' '}
           </option>
         </select>
-        <span className="arrow" />
       </div>
     </div>
   );
