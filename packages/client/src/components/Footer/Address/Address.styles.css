@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+.address-info {
+  width: 38%;
+  background-color: rgba(35, 28, 22, 0.6);
+  line-height: 1.5rem;
+  padding-top: 2rem;
+  align-items: center;
+  padding-left: 1.5rem;
+  color: white;
+}
+.adress-text-logo {
+  display: flex;
+  align-items: center;
+}
+.map-in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.simply-spices {
+  margin-top: -0.5rem;
+  font-family: Fredericka the Great;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.08em;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.small-map-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.adress {
+  font-family: Montserrat;
+  font-size: 0.8rem;
+  font-style: Medium;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 560px) {
+  .address-info {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .map-in {
+    width: 100%;
+  }
+}
