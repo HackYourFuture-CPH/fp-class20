@@ -3,7 +3,7 @@ import React from 'react';
 import Cart from './Cart.component';
 
 export default {
-  title: 'components/cart',
+  title: 'components/Navigation',
   component: Cart,
 };
 
