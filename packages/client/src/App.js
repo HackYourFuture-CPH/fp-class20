@@ -1,22 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Navigation } from './components/Layout/Navigation/Navigation.Components.Layout';
-
-import { AboutUsPage } from './pages/AboutUsPage/AboutUsPage.Container';
-import { CategoryPage } from './pages/CategoryPage/CategoryPage.Container';
-import { ContactUsPage } from './pages/ContactUsPage/ContactUsPage.Container';
-import { LandingPage } from './pages/LandingPage/LandingPage.Container';
-import { PageNotFound } from './pages/PageNotFound/PageNotFound.Container';
-import { ProductPage } from './pages/ProductPage/ProductPage.Container';
-
-import { Footer } from './components/Layout/Footer/Footer.Components.Layout';
+import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
+import { CategoryPage } from './containers/CategoryPage/CategoryPage.Container';
+import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
+import { LandingPage } from './containers/LandingPage/LandingPage.Container';
+import { PageNotFound } from './containers/PageNotFound/PageNotFound.Container';
+import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Navigation />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
@@ -26,7 +21,6 @@ function App() {
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>
-      <Footer />
     </div>
   );
 }
