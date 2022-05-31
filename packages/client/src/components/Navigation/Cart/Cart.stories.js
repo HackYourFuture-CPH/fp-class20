@@ -12,7 +12,4 @@ const Template = (args) => <Cart {...args} />;
 export const AddToCart = Template.bind({});
 AddToCart.args = {
   label: 'Cart',
-  onClick: () =>
-    // eslint-disable-next-line no-console
-    console.log('i am clicked,'),
 };

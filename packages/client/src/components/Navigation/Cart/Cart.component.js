@@ -6,7 +6,7 @@ import './Cart.styles.css';
 
 import CartIcon from '../../../../public/assets/vectors/vector_cart.svg';
 
-const Cart = ({ label, onClick }) => {
+const Cart = ({ label }) => {
   return (
     <div className="cart-container">
       <img className="cart-icon" src={CartIcon} alt="cart-icon" />
@@ -20,11 +20,4 @@ export default Cart;
 
 Cart.propTypes = {
   label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-};
-
-Cart.defaultProps = {
-  onClick: () => {
-    // eslint-disable-next-line
-  },
 };
