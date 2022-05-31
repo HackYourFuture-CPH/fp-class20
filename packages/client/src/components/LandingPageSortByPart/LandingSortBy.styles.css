@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
-.LandingSortByComponent_info {
+.landing-sort-by-component-info {
   background-color: rgba(35, 28, 22, 0.9);
   width: 60%;
   color: white;
@@ -15,7 +15,7 @@
   place-items: end;
 }
 
-.text_samll {
+.text-samll {
   font-family: Montserrat;
   font-size: 1.5rem;
   font-weight: 400;
@@ -24,7 +24,7 @@
   text-align: center;
   display: block;
 }
-.text_big {
+.text-big {
   font-family: Montserrat;
   font-size: 3.5rem;
   font-weight: 400;
@@ -34,14 +34,14 @@
   display: block;
 }
 @media screen and (max-width:400px) {
-.LandingSortByComponent_info{
+.landing-sort-by-component-info{
   width: 100%;
 }
 
-.text_big{
+.text-big{
   font-size: 2.5rem;
 }
-.text_samll {
+.text-samll {
     font-size: 1.5rem;
 }
 }

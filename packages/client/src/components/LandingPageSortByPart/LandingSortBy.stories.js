@@ -5,4 +5,4 @@ export default {
   title: 'LandingSortByComponent/LandingSortByComponent',
   component: LandingSortBy,
 };
-export const LandingSortByA = () => <LandingSortBy />;
+export const LandingSortby = () => <LandingSortBy />;
