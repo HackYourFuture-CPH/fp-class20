@@ -20,8 +20,10 @@ const SortBy = () => {
                 }
           }
         >
-          <option value="sort-by">SORT BY :</option>
-          <option value="A-Z">A - Z</option>
+          <option value="sort-by" disabled>
+            SORT BY :
+          </option>
+          <option value="alphabetically">A - Z</option>
           <option value="Lowest price">Lowest price</option>
           <option value="New arrivals">New arrivals</option>
         </select>
