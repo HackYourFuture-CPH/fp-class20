@@ -21,22 +21,13 @@ export default function Carousel({ products, show }) {
     }
   };
 
-  // eslint-disable-next-line no-return-assign
   return (
     <div className="carousel-container">
       {currentIndex >= 0 && (
         <ArrowLeftIcon className="left-arrow" onClick={prev} />
       )}
       <div className="carousel-inner">
-        <div
-          className={`show-${show} carousel`}
-          style={
-            {
-              // transform: `translateX(-${currentIndex * (100 / show)}%)`,
-              // transform: `translateX(-${currentIndex * 33}%)`,
-            }
-          }
-        >
+        <div className={`show-${show} carousel`}>
           {products
             .slice(currentIndex, currentIndex + show)
             // eslint-disable-next-line no-return-assign
