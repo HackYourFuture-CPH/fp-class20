@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: row;
   width: 60%;
-  background-color: rgba(35, 28, 22, 0.9);
+  background-color: rgb(35 28 22 / 90%);
   padding: 0.7rem;
   justify-content: space-evenly;
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
@@ -15,8 +15,8 @@
   align-items: center;
   margin: 0 auto;
 }
+
 .input-container {
-  background-color: rgba(35, 28, 22, 0.9);
   border: none;
   background-color: transparent;
   resize: none;
@@ -24,8 +24,9 @@
   width: 100%;
   color: white;
 }
-.input-container::-webkit-input-placeholder {
-  font-family: Montserrat;
+
+.input-container::placeholder {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   text-align: left;
@@ -45,9 +46,11 @@
     margin: 0 auto;
     font-size: 0.7rem;
   }
+
   .main-container > div {
     padding: 0.75rem;
   }
+
   .input-container {
     font-size: 0.7rem;
     width: 100%;

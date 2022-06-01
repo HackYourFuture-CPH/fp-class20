@@ -3,7 +3,7 @@ import './CategoryPage.Style.css';
 
 export const CategoryPage = () => {
   return (
-    <div className="CategoryPageContainer">
+    <div className="category-page-container">
       <span>Category Page</span>
     </div>
   );

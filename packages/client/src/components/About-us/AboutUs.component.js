@@ -6,7 +6,7 @@ import logoStyle from '../../../public/assets/vectors/vector_logo_underline.svg'
 
 export const AboutUs = () => {
   return (
-    <div className="aboutus-section">
+    <div className="about-us-section">
       <div>
         <h1 className="simple-spices-heading">Simply Spices</h1>
         <img
@@ -15,16 +15,16 @@ export const AboutUs = () => {
           className="main-slogan-vector-style"
         />
       </div>
-      <div className="aboutus-description">
-        <h3 className="aboutheading">About us</h3>
+      <div className="about-us-description">
+        <h3 className="about-heading">About us</h3>
         <div className="description">
           <p>
-            Founded in 1990, the companty offers finest spices and herbs for
+            Founded in 1990, the company offers finest spices and herbs for
             superstar chefs everywhere.
           </p>{' '}
           <p>
             We are proud of our global network of farmers and distributors who
-            keep delivering unparallelled quality.
+            keep delivering unparalleled quality.
           </p>{' '}
           <p>
             We are committed to sustaining our core values: quality,

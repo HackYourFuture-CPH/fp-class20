@@ -5,7 +5,7 @@ import './SpiceMenu.styles.css';
 
 function SpiceMenu() {
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
-  const displayMode = dropDownExpanded ? 'display' : 'noDisplay';
+  const displayMode = dropDownExpanded ? 'display' : 'no-display';
   const toggleIcon = () => {
     setDropDownExpanded(!dropDownExpanded);
   };
@@ -27,7 +27,7 @@ function SpiceMenu() {
       <div className={displayMode}>
         <span className="main-heading">Browser spices by plant part</span>
 
-        <div className="items-contanier">
+        <div className="items-container">
           <div className="left-container">
             <div className="block-height">
               <span className="spice-names">BUD/FLOWER</span>

@@ -3,7 +3,7 @@ import './ProductPage.Style.css';
 
 export const ProductPage = () => {
   return (
-    <div className="ProductPageContainer">
+    <div className="product-page-container">
       <span>Product Page </span>
     </div>
   );
