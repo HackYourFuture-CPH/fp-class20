@@ -4,7 +4,7 @@ import './PageNotFound.Style.css';
 
 export function PageNotFound() {
   return (
-    <div className="PageNotFoundContainer">
+    <div className="page-not-found-container">
       <p>sorry !</p>
       <p>This page can not be found !! </p>
       <NavLink to="/"> go back to home page ... </NavLink>
