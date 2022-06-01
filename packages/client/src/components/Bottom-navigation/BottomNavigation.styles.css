@@ -17,7 +17,6 @@
 }
 
 .input-container {
-  background-color: rgb(35 28 22 / 90%);
   border: none;
   background-color: transparent;
   resize: none;
@@ -26,8 +25,8 @@
   color: white;
 }
 
-.input-container::input-placeholder {
-  font-family: Montserrat;
+.input-container::placeholder {
+  font-family: Montserrat,Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   text-align: left;
