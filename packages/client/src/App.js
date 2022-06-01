@@ -10,7 +10,7 @@ import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
