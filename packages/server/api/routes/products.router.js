@@ -10,14 +10,14 @@ const productsController = require('../controllers/products.controller');
 /**
  * @swagger
  * /Products:
- *  get: All products
+ *    get: All products
  *    tags:
  *    - Products
  *    summary: Get all Products
  *    description:
  *      Will return all Products with a 10 page limit pagination.
  *    produces: application/json
- * parameters:
+ *    parameters:
  *     - in: page
  *       name: query
  *       schema:
