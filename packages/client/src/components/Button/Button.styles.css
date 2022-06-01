@@ -10,7 +10,7 @@
   border: 1px solid #fff;
 }
 
-.storybook-button--submit {
+.storybook-button-submit {
   width: 21.563rem;
   height: 4.125rem;
   background: #53742a;
@@ -22,18 +22,13 @@
   font-size: 1.875rem;
 }
 
-.storybook-button--small {
-  font-size: 0.75rem;
-  padding: 0.625rem 1rem;
-}
-
 .add-to-cart-svg {
   width: 1.25rem;
   height: 25rem;
   padding-left: 0.625rem;
 }
 
-.storybook-button--submitSecondary {
+.storybook-button-submit-secondary {
   width: 21.563rem;
   height: 4.125rem;
   background: #231c16;
@@ -45,7 +40,7 @@
   font-size: 1.875rem;
 }
 
-.storybook-button--shop {
+.storybook-button-shop {
   width: 21.563rem;
   height: 4.125rem;
   background: #231c16;
@@ -55,7 +50,7 @@
   font-size: 1.875rem;
 }
 
-.storybook-button--editDetails {
+.storybook-button-edit-details {
   width: 12.058rem;
   height: 2.313rem;
   background-color: #2c251e;
@@ -66,7 +61,7 @@
   font-size: 0.938rem;
 }
 
-.storybook-button--continueShopping {
+.storybook-button-continue-shopping {
   width: 13.313rem;
   height: 2.313rem;
   background: rgb(35 28 22 / 90%);
@@ -77,7 +72,7 @@
   text-align: center;
 }
 
-.storybook-button--continueShoppingSecondary {
+.storybook-button-continue-shopping-secondary {
   width: 12.058rem;
   height: 2.313rem;
   background: rgb(35 28 22 / 90%);
@@ -90,7 +85,7 @@
   padding: 0;
 }
 
-.storybook-button--reviewOrderDetails {
+.storybook-button-review-order-details {
   width: 12.058;
   height: 2.313rem;
   background: rgb(35 28 22 / 90%);
@@ -102,7 +97,7 @@
   text-align: center;
 }
 
-.storybook-button--checkout {
+.storybook-button-checkout {
   width: 13.313rem;
   height: 37px;
   background: #53742a;
@@ -114,7 +109,7 @@
   text-align: center;
 }
 
-.storybook-button--reviewOrder {
+.storybook-button-review-order {
   width: 13.313rem;
   height: 2.313rem;
   background: #53742a;
@@ -126,7 +121,7 @@
   text-align: center;
 }
 
-.storybook-button--addToCart {
+.storybook-button-add-to-cart {
   width: 13.313rem;
   height: 2.313rem;
   background: #53742a;
@@ -140,28 +135,28 @@
   padding-left: 25px;
 }
 
-.storybook-button--primary {
+.storybook-button-primary {
   color: #fff;
   background-color: #53742a;
 }
 
-.storybook-button--secondary {
+.storybook-button-secondary {
   color: #fff;
   background-color: rgb(35 28 22 / 90%);
   box-shadow: rgb(0 0 0 / 15%) 0 0 0 1px inset;
 }
 
-.storybook-button--small {
+.storybook-button-small {
   font-size: 0.75rem;
   padding: 0.625rem 1rem;
 }
 
-.storybook-button--medium {
+.storybook-button-medium {
   font-size: 0.875rem;
   padding: 0.688rem 1.25rem;
 }
 
-.storybook-button--large {
+.storybook-button-large {
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
 }

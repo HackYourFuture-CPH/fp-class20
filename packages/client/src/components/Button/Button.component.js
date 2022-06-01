@@ -19,20 +19,20 @@ export const Button = ({
   // eslint-disable-next-line no-param-reassign
   // eslint-disable-next-line no-param-reassign
   // eslint-disable-next-line no-unused-expressions
-  type === ('addToCart' && 'storybook-button--addToCart') ||
-    ('submit' && 'storybook-button--submit') ||
-    ('submitSecondary' && 'storybook-button--submitSecondary') ||
-    ('shop' && 'storybook-button--shop') ||
-    ('editDetails' && 'storybook-button--editDetails') ||
-    ('continueShopping' && 'storybook-button--continueShopping') ||
-    ('continueShopping' && 'storybook-button--continueShoppingSecondary') ||
-    ('reviewOrderDetails' && 'storybook-button--reviewOrderDetails') ||
-    ('checkout' && 'storybook-button--checkout') ||
-    'storybook-button--reviewOrder';
+  type === ('addToCart' && 'storybook-button-add-to-cart') ||
+    ('submit' && 'storybook-button-submit') ||
+    ('submitSecondary' && 'storybook-button-submit-secondary') ||
+    ('shop' && 'storybook-button-shop') ||
+    ('editDetails' && 'storybook-button-edit-details') ||
+    ('continueShopping' && 'storybook-button-continue-shopping') ||
+    ('continueShopping' && 'storybook-button-continue-shopping-secondary') ||
+    ('reviewOrderDetails' && 'storybook-button-review-order-details') ||
+    ('checkout' && 'storybook-button-checkout') ||
+    'storybook-button-review-order';
 
   let mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
+    ? 'storybook-button-primary'
+    : 'storybook-button-secondary';
 
   // eslint-disable-next-line no-return-assign
   return (
@@ -40,8 +40,8 @@ export const Button = ({
       type="button"
       className={[
         'storybook-button',
-        `storybook-button--${type}`,
-        `storybook-button--${size}`,
+        `storybook-button-${type}`,
+        `storybook-button-${size}`,
         type === '' ? mode : (mode = ''),
       ].join(' ')}
       style={backgroundColor && { backgroundColor }}
