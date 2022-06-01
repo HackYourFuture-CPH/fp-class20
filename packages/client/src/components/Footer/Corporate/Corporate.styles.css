@@ -1,20 +1,22 @@
 .corporate-info {
-  background-color: rgba(35, 28, 22, 0.6);
+  background-color: rgb(35 28 22 / 60%);
   width: 20%;
   padding-left: 1rem;
   padding-bottom: 1rem;
   margin-right: 1rem;
 }
+
 .corporate-info .text_big {
   display: block;
   padding-top: 1rem;
   font-size: 0.8rem;
   font-family: Montserrat;
-  font-style: SemiBold;
+  font-style: semibold;
   line-height: 3rem;
   font-weight: 600;
   color: white;
 }
+
 .corporate-info .text-small {
   display: block;
   font-family: Montserrat;

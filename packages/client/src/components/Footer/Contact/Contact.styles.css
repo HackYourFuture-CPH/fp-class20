@@ -1,10 +1,11 @@
 .contact-info {
-  background-color: rgba(35, 28, 22, 0.6);
+  background-color: rgb(35 28 22 / 60%);
   width: 20%;
   padding-left: 1rem;
   padding-bottom: 1.5rem;
   padding-right: 0.5rem;
 }
+
 .contact-info img {
   padding-right: 0.5rem;
 }
@@ -15,11 +16,12 @@
   padding-top: 2rem;
   font-size: 0.8rem;
   font-family: Montserrat;
-  font-style: SemiBold;
+  font-style: semibold;
   line-height: 1rem;
   font-weight: 600;
   color: white;
 }
+
 .contact-info .text-small {
   display: flex;
   font-family: Montserrat;
@@ -29,11 +31,13 @@
   color: white;
   align-items: center;
 }
+
 .phone,
 .envelop {
   width: 1.5rem;
   height: 1.5rem;
 }
+
 .contact-info .phone_text {
   margin-bottom: 1rem;
 }

@@ -1,56 +1,59 @@
 .counter {
   display: flex;
   flex-direction: row;
-  border: 16rem solid #ffffff;
+  border: 16rem solid #fff;
   background-color: #867572;
   height: 2.3125rem;
   width: 4.938rem;
   left: 63.188rem;
   justify-content: space-between;
 }
+
 .decrement-quantity-button {
   width: 0.875rem;
   height: 1.438rem;
   left: 63.563rem;
   top: 52.375rem;
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
   font-size: 0.938rem;
   line-height: 1.125rem;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   text-shadow: 0.125rem 0.125rem 0.25rem #231016;
   margin-top: 0.313rem;
 }
+
 .quantity-button {
   width: 1.438rem;
   height: 1.438rem;
   left: 6.438rem;
   top: 52.375rem;
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
   font-size: 0.938rem;
   line-height: 1.125rem;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   mix-blend-mode: normal;
   text-shadow: 0.125rem 0.125rem 0.25rem #231016;
   margin-top: 0.313rem;
 }
+
 .increment-quantity-button {
   width: 1.938rem;
   height: 1.438rem;
   left: 66.063rem;
   top: 52.375rem;
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
   font-size: 0.938rem;
   line-height: 1.125rem;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   text-shadow: 0.125rem 0.125rem 0.25rem #231016;
   margin-top: 0.313rem;
 }
