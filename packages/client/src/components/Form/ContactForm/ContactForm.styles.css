@@ -79,7 +79,6 @@ textarea:focus {
   border: 0.1rem solid rgb(255 0 0);
 }
 
-
 input:focus {
   outline: none;
 }
@@ -97,7 +96,7 @@ input:focus {
 }
 
 .simply-spices {
-  font-family: "Fredericka the Great", Arial, Helvetica, sans-serif;
+  font-family: 'Fredericka the Great', Arial, Helvetica, sans-serif;
   font-size: 3.5rem;
   font-weight: 400;
   letter-spacing: -0.02em;
