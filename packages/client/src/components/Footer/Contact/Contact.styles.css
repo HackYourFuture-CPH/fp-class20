@@ -15,7 +15,7 @@
   margin-bottom: 2rem;
   padding-top: 2rem;
   font-size: 0.8rem;
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-style: semibold;
   line-height: 1rem;
   font-weight: 600;
@@ -24,7 +24,7 @@
 
 .contact-info .text-small {
   display: flex;
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 0.8rem;
   line-height: 1.5rem;
   font-weight: 400;
@@ -38,7 +38,7 @@
   height: 1.5rem;
 }
 
-.contact-info .phone_text {
+.contact-info .phone-text {
   margin-bottom: 1rem;
 }
 @media screen and (max-width: 560px) {
