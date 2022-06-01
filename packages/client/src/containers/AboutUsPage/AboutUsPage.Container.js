@@ -3,7 +3,7 @@ import './AboutUsPage.Style.css';
 
 export const AboutUsPage = () => {
   return (
-    <div className="AboutUsPageContainer">
+    <div className="about-us-page-container">
       <span>About Us Page</span>
     </div>
   );
