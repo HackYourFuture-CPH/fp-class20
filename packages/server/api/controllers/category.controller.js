@@ -1,30 +1,23 @@
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
-const getCategory = async () => {
+const getCategories = async () => {
   return knex('Categories').select();
 };
 
 const getProducts = async (category, sortby) => {
-  const capitalizeCategory =
-    category[0].toUpperCase() + category.slice(1).toLowerCase();
-
   const productByCategory = knex('Categories')
     .join('Products', 'Categories.id', 'Products.categoryId')
-    .where('Categories.name', 'like', `${capitalizeCategory}%`);
+    .where('Categories.id', 'like', `${category}%`);
 
-  if (productByCategory.length === 0) {
-    throw new HttpError('No product under this category', 404);
-  }
-
-  if ('name' in sortby) {
+  if (sortby.sort === 'name') {
     productByCategory.orderBy('Products.name', 'asc');
   }
 
-  if ('lowestPrice' in sortby) {
+  if (sortby.sort === 'lowestPrice') {
     productByCategory.orderBy('Products.size', 'desc');
   }
-  if ('newest' in sortby) {
+  if (sortby.sort === 'newest') {
     productByCategory.orderBy('Products.createdAt', 'asc');
   }
   return productByCategory;
@@ -32,10 +25,13 @@ const getProducts = async (category, sortby) => {
 
 const getProductByCategory = async (category, sortby) => {
   const products = await getProducts(category, sortby);
+  if (products.length === 0) {
+    throw new HttpError('No product under this category', 404);
+  }
   return products;
 };
 
 module.exports = {
   getProductByCategory,
-  getCategory,
+  getCategories,
 };

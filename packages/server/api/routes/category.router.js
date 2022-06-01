@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 
 // controllers
-const getProductByCategory = require('../controllers/category.controller');
+const controller = require('../controllers/category.controller');
 
 /**
  * @swagger
@@ -23,47 +23,37 @@ const getProductByCategory = require('../controllers/category.controller');
  */
 
 router.get('/', (req, res, next) => {
-  getProductByCategory
-    .getCategory()
+  controller
+    .getCategories()
     .then((result) => res.json(result))
     .catch(next);
 });
 
 /**
  * @swagger
- * /category/{category}:
+ * /category/{ID}:
  *  get:
  *    tags:
  *    - category
- *    summary: Get products by category name.
- *    description:
- *      Will return all products with a matching category.
+ *    summary: Get products by category ID.
+ *    description: Will return all products with a matching category ID.
  *    produces: application/json
  *    parameters:
  *     - in: path
- *       name: category
+ *       name: ID
  *       schema:
  *         type: string
  *         required: true
- *         description: The spice category name.
+ *         description: The ID of the categoryto get.
  *     - in: query
- *       name: name
- *       schema:
- *         type: string
- *         required: true
- *         description: This will return all products in alphabetical order.
- *     - in: query
- *       name: newest
- *       schema:
- *         type: string
- *         required: true
- *         description: This will return all products recently created.
- *     - in: query
- *       name: lowestPrice
- *       schema:
- *         type: string
- *         required: true
- *         description: This will return all products with the lowest price.
+ *       name: sort
+ *       type: string
+ *       enum:
+ *       - newest
+ *       - lowestPrice
+ *       - name
+ *       default: available
+ *       collectionFormat: multi
  *    responses:
  *      200:
  *        description: Successful request
@@ -72,7 +62,7 @@ router.get('/', (req, res, next) => {
  */
 
 router.get('/:category', (req, res, next) => {
-  getProductByCategory
+  controller
     .getProductByCategory(req.params.category, req.query)
     .then((result) => res.json(result))
     .catch(next);
