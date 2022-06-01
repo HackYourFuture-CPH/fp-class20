@@ -33,7 +33,7 @@ const productsController = require('../controllers/products.controller');
 router.get('/', (req, res, next) => {
   const { page } = req.query;
   productsController
-    .getProducts(page)
+    .getAllProducts(page, req.query)
     .then((result) => res.json(result))
     .catch(next);
 });
