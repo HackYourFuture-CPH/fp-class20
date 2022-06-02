@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   background: linear-gradient(180deg, #231c16 0%, rgba(35, 28, 22, 0.75) 100%);
-  background-color: #f6f8eb;
 }
 
 .carousel-inner {
@@ -24,6 +23,10 @@
   scrollbar-width: none;
   /* hide scrollbar in Firefox */
   margin: 1rem;
+  max-width: 34.688rem;
+  max-height: 14.375rem;
+  overflow: hidden;
+  background: rgba(35, 28, 22, 0.3);
 }
 
 .right-arrow {

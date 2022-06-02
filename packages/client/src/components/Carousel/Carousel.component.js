@@ -14,41 +14,32 @@ export default function Carousel({ products, show }) {
       setCurrentIndex(0);
     }
   };
-
   const prev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - show);
+    } else {
+      setCurrentIndex(products.length - show);
     }
   };
 
   return (
     <div className="carousel-container">
-      {currentIndex >= 0 && (
-        <ArrowLeftIcon className="left-arrow" onClick={prev} />
-      )}
+      <ArrowLeftIcon className="left-arrow" onClick={prev} />
+
       <div className="carousel-inner">
         <div className={`show-${show} carousel`}>
-          {products
-            .slice(currentIndex, currentIndex + show)
-            // eslint-disable-next-line no-return-assign
-            .map(({ picture, name, price }) => (
-              <span className="carousel-content">
-                <img src={picture} alt={name} style={{ width: '200px' }} />
-                {name}
-                {price}
-              </span>
-            ))}
+          {products.slice(currentIndex, currentIndex + show).map((product) => (
+            <span className="carousel-content">{product}</span>
+          ))}
         </div>
       </div>
-
       <ArrowRightIcon className="right-arrow" onClick={next} />
     </div>
   );
 }
 
 Carousel.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  products: PropTypes.array,
+  products: PropTypes.node,
   show: PropTypes.number,
 };
 
