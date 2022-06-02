@@ -31,9 +31,8 @@ const productsController = require('../controllers/products.controller');
  */
 
 router.get('/', (req, res, next) => {
-  const { page } = req.query;
   productsController
-    .getAllProducts(page, req.query)
+    .getAllProducts(req.query)
     .then((result) => res.json(result))
     .catch(next);
 });
