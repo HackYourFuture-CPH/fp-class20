@@ -27,72 +27,63 @@ export const Submit = Template.bind({});
 Submit.args = {
   type: 'submit',
   label: 'SUBMIT',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const SubmitSecondary = Template.bind({});
 SubmitSecondary.args = {
   type: 'submitSecondary',
   label: 'SUBMIT',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const Shop = Template.bind({});
 Shop.args = {
   type: 'shop',
   label: 'SHOP',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const EditDetails = Template.bind({});
 EditDetails.args = {
   type: 'editDetails',
   label: 'EDIT DETAILS',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const ContinueShopping = Template.bind({});
 ContinueShopping.args = {
   type: 'continueShopping',
   label: 'CONTINUE SHOPPING',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const ContinueShoppingSecondary = Template.bind({});
 ContinueShoppingSecondary.args = {
   type: 'continueShoppingSecondary',
   label: 'CONTINUE SHOPPING',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const ReviewOrderDetails = Template.bind({});
 ReviewOrderDetails.args = {
   type: 'reviewOrderDetails',
   label: 'REVIEW ORDER DETAILS',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const ReviewOrder = Template.bind({});
 ReviewOrder.args = {
   type: 'reviewOrder',
   label: 'REVIEW ORDER',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const Checkout = Template.bind({});
 Checkout.args = {
   type: 'checkout',
   label: 'CHECKOUT',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 // 👇 Each story then reuses that template
@@ -100,37 +91,32 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Button',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Button',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
   label: 'Button',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   size: 'medium',
   label: 'Button',
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  icon: <></>,
+  icon: '',
 };

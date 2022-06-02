@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.styles.css';
-import { ReactComponent as AddToCardSVGIcon } from '../../../public/assets/vectors/vector_cart.svg';
+// import { ReactComponent as AddToCardSVGIcon } from '../../../public/assets/vectors/vector_cart.svg';
 
 /**
  * Primary UI component for user interaction
@@ -48,7 +48,7 @@ export const Button = ({
       {...props}
     >
       {label}
-      {icon}
+      {icon !== '' && <img className="button-icon" src={icon} alt="" />}
     </button>
   );
 };
@@ -76,8 +76,12 @@ Button.propTypes = {
    * Button contents
    */
   label: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/no-typos
-  icon: PropTypes.ReactComponent,
+
+  // icon: PropTypes.string,
+
+  // icon: PropTypes.ReactComponent, it does not work at all
+  // it works as below if react component
+  icon: PropTypes.string,
   /**
    * Optional click handler
    */
@@ -90,5 +94,5 @@ Button.defaultProps = {
   onClick: undefined,
   primary: false,
   size: 'story',
-  icon: <AddToCardSVGIcon />,
+  icon: '/assets/vectors/vector_cart.svg',
 };

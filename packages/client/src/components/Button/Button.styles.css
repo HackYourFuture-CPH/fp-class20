@@ -22,7 +22,12 @@
   font-size: 1.875rem;
 }
 
-.add-to-cart-svg {
+.storybook-button--small {
+  font-size: 0.75rem;
+  padding: 0.625rem 1rem;
+}
+
+.button-icon {
   width: 1.25rem;
   height: 25rem;
   padding-left: 0.625rem;
