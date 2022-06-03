@@ -19,7 +19,7 @@ const Template = (args) => <Button {...args} />;
 // 👇 Each story then reuses that template
 export const AddToCart = Template.bind({});
 AddToCart.args = {
-  type: 'addToCart',
+  type: 'add-to-cart',
   label: 'ADD TO CART',
 };
 
@@ -32,7 +32,7 @@ Submit.args = {
 
 export const SubmitSecondary = Template.bind({});
 SubmitSecondary.args = {
-  type: 'submitSecondary',
+  type: 'submit-secondary',
   label: 'SUBMIT',
   icon: '',
 };
@@ -46,28 +46,28 @@ Shop.args = {
 
 export const EditDetails = Template.bind({});
 EditDetails.args = {
-  type: 'editDetails',
+  type: 'edit-details',
   label: 'EDIT DETAILS',
   icon: '',
 };
 
 export const ContinueShopping = Template.bind({});
 ContinueShopping.args = {
-  type: 'continueShopping',
+  type: 'continue-shopping',
   label: 'CONTINUE SHOPPING',
   icon: '',
 };
 
 export const ContinueShoppingSecondary = Template.bind({});
 ContinueShoppingSecondary.args = {
-  type: 'continueShoppingSecondary',
+  type: 'continue-shopping-secondary',
   label: 'CONTINUE SHOPPING',
   icon: '',
 };
 
 export const ReviewOrderDetails = Template.bind({});
 ReviewOrderDetails.args = {
-  type: 'reviewOrderDetails',
+  type: 'review-order-details',
   label: 'REVIEW ORDER DETAILS',
   icon: '',
 };

@@ -19,14 +19,15 @@ export const Button = ({
   // eslint-disable-next-line no-param-reassign
   // eslint-disable-next-line no-param-reassign
   // eslint-disable-next-line no-unused-expressions
-  type === ('addToCart' && 'storybook-button-add-to-cart') ||
+  type === ('add-to-cart' && 'storybook-button-add-to-cart') ||
     ('submit' && 'storybook-button-submit') ||
-    ('submitSecondary' && 'storybook-button-submit-secondary') ||
+    ('submit-secondary' && 'storybook-button-submit-secondary') ||
     ('shop' && 'storybook-button-shop') ||
-    ('editDetails' && 'storybook-button-edit-details') ||
-    ('continueShopping' && 'storybook-button-continue-shopping') ||
-    ('continueShopping' && 'storybook-button-continue-shopping-secondary') ||
-    ('reviewOrderDetails' && 'storybook-button-review-order-details') ||
+    ('edit-details' && 'storybook-button-edit-details') ||
+    ('continue-shopping' && 'storybook-button-continue-shopping') ||
+    ('continue-shopping-secondary' &&
+      'storybook-button-continue-shopping-secondary') ||
+    ('review-order-details' && 'storybook-button-review-order-details') ||
     ('checkout' && 'storybook-button-checkout') ||
     'storybook-button-review-order';
 

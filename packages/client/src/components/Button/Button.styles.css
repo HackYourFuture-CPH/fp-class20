@@ -29,7 +29,7 @@
 
 .button-icon {
   width: 1.25rem;
-  height: 25rem;
+  height: 1.25rem;
   padding-left: 0.625rem;
 }
 
@@ -58,7 +58,7 @@
 .storybook-button-edit-details {
   width: 12.058rem;
   height: 2.313rem;
-  background-color: #2c251e;
+  background: #2c251e;
   border: 1px solid #ffffffd3;
   color: #fff;
   text-align: center;
