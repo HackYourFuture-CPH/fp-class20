@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from './Carousel.component';
 
-const Products = [
+const items = [
   <img
     src="assets/images/spices_square/star_anise.jpeg"
     alt="star anise"
@@ -39,11 +39,10 @@ export default {
   component: Carousel.component,
 };
 
-/*eslint-disable */
 const Template = (args) => <Carousel {...args} />;
-/* eslint-enable */
+
 export const Default = Template.bind({});
 Default.args = {
-  products: Products,
+  items,
   show: 3,
 };
