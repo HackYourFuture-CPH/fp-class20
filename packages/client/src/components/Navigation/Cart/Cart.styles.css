@@ -8,7 +8,7 @@
 }
 
 .cart-icon {
-  height: 1.70rem;
+  height: 1.7rem;
 }
 
 .number {
@@ -16,23 +16,20 @@
   padding: 0.15rem;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
   justify-content: center;
-  background-color: #B80000;
+  background-color: #b80000;
   border-radius: 50%;
-  width: 1.00rem;
-  height: 1.00rem;
-
-  color: #FFFFFF;
-  font-size: 0.80rem;
+  width: 1rem;
+  height: 1rem;
+  color: #fff;
+  font-size: 0.8rem;
   font-weight: 900;
   text-align: center;
-  align-items: center;
-  text-shadow: 0.125rem 0.125rem 0.25rem #000000;
+  text-shadow: 0.125rem 0.125rem 0.25rem #000;
 }
 
 .cart-text {
-  font-size: 1.30rem;
-  padding-top: 0.20rem;
+  font-size: 1.3rem;
+  padding-top: 0.2rem;
 }
