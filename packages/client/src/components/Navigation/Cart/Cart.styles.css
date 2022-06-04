@@ -16,7 +16,6 @@
   padding: 0.15rem;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
   justify-content: center;
   background-color: #b80000;
@@ -27,7 +26,6 @@
   font-size: 0.8rem;
   font-weight: 900;
   text-align: center;
-  align-items: center;
   text-shadow: 0.125rem 0.125rem 0.25rem #000;
 }
 
