@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, #231c16 0%, rgba(35, 28, 22, 0.75) 100%);
+  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
 }
 
 .carousel-inner {
@@ -12,21 +12,23 @@
   overflow: hidden;
   margin: 0 auto;
   justify-content: space-between;
-  background: rgba(255, 249, 238, 0.1);
+  background: rgb(255 249 238 / 10%);
 }
 
 .carousel-content {
   display: flex;
   transition: all 250ms linear;
   -ms-overflow-style: none;
+
   /* hide scrollbar in IE and Edge */
   scrollbar-width: none;
+
   /* hide scrollbar in Firefox */
   margin: 1rem;
   max-width: 34.688rem;
   max-height: 14.375rem;
   overflow: hidden;
-  background: rgba(35, 28, 22, 0.3);
+  background: rgb(35 28 22 / 30%);
 }
 
 .right-arrow {

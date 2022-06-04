@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
 .top-nav-background {
-  background-color: #000000;
+  background-color: #000;
   width: 100%;
   padding: 0;
   margin: 0;
 }
 
 .top-nav-main-container {
-  background-color: #000000;
+  background-color: #000;
   display: flex;
   flex-wrap: nowrap;
   width: 60%;
@@ -24,7 +24,7 @@
   font-family: Montserrat, sans-serif;
   line-height: 1.5rem;
   font-weight: 400;
-  color: #ffffff;
+  color: #fff;
   padding: 0;
   margin: 0;
 }
@@ -46,18 +46,22 @@ Please do NOT treat the below code as a guide!!! */
     align-items: center;
     margin: 1rem 0;
   }
+
   .top-nav-background {
     height: auto;
   }
+
   .top-nav-main-container {
     flex-direction: column;
     height: auto;
     display: flex;
   }
+
   .top-nav-right-container {
     display: flex;
     flex-direction: column;
   }
+
   .top-nav-right-container > div {
     text-align: center;
     align-items: center;
