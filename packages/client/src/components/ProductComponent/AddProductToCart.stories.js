@@ -1,18 +1,15 @@
 import React from 'react';
-import { Product } from './ProductComponent.component';
+import { AddProductToCart } from './AddProductToCart.component';
 
 export default {
   title: 'components/Product',
-  component: Product.component,
+  component: AddProductToCart.component,
 };
 
-// export const Template = () => <ProductContainer />;
-
-const Template = (props) => <Product {...props} />;
+const Template = (props) => <AddProductToCart {...props} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  // eslint-disable-next-line object-shorthand
   product: {
     id: 1,
     size: '250g glass jar',

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Product } from '../ProductComponent/ProductComponent.component';
+import { AddProductToCart } from '../ProductComponent/AddProductToCart.component';
 
 export const ProductPage = () => {
   return (
     <div>
-      <Product />
+      <AddProductToCart />
     </div>
   );
 };

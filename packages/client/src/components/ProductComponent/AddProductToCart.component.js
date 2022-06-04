@@ -1,30 +1,34 @@
 import React, { useState } from 'react';
-import './ProductComponent.styles.css';
+import './AddProductToCart.styles.css';
 import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
-// import heartEmpty from '../../../public/assets/vectors/vector_heart_empty.svg';
-// import heartFull from '../../../public/assets/vectors/vector_heart_full.svg';
+import heartEmpty from '../../../public/assets/vectors/vector_heart_empty.svg';
+import heartFull from '../../../public/assets/vectors/vector_heart_full.svg';
 import { Modal } from '../Modal/Modal.component';
 
-export const Product = ({ product, saveToFavorites }) => {
+export const AddProductToCart = ({ product }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const onAddToFavorites = () => {
+    setIsFavorite(!isFavorite);
+  };
 
   return (
     <div>
       <div className="product-container">
         <div className="favorite-icon">
-          <div>
-            <button type="button">
-              Save to favorites
-              <img
-                // onClick={onAddToFavorites}
-                // src={isFavorite ? 'heartFull' : 'heartEmpty'}
-                alt="heart-icon"
-              />
-            </button>
-          </div>
+          {/* <button>
+            Save to favorites
+            <img
+              onClick={onAddToFavorites}
+              onKeyUp={onAddToFavorites}
+              src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
+              alt="heart-icon"
+            />
+          </button> */}
         </div>
         <div className="product-details">
           <div className="product-image">
@@ -73,13 +77,10 @@ export const Product = ({ product, saveToFavorites }) => {
   );
 };
 
-Product.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  product: PropTypes.object,
-  saveToFavorites: PropTypes.string,
+AddProductToCart.propTypes = {
+  product: PropTypes.func,
 };
 
-Product.defaultProps = {
+AddProductToCart.defaultProps = {
   product: {},
-  saveToFavorites: null,
 };
