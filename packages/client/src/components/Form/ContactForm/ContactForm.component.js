@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.styles.css';
-
-import contactPageSwirlDecoration from '../../../../public/assets/vectors/vector_logo_underline.svg';
+import { Button } from '../../Button/Button.component';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
@@ -65,31 +64,36 @@ export const ContactForm = ({ text, label, handlePost }) => {
     if (errors.filter((err) => err.message !== '').length === 0) {
       handlePost(formState.name, formState.email, formState.message);
       setIsMessageSent(true);
+
       setFormState({
         name: '',
         email: '',
         message: '',
       });
+      // navigate('/about-us-feedback-page');
     }
     setErrorState(errors);
   };
 
   return (
-    <div>
+    <div className="contact-form-backgorund">
       <div className="contact-form-container">
-        <div className="contact-head">
-          <p className="simply-spices"> Simply Spices</p>
-          <img alt="simply spices" src={contactPageSwirlDecoration} />
+        <div className="contact-head ">
+          <p className="simply-spices-text"> Simply Spices</p>
+          <img
+            alt="simply spices text"
+            src="assets/vectors/vector_logo_underline.svg"
+          />
         </div>
 
-        <div className="wrapper-outer">
+        <div className="wrapper-outer-contact-form">
           <p>
             your opinion and questions matter to us so feel free to contact our
             customer service for all general enquiries. We respond withing
             maximum 2 working days.
           </p>
           <form id="contactForm">
-            <div className="wrapper">
+            <div className="wrapper-contact-form">
               {isMessageSent ? (
                 <p className="success-msg">Message Sent</p>
               ) : (
@@ -148,7 +152,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
               </div>
 
               <div className="form-row">
-                <button
+                {/* <button
                   className={
                     isAllInputFilledOut ? 'ready-button' : 'normal-button'
                   }
@@ -157,7 +161,18 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   onClick={handleSubmit}
                 >
                   {text}
-                </button>
+                </button> */}
+
+                <Button
+                  type="submit"
+                  onClick={handleSubmit}
+                  className={
+                    isAllInputFilledOut ? 'ready-button' : 'normal-button'
+                  }
+                  size="medium"
+                  label="SUBMIT"
+                  icon=""
+                />
               </div>
             </div>
           </form>

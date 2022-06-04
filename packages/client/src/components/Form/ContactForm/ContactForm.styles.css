@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
+/* background image will be global so it needs to be deleted while cocmpiling */
+body {
+  /* background-image: url(../../../../public/assets/images/hero_image.png); */
+  mix-blend-mode: normal;
+}
+
 .contact-form-container {
-  width: 50%;
-  padding: 1% 5%;
+  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  width: 60%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
-  background-color: #251f19;
   margin: 0 auto;
 }
 
@@ -27,16 +35,15 @@
   margin: 0 auto;
 }
 
-.wrapper-outer {
-  width: 80%;
+.wrapper-outer-contact-form {
   justify-content: center;
   margin: 0 auto;
+  width: 85%;
 }
 
-.wrapper {
+.wrapper-contact-form {
   display: flex;
   flex-direction: column;
-  background-color: #3a3736;
   padding: 0;
   margin: 0 auto;
   justify-content: center;
@@ -83,10 +90,6 @@ input:focus {
   outline: none;
 }
 
-.contact-head > img {
-  width: 70%;
-}
-
 .error-msg {
   color: rgb(227 20 20);
 }
@@ -95,7 +98,7 @@ input:focus {
   color: rgb(4 255 4);
 }
 
-.simply-spices {
+.simply-spices-text {
   font-family: 'Fredericka the Great', Arial, Helvetica, sans-serif;
   font-size: 3.5rem;
   font-weight: 400;
@@ -106,8 +109,16 @@ input:focus {
 }
 
 @media only screen and (max-width: 600px) {
+  /* background image will be global so it needs to be deleted while cocmpiling */
   body {
-    background-color: lightblue;
+    /* background-image: url('../../../../public/assets/images/hero_image.png'); */
+    mix-blend-mode: normal;
+  }
+
+  .contact-form-container,
+  .wrapper-outer-contact-form,
+  .wrapper-contact-form {
+    background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
   }
 
   .form-row {
@@ -130,7 +141,7 @@ input:focus {
     background: rgb(25 24 24);
     color: white;
     border: 0.1rem solid white;
-    width: 100%;
+    width: 80%;
     align-items: center;
   }
 }

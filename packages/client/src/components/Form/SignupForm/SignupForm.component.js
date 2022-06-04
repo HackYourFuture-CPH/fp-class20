@@ -105,8 +105,8 @@ export const SignupForm = ({ text, label, handlePost }) => {
     <div>
       <div className="signup-form-container">
         <div className="wrapper-outer">
-          <form id="signupForm">
-            <div className="wrapper">
+          <form id="signup-form">
+            <div className="wrapper-signup-form">
               {isMessageSent ? (
                 <p className="success-msg">Your data submitted</p>
               ) : (
@@ -162,7 +162,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
                 />
               </div>
 
-              <p> DELIVERY ADDRESS</p>
+              <p id="delivery"> DELIVERY ADDRESS</p>
 
               <div className="form-row">
                 <label htmlFor="streetName">
