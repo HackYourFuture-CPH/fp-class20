@@ -2,7 +2,7 @@ import React from 'react';
 import './LandingSortBy.styles.css';
 import SortBy from './SortByComponent/SortBy.component';
 
-export const LandingSortBy = () => {
+const LandingSortBy = () => {
   return (
     <div className="landing-sort-by-component-info">
       <span className="text-samll">Simply Spices / All Spices</span>
@@ -13,3 +13,5 @@ export const LandingSortBy = () => {
     </div>
   );
 };
+
+export default LandingSortBy;

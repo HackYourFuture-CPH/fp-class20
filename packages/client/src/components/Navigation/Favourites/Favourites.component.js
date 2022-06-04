@@ -1,6 +1,6 @@
 import React from 'react';
 
-import favouriteIcon from '../../../../public/assets/vectors/vector_heart_empty.svg';
+// import favouriteIcon from '../../../../public/assets/vectors/vector_heart_empty.svg';
 
 import './Favourite.styles.css';
 
@@ -9,7 +9,7 @@ const Favourites = () => {
     <div className="favourite-container">
       <img
         className="favourite-icon"
-        src={favouriteIcon}
+        src="assets/vectors/vector_heart_empty.svg"
         alt="favourite-icon"
       />{' '}
       <span className="favourites-text">Favourites </span>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SortBy.styles.css';
-import arrowDown from '../../../../public/assets/vectors/vector_arrow_down.svg';
-import arrowUp from '../../../../public/assets/vectors/vector_arrow_up.svg';
+// import arrowDown from '../../../../public/assets/vectors/vector_arrow_down.svg';
+// import arrowUp from '../../../../public/assets/vectors/vector_arrow_up.svg';
 
 const SortBy = () => {
   const [arrow, setArrow] = useState(true);
@@ -13,10 +13,10 @@ const SortBy = () => {
           style={
             arrow
               ? {
-                  backgroundImage: `url(${arrowDown})`,
+                  backgroundImage: `url('assets/vectors/vector_arrow_down.svg')`,
                 }
               : {
-                  backgroundImage: `url(${arrowUp})`,
+                  backgroundImage: `url('assets/vectors/vector_arrow_up.svg')`,
                 }
           }
         >
