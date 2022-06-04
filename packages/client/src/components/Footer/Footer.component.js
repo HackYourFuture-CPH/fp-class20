@@ -5,7 +5,7 @@ import { Contact } from './Contact/Contact.component';
 import { Map } from './Map/Map.component';
 import { Address } from './Address/Address.component';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <div className="footer-container">
       <div className="footer-info">
@@ -20,3 +20,5 @@ export const Footer = () => {
     </div>
   );
 };
+
+export default Footer;
