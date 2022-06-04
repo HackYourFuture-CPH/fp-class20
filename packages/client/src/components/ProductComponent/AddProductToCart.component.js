@@ -5,7 +5,7 @@ import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import heartEmpty from '../../../public/assets/vectors/vector_heart_empty.svg';
 import heartFull from '../../../public/assets/vectors/vector_heart_full.svg';
-import { Modal } from '../Modal/Modal.component';
+import { CartAdditionConfirmationModal } from '../Modal/CartAdditionConfirmationModal.component';
 
 export const AddProductToCart = ({ product }) => {
   const [count, setCount] = useState(1);
@@ -64,8 +64,8 @@ export const AddProductToCart = ({ product }) => {
 
       {isModalOpen && (
         <div className="confirmation-modal">
-          <Modal
-            closeModal={() => toggleModal}
+          <CartAdditionConfirmationModal
+            closeModal={() => toggleModal(false)}
             productImage={product.pictureUrl}
             productName={product.name}
             count={count}

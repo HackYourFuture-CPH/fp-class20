@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from '../Button/Button.component';
-import './Modal.styles.css';
+import './CartAdditionConfirmationModal.styles.css';
 import PropTypes from 'prop-types';
 
-export const Modal = ({
+export const CartAdditionConfirmationModal = ({
   closeModal,
   productImage,
   productName,
@@ -12,10 +12,10 @@ export const Modal = ({
 }) => {
   return (
     <div className="modal-container">
-      <div className="cancell-button">
+      <div className="cancel-butt-container">
         <button
           type="button"
-          onClick={() => closeModal(false)}
+          onClick={() => closeModal()}
           className="cancell-button"
         >
           X
@@ -39,27 +39,26 @@ export const Modal = ({
           <Button label="Continue Shopping" onClick={() => closeModal(false)} />
         </span>
         <span>
-          <Button label="Add to cart" backgroundColor="green" color="white" />
+          <Button label="View Cart" backgroundColor="green" color="white" />
         </span>
       </div>
     </div>
   );
 };
-Modal.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
+CartAdditionConfirmationModal.propTypes = {
   closeModal: PropTypes.func,
   productImage: PropTypes.string,
-  // eslint-disable-next-line react/require-default-props
   productName: PropTypes.string,
   count: PropTypes.number,
   price: PropTypes.number,
 };
 
-Modal.defaultProps = {
+CartAdditionConfirmationModal.defaultProps = {
   closeModal: () => {},
   productImage: null,
   // eslint-disable-next-line react/default-props-match-prop-types
   PropTypes: '',
   count: 1,
   price: 350,
+  productName: 'product name',
 };
