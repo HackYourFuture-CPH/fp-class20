@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=inter@100&family=Work+Sans:wght@100&display=swap');
+
 .sort-by-select {
   z-index: 99;
 }
+
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: rgba(35, 28, 22, 0.9);
-  border: 2px solid white;
+  appearance: none;
+  background-color: rgb(35 28 22 / 90%);
   color: white;
   background-repeat: no-repeat;
   background-position-x: 100%;
@@ -18,13 +18,11 @@ select {
   padding-right: 1.55rem;
   cursor: pointer;
   font-size: 1.125rem;
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 500;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
-  
 }
-
 
 option {
   font-size: 0.75rem;
