@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.styles.css';
 
-import contactPageSwirlDecoration from '../../../../public/assets/Vector192.png';
+import contactPageSwirlDecoration from '../../../../public/assets/vectors/vector_logo_underline.svg';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
@@ -77,8 +77,8 @@ export const ContactForm = ({ text, label, handlePost }) => {
   return (
     <div>
       <div className="contact-form-container">
-        <div className="contactHead">
-          <p className="simplySpices"> Simply Spices</p>
+        <div className="contact-head">
+          <p className="simply-spices"> Simply Spices</p>
           <img alt="simply spices" src={contactPageSwirlDecoration} />
         </div>
 
@@ -91,9 +91,9 @@ export const ContactForm = ({ text, label, handlePost }) => {
           <form id="contactForm">
             <div className="wrapper">
               {isMessageSent ? (
-                <p className="successMsg">Message Sent</p>
+                <p className="success-msg">Message Sent</p>
               ) : (
-                <div className="errorMsg">
+                <div className="error-msg">
                   {errorState.map((error) => (
                     <p>{error.message}</p>
                   ))}
@@ -101,7 +101,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
               )}
               <div className="form-row">
                 <label htmlFor="name">
-                  Name <span className="requiredStar">*</span>
+                  Name <span className="required-star">*</span>
                 </label>
 
                 <input
@@ -117,7 +117,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="email">
-                  Email <span className="requiredStar">*</span>
+                  Email <span className="required-star">*</span>
                 </label>
 
                 <input
@@ -133,7 +133,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="textarea">
-                  Your message <span className="requiredStar">*</span>
+                  Your message <span className="required-star">*</span>
                 </label>
 
                 <textarea
@@ -150,7 +150,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
               <div className="form-row">
                 <button
                   className={
-                    isAllInputFilledOut ? 'readyButton' : 'normalButton'
+                    isAllInputFilledOut ? 'ready-button' : 'normal-button'
                   }
                   type="button"
                   label={label}

@@ -108,9 +108,9 @@ export const SignupForm = ({ text, label, handlePost }) => {
           <form id="signupForm">
             <div className="wrapper">
               {isMessageSent ? (
-                <p className="successMsg">Your data submitted</p>
+                <p className="success-msg">Your data submitted</p>
               ) : (
-                <div className="errorMsg">
+                <div className="error-msg">
                   {errorState.map((error) => (
                     <p>{error.message}</p>
                   ))}
@@ -119,7 +119,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="name">
-                  name <span className="requiredStar">*</span>
+                  name <span className="required-star">*</span>
                 </label>
                 <input
                   type="text"
@@ -134,7 +134,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="email">
-                  email <span className="requiredStar">*</span>
+                  email <span className="required-star">*</span>
                 </label>
                 <input
                   type="email"
@@ -149,7 +149,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="mobile">
-                  mobile <span className="requiredStar">*</span>
+                  mobile <span className="required-star">*</span>
                 </label>
                 <input
                   type="tel"
@@ -166,7 +166,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="streetName">
-                  street name <span className="requiredStar">*</span>
+                  street name <span className="required-star">*</span>
                 </label>
                 <input
                   type="text"
@@ -181,7 +181,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="city">
-                  city <span className="requiredStar">*</span>
+                  city <span className="required-star">*</span>
                 </label>
                 <input
                   type="text"
@@ -196,7 +196,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
 
               <div className="form-row">
                 <label htmlFor="zipCode">
-                  zip code <span className="requiredStar">*</span>
+                  zip code <span className="required-star">*</span>
                 </label>
                 <input
                   type="text"
@@ -213,8 +213,8 @@ export const SignupForm = ({ text, label, handlePost }) => {
                 <button
                   className={
                     isAllInputProvided
-                      ? 'allInputProvided'
-                      : 'notAllInputProvided'
+                      ? 'all-input-provided'
+                      : 'not-all-input-provided'
                   }
                   type="button"
                   label={label}
