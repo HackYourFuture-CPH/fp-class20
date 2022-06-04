@@ -20,15 +20,13 @@ export const AddProductToCart = ({ product }) => {
     <div>
       <div className="product-container">
         <div className="favorite-icon">
-          {/* <button>
-            Save to favorites
-            <img
-              onClick={onAddToFavorites}
-              onKeyUp={onAddToFavorites}
-              src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
-              alt="heart-icon"
-            />
-          </button> */}
+          Save to favorites
+          <img
+            onClick={onAddToFavorites}
+            src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
+            alt="heart-icon"
+            aria-hidden="true"
+          />
         </div>
         <div className="product-details">
           <div className="product-image">
