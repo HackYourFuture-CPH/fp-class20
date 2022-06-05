@@ -9,7 +9,6 @@ export const CartAdditionConfirmationModal = ({
   productName,
   count,
   price,
-  setCount,
 }) => {
   return (
     <div className="modal-container">
@@ -27,17 +26,13 @@ export const CartAdditionConfirmationModal = ({
       </div>
       <div className="product-image-modal">
         <img src={productImage} alt="product-img" />
-        <span className="text">ADDED TO CART </span>
-        <span className="text">
+        <span>ADDED TO CART </span>
+        <span>
           There are
-          <span className="count-item">
-            {setCount((prevState) => {
-              return prevState + count;
-            })}
-          </span>
+          <span className="count-item">{count}</span>
           items in your Cart.
         </span>
-        <span className="text">Card subtotal: {count * price} DKK </span>
+        <span>Card subtotal: {count * price} DKK </span>
       </div>
 
       <div className="modal-footer">
@@ -57,7 +52,6 @@ CartAdditionConfirmationModal.propTypes = {
   productName: PropTypes.string,
   count: PropTypes.number,
   price: PropTypes.number,
-  setCount: PropTypes.func,
 };
 
 CartAdditionConfirmationModal.defaultProps = {
@@ -66,5 +60,4 @@ CartAdditionConfirmationModal.defaultProps = {
   price: 350,
   productName: 'product name',
   count: 1,
-  setCount: () => {},
 };

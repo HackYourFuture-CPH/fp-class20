@@ -19,5 +19,5 @@ Primary.args = {
     pictureUrl: 'assets/images/spices_square/dried_juniper_berries.jpeg',
   },
   saveToFavorites: 'save to favorites',
-  closeModal: () => {},
+  onClose: () => {},
 };

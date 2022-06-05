@@ -5,7 +5,7 @@ import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import heartEmpty from '../../../public/assets/vectors/vector_heart_empty.svg';
 import heartFull from '../../../public/assets/vectors/vector_heart_full.svg';
-import { CartAdditionConfirmationModal } from '../Modal/CartAdditionConfirmationModal.component';
+import { CartAdditionConfirmationModal } from './CartAdditionConfirmationModal.component';
 
 export const AddProductToCart = ({ product }) => {
   const [count, setCount] = useState(1);
