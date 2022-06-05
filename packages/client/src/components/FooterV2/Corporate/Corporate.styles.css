@@ -1,0 +1,43 @@
+.corporate-info {
+  background-color: linear-gradient(
+    180deg,
+    #231c16 0%,
+    rgba(35 28 22/ 75%) 100%
+  );
+  box-sizing: border-box;
+  width: 22%;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.corporate-info .text-big {
+  display: block;
+  padding-top: 2rem;
+  font-size: 1rem;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-style: semibold;
+  line-height: 1rem;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.corporate-info .text-small {
+  display: block;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: white;
+  text-align: left;
+}
+@media screen and (max-width: 800px) {
+  .corporate-info {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 20%;
+    margin-bottom: 1rem;
+  }
+}

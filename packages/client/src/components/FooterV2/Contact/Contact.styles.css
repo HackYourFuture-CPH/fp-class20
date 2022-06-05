@@ -1,0 +1,53 @@
+.contact-info {
+  background-color: rgb(35 28 22 / 60%);
+  width: 22%;
+  box-sizing: border-box;
+}
+
+.contact-info img {
+  padding-right: 0.5rem;
+}
+
+.email-underline {
+  text-decoration: underline;
+}
+
+.contact-info .text-big {
+  padding-top: 2rem;
+  font-size: 1rem;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-style: semibold;
+  line-height: 1rem;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+}
+
+.contact-info .text-small {
+  display: flex;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 0.01rem;
+  text-align: left;
+  align-items: center;
+}
+
+.phone,
+.envelop {
+  width: 1.75rem;
+  height: 1.68rem;
+}
+
+.contact-info .phone-text {
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .contact-info {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 20%;
+  }
+}
