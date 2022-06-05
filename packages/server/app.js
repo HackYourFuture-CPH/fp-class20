@@ -5,8 +5,6 @@ const logger = require('morgan');
 
 const router = require('./api/routes/index');
 const HttpError = require('./api/lib/utils/http-error');
-
-
 const app = express();
 
 app.use(logger('dev'));
