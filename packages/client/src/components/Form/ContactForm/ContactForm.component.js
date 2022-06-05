@@ -47,6 +47,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
     let errors = [];
     errors = Object.keys(formState).map((key) => {
       const error = {
+        field: key,
         message: '',
       };
       if (!formState[key]) {
@@ -74,8 +75,18 @@ export const ContactForm = ({ text, label, handlePost }) => {
     }
     setErrorState(errors);
   };
-  // eslint-disable-next-line
-  console.log(errorState);
+
+  const errObj = {
+    name: errorState
+      .filter((error) => error.field === 'name')
+      .map((error) => error.message),
+    email: errorState
+      .filter((error) => error.field === 'email')
+      .map((error) => error.message),
+    message: errorState
+      .filter((error) => error.field === 'message')
+      .map((error) => error.message),
+  };
 
   return (
     <div className="contact-form-backgorund">
@@ -100,11 +111,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
               {isMessageSent ? (
                 <span className="success-msg">Message Sent</span>
               ) : (
-                <div className="error-msg">
-                  {errorState.map((error) => (
-                    <span className="contact-error-span">{error.message}</span>
-                  ))}
-                </div>
+                ''
               )}
               <div className="form-row">
                 <label htmlFor="name">
@@ -112,6 +119,13 @@ export const ContactForm = ({ text, label, handlePost }) => {
                 </label>
 
                 <input
+                  className={
+                    errorState?.some(
+                      (field) => field.field === 'name' && field.message,
+                    )
+                      ? 'contact-input-wrong'
+                      : 'contact-input'
+                  }
                   type="text"
                   id="name"
                   name="name"
@@ -121,6 +135,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   required
                 />
               </div>
+              <span className="contact-error-span"> {errObj.name}</span>
 
               <div className="form-row">
                 <label htmlFor="email">
@@ -128,6 +143,13 @@ export const ContactForm = ({ text, label, handlePost }) => {
                 </label>
 
                 <input
+                  className={
+                    errorState?.some(
+                      (field) => field.field === 'email' && field.message,
+                    )
+                      ? 'contact-input-wrong'
+                      : 'contact-input'
+                  }
                   type="email"
                   id="email"
                   name="email"
@@ -137,6 +159,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   required
                 />
               </div>
+              <span className="contact-error-span"> {errObj.email}</span>
 
               <div className="form-row">
                 <label htmlFor="textarea">
@@ -144,6 +167,13 @@ export const ContactForm = ({ text, label, handlePost }) => {
                 </label>
 
                 <textarea
+                  className={
+                    errorState?.some(
+                      (field) => field.field === 'message' && field.message,
+                    )
+                      ? 'contact-input-wrong'
+                      : 'contact-input'
+                  }
                   id="textarea"
                   name="message"
                   value={formState.message}
@@ -153,6 +183,8 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   required
                 />
               </div>
+
+              <span className="contact-error-span"> {errObj.message}</span>
 
               <div className="form-row">
                 {/* <button

@@ -100,12 +100,6 @@ input:focus {
   border: 0.2rem solid #53742a;
 }
 
-input:required:invalid,
-textarea:required:invalid {
-  outline: none;
-  border: 0.1rem solid rgb(255 0 0);
-}
-
 .error-msg {
   color: rgb(227 20 20);
 }
@@ -114,12 +108,24 @@ textarea:required:invalid {
   color: #53742a;
 }
 
+.contact-input {
+  width: 50%;
+  text-align: left;
+}
+
+.contact-input-wrong {
+  border: 0.2rem solid red;
+}
+
 .contact-error-span {
   display: flex;
   flex-direction: column;
-  color: rgb(255 0 0);
+  color: red;
   font-size: small;
   font-family: Montserrat, sans-serif;
+  justify-content: right;
+  align-items: flex-end;
+  text-align: right;
 }
 
 .contact-form-simply-spices-text {
@@ -132,12 +138,14 @@ textarea:required:invalid {
   margin-top: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
   .contact-form-container,
   .wrapper-outer-contact-form,
   .wrapper-contact-form {
     background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
     font-size: xx-small;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .form-row {
