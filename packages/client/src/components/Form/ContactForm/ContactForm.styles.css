@@ -5,6 +5,9 @@
 body {
   background-image: url('../../../../public/assets/images/hero_image.png');
   mix-blend-mode: normal;
+  background-size: cover;
+  min-width: fit-content;
+  background-repeat: no-repeat;
 }
 
 * {
