@@ -1,31 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@100&display=swap');
+
 /* background image will be global so it needs to be deleted while cocmpiling */
 body {
   /* background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%); */
   mix-blend-mode: normal;
 }
 
-.contact-head {
-  text-align: center;
+* {
+  font-family: Montserrat, sans-serif;
 }
 
-.required-star {
-  color: rgb(255 0 0);
-}
-
-.contact-form {
-  margin: 0 auto;
-}
-
-.wrapper-outer {
+.signup-container {
   width: 60%;
+  margin: 0 auto;
+  font-size: inherit;
+}
+
+#signup-form {
+  /* width: 90%; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  align-items: end;
+}
+
+.signup-wrapper-outer {
+  width: 100%;
   background: linear-gradient(180deg, #696560 0%, rgb(35 28 22 / 75%) 100%);
-  opacity: 0.8;
+
+  /* opacity: 0.8; */
   justify-content: center;
   margin: 0 auto;
   padding: 1rem 1.5rem;
 }
 
-.wrapper-signup-form {
+.signup-wrapper {
   background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
   opacity: 0.8;
   display: flex;
@@ -36,21 +46,30 @@ body {
   padding: 1rem;
 }
 
-.form-row {
+.signup-form-row {
   display: flex;
-  justify-content: flex-end;
+
+  /* flex-direction: column; */
   padding: 0.2em;
   gap: 1rem;
-  align-content: space-between;
+  justify-content: flex-end;
 }
 
-label {
+.signup-label {
   flex: 1;
   display: flex;
   flex-shrink: 1;
   justify-content: right;
   text-align: right;
   color: white;
+}
+
+.signup-required-star {
+  color: rgb(255 0 0);
+}
+
+.all-input-provided {
+  background-color: green;
 }
 
 #delivery {
@@ -66,42 +85,94 @@ button {
   width: 5rem;
 }
 
-textarea,
-input {
+.signup-input {
   width: 50%;
   text-align: left;
 }
 
-input:focus {
+.signup-input:required:invalid {
   outline: none;
-  border: 0.1rem solid rgb(255 0 0);
+  border: 0.1rem solid red;
 }
 
-.contact-head > img {
-  width: 70%;
+.signup-input-wrong {
+  background-color: red;
 }
 
-.error-msg {
-  color: rgb(227 20 20);
+.signup-error-msg {
+  /* display: flex;
+  z-index: 44;
+  margin: 1rem;
+  width: 100%; */
+  color: red;
 }
 
-.success-msg {
+.signup-error-span {
+  display: flex;
+  flex-direction: column;
+  color: red;
+  font-size: small;
+  font-family: Montserrat, sans-serif;
+}
+
+.signup-success-msg {
   color: rgb(4 255 4);
 }
 
+/* tool tip start */
+.tooltip {
+  z-index: 881;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100%;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(232 13 13) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  z-index: 88;
+}
+
+/* tool tip end */
+
 @media only screen and (max-width: 600px) {
-  .form-row {
+  .signup-form-row {
     display: flex;
     flex-direction: column;
   }
 
-  textarea,
-  input {
+  .signup-input {
     width: 100%;
     text-align: left;
   }
 
-  label {
+  .signup-label {
     display: flex;
     justify-content: flex-start;
   }

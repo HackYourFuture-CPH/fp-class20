@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@100&display=swap');
 
 /* background image will be global so it needs to be deleted while cocmpiling */
 body {
-  /* background-image: url(../../../../public/assets/images/hero_image.png); */
+  background-image: url('../../../../public/assets/images/hero_image.png');
   mix-blend-mode: normal;
+}
+
+* {
+  font-family: Montserrat, sans-serif;
 }
 
 .contact-form-container {
@@ -17,10 +22,16 @@ body {
   justify-content: center;
   color: white;
   margin: 0 auto;
+  font-size: medium;
+}
+
+.contact-head > img {
+  width: 70%;
 }
 
 .ready-button {
-  background-color: green;
+  background: #53742a;
+  border: 1px solid #fff;
 }
 
 .required-star {
@@ -44,10 +55,9 @@ body {
 .wrapper-contact-form {
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 3rem;
   margin: 0 auto;
   justify-content: center;
-  width: 100%;
 }
 
 .form-row {
@@ -81,13 +91,16 @@ input {
   text-align: left;
 }
 
-textarea:focus {
-  outline: none;
-  border: 0.1rem solid rgb(255 0 0);
-}
-
+textarea:focus,
 input:focus {
   outline: none;
+  border: 0.2rem solid #53742a;
+}
+
+input:required:invalid,
+textarea:required:invalid {
+  outline: none;
+  border: 0.1rem solid rgb(255 0 0);
 }
 
 .error-msg {
@@ -95,10 +108,18 @@ input:focus {
 }
 
 .success-msg {
-  color: rgb(4 255 4);
+  color: #53742a;
 }
 
-.simply-spices-text {
+.contact-error-span {
+  display: flex;
+  flex-direction: column;
+  color: rgb(255 0 0);
+  font-size: small;
+  font-family: Montserrat, sans-serif;
+}
+
+.contact-form-simply-spices-text {
   font-family: 'Fredericka the Great', Arial, Helvetica, sans-serif;
   font-size: 3.5rem;
   font-weight: 400;
@@ -109,16 +130,11 @@ input:focus {
 }
 
 @media only screen and (max-width: 600px) {
-  /* background image will be global so it needs to be deleted while cocmpiling */
-  body {
-    /* background-image: url('../../../../public/assets/images/hero_image.png'); */
-    mix-blend-mode: normal;
-  }
-
   .contact-form-container,
   .wrapper-outer-contact-form,
   .wrapper-contact-form {
     background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+    font-size: xx-small;
   }
 
   .form-row {

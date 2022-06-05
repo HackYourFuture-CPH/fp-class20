@@ -74,13 +74,16 @@ export const ContactForm = ({ text, label, handlePost }) => {
     }
     setErrorState(errors);
   };
+  // eslint-disable-next-line
+  console.log(errorState);
 
   return (
     <div className="contact-form-backgorund">
       <div className="contact-form-container">
         <div className="contact-head ">
-          <p className="simply-spices-text"> Simply Spices</p>
+          <p className="contact-form-simply-spices-text"> Simply Spices</p>
           <img
+            className="contact-form-vector_logo_underline"
             alt="simply spices text"
             src="assets/vectors/vector_logo_underline.svg"
           />
@@ -88,18 +91,18 @@ export const ContactForm = ({ text, label, handlePost }) => {
 
         <div className="wrapper-outer-contact-form">
           <p>
-            your opinion and questions matter to us so feel free to contact our
-            customer service for all general enquiries. We respond withing
+            Your opinion and questions matter to us so feel free to contact our
+            customer service for all general enquiries. We respond within
             maximum 2 working days.
           </p>
           <form id="contactForm">
             <div className="wrapper-contact-form">
               {isMessageSent ? (
-                <p className="success-msg">Message Sent</p>
+                <span className="success-msg">Message Sent</span>
               ) : (
                 <div className="error-msg">
                   {errorState.map((error) => (
-                    <p>{error.message}</p>
+                    <span className="contact-error-span">{error.message}</span>
                   ))}
                 </div>
               )}
@@ -177,7 +180,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
             </div>
           </form>
           <p>
-            Regardin all urgent matters you can also contact us on one of our
+            Regarding all urgent matters you can also contact us on one of our
             phone numbers.
           </p>
           <p>
@@ -185,7 +188,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
             12 34 56 87
           </p>
 
-          <span>+ 45 87654321 or press</span>
+          <span> +45 87 65 43 21 or press</span>
           <a
             href="https://www.hackyourfuture.dk/volunteer"
             target="_blank"
