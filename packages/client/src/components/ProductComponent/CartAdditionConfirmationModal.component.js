@@ -22,17 +22,17 @@ export const CartAdditionConfirmationModal = ({
         </button>
       </div>
       <div className="product-title">
-        <span>{productName}</span>
+        <div>{productName}</div>
       </div>
       <div className="product-image-modal">
         <img src={productImage} alt="product-img" />
-        <span>ADDED TO CART </span>
-        <span>
+        <div>ADDED TO CART </div>
+        <div>
           There are
-          <span className="count-item">{count}</span>
+          <div className="count-item">{count}</div>
           items in your Cart.
-        </span>
-        <span>Card subtotal: {count * price} DKK </span>
+        </div>
+        <div>Card subtotal: {count * price} DKK </div>
       </div>
 
       <div className="modal-footer">
