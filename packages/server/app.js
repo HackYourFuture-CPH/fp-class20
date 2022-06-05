@@ -6,6 +6,8 @@ const logger = require('morgan');
 const router = require('./api/routes/index');
 const HttpError = require('./api/lib/utils/http-error');
 
+const HttpError = require('./api/lib/utils/http-error');
+
 const app = express();
 
 app.use(logger('dev'));
@@ -23,6 +25,7 @@ app.use((err, req, res, next) => {
     return;
   }
   res.status(500).send({ error: "There's server issue going on right now." });
+
   next();
 });
 
