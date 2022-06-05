@@ -63,10 +63,11 @@ export const AddProductToCart = ({ product }) => {
       {isModalOpen && (
         <div className="confirmation-modal">
           <CartAdditionConfirmationModal
-            closeModal={() => toggleModal(false)}
+            onClose={() => toggleModal(false)}
             productImage={product.pictureUrl}
             productName={product.name}
             count={count}
+            setCount={setCount}
             price={product.price}
           />
         </div>

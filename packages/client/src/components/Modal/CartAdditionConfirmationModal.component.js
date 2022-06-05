@@ -4,39 +4,45 @@ import './CartAdditionConfirmationModal.styles.css';
 import PropTypes from 'prop-types';
 
 export const CartAdditionConfirmationModal = ({
-  closeModal,
+  onClose,
   productImage,
   productName,
   count,
   price,
+  setCount,
 }) => {
   return (
     <div className="modal-container">
       <div className="cancel-butt-container">
         <button
           type="button"
-          onClick={() => closeModal()}
+          onClick={() => onClose()}
           className="cancell-button"
         >
           X
         </button>
       </div>
       <div className="product-title">
-        <h4>{productName}</h4>
+        <span>{productName}</span>
       </div>
       <div className="product-image-modal">
         <img src={productImage} alt="product-img" />
-        <h5>ADDED TO CARD </h5>
-        <h5>
-          There are <span className="count-item">{count}</span> items in your
-          card.
-        </h5>
-        <h5>Card subtotal: {count * price} DKK </h5>
+        <span className="text">ADDED TO CART </span>
+        <span className="text">
+          There are
+          <span className="count-item">
+            {setCount((prevState) => {
+              return prevState + count;
+            })}
+          </span>
+          items in your Cart.
+        </span>
+        <span className="text">Card subtotal: {count * price} DKK </span>
       </div>
 
       <div className="modal-footer">
         <span className="continue-shopping-button">
-          <Button label="Continue Shopping" onClick={() => closeModal(false)} />
+          <Button label="Continue Shopping" onClick={() => onClose(false)} />
         </span>
         <span>
           <Button label="View Cart" backgroundColor="green" color="white" />
@@ -46,19 +52,19 @@ export const CartAdditionConfirmationModal = ({
   );
 };
 CartAdditionConfirmationModal.propTypes = {
-  closeModal: PropTypes.func,
+  onClose: PropTypes.func,
   productImage: PropTypes.string,
   productName: PropTypes.string,
   count: PropTypes.number,
   price: PropTypes.number,
+  setCount: PropTypes.func,
 };
 
 CartAdditionConfirmationModal.defaultProps = {
-  closeModal: () => {},
+  onClose: () => {},
   productImage: null,
-  // eslint-disable-next-line react/default-props-match-prop-types
-  PropTypes: '',
-  count: 1,
   price: 350,
   productName: 'product name',
+  count: 1,
+  setCount: () => {},
 };
