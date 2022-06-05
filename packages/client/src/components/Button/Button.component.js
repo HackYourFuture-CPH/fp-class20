@@ -2,23 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.styles.css';
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
+export const Button = ({
+  backgroundColor,
+  label,
+  icon,
+  size,
+  primary,
+  ...props
+}) => {
   const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
+    ? 'storybook-button-primary'
+    : 'storybook-button-secondary';
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
+      className={['storybook-button', `storybook-button-${size}`, mode].join(
         ' ',
       )}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
       {label}
+      {icon !== '' && <img className="button-icon" src={icon} alt="" />}
     </button>
   );
 };
@@ -40,6 +46,8 @@ Button.propTypes = {
    * Button contents
    */
   label: PropTypes.string.isRequired,
+  // it works as below if react component
+  icon: PropTypes.string,
   /**
    * Optional click handler
    */
@@ -48,7 +56,8 @@ Button.propTypes = {
 
 Button.defaultProps = {
   backgroundColor: null,
+  onClick: undefined,
   primary: false,
   size: 'medium',
-  onClick: undefined,
+  icon: '/assets/vectors/vector_cart.svg',
 };

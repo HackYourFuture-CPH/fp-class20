@@ -5,6 +5,8 @@ const logger = require('morgan');
 
 const router = require('./api/routes/index');
 
+const HttpError = require('./api/lib/utils/http-error');
+
 const app = express();
 
 app.use(logger('dev'));
@@ -14,5 +16,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(`/api/`, router);
+
+app.use((err, req, res, next) => {
+  if (err instanceof HttpError) {
+    res.status(err.httpStatus);
+    return res.send({ error: err.message });
+  }
+  res.status(500).send({ error: err.message });
+  next();
+});
 
 module.exports = app;

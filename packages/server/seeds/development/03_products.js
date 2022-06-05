@@ -24,6 +24,7 @@ exports.seed = async function (knex) {
       name: 'saffron powder',
       description:
         'Our Superior Grade Spanish Saffron is grown in La Mancha, Spain. Saffron is expensive because it must be harvested by hand.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',
@@ -37,6 +38,7 @@ exports.seed = async function (knex) {
       name: 'caraway seed',
       description:
         'The Dutch love Caraway Seeds in Leyden cheese. Danes love them in akvavit.',
+
       price: 50.0,
       size: '100',
       status: 'inStock',
@@ -50,6 +52,7 @@ exports.seed = async function (knex) {
       name: 'allspice',
       description:
         'Jamaicans take great pride in their world-famous allspice, harvested from 40-foot pimenta trees.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',
@@ -63,6 +66,7 @@ exports.seed = async function (knex) {
       name: 'black cumin seeds',
       description:
         'Whole cumin seeds are perfect on top of salads or steamed rice. The true flavors come out.',
+
       price: 50.0,
       size: '100',
       status: 'inStock',
@@ -76,6 +80,7 @@ exports.seed = async function (knex) {
       name: 'Fenugreek powder',
       description:
         'Fenugreek seeds lend a subtle sweet taste to pickles and chutneys.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',
@@ -89,6 +94,7 @@ exports.seed = async function (knex) {
       name: 'goji berry',
       description:
         'Goji berry is made from sweet and earthy chilies, that are mildly hot.',
+
       price: 50.0,
       size: '100',
       status: 'inStock',
@@ -102,6 +108,7 @@ exports.seed = async function (knex) {
       name: 'star anise',
       description:
         'Gathered at their peak under the Andalusian sun, our Anise Seeds lend a fleeting and floral scent reminiscent.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',
@@ -115,6 +122,7 @@ exports.seed = async function (knex) {
       name: 'dill seed',
       description:
         'The grassy flavor of Dill Seeds accent Russian and Caucasian dishes.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',
@@ -128,6 +136,7 @@ exports.seed = async function (knex) {
       name: 'poppy seeds',
       description:
         'Mixed into muffins or ground into paste for strudel, dough and blue poppy seeds have worked.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',
@@ -141,6 +150,7 @@ exports.seed = async function (knex) {
       name: 'dried bay leaves',
       description:
         'The Oracle of Delphi chewed fresh laurel leaves for divine inspiration. When dried.',
+
       price: 50.0,
       size: '100',
       status: 'inStock',
@@ -154,6 +164,7 @@ exports.seed = async function (knex) {
       name: 'powdered ginger',
       description:
         'Ginger adds zing to almost anything. Most dried ginger in the U.S. comes from India.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',
@@ -167,6 +178,7 @@ exports.seed = async function (knex) {
       name: 'cinnamon sticks',
       description:
         'If there’s one spice you must try from The Spice House, it’s cinnamon.',
+
       price: 100.0,
       size: '250',
       status: 'inStock',

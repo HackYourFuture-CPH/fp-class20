@@ -1,0 +1,8 @@
+.page-not-found-container {
+  color: #232516;
+}
+
+.page-not-found-container > a,
+.page-not-found-container > a:visited {
+  color: rgb(249 11 11);
+}
