@@ -15,7 +15,7 @@ const getProducts = async (category, query) => {
   }
 
   if (query.sort === 'lowestPrice') {
-    productByCategory = productByCategory.orderBy('Products.size', 'desc');
+    productByCategory = productByCategory.orderBy('Products.size', 'asc');
   }
   if (query.sort === 'newest') {
     productByCategory = productByCategory.orderBy('Products.createdAt', 'asc');
