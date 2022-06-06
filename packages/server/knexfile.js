@@ -18,10 +18,10 @@ module.exports = {
     },
     pool: { min: 0, max: 7 },
     migrations: {
-      directory: './migrations',
+      directory: '/migrations',
     },
     seeds: {
-      directory: path.join(__dirname, './seeds/development'),
+      directory: path.join(__dirname, '/seeds/development'),
     },
   },
   production: {
@@ -32,10 +32,10 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      directory: './migrations',
+      directory: '/migrations',
     },
     seeds: {
-      directory: './seeds/production',
+      directory: '/seeds/production',
     },
   },
 };
