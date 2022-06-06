@@ -285,11 +285,12 @@ export const SignupForm = ({ text, label, handlePost }) => {
             <span className="signup-error-span"> {errObj.zipCode}</span>
 
             <div className="signup-form-row">
+              {/* dummy button */}
               <button
                 className={
                   isAllInputProvided
-                    ? 'all-input-provided'
-                    : 'not-all-input-provided'
+                    ? 'all-input-provided-button'
+                    : 'all-input-notprovided-button'
                 }
                 type="button"
                 label={label}

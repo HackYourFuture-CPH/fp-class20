@@ -1,52 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@100&display=swap');
 
-/* background image will be global so it needs to be deleted while cocmpiling */
-body {
-  background-image: url('../../../../public/assets/images/hero_image.png');
-  mix-blend-mode: normal;
-  background-size: cover;
-  min-width: fit-content;
-  background-repeat: no-repeat;
-}
-
 * {
   font-family: Montserrat, sans-serif;
 }
 
 .contact-form-container {
-  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  background: #231c16e5;
   mix-blend-mode: normal;
   opacity: 0.8;
-  width: 60%;
+  width: 1190px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
+  color: #fff;
   margin: 0 auto;
   font-size: medium;
 }
 
-.contact-head > img {
-  width: 70%;
-}
-
-.ready-button {
-  background: #53742a;
-  border: 1px solid #fff;
-}
-
-.required-star {
-  color: rgb(255 0 0);
-}
-
 .contact-head {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.01rem;
 }
 
-.contact-form {
-  margin: 0 auto;
+.contact-head > img {
+  width: 50%;
+}
+
+.contact-form-simply-spices-text {
+  font-family: 'Fredericka the Great', Arial, Helvetica, sans-serif;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
 }
 
 .wrapper-outer-contact-form {
@@ -58,16 +53,16 @@ body {
 .wrapper-contact-form {
   display: flex;
   flex-direction: column;
-  padding: 3rem;
-  margin: 0 auto;
+  padding: 0 3rem 0 2rem;
   justify-content: center;
+  gap: 0.2rem;
 }
 
 .form-row {
   display: flex;
   justify-content: flex-end;
   padding: 0.2em;
-  gap: 1rem;
+  gap: 1.5rem;
   align-content: space-between;
 }
 
@@ -79,18 +74,13 @@ label {
   text-align: right;
 }
 
-button {
-  padding: 0.4rem 1rem;
-  margin-top: 1rem;
-  background: rgb(25 24 24);
-  color: white;
-  border: 0.1rem solid white;
-  width: 5rem;
+.required-star {
+  color: #f00;
 }
 
-textarea,
-input {
-  width: 50%;
+input,
+textarea {
+  width: 60%;
   text-align: left;
 }
 
@@ -100,27 +90,18 @@ input:focus {
   border: 0.2rem solid #53742a;
 }
 
-.error-msg {
-  color: rgb(227 20 20);
-}
-
 .success-msg {
-  color: #53742a;
-}
-
-.contact-input {
-  width: 50%;
-  text-align: left;
+  color: #8cff00;
 }
 
 .contact-input-wrong {
-  border: 0.2rem solid red;
+  border: 0.2rem solid #f00;
 }
 
 .contact-error-span {
   display: flex;
   flex-direction: column;
-  color: red;
+  color: #f80000;
   font-size: small;
   font-family: Montserrat, sans-serif;
   justify-content: right;
@@ -128,47 +109,78 @@ input:focus {
   text-align: right;
 }
 
-.contact-form-simply-spices-text {
-  font-family: 'Fredericka the Great', Arial, Helvetica, sans-serif;
-  font-size: 3.5rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: 0;
+.normal-button {
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  background: #191818;
+  color: #fff;
+  width: 15rem;
+  border: 1px solid #fff;
 }
 
-@media only screen and (max-width: 750px) {
-  .contact-form-container,
-  .wrapper-outer-contact-form,
-  .wrapper-contact-form {
-    background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+.ready-button {
+  background: #53742a;
+  border: 1px solid #fff;
+  width: 15rem;
+}
+
+.email-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1225px) {
+  .contact-form-container {
+    width: 800px;
+  }
+
+  * {
+    font-size: small;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  * {
     font-size: xx-small;
-    width: 100%;
+  }
+
+  .contact-form-container {
+    width: 400px;
     margin: 0 auto;
   }
 
   .form-row {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 0.5rem;
   }
 
-  textarea,
-  input {
+  input,
+  textarea {
     width: 100%;
     text-align: left;
   }
 
   label {
-    display: flex;
-    justify-content: flex-start;
+    visibility: hidden;
   }
 
-  button {
-    background: rgb(25 24 24);
-    color: white;
-    border: 0.1rem solid white;
-    width: 80%;
-    align-items: center;
+  .contact-form {
+    width: 100%;
+  }
+
+  .wrapper-contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact-error-span {
+    color: #f80000;
+    align-items: flex-start;
+    font-size: x-small;
   }
 }

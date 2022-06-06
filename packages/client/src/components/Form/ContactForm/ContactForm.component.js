@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import './ContactForm.styles.css';
-import { Button } from '../../Button/Button.component';
+// import './ContactForm.styles.css';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
@@ -71,7 +70,6 @@ export const ContactForm = ({ text, label, handlePost }) => {
         email: '',
         message: '',
       });
-      // navigate('/about-us-feedback-page');
     }
     setErrorState(errors);
   };
@@ -89,7 +87,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
   };
 
   return (
-    <div className="contact-form-backgorund">
+    <div className="contact-form-background">
       <div className="contact-form-container">
         <div className="contact-head ">
           <p className="contact-form-simply-spices-text"> Simply Spices</p>
@@ -106,7 +104,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
             customer service for all general enquiries. We respond within
             maximum 2 working days.
           </p>
-          <form id="contactForm">
+          <form id="contact-form">
             <div className="wrapper-contact-form">
               {isMessageSent ? (
                 <span className="success-msg">Message Sent</span>
@@ -133,6 +131,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   placeholder="type your name"
                   onChange={handleChange}
                   required
+                  // size="75"
                 />
               </div>
               <span className="contact-error-span"> {errObj.name}</span>
@@ -157,6 +156,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   placeholder="type your email"
                   onChange={handleChange}
                   required
+                  // size="75"
                 />
               </div>
               <span className="contact-error-span"> {errObj.email}</span>
@@ -187,7 +187,8 @@ export const ContactForm = ({ text, label, handlePost }) => {
               <span className="contact-error-span"> {errObj.message}</span>
 
               <div className="form-row">
-                {/* <button
+                {/* dummy button */}
+                <button
                   className={
                     isAllInputFilledOut ? 'ready-button' : 'normal-button'
                   }
@@ -196,18 +197,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   onClick={handleSubmit}
                 >
                   {text}
-                </button> */}
-
-                <Button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className={
-                    isAllInputFilledOut ? 'ready-button' : 'normal-button'
-                  }
-                  size="medium"
-                  label="SUBMIT"
-                  icon=""
-                />
+                </button>
               </div>
             </div>
           </form>
@@ -220,8 +210,9 @@ export const ContactForm = ({ text, label, handlePost }) => {
             12 34 56 87
           </p>
 
-          <span> +45 87 65 43 21 or press</span>
+          <span>press: +45 87 65 43 21 or press</span>
           <a
+            className="email-link"
             href="https://www.hackyourfuture.dk/volunteer"
             target="_blank"
             rel="noreferrer"
