@@ -1,50 +1,49 @@
-.corporate-info {
-  background-color: linear-gradient(
-    180deg,
-    #231c16 0%,
-    rgba(35 28 22/ 75%) 100%
-  );
-  box-sizing: border-box;
-  width: 22%;
-  padding-left: 1rem;
-  padding-bottom: 1rem;
-  margin-right: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
+
+.corporate-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff33;
+  height: 10rem;
+  width: 23%;
+  margin-right: 1%;
+  /* REMOVE THIS MARGIN IN MEDIA QUERIES!!!*/
+  padding: 0 2rem 1rem 2rem;
+  border: green solid 2px;
 }
 
-.corporate-info .text-big {
-  display: block;
-  padding-top: 2rem;
-  font-size: 1rem;
+.corporate-container .text-big {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-style: semibold;
+  font-size: 1rem;
   line-height: 1rem;
   font-weight: 600;
-  color: white;
+  color: #fff;
   text-align: left;
-  margin-bottom: 2rem;
+  margin: 0;
+  padding: 1rem 0 1rem 0;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
 }
 
-.corporate-info .text-small {
-  display: block;
+.corporate-container .text-small {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
-  color: white;
-  text-align: left;
+  color: #fff;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
 }
 
-@media screen and (max-width: 1225px) {
-  .corporate-info .text-small {
+/* @media screen and (max-width: 1225px) {
+  .corporate-container .text-small {
     font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 850px) {
-  .corporate-info {
+  .corporate-container {
     width: 80%;
     margin: 0 auto;
     padding-left: 20%;
     margin-bottom: 1rem;
   }
-}
+} */

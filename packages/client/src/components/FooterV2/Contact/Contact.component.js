@@ -1,18 +1,20 @@
 import React from 'react';
 import './Contact.styles.css';
 import phone from '../../../../public/assets/vectors/vector_receiver.svg';
-import envelop from '../../../../public/assets/vectors/vector_envelope.svg';
+import envelope from '../../../../public/assets/vectors/vector_envelope.svg';
 
 export const Contact = () => {
   return (
-    <div className="contact-info">
-      <span className="text-big ">Contact us</span>
-      <div className="text-small phone-text">
+    <div className="contact-container">
+      <div className="text-big ">Contact us</div>
+
+      <div className="text-small">
         <img src={phone} alt="Canvas phone Logo" className="phone" />
         <span>+45 666 555</span>
       </div>
+
       <div className="text-small">
-        <img src={envelop} alt="Canvas envelop Logo" className="envelop" />
+        <img src={envelope} alt="Canvas envelope Logo" className="envelope" />
         <span className="email-underline">spice @ kbh.dk</span>
       </div>
     </div>

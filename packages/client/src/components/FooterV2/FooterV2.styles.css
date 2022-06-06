@@ -3,56 +3,63 @@
 .whole-footer-container {
   display: flex;
   flex-direction: column;
+  /* border: solid royalblue; */
 }
 
-.footer-outer-container,
-.copyright-outer-container {
-  width: 100%;
+/* please delete the comments later -Magda */
+
+/* all the background sizing you need */
+.footer-top-background,
+.footer-bottom-background {
+  width: 100vw;
   padding: 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-.footer-outer-container {
-  background: rgba(35 28 22/ 85%);
-  width: 100%;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+.footer-top-background {
+  background: rgba(35 28 22 / 60%);
 }
 
-.copyright-outer-container {
-  background-color: rgba(35 28 22 /100%);
-  width: 100%;
-  padding: 0;
-  margin: 0 auto;
+.footer-bottom-background {
+  background-color: rgb(35, 28, 22);
+  background-color: #231c16;
+  /* rgb or hex? or any of them? 
+  Please read documentation regarding the correct formats 
+  for this project and convert them whenever required */
 }
 
-.footer-inner-container {
+.footer-top-content,
+.footer-bottom-content {
   width: 1190px;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  background: transparent;
 }
 
-.copyright-inner-container {
+.footer-top-content {
+  border: yellow solid 2px;
+}
+
+.footer-bottom-content {
   width: 1190px;
   display: flex;
-  justify-content: end;
-  color: white;
+  justify-content: flex-end;
+  background-color: transparent;
   margin: 0 auto;
   height: 2.5rem;
-  align-items: center;
-  text-align: end;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  color: #fff;
+  /* font::vertical::cleanup */
   font-size: 0.85rem;
-  font-weight: 400;
-  line-height: 1.56rem;
+  padding: 0.5rem 0 0 0;
+  align-items: center;
+
+  border: yellow dashed 2px;
 }
 
-@media screen and (max-width: 1225px) {
+/* @media screen and (max-width: 1225px) {
   .footer-inner-container,
   .copyright-inner-container {
     width: 800px;
@@ -80,4 +87,4 @@
   .copyright-inner-container {
     padding-right: 15%;
   }
-}
+} */

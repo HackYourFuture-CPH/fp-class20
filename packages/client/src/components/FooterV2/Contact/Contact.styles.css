@@ -1,60 +1,61 @@
-.contact-info {
-  background-color: rgb(35 28 22 / 60%);
-  width: 22%;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
-.contact-info img {
-  padding-right: 0.5rem;
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff33;
+  height: 10rem;
+  width: 23%;
+  padding: 0 2rem 1rem 2rem;
+  border: green solid 2px;
 }
 
 .email-underline {
   text-decoration: underline;
 }
 
-.contact-info .text-big {
-  padding-top: 2rem;
-  font-size: 1rem;
+.contact-container .text-big {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-style: semibold;
+  font-size: 1rem;
   line-height: 1rem;
   font-weight: 600;
-  color: white;
+  color: #fff;
   text-align: left;
+  margin: 0;
+  padding: 1rem 0 1rem 0;
 }
 
-.contact-info .text-small {
+.contact-container .text-small {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 2.5rem;
   font-weight: 400;
-  color: white;
-  letter-spacing: 0.01rem;
-  text-align: left;
-  align-items: center;
+  color: #fff;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
 }
 
 .phone,
-.envelop {
-  width: 1.75rem;
-  height: 1.68rem;
+.envelope {
+  margin: 0;
+  padding: 0 1rem 0 0;
+  width: 2rem;
+  height: auto;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
 }
 
-.contact-info .phone-text {
-  margin-bottom: 1rem;
-}
-
-@media screen and (max-width: 1225px) {
-  .contact-info .text-small {
+/* @media screen and (max-width: 1225px) {
+  .contact-container .text-small {
     font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 850px) {
-  .contact-info {
+  .contact-container {
     width: 80%;
     margin: 0 auto;
     padding-left: 20%;
   }
-}
+} */
