@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import './ContactForm.styles.css';
+import './ContactForm.styles.css';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
