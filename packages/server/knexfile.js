@@ -21,21 +21,21 @@ module.exports = {
       directory: './migrations',
     },
     seeds: {
-      directory: path.join(__dirname, '/seeds/development'),
+      directory: path.join(__dirname, './seeds/development'),
     },
   },
   production: {
-    client: 'mysql2',
-    connection: {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE,
+    client: 'postgresql',
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10,
     },
-    pool: { min: 0, max: 7 },
+    migrations: {
+      directory: './migrations',
+    },
     seeds: {
-      directory: path.join(__dirname, '/seeds/production'),
+      directory: './seeds/production',
     },
   },
 };
