@@ -210,15 +210,17 @@ export const ContactForm = ({ text, label, handlePost }) => {
             12 34 56 87
           </p>
 
-          <span>press: +45 87 65 43 21 or press</span>
-          <a
-            className="email-link"
-            href="https://www.hackyourfuture.dk/volunteer"
-            target="_blank"
-            rel="noreferrer"
-          >
-            @simplyspices.dk
-          </a>
+          <p>
+            Press: +45 87 65 43 21 or
+            <a
+              className="email-link"
+              href="https://www.hackyourfuture.dk/volunteer"
+              target="_blank"
+              rel="noreferrer"
+            >
+              press@simplyspices.dk
+            </a>
+          </p>
         </div>
       </div>
     </div>
