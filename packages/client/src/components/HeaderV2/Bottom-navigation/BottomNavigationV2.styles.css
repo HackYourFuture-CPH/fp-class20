@@ -26,6 +26,8 @@ div {
   outline: none;
   width: 100%;
   color: white;
+  padding-top: 0.5rem;
+  font-size: 1.25rem;
 }
 
 .input-container::placeholder {
@@ -54,16 +56,24 @@ div {
   margin: 0;
 }
 
+@media screen and (max-width: 1225px) {
+  .text {
+    padding-top: 0.3rem;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .text {
     font-size: 0.7rem;
+    padding-top: 0.3rem;
   }
 
   .input-container::placeholder {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .search-container {
     width: 25%;
+    margin-bottom: 0.5rem;
   }
 }
