@@ -5,7 +5,7 @@ const router = express.Router({ mergeParams: true });
 const searchProduct = require('../controllers/searchProduct.controller');
 
 router.get('/', (req, res, next) => {
-  searchProduct.controller
+  searchProduct
     .getSearchedProducts(req.query.name)
     .then((result) => res.json(result))
     .catch(next);
