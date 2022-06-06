@@ -20,7 +20,7 @@
     "validate": "yarn prettier:check && yarn lint && yarn stylelint:check",
     "fix": "yarn prettier:fix && yarn lint:fix && yarn stylelint:fix",
     "prepare": "husky install",
-    "start": "yarn run build"
+    "start": "node ./bin/www"
   },
   "devDependencies": {
     "husky": "^7.0.4",
