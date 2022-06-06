@@ -5,7 +5,6 @@
   "scripts": {
     "db:setup": "yarn knex migrate:up && yarn knex seed:run",
     "db:clean": "yarn knex migrate:rollback --all",
-    "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
   },
