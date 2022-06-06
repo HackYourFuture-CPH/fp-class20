@@ -44,6 +44,7 @@
   padding-left: 1rem;
   font-weight: 500;
 }
+
 @media screen and (max-width: 560px) {
   .address-info {
     width: 50%;

@@ -1,43 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
-.address-container {
+.address-info {
+  width: 33%;
+  background-color: rgb(35 28 22 / 15%);
+  line-height: 1.5rem;
+  padding-top: 2rem;
+  align-items: center;
+  color: white;
+  box-sizing: border-box;
+}
+
+.address-text-logo {
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column;
-  background-color: #ffffff33;
-  height: 10rem;
-  width: 23%;
-  padding: 0 2rem 1rem 2rem;
-  border: green solid 2px;
+  align-items: center;
+  text-align: center;
 }
 
-.simply-spices-logo {
+.map-in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.simply-spicesa {
   font-family: 'Fredericka the Great', Arial, Helvetica, sans-serif;
-  color: #fff;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
-  letter-spacing: 0rem;
-  padding: 1rem 0 1rem 0;
-  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
+  line-height: 1.85rem;
+  letter-spacing: 0.08em;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
-.coordinates-icon {
-  align-items: flex-start;
-  width: 1.5rem;
-  height: 3.5rem;
-  filter: drop-shadow(0.125rem 0.125rem 0.25rem #231016);
+.small-map-icon {
+  width: 1.6rem;
+  height: 1.88rem;
+  margin-right: 2rem;
 }
 
-.address-icon-text-small .address {
+.address {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1rem;
+  font-weight: 500;
   line-height: 1.5rem;
-  font-weight: 400;
-  color: #fff;
-  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
+  text-align: left;
 }
 
-/* @media screen and (max-width: 1225px) {
+@media screen and (max-width: 1225px) {
   .simply-spicesa {
     font-size: 1.5rem;
   }
@@ -56,10 +66,10 @@
     font-size: 2rem;
   }
 
-  .address-container {
+  .address-info {
     width: 80%;
     margin: 0 auto;
     padding-left: 15%;
     padding-bottom: 10%;
   }
-} */
+}

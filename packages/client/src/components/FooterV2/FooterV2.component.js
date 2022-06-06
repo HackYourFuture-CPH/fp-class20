@@ -8,8 +8,8 @@ import { Address } from './Address/Address.component';
 export const FooterV2 = () => {
   return (
     <div className="whole-footer-container">
-      <div className="footer-top-background">
-        <div className="footer-top-content">
+      <div className="footer-outer-container">
+        <div className="footer-inner-container">
           <Corporate />
           <Contact />
           <Map />
@@ -17,8 +17,8 @@ export const FooterV2 = () => {
         </div>
       </div>
 
-      <div className="footer-bottom-background">
-        <div className="footer-bottom-content">
+      <div className="copyright-outer-container">
+        <div className="copyright-inner-container">
           <p>Copyright info...</p>
         </div>
       </div>
