@@ -31,14 +31,14 @@
 }
 
 .footer-inner-container {
-  width: 1225px;
+  width: 1190px;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
 }
 
 .copyright-inner-container {
-  width: 1225px;
+  width: 1190px;
   display: flex;
   justify-content: end;
   color: white;
@@ -61,9 +61,13 @@
   .simply-spices {
     font-size: 1.5rem;
   }
+
+  .copyright-inner-container p {
+    font-size: 0.85rem;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .footer-inner-container,
   .copyright-inner-container {
     width: 400px;

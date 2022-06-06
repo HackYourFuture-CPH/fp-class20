@@ -44,7 +44,14 @@
 .contact-info .phone-text {
   margin-bottom: 1rem;
 }
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 1225px) {
+  .contact-info .text-small {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
   .contact-info {
     width: 80%;
     margin: 0 auto;

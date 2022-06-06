@@ -47,7 +47,7 @@
   text-align: left;
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1225px) {
   .simply-spicesa {
     font-size: 1.5rem;
   }
@@ -55,8 +55,13 @@
   .small-map-icon {
     margin-right: 0.5rem;
   }
+
+  .address {
+    font-size: 0.8rem;
+  }
 }
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 850px) {
   .simply-spicesa {
     font-size: 2rem;
   }
