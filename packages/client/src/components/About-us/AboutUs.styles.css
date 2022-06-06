@@ -1,34 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
 
-.about-us-section {
-  width: 60%;
-  height: 60%;
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  width: 1190px;
+  height: 100%;
   margin: 0 auto;
-  background: rgb(35 28 22 / 70%);
-  text-align: center;
-  padding-bottom: 1rem;
+  padding: 2rem 0 4em;
+  background: rgb(35 28 22 / 90%);
+  mix-blend-mode: normal;
+  justify-content: center;
 }
 
 .simple-spices-heading {
+  display: flex;
+  margin: 0 auto;
   font-family: 'Fredericka the Great', cursive;
-  font-size: 3rem;
-  font-style: normal;
-  letter-spacing: -0.02em;
-  color: rgb(255 255 255 / 80%);
-  margin-top: 1.4rem;
-  margin-bottom: 0.1rem;
+  line-height: 1.5rem;
+  transform: scale(2.2);
+  font-weight: 100;
+  padding: 2rem 0 1rem;
+  color: #fff;
 }
 
 .main-slogan-vector-style {
-  width: 50%;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0;
+  transform: scale(1.4);
+}
+
+.about-heading,
+.about-us-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  padding: 2rem 0 0;
+  color: #fff;
+  text-align: center;
 }
 
 .about-us-description {
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-style: normal;
-  width: 65%;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  margin: auto;
-  color: #fff;
+  padding: 1.5rem 0 0;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 1225px) {
+  .about-us-container {
+    width: 800px;
+  }
+
+  * {
+    font-size: small;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  * {
+    font-size: xx-small;
+  }
+
+  .about-us-container {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .main-slogan-vector-style {
+    transform: scale(1.8);
+    margin: 0 auto;
+  }
 }
