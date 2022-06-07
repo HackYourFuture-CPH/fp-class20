@@ -211,7 +211,15 @@ export const ContactForm = ({ text, label, handlePost }) => {
           </p>
 
           <p>
-            Press: +45 87 65 43 21 or
+            <a
+              className="email-link"
+              href="tel:+4587654321"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Press: +45 87 65 43 21
+            </a>
+            &nbsp; or
             <a
               className="email-link"
               href="https://www.hackyourfuture.dk/volunteer"
