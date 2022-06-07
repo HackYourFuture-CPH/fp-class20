@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
+
+.feedback-message-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1190px;
+  height: 100%;
+  background: rgb(35 28 22 / 90%);
+  mix-blend-mode: normal;
+}
+
+.simple-spices-heading {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 3rem;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: rgb(255 255 255 / 80%);
+  margin-top: 1.4rem;
+  margin-bottom: 0.1rem;
+}
+
+.main-slogan-vector-style {
+  width: 40%;
+}
+
+.feedback-message {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  width: 50%;
+  font-size: 1.5rem;
+  line-height: 1.2rem;
+  margin: auto;
+  color: #fff;
+}
+
+.feedback-message p {
+  text-align: center;
+}
+
+.thank-you {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1225px) {
+  .feedback-message-section {
+    width: 800px;
+  }
+
+  * {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .feedback-message-section {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  * {
+    font-size: 0.5rem;
+  }
+
+  .vector-logo-underline {
+    transform: scale(1.8);
+    margin: 0 auto;
+  }
+}
