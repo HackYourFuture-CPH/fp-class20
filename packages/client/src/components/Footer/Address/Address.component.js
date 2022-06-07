@@ -5,16 +5,16 @@ import map from '../../../../public/assets/vectors/vector_location.svg';
 export const Address = () => {
   return (
     <div className="address-info">
-      <span className="simply-spices">Simply Spices</span>
+      <span className="simply-spicesa">Simply Spices</span>
       <div className="address-text-logo">
         <img className="small-map-icon" src={map} alt="Canvas map Logo" />
-        <p className="address">
+        <span className="address">
           Norrebrogade 666
           <br />
           2200 Norrebro
           <br />
           Copenhagen
-        </p>
+        </span>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 .corporate-info {
   background-color: rgb(35 28 22 / 60%);
-  width: 20%;
+  box-sizing: border-box;
+  width: 22%;
   padding-left: 1rem;
   padding-bottom: 1rem;
   margin-right: 1rem;
@@ -8,28 +9,41 @@
 
 .corporate-info .text-big {
   display: block;
-  padding-top: 1rem;
-  font-size: 0.8rem;
+  padding-top: 2rem;
+  font-size: 1rem;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-style: semibold;
-  line-height: 3rem;
+  line-height: 1rem;
   font-weight: 600;
   color: white;
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
 .corporate-info .text-small {
   display: block;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
   color: white;
-  letter-spacing: 0.01rem;
+  text-align: left;
 }
-@media screen and (max-width: 560px) {
+
+@media screen and (max-width: 1225px) {
+  .corporate-info .text-small {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .corporate-info {
-    width: 40%;
-    text-align: start;
-    margin: 0 auto;
+    width: 100%;
+  }
+
+  .corporate-info .text-big,
+  .corporate-info .text-small {
+    text-align: center;
   }
 }
