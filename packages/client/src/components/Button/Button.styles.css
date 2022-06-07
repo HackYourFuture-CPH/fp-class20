@@ -1,162 +1,57 @@
-/* Button Style */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 .storybook-button {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-style: normal;
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
   width: fit-content;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
 }
 
-.storybook-button--submit {
-  width: 21.563rem;
-  height: 4.125rem;
-  background: #53742a;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.875rem;
-}
-
-.storybook-button--small {
-  font-size: 0.75rem;
-  padding: 0.625rem 1rem;
-}
-
-.add-to-cart-svg {
+.button-icon {
   width: 1.25rem;
-  height: 25rem;
+  height: 1.25rem;
   padding-left: 0.625rem;
 }
 
-.storybook-button--submitSecondary {
-  width: 21.563rem;
-  height: 4.125rem;
-  background: #231c16;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.875rem;
-}
-.storybook-button--shop {
-  width: 21.563rem;
-  height: 4.125rem;
-  background: #231c16;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 1.875rem;
-}
-
-.storybook-button--editDetails {
-  width: 12.058rem;
-  height: 2.313rem;
-  background-color: #2c251e;
+.storybook-button-primary {
+  background: #53742a;
   border: 1px solid #ffffffd3;
-  color: #ffffff;
-  text-align: center;
-  font-weight: 400;
-  font-size: 0.938rem;
+  color: #fff;
+  font-style: normal;
 }
 
-.storybook-button--continueShopping {
-  width: 13.313rem;
-  height: 2.313rem;
-  background: rgba(35, 28, 22, 0.9);
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 0.938rem;
-  text-align: center;
-}
-
-.storybook-button--continueShoppingSecondary {
-  width: 12.058rem;
-  height: 2.313rem;
-  background: rgba(35, 28, 22, 0.9);
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 0.938rem;
+.storybook-button-secondary {
+  background: rgb(35 28 22 / 90%);
+  border: 1px solid #fff;
+  color: #fff;
   line-height: 1.125rem;
   text-align: center;
-  padding: 0px;
+  font-size: 0.938rem;
 }
 
-.storybook-button--reviewOrderDetails {
+.storybook-button-small {
   width: 12.058;
   height: 2.313rem;
-  background: rgba(35, 28, 22, 0.9);
-  border: 1px solid #ffffff;
-  color: #ffffff;
   font-weight: 400;
   font-size: 0.938rem;
   line-height: 1.125rem;
-  text-align: center;
 }
 
-.storybook-button--checkout {
-  width: 13.313rem;
-  height: 37px;
-  background: #53742a;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.storybook-button--reviewOrder {
+.storybook-button-medium {
   width: 13.313rem;
   height: 2.313rem;
-  background: #53742a;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.938rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.storybook-button--addToCart {
-  width: 13.313rem;
-  height: 2.313rem;
-  background: #53742a;
-  border: 1px solid #ffffffd3;
-  color: #ffffff;
-  font-style: normal;
   font-weight: 600;
   font-size: 0.938rem;
   line-height: 1.125rem;
-  text-align: center;
-  padding-left: 25px;
 }
 
-.storybook-button--primary {
-  color: #ffffff;
-  background-color: #53742a;
-}
-.storybook-button--secondary {
-  color: #ffffff;
-  background-color: rgba(35, 28, 22, 0.9);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-}
-.storybook-button--small {
-  font-size: 0.75rem;
-  padding: 0.625rem 1rem;
-}
-.storybook-button--medium {
-  font-size: 0.875rem;
-  padding: 0.688rem 1.25rem;
-}
-.storybook-button--large {
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
+.storybook-button-large {
+  width: 21.563rem;
+  height: 4.125rem;
+  font-weight: 500;
+  font-size: 1.875rem;
 }
