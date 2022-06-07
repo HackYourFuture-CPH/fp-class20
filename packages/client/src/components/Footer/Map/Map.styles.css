@@ -10,6 +10,17 @@
   margin-top: 1rem;
 }
 
+@media screen and (max-width: 1225px) {
+  .google-map iframe {
+    width: 100%;
+  }
+
+  body {
+    padding: 0 !important;
+    background: none !important;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .google-map {
     width: 100%;
@@ -18,5 +29,11 @@
 
   .google-map iframe {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .google-map iframe {
+    width: 80%;
   }
 }

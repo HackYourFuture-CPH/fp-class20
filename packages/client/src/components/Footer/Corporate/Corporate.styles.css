@@ -39,11 +39,13 @@
 
 @media screen and (max-width: 700px) {
   .corporate-info {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 18%;
   }
 
   .corporate-info .text-big,
   .corporate-info .text-small {
-    text-align: center;
+    text-align: left;
   }
 }
