@@ -1,14 +1,10 @@
 .modal-container {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  background-color: #38332e;
+  background-color: #231c16;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 36.125rem;
-  width: 62.5rem;
-  left: 28.75rem;
-  top: 24.063rem;
   box-shadow: 0 0 0.5rem 0.313rem rgb(35 16 22 / 100%);
   border-width: 1.75rem 2.25rem 1.25rem;
   border-color: #4a443f;
@@ -18,14 +14,14 @@
 .modal-footer {
   display: flex;
   flex-direction: row;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .cancel-butt-container {
   padding-left: 43.2rem;
 }
 
-.cancell-button {
+.cancel-button {
   height: 2.18rem;
   width: 2.825rem;
   left: 86.125rem;
@@ -41,19 +37,78 @@
   offset: 0.125rem, 0.125rem #231016;
 }
 
+.product-image-modal {
+  text-align: center;
+}
+
 .product-image-modal img {
   height: 7.5rem;
   width: 7.5rem;
   left: 56.25rem;
   top: 31.688rem;
   border-radius: 18.75rem;
-  margin-left: 5.3rem;
+  margin: 0.5rem auto;
 }
 
 .count-item {
   color: red;
+  padding: 0.5rem;
+  margin-top: 1rem;
 }
 
 .continue-shopping-button {
   margin-right: 2rem;
+}
+
+@media screen and (max-width: 874px) and (min-width: 600px) {
+  .modal-container {
+    margin: 3rem;
+    width: 100%;
+    box-shadow: 0 rgb(35 16 22 / 100%);
+  }
+
+  .cancel-butt-container {
+    padding-left: 23.2rem;
+  }
+
+  .modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .continue-shopping-button {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-container {
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    font-size: 0.75rem;
+    box-shadow: 0 0 0.5rem 0.313rem rgb(35 16 22 / 100%);
+  }
+
+  .modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cancel-butt-container {
+    padding-left: 13rem;
+  }
+
+  .product-title {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .continue-shopping-button {
+    margin-left: 2rem;
+  }
 }

@@ -16,23 +16,22 @@ export const CartAdditionConfirmationModal = ({
         <button
           type="button"
           onClick={() => onClose()}
-          className="cancell-button"
+          className="cancel-button"
         >
           X
         </button>
       </div>
-      <div className="product-title">
-        <div>{productName}</div>
-      </div>
+      <div className="product-title">{productName}</div>
       <div className="product-image-modal">
         <img src={productImage} alt="product-img" />
         <div>ADDED TO CART </div>
         <div>
           There are
-          <div className="count-item">{count}</div>
+          <span className="count-item">{count}</span>
           items in your Cart.
+          <br />
+          <span>Card subtotal: {count * price} DKK </span>
         </div>
-        <div>Card subtotal: {count * price} DKK </div>
       </div>
 
       <div className="modal-footer">
