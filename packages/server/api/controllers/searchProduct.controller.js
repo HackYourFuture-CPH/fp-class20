@@ -1,3 +1,4 @@
+const { response } = require('express');
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
@@ -13,10 +14,11 @@ const getSearchedProducts = async (name) => {
       .where('name', 'like', `%${name}%`);
 
     if (searchedProducts.length === 0) {
-      throw new Error(`the searched item does no exist`, 404);
+      throw new HttpError(`the searched item does no exist`, 404);
     }
     return searchedProducts;
   } catch (error) {
+    response.status(error.httpStatus);
     return error.message;
   }
 };
