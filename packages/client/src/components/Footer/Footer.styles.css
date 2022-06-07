@@ -2,7 +2,7 @@
 
 .whole-footer-container {
   /* background: rgba(35 28 22 / 100%); */
-  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  background: #231c1699;
   mix-blend-mode: normal;
   opacity: 0.8;
   padding: 0;
@@ -20,7 +20,7 @@
 }
 
 .footer-up-background {
-  background: #231c1699;
+  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
 
   /* background-image: url('../../../public/assets/images/vintage_concrete_desaturated.png');
   background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%); */
