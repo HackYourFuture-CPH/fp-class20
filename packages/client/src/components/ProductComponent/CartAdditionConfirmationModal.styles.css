@@ -1,4 +1,5 @@
 .modal-container {
+  width: 1190px;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: #231c16;
   display: flex;
@@ -60,35 +61,16 @@
   margin-right: 2rem;
 }
 
-@media screen and (max-width: 874px) and (min-width: 600px) {
+@media screen and (max-width: 1225px) {
   .modal-container {
-    margin: 3rem;
-    width: 100%;
-    box-shadow: 0 rgb(35 16 22 / 100%);
-  }
-
-  .cancel-butt-container {
-    padding-left: 23.2rem;
-  }
-
-  .modal-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .continue-shopping-button {
-    margin-left: 2rem;
+    width: 800px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .modal-container {
-    width: 100%;
-    margin-top: 2rem;
-    margin-left: 3rem;
-    font-size: 0.75rem;
+    width: 400px;
+    font-size: 0.85rem;
     box-shadow: 0 0 0.5rem 0.313rem rgb(35 16 22 / 100%);
   }
 
@@ -97,6 +79,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 7rem;
+    margin-top: 2rem;
   }
 
   .cancel-butt-container {
