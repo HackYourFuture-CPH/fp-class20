@@ -59,18 +59,18 @@
   }
 
   * {
-    font-size: small;
+    font-size: 0.8rem;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  * {
-    font-size: xx-small;
-  }
-
   .about-us-container {
     width: 400px;
     margin: 0 auto;
+  }
+
+  * {
+    font-size: 0.4rem;
   }
 
   .main-slogan-vector-style {
