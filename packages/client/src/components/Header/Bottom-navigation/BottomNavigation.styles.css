@@ -3,7 +3,7 @@
 .right-container-container {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 75%;
   padding: 0.7rem;
   justify-content: space-evenly;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -20,6 +20,7 @@ div {
 }
 
 .input-container {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   border: none;
   background-color: transparent;
   resize: none;
@@ -60,9 +61,13 @@ div {
   .text {
     padding-top: 0.3rem;
   }
+
+  .search-container {
+    width: 25%;
+  }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 750px) {
   .text {
     font-size: 0.7rem;
     padding-top: 0.3rem;
@@ -72,8 +77,12 @@ div {
     font-size: 0.8rem;
   }
 
+  .input-container {
+    font-size: 1rem;
+  }
+
   .search-container {
-    width: 25%;
+    width: 38%;
     margin-bottom: 0.5rem;
   }
 }

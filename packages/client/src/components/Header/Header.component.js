@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ReactComponent as ArrowUp } from '../../../public/assets/vectors/vector_arrow_up.svg';
 import { ReactComponent as ArrowDown } from '../../../public/assets/vectors/vector_arrow_down.svg';
-import './HeaderV2.styles.css';
-import { BottomNavigationV2 } from './Bottom-navigation/BottomNavigationV2.component';
+import './Header.styles.css';
+import { BottomNavigation } from './Bottom-navigation/BottomNavigation.component';
 
-function HeaderV2() {
+function Header() {
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
   const displayMode = dropDownExpanded ? 'display' : 'no-display';
   const toggleIcon = () => {
@@ -14,7 +14,7 @@ function HeaderV2() {
     <div className="whole-container">
       <div className="up-container">
         <div className="button-for-spices">
-          <span className="spices-button-new">SPICES</span>
+          <span className="spices-button">SPICES</span>
 
           {dropDownExpanded ? (
             <button
@@ -34,7 +34,7 @@ function HeaderV2() {
             </button>
           )}
         </div>
-        <BottomNavigationV2 />
+        <BottomNavigation />
       </div>
 
       {/* this is the toggle part */}
@@ -78,4 +78,4 @@ function HeaderV2() {
     </div>
   );
 }
-export default HeaderV2;
+export default Header;
