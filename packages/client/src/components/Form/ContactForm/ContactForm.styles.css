@@ -110,10 +110,6 @@ input:focus {
     background-color: lightblue;
   }
 
-  * {
-    font-size: 7px;
-  }
-
   .form-row {
     display: flex;
     flex-direction: column;
