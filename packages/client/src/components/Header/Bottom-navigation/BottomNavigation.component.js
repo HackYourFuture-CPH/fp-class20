@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './BottomNavigationV2.styles.css';
+import './BottomNavigation.styles.css';
 
-export const BottomNavigationV2 = () => {
+export const BottomNavigation = () => {
   return (
     <>
       <div className="text">
