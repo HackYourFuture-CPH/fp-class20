@@ -5,18 +5,14 @@ img {
   width: 65%;
 }
 
-.error-page {
-  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
-  mix-blend-mode: normal;
-  opacity: 0.8;
-}
-
 .error-details {
   width: 1190px;
   background: rgb(35 28 22 / 90%);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  mix-blend-mode: normal;
+  opacity: 0.8;
 }
 
 .error-message {
