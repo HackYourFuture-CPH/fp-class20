@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
 
+.error-page {
+  background: #867572;
+}
+
 img {
-  margin-left: 3rem;
-  width: 65%;
+  padding-top: 2rem;
 }
 
 .error-details {
   width: 1190px;
-  background: rgb(35 28 22 / 90%);
+  background: linear-gradient(180deg, #231c16 0%, rgba(35 28 22/ 75%) 100%);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   mix-blend-mode: normal;
   opacity: 0.8;
+  justify-content: space-evenly;
 }
 
 .error-message {
@@ -21,8 +25,6 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -5px;
-  width: 35%;
 }
 
 h3 {
@@ -50,9 +52,9 @@ h3 {
     text-align: center;
   }
 
-  img {
-    width: 35%;
-    margin: 0 auto;
+  body {
+    padding: 0 !important;
+    background: none !important;
   }
 
   h3 {
