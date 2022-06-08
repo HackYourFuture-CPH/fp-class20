@@ -1,4 +1,5 @@
-/* Button Style */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 .storybook-button {
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -10,153 +11,47 @@
   border: 1px solid #fff;
 }
 
-.storybook-button-submit {
-  width: 21.563rem;
-  height: 4.125rem;
-  background: #53742a;
-  border: 1px solid #fff;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.875rem;
-}
-
-.add-to-cart-svg {
+.button-icon {
   width: 1.25rem;
-  height: 25rem;
+  height: 1.25rem;
   padding-left: 0.625rem;
 }
 
-.storybook-button-submit-secondary {
-  width: 21.563rem;
-  height: 4.125rem;
-  background: #231c16;
-  border: 1px solid #fff;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.875rem;
-}
-
-.storybook-button-shop {
-  width: 21.563rem;
-  height: 4.125rem;
-  background: #231c16;
-  border: 1px solid #fff;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.875rem;
-}
-
-.storybook-button-edit-details {
-  width: 12.058rem;
-  height: 2.313rem;
-  background-color: #2c251e;
-  border: 1px solid #ffffffd3;
-  color: #fff;
-  text-align: center;
-  font-weight: 400;
-  font-size: 0.938rem;
-}
-
-.storybook-button-continue-shopping {
-  width: 13.313rem;
-  height: 2.313rem;
-  background: rgb(35 28 22 / 90%);
-  border: 1px solid #fff;
-  color: #fff;
-  font-weight: 400;
-  font-size: 0.938rem;
-  text-align: center;
-}
-
-.storybook-button-continue-shopping-secondary {
-  width: 12.058rem;
-  height: 2.313rem;
-  background: rgb(35 28 22 / 90%);
-  border: 1px solid #fff;
-  color: #fff;
-  font-weight: 400;
-  font-size: 0.938rem;
-  line-height: 1.125rem;
-  text-align: center;
-  padding: 0;
-}
-
-.storybook-button-review-order-details {
-  width: 12.058;
-  height: 2.313rem;
-  background: rgb(35 28 22 / 90%);
-  border: 1px solid #fff;
-  color: #fff;
-  font-weight: 400;
-  font-size: 0.938rem;
-  line-height: 1.125rem;
-  text-align: center;
-}
-
-.storybook-button-checkout {
-  width: 13.313rem;
-  height: 37px;
-  background: #53742a;
-  border: 1px solid #fff;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.storybook-button-review-order {
-  width: 13.313rem;
-  height: 2.313rem;
-  background: #53742a;
-  border: 1px solid #fff;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.938rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.storybook-button-add-to-cart {
-  width: 13.313rem;
-  height: 2.313rem;
+.storybook-button-primary {
   background: #53742a;
   border: 1px solid #ffffffd3;
   color: #fff;
   font-style: normal;
-  font-weight: 600;
-  font-size: 0.938rem;
-  line-height: 1.125rem;
-  text-align: center;
-  padding-left: 25px;
-}
-
-.storybook-button-primary {
-  color: #fff;
-  background-color: #53742a;
 }
 
 .storybook-button-secondary {
+  background: rgb(35 28 22 / 90%);
+  border: 1px solid #fff;
   color: #fff;
-  background-color: rgb(35 28 22 / 90%);
-  box-shadow: rgb(0 0 0 / 15%) 0 0 0 1px inset;
+  line-height: 1.125rem;
+  text-align: center;
+  font-size: 0.938rem;
 }
 
 .storybook-button-small {
-  font-size: 0.75rem;
-  padding: 0.625rem 1rem;
+  width: 12.058;
+  height: 2.313rem;
+  font-weight: 400;
+  font-size: 0.938rem;
+  line-height: 1.125rem;
 }
 
 .storybook-button-medium {
-  font-size: 0.875rem;
-  padding: 0.688rem 1.25rem;
+  width: 13.313rem;
+  height: 2.313rem;
+  font-weight: 600;
+  font-size: 0.938rem;
+  line-height: 1.125rem;
 }
 
 .storybook-button-large {
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
+  width: 21.563rem;
+  height: 4.125rem;
+  font-weight: 500;
+  font-size: 1.875rem;
 }
