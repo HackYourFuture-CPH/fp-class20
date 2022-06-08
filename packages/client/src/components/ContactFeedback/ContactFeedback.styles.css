@@ -7,8 +7,13 @@
   align-items: center;
   width: 1190px;
   height: 100%;
-  background: rgb(35 28 22 / 90%);
+  background: rgba(35 28 22 / 90%);
   mix-blend-mode: normal;
+  margin: 0 auto;
+}
+
+.heading-section {
+  text-align: center;
 }
 
 .simple-spices-heading {
@@ -16,7 +21,7 @@
   font-size: 3rem;
   font-style: normal;
   letter-spacing: -0.02em;
-  color: rgb(255 255 255 / 80%);
+  color: rgba(255 255 255 / 80%);
   margin-top: 1.4rem;
   margin-bottom: 0.1rem;
 }
@@ -59,8 +64,14 @@
 
 @media only screen and (max-width: 800px) {
   .feedback-message-section {
-    width: 400px;
+    box-sizing: border-box;
+    width: 375px;
     margin: 0 auto;
+  }
+
+  body {
+    padding: 0 !important;
+    background: none !important;
   }
 
   * {
