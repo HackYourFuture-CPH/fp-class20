@@ -18,60 +18,59 @@ export const AddProductToCart = ({ product }) => {
 
   return (
     <div className="product-whole-container">
-      {isModalOpen ? (
-        <div className="confirmation-modal">
-          <CartAdditionConfirmationModal
-            onClose={() => toggleModal(false)}
-            productImage={product.pictureUrl}
-            productName={product.name}
-            count={count}
-            setCount={setCount}
-            price={product.price}
+      <div className="product-container">
+        <div className="favorite-icon">
+          Save to favorites
+          <img
+            onClick={onAddToFavorites}
+            src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
+            alt="heart-icon"
+            aria-hidden="true"
           />
         </div>
-      ) : (
-        <div className="product-container">
-          <div className="favorite-icon">
-            Save to favorites
-            <img
-              onClick={onAddToFavorites}
-              src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
-              alt="heart-icon"
-              aria-hidden="true"
-            />
+        <div className="product-details">
+          <div className="product-image">
+            <img src={product.pictureUrl} alt="product-img" />
           </div>
-          <div className="product-details">
-            <div className="product-image">
-              <img src={product.pictureUrl} alt="product-img" />
-            </div>
 
-            <div className="product-information">
-              <div>
-                <h2 className="product-name"> {product.name}</h2>
-                <p className="product-info"> {product.description}</p>
+          <div className="product-information">
+            <div>
+              <h2 className="product-name"> {product.name}</h2>
+              <p className="product-info"> {product.description}</p>
+            </div>
+            <div>
+              <span className="product-size">{product.size}</span>
+              <span className="product-size">{product.price} DKK</span>
+            </div>
+            <div className="counter-cart-button">
+              <div className="counter-button">
+                <Counter count={count} setCount={setCount} />
               </div>
-              <div>
-                <span className="product-size">{product.size}</span>
-                <span className="product-size">{product.price} DKK</span>
-              </div>
-              <div className="counter-cart-button">
-                <div className="counter-button">
-                  <Counter count={count} setCount={setCount} />
-                </div>
-                <Button
-                  label="ADD TO CART "
-                  type="addToCart"
-                  backgroundColor="#53742A"
-                  className="add-to-cart-button"
-                  onClick={() => {
-                    toggleModal(true);
-                  }}
-                />
-              </div>
+              <Button
+                label="ADD TO CART "
+                type="addToCart"
+                backgroundColor="#53742A"
+                className="add-to-cart-button"
+                onClick={() => {
+                  toggleModal(true);
+                }}
+              />
             </div>
           </div>
         </div>
-      )}
+        {isModalOpen && (
+          <div className="confirmation-modal">
+            <CartAdditionConfirmationModal
+              onClose={() => toggleModal(false)}
+              productImage={product.pictureUrl}
+              productName={product.name}
+              count={count}
+              setCount={setCount}
+              price={product.price}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
