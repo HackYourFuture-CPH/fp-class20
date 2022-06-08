@@ -5,7 +5,6 @@ const exampleResources = require('./exampleResources.router');
 
 const category = require('./category.router');
 const products = require('./products.router');
-const searchProduct = require('./searchProduct.router');
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -38,6 +37,5 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 router.use('/exampleResources', exampleResources);
 router.use('/category', category);
 router.use('/products', products);
-router.use('/searchProduct', searchProduct);
 
 module.exports = router;

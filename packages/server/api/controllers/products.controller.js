@@ -35,7 +35,24 @@ const getProductsByid = async (id) => {
   return productsByid;
 };
 
+const getSearchedProducts = async (name) => {
+  const nameReg = /^[A-Za-z]*$/;
+  if (!nameReg.test(name)) {
+    throw new HttpError('the data entery is incorrect', 400);
+  }
+
+  try {
+    const searchedProducts = await knex('Products')
+      .select('name', 'price', 'size', 'pictureUrl', 'categoryId')
+      .where('name', 'like', `%${name}%`);
+    return searchedProducts;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   getAllProducts,
   getProductsByid,
+  getSearchedProducts,
 };
