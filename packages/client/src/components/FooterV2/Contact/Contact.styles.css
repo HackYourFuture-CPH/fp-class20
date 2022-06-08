@@ -4,10 +4,9 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff33;
-  height: 10rem;
+  height: 12rem;
   width: 23%;
   padding: 0 2rem 1rem 2rem;
-  border: green solid 2px;
 }
 
 .email-underline {
@@ -23,6 +22,7 @@
   text-align: left;
   margin: 0;
   padding: 1rem 0 1rem 0;
+  text-shadow: 0.125rem 0.125rem 0.25rem #231016;
 }
 
 .contact-container .text-small {
@@ -46,16 +46,16 @@
   text-shadow: 0.125rem 0.125rem 0.25rem #231016;
 }
 
-/* @media screen and (max-width: 1225px) {
-  .contact-container .text-small {
-    font-size: 0.8rem;
+@media screen and (max-width: 1225px) {
+  .contact-container {
+    width: 50%;
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 500px) {
   .contact-container {
-    width: 80%;
-    margin: 0 auto;
-    padding-left: 20%;
+    width: 100%;
+    margin: 0;
+    align-items: center;
   }
-} */
+}

@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
+* {
+  box-sizing: border-box;
+  /* border: pink solid 2px; */
+}
 
 .whole-footer-container {
   display: flex;
   flex-direction: column;
-  /* border: solid royalblue; */
+  width: 100vw;
 }
 
 /* please delete the comments later -Magda */
@@ -39,10 +43,6 @@
   background: transparent;
 }
 
-.footer-top-content {
-  border: yellow solid 2px;
-}
-
 .footer-bottom-content {
   width: 1190px;
   display: flex;
@@ -53,38 +53,56 @@
   color: #fff;
   /* font::vertical::cleanup */
   font-size: 0.85rem;
-  padding: 0.5rem 0 0 0;
+  padding: 0.5rem 1rem 0 0;
   align-items: center;
-
-  border: yellow dashed 2px;
 }
 
-/* @media screen and (max-width: 1225px) {
-  .footer-inner-container,
-  .copyright-inner-container {
-    width: 800px;
-  }
-
-  .simply-spices {
-    font-size: 1.5rem;
-  }
-
-  .copyright-inner-container p {
-    font-size: 0.85rem;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .footer-inner-container,
-  .copyright-inner-container {
-    width: 400px;
-  }
-
-  .footer-inner-container {
+@media screen and (max-width: 1225px) {
+  .whole-footer-container {
+    display: flex;
     flex-direction: column;
+    /* border: solid royalblue 5px; */
   }
 
-  .copyright-inner-container {
-    padding-right: 15%;
+  .footer-top-content,
+  .footer-bottom-content {
+    width: 100vw;
   }
-} */
+
+  .footer-top-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .whole-footer-container {
+    display: flex;
+    flex-direction: column;
+    /* border: solid royalblue 5px; */
+  }
+
+  .footer-top-content,
+  .footer-bottom-content {
+    width: 100vw;
+  }
+
+  .footer-top-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom-content {
+    justify-content: flex-start;
+    padding-left: 53.5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer-bottom-content {
+    padding-left: 0;
+    justify-content: center;
+  }
+}

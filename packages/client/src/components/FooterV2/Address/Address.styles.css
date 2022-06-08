@@ -5,10 +5,9 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff33;
-  height: 10rem;
-  width: 23%;
+  height: 12rem;
+  width: 30%;
   padding: 0 2rem 1rem 2rem;
-  border: green solid 2px;
 }
 
 .simply-spices-logo {
@@ -37,29 +36,20 @@
   text-shadow: 0.125rem 0.125rem 0.25rem #231016;
 }
 
-/* @media screen and (max-width: 1225px) {
-  .simply-spicesa {
-    font-size: 1.5rem;
+@media screen and (max-width: 1225px) {
+  .address-container {
+    width: 50%;
   }
 
-  .small-map-icon {
-    margin-right: 0.5rem;
-  }
-
-  .address {
-    font-size: 0.8rem;
+  .simply-spices-logo {
+    font-size: 1.7rem;
   }
 }
 
-@media screen and (max-width: 850px) {
-  .simply-spicesa {
-    font-size: 2rem;
-  }
-
+@media screen and (max-width: 500px) {
   .address-container {
-    width: 80%;
-    margin: 0 auto;
-    padding-left: 15%;
-    padding-bottom: 10%;
+    width: 100%;
+    align-items: center;
+    padding: 0rem 0 5rem 0;
   }
-} */
+}

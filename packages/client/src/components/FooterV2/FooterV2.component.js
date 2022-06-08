@@ -16,7 +16,6 @@ export const FooterV2 = () => {
           <Address />
         </div>
       </div>
-
       <div className="footer-bottom-background">
         <div className="footer-bottom-content">
           <p>Copyright info...</p>
