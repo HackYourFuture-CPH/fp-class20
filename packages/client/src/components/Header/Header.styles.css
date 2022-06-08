@@ -19,6 +19,7 @@
   align-items: center;
   text-align: center;
   padding: 0.5rem;
+  box-sizing: border-box;
 }
 
 .toggle-button {
@@ -68,6 +69,7 @@
   width: 1190px;
   margin: 0 auto;
   padding: 3rem 1rem;
+  box-sizing: border-box;
 }
 
 .main-heading {
@@ -104,6 +106,7 @@ p {
   .up-container,
   .down-container {
     width: 700px;
+    box-sizing: border-box;
   }
 
   .spices-button {
@@ -116,13 +119,19 @@ p {
 }
 
 @media screen and (max-width: 750px) {
+  body {
+    padding: 0 !important;
+    background: none !important;
+  }
+
   .whole-container {
     height: auto;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .display {
-    padding-left: 20%;
+    padding-left: 10%;
   }
 
   .up-container,
