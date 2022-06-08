@@ -7,6 +7,7 @@
   padding: 0;
   margin: 0;
   min-width: 100vw;
+  box-sizing: border-box;
 }
 
 .footer-up-background,
@@ -16,6 +17,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .footer-up-background {
@@ -80,6 +82,7 @@
   .footer-down-container {
     width: 70%;
     margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .footer-up-container {
