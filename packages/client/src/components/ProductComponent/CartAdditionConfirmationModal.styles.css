@@ -1,5 +1,10 @@
+.modal-whole-container {
+  background: linear-gradient(180deg, #231c16 0%, rgba(35 28 22 / 75%));
+}
+
 .modal-container {
   width: 1190px;
+  margin: 0 auto;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: #231c16;
   display: flex;
@@ -64,12 +69,14 @@
 @media screen and (max-width: 1225px) {
   .modal-container {
     width: 800px;
+    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 800px) {
   .modal-container {
     width: 400px;
+    margin: 0 auto;
     font-size: 0.85rem;
     box-shadow: 0 0 0.5rem 0.313rem rgb(35 16 22 / 100%);
   }
