@@ -5,7 +5,6 @@
 }
 
 .signup-container {
-  /* background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%); */
   mix-blend-mode: normal;
   width: 60%;
   margin: 0 auto;
@@ -19,14 +18,11 @@
   justify-content: right;
   margin-bottom: 2%;
   align-items: flex-end;
-  align-items: end;
 }
 
 .signup-wrapper-outer {
   width: 100%;
   background: linear-gradient(180deg, #696560 0%, #231c16bf 100%);
-
-  /* opacity: 0.8; */
   justify-content: center;
   margin: 0 auto;
   padding: 1rem 1.5rem;
