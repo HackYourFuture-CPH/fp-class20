@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
+
+.error-page {
+  background: #867572;
+}
+
+img {
+  padding-top: 2rem;
+}
+
+.error-details {
+  width: 1190px;
+  background: linear-gradient(180deg, #231c16 0%, rgba(35 28 22/ 75%) 100%);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  justify-content: space-evenly;
+}
+
+.error-message {
+  font-family: Montserrat, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  font-size: 4rem;
+  letter-spacing: 0.3em;
+}
+
+.error-message p {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: -8px;
+}
+
+@media screen and (max-width: 1225px) {
+  .error-details {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .error-details {
+    width: 400px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  body {
+    padding: 0 !important;
+    background: none !important;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
