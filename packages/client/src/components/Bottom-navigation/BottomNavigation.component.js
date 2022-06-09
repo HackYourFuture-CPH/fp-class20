@@ -2,7 +2,7 @@ import React from 'react';
 
 import './BottomNavigation.styles.css';
 
-export const BottomNavigation = () => {
+const BottomNavigation = () => {
   return (
     <div className="main-container">
       <div>
@@ -21,3 +21,5 @@ export const BottomNavigation = () => {
     </div>
   );
 };
+
+export default BottomNavigation;
