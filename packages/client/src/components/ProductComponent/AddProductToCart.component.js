@@ -30,7 +30,7 @@ export const AddProductToCart = ({ product }) => {
         </div>
         <div className="product-details">
           <div className="product-image">
-            <img src={product.pictureUrl} alt="product-img" />
+            <img src={`assets/${product.pictureUrl}`} alt="product-img" />
           </div>
 
           <div className="product-information">
@@ -39,7 +39,7 @@ export const AddProductToCart = ({ product }) => {
               <p className="product-info"> {product.description}</p>
             </div>
             <div>
-              <span className="product-size">{product.size}</span>
+              <span className="product-size">{product.size}g</span>
               <span className="product-size">{product.price} DKK</span>
             </div>
             <div className="counter-cart-button">
@@ -62,7 +62,7 @@ export const AddProductToCart = ({ product }) => {
           <div className="confirmation-modal">
             <CartAdditionConfirmationModal
               onClose={() => toggleModal(false)}
-              productImage={product.pictureUrl}
+              productImage={`assets/${product.pictureUrl}`}
               productName={product.name}
               count={count}
               setCount={setCount}
