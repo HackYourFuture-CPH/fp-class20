@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.styles.css';
 
-import contactPageSwirlDecoration from '../../../../public/assets/vectors/vector_logo_underline.svg';
-
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
   email:
@@ -48,6 +46,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
     let errors = [];
     errors = Object.keys(formState).map((key) => {
       const error = {
+        field: key,
         message: '',
       };
       if (!formState[key]) {
@@ -65,6 +64,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
     if (errors.filter((err) => err.message !== '').length === 0) {
       handlePost(formState.name, formState.email, formState.message);
       setIsMessageSent(true);
+
       setFormState({
         name: '',
         email: '',
@@ -74,30 +74,42 @@ export const ContactForm = ({ text, label, handlePost }) => {
     setErrorState(errors);
   };
 
+  const errObj = {
+    name: errorState
+      .filter((error) => error.field === 'name')
+      .map((error) => error.message),
+    email: errorState
+      .filter((error) => error.field === 'email')
+      .map((error) => error.message),
+    message: errorState
+      .filter((error) => error.field === 'message')
+      .map((error) => error.message),
+  };
+
   return (
-    <div>
+    <div className="contact-form-background">
       <div className="contact-form-container">
-        <div className="contact-head">
-          <p className="simply-spices"> Simply Spices</p>
-          <img alt="simply spices" src={contactPageSwirlDecoration} />
+        <div className="contact-head ">
+          <p className="contact-form-simply-spices-text"> Simply Spices</p>
+          <img
+            className="contact-form-vector_logo_underline"
+            alt="simply spices text"
+            src="assets/vectors/vector_logo_underline.svg"
+          />
         </div>
 
-        <div className="wrapper-outer">
+        <div className="wrapper-outer-contact-form">
           <p>
-            your opinion and questions matter to us so feel free to contact our
-            customer service for all general enquiries. We respond withing
+            Your opinion and questions matter to us so feel free to contact our
+            customer service for all general enquiries. We respond within
             maximum 2 working days.
           </p>
-          <form id="contactForm">
-            <div className="wrapper">
+          <form id="contact-form">
+            <div className="wrapper-contact-form">
               {isMessageSent ? (
-                <p className="success-msg">Message Sent</p>
+                <span className="success-msg">Message Sent</span>
               ) : (
-                <div className="error-msg">
-                  {errorState.map((error) => (
-                    <p>{error.message}</p>
-                  ))}
-                </div>
+                ''
               )}
               <div className="form-row">
                 <label htmlFor="name">
@@ -105,6 +117,13 @@ export const ContactForm = ({ text, label, handlePost }) => {
                 </label>
 
                 <input
+                  className={
+                    errorState?.some(
+                      (field) => field.field === 'name' && field.message,
+                    )
+                      ? 'contact-input-wrong'
+                      : 'contact-input'
+                  }
                   type="text"
                   id="name"
                   name="name"
@@ -112,8 +131,10 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   placeholder="type your name"
                   onChange={handleChange}
                   required
+                  // size="75"
                 />
               </div>
+              <span className="contact-error-span"> {errObj.name}</span>
 
               <div className="form-row">
                 <label htmlFor="email">
@@ -121,6 +142,13 @@ export const ContactForm = ({ text, label, handlePost }) => {
                 </label>
 
                 <input
+                  className={
+                    errorState?.some(
+                      (field) => field.field === 'email' && field.message,
+                    )
+                      ? 'contact-input-wrong'
+                      : 'contact-input'
+                  }
                   type="email"
                   id="email"
                   name="email"
@@ -128,8 +156,10 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   placeholder="type your email"
                   onChange={handleChange}
                   required
+                  // size="75"
                 />
               </div>
+              <span className="contact-error-span"> {errObj.email}</span>
 
               <div className="form-row">
                 <label htmlFor="textarea">
@@ -137,6 +167,13 @@ export const ContactForm = ({ text, label, handlePost }) => {
                 </label>
 
                 <textarea
+                  className={
+                    errorState?.some(
+                      (field) => field.field === 'message' && field.message,
+                    )
+                      ? 'contact-input-wrong'
+                      : 'contact-input'
+                  }
                   id="textarea"
                   name="message"
                   value={formState.message}
@@ -147,7 +184,10 @@ export const ContactForm = ({ text, label, handlePost }) => {
                 />
               </div>
 
+              <span className="contact-error-span"> {errObj.message}</span>
+
               <div className="form-row">
+                {/* dummy button */}
                 <button
                   className={
                     isAllInputFilledOut ? 'ready-button' : 'normal-button'
@@ -162,7 +202,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
             </div>
           </form>
           <p>
-            Regardin all urgent matters you can also contact us on one of our
+            Regarding all urgent matters you can also contact us on one of our
             phone numbers.
           </p>
           <p>
@@ -170,14 +210,25 @@ export const ContactForm = ({ text, label, handlePost }) => {
             12 34 56 87
           </p>
 
-          <span>+ 45 87654321 or press</span>
-          <a
-            href="https://www.hackyourfuture.dk/volunteer"
-            target="_blank"
-            rel="noreferrer"
-          >
-            @simplyspices.dk
-          </a>
+          <p>
+            <a
+              className="email-link"
+              href="tel:+4587654321"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Press: +45 87 65 43 21
+            </a>
+            &nbsp; or
+            <a
+              className="email-link"
+              href="https://www.hackyourfuture.dk/volunteer"
+              target="_blank"
+              rel="noreferrer"
+            >
+              press@simplyspices.dk
+            </a>
+          </p>
         </div>
       </div>
     </div>

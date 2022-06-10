@@ -61,7 +61,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let errors = [];
+    let errors = {};
     errors = Object.keys(formState).map((key) => {
       const error = {
         field: key,
@@ -100,133 +100,208 @@ export const SignupForm = ({ text, label, handlePost }) => {
       });
     }
   };
+  const errObj = {
+    name: errorState
+      .filter((error) => error.field === 'name')
+      .map((error) => error.message),
+    email: errorState
+      .filter((error) => error.field === 'email')
+      .map((error) => error.message),
+    mobile: errorState
+      .filter((error) => error.field === 'mobile')
+      .map((error) => error.message),
+    streetName: errorState
+      .filter((error) => error.field === 'streetName')
+      .map((error) => error.message),
+    city: errorState
+      .filter((error) => error.field === 'city')
+      .map((error) => error.message),
+    zipCode: errorState
+      .filter((error) => error.field === 'zipCode')
+      .map((error) => error.message),
+  };
 
   return (
-    <div>
-      <div className="signup-form-container">
-        <div className="wrapper-outer">
-          <form id="signupForm">
-            <div className="wrapper">
-              {isMessageSent ? (
-                <p className="success-msg">Your data submitted</p>
-              ) : (
-                <div className="error-msg">
-                  {errorState.map((error) => (
-                    <p>{error.message}</p>
-                  ))}
-                </div>
-              )}
+    <div className="signup-container">
+      <form id="signup-form">
+        <div className="signup-wrapper-outer">
+          <div className="signup-wrapper">
+            {isMessageSent ? (
+              <p className="signup-success-msg">Your data submitted</p>
+            ) : (
+              ''
+            )}
 
-              <div className="form-row">
-                <label htmlFor="name">
-                  name <span className="required-star">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formState.name}
-                  placeholder="type your name"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+            <div className="signup-form-row">
+              <label className="signup-label " htmlFor="name">
+                name
+                <span className="signup-required-star">*</span>
+              </label>
 
-              <div className="form-row">
-                <label htmlFor="email">
-                  email <span className="required-star">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formState.email}
-                  placeholder="type your email"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-row">
-                <label htmlFor="mobile">
-                  mobile <span className="required-star">*</span>
-                </label>
-                <input
-                  type="tel"
-                  id="mobile"
-                  name="mobile"
-                  value={formState.mobile}
-                  placeholder="type your mobile"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <p> DELIVERY ADDRESS</p>
-
-              <div className="form-row">
-                <label htmlFor="streetName">
-                  street name <span className="required-star">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="streetName"
-                  name="streetName"
-                  value={formState.streetName}
-                  placeholder="type your street name"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-row">
-                <label htmlFor="city">
-                  city <span className="required-star">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  value={formState.city}
-                  placeholder="type your city name"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-row">
-                <label htmlFor="zipCode">
-                  zip code <span className="required-star">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="zipCode"
-                  name="zipCode"
-                  value={formState.zipCode}
-                  placeholder="type your zip-code"
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-row">
-                <button
-                  className={
-                    isAllInputProvided
-                      ? 'all-input-provided'
-                      : 'not-all-input-provided'
-                  }
-                  type="button"
-                  label={label}
-                  onClick={handleSubmit}
-                >
-                  {text}
-                </button>
-              </div>
+              <input
+                className={
+                  errorState?.some(
+                    (field) => field.field === 'name' && field.message,
+                  )
+                    ? 'signup-input-wrong'
+                    : 'signup-input'
+                }
+                type="text"
+                id="name"
+                name="name"
+                value={formState.name}
+                placeholder="type your name"
+                onChange={handleChange}
+                required
+              />
             </div>
-          </form>
+            <span className="signup-error-span"> {errObj.name}</span>
+
+            <div className="signup-form-row">
+              <label className="signup-label" htmlFor="email">
+                email <span className="signup-required-star">*</span>
+              </label>
+
+              <input
+                className={
+                  errorState?.some(
+                    (field) => field.field === 'email' && field.message,
+                  )
+                    ? 'signup-input-wrong'
+                    : 'signup-input'
+                }
+                type="email"
+                id="email"
+                name="email"
+                value={formState.email}
+                placeholder="type your email"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <span className="signup-error-span"> {errObj.email}</span>
+            <div className="signup-form-row">
+              <label className="signup-label" htmlFor="mobile">
+                mobile <span className="signup-required-star">*</span>
+              </label>
+
+              <input
+                className={
+                  errorState?.some(
+                    (field) => field.field === 'mobile' && field.message,
+                  )
+                    ? 'signup-input-wrong'
+                    : 'signup-input'
+                }
+                type="tel"
+                id="mobile"
+                name="mobile"
+                value={formState.mobile}
+                placeholder="type your mobile"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <span className="signup-error-span"> {errObj.mobile}</span>
+
+            <p id="delivery"> DELIVERY ADDRESS</p>
+
+            <div className="signup-form-row">
+              <label className="signup-label" htmlFor="streetName">
+                street name <span className="signup-required-star">*</span>
+              </label>
+
+              <input
+                className={
+                  errorState?.some(
+                    (field) => field.field === 'streetName' && field.message,
+                  )
+                    ? 'signup-input-wrong'
+                    : 'signup-input'
+                }
+                type="text"
+                id="streetName"
+                name="streetName"
+                value={formState.streetName}
+                placeholder="type your street name"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <span className="signup-error-span"> {errObj.streetName}</span>
+
+            <div className="signup-form-row">
+              <label className="signup-label" htmlFor="city">
+                city <span className="signup-required-star">*</span>
+              </label>
+
+              <input
+                className={
+                  errorState?.some(
+                    (field) => field.field === 'city' && field.message,
+                  )
+                    ? 'signup-input-wrong'
+                    : 'signup-input'
+                }
+                type="text"
+                id="city"
+                name="city"
+                value={formState.city}
+                placeholder="type your city name"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <span className="signup-error-span"> {errObj.city}</span>
+
+            <div className="signup-form-row ">
+              <label className="signup-label" htmlFor="zipCode">
+                zip code <span className="signup-required-star">*</span>
+              </label>
+
+              <input
+                className={
+                  errorState?.some(
+                    (field) =>
+                      field.field === 'zipCode' && field.message.length,
+                  )
+                    ? 'signup-input-wrong'
+                    : 'signup-input'
+                }
+                type="text"
+                id="zipCode"
+                name="zipCode"
+                value={formState.zipCode}
+                placeholder="type your zip-code"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <span className="signup-error-span"> {errObj.zipCode}</span>
+
+            <div className="signup-form-row">
+              {/* dummy button */}
+              <button
+                className={
+                  isAllInputProvided
+                    ? 'all-input-provided-button'
+                    : 'all-input-notprovided-button'
+                }
+                type="button"
+                label={label}
+                onClick={handleSubmit}
+              >
+                {text}
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
