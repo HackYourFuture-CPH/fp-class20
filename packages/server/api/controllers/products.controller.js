@@ -20,6 +20,20 @@ const getProducts = async (sortOrder = 'name', pageIndex = 0) => {
 };
 
 const getAllProducts = async (query) => {
+  if ('name' in query) {
+    const nameReg = /^[A-Za-z]*$/;
+    if (!nameReg.test(query.name)) {
+      throw new HttpError('the data entery is incorrect', 400);
+    }
+    try {
+      const name = query.name.toLowerCase();
+      let result = await getProducts(query.sortOrder, query.pageIndex);
+      result = result.filter((product) => product.name.includes(name));
+      return result;
+    } catch (error) {
+      return error.message;
+    }
+  }
   return /* await */ getProducts(query.sortOrder, query.pageIndex);
 };
 
@@ -35,24 +49,7 @@ const getProductsByid = async (id) => {
   return productsByid;
 };
 
-const getSearchedProducts = async (name) => {
-  const nameReg = /^[A-Za-z]*$/;
-  if (!nameReg.test(name)) {
-    throw new HttpError('the data entery is incorrect', 400);
-  }
-
-  try {
-    const searchedProducts = await knex('Products')
-      .select('name', 'price', 'size', 'pictureUrl', 'categoryId')
-      .where('name', 'like', `%${name}%`);
-    return searchedProducts;
-  } catch (error) {
-    return error.message;
-  }
-};
-
 module.exports = {
   getAllProducts,
   getProductsByid,
-  getSearchedProducts,
 };

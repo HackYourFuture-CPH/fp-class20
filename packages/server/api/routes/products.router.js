@@ -32,7 +32,7 @@ const productsController = require('../controllers/products.controller');
 
 /**
  * @swagger
- * /searchProduct?name={name}:
+ * /products?name={name}:
  *  get:
  *    tags:
  *    - search product
@@ -52,23 +52,14 @@ const productsController = require('../controllers/products.controller');
  *        description: Successful request
  *      5XX:
  *        description: Unexpected error.
- *      404:
- *        description: the searched item does no exist.
  *
  */
 
 router.get('/', (req, res, next) => {
-  if ('name' in req.query) {
-    productsController
-      .getSearchedProducts(req.query.name)
-      .then((result) => res.json(result))
-      .catch(next);
-  } else {
-    productsController
-      .getAllProducts(req.query)
-      .then((result) => res.json(result))
-      .catch(next);
-  }
+  productsController
+    .getAllProducts(req.query)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 /* products by id
