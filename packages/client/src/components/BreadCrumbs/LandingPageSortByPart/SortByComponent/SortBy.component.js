@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SortBy.styles.css';
-import arrowDown from '../../../../public/assets/vectors/vector_arrow_down.svg';
-import arrowUp from '../../../../public/assets/vectors/vector_arrow_up.svg';
+import arrowDown from '../../../../../public/assets/vectors/vector_arrow_down.svg';
+import arrowUp from '../../../../../public/assets/vectors/vector_arrow_up.svg';
 
 const SortBy = () => {
   const [arrow, setArrow] = useState(true);
@@ -9,6 +9,7 @@ const SortBy = () => {
     <div className="sort-by-select">
       <div>
         <select
+          className="select"
           onClick={() => setArrow(!arrow)}
           style={
             arrow

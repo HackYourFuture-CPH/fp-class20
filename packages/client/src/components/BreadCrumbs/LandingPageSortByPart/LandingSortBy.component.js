@@ -2,11 +2,14 @@ import React from 'react';
 import './LandingSortBy.styles.css';
 import SortBy from './SortByComponent/SortBy.component';
 
-export const LandingSortBy = () => {
+// eslint-disable-next-line react/prop-types
+export const LandingSortBy = ({ sideBar, main }) => {
   return (
     <div className="landing-sort-by-component-info">
-      <span className="text-samll">Simply Spices / All Spices</span>
-      <span className="text-big">All Spices</span>
+      {/* <span className="text-samll">Simply Spices / All Spices</span>
+      <span className="text-big">All Spices</span> */}
+      {sideBar}
+      {main}
       <div className="sort-by-container">
         <SortBy />
       </div>

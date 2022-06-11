@@ -1,0 +1,35 @@
+body {
+  padding: 0;
+  background: none !important;
+}
+
+.landing-sort-by-background {
+  background-color: rgba(35 28 22 / 100%);
+}
+
+.landing-sort-by-component-info {
+  background-color: transparent;
+}
+
+.select {
+  background-color: rgba(35 28 22 / 100%);
+}
+
+.whole-container {
+  background: linear-gradient(180deg, #231c16 0%, rgba(35 28 22/ 75%) 100%);
+}
+
+.up-background-image {
+  background-image: url('../../../../public/assets/images/hero_image.png');
+  height: 46rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.display {
+  background-color: rgba(35 28 22 / 100%);
+}
+
+.products-container {
+  height: 300px;
+}
