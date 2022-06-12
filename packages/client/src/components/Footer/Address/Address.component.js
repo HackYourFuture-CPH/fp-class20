@@ -5,7 +5,7 @@ import map from '../../../../public/assets/vectors/vector_location.svg';
 export const Address = () => {
   return (
     <div className="address-info">
-      <span className="simply-spicesa">Simply Spices</span>
+      <span className="simply-spices-text">Simply Spices</span>
       <div className="address-text-logo">
         <img className="small-map-icon" src={map} alt="Canvas map Logo" />
         <span className="address">
