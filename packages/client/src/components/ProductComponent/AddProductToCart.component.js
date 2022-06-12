@@ -7,7 +7,7 @@ import heartEmpty from '../../../public/assets/vectors/vector_heart_empty.svg';
 import heartFull from '../../../public/assets/vectors/vector_heart_full.svg';
 import { CartAdditionConfirmationModal } from './CartAdditionConfirmationModal.component';
 
-export const AddProductToCart = ({ product }) => {
+export const AddProductToCart = ({ product, isLarge }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -20,7 +20,7 @@ export const AddProductToCart = ({ product }) => {
     <div className="product-whole-container">
       <div className="product-container">
         <div className="favorite-icon">
-          Save to favorites
+          {isLarge && 'Save to favorites'}
           <img
             onClick={onAddToFavorites}
             src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
@@ -36,7 +36,10 @@ export const AddProductToCart = ({ product }) => {
           <div className="product-information">
             <div>
               <h2 className="product-name"> {product.name}</h2>
-              <p className="product-info"> {product.description}</p>
+
+              {isLarge && (
+                <p className="product-info"> {product.description}</p>
+              )}
             </div>
             <div>
               <span className="product-size">{product.size}g</span>
@@ -77,8 +80,10 @@ export const AddProductToCart = ({ product }) => {
 
 AddProductToCart.propTypes = {
   product: PropTypes.func,
+  isLarge: PropTypes.bool,
 };
 
 AddProductToCart.defaultProps = {
   product: {},
+  isLarge: null,
 };

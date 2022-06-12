@@ -6,7 +6,16 @@ export default {
   component: AddProductToCart.component,
 };
 
-const Template = (props) => <AddProductToCart {...props} />;
+const Template = (props) => (
+  <>
+    <AddProductToCart {...props} isLarge={true} />
+    <div style={{ display: 'flex', width: '100%' }}>
+      <AddProductToCart {...props} isLarge={false} />
+      <AddProductToCart {...props} isLarge={false} />
+      <AddProductToCart {...props} isLarge={false} />
+    </div>
+  </>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

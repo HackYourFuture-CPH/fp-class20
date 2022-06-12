@@ -11,7 +11,7 @@ body {
 }
 
 .product-container {
-  width: 1190px;
+  width: 100%;
   margin: 0 auto;
   border-width: 1.75rem 2.25rem 1.25rem;
   border-color: #4a443f;
