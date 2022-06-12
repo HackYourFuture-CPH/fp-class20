@@ -5,4 +5,4 @@ export default {
   title: 'components/Footer',
   component: Footer,
 };
-export const FooterInfo = () => <Footer />;
+export const footer = () => <Footer />;
