@@ -28,7 +28,7 @@ div {
   width: 100%;
   color: white;
   padding-top: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .input-container::placeholder {
@@ -40,7 +40,7 @@ div {
   color: white;
 }
 
-.text {
+.text > span {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
@@ -58,8 +58,8 @@ div {
 }
 
 @media screen and (max-width: 1225px) {
-  .text {
-    padding-top: 0.3rem;
+  .text > span {
+    padding-top: 1rem;
   }
 
   .search-container {
@@ -67,14 +67,14 @@ div {
   }
 }
 
-@media screen and (max-width: 750px) {
-  .text {
-    font-size: 0.7rem;
+@media screen and (max-width: 800px) {
+  .text > span {
+    font-size: 1rem;
     padding-top: 0.3rem;
   }
 
   .input-container::placeholder {
-    font-size: 0.8rem;
+    font-size: 1.125rem;
   }
 
   .input-container {
@@ -84,5 +84,15 @@ div {
   .search-container {
     width: 38%;
     margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .text > span {
+    font-size: 0.8rem;
+  }
+
+  .input-container::placeholder {
+    font-size: 1rem;
   }
 }

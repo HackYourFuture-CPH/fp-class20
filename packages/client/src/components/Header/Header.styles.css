@@ -3,7 +3,11 @@
 .whole-container {
   display: flex;
   flex-direction: column;
-  background-color: rgba(35 28 22 / 80%);
+  background: linear-gradient(
+    180deg,
+    rgb(35 28 22 / 90%) 19.79%,
+    rgba(35 28 22 /45%) 78.65%
+  );
   height: 4rem;
   padding: 0;
   margin: 0 auto;
@@ -26,13 +30,15 @@
   background: none;
   border: none;
   margin-left: -1rem;
-  padding-top: -px;
+  padding-top: 1rem;
   display: inline-block;
 }
 
 .display {
-  background-color: rgba(35 28 22 / 85%);
+  background: #342f2b;
   color: white;
+
+  /* margin-top: .3rem; */
 }
 
 .no-display {
@@ -105,8 +111,12 @@ p {
 @media only screen and (max-width: 1225px) {
   .up-container,
   .down-container {
-    width: 700px;
+    width: 800px;
     box-sizing: border-box;
+  }
+
+  .arrow {
+    width: 1.5rem;
   }
 
   .spices-button {
@@ -118,7 +128,7 @@ p {
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   body {
     padding: 0 !important;
     background: none !important;
@@ -145,9 +155,9 @@ p {
   }
 
   .spices-button {
-    font-size: 0.7rem;
-    padding-top: 0.3rem;
+    font-size: 1rem;
     padding-right: 0.2rem;
+    padding-left: 2rem;
   }
 
   .main-heading {
@@ -161,5 +171,21 @@ p {
   .down-container {
     padding: 0;
     padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .up-container,
+  .down-container {
+    width: 375px;
+    box-sizing: border-box;
+  }
+
+  .spices-button {
+    font-size: 0.8rem;
+  }
+
+  .arrow {
+    width: 1.25rem;
   }
 }
