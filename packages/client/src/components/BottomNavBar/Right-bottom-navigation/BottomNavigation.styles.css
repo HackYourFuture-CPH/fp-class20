@@ -71,6 +71,7 @@ div {
   .text > span {
     font-size: 1rem;
     padding-top: 0.3rem;
+    padding-right: 0.1rem;
   }
 
   .input-container::placeholder {
@@ -78,7 +79,7 @@ div {
   }
 
   .input-container {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .search-container {
@@ -87,12 +88,29 @@ div {
   }
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 550px) {
+.text > span{
+  font-size: .9rem;
+}
+
+} */
+
+@media screen and (max-width: 550px) {
   .text > span {
     font-size: 0.8rem;
   }
 
   .input-container::placeholder {
     font-size: 1rem;
+  }
+
+  .input-container {
+    font-size: 1rem;
+  }
+
+  .search-container {
+    width: 33%;
+    margin-bottom: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
