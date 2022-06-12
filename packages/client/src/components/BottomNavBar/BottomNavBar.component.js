@@ -18,19 +18,19 @@ function Header() {
 
           {dropDownExpanded ? (
             <button
-              className="toggle-button"
+              className="toggle-button-bottom"
               type="button"
               onClick={toggleIcon}
             >
-              <ArrowUp className="arrow" />
+              <ArrowUp className="arrow-bottom-bar" />
             </button>
           ) : (
             <button
-              className="toggle-button"
+              className="toggle-button-bottom"
               type="button"
               onClick={toggleIcon}
             >
-              <ArrowDown className="arrow" />
+              <ArrowDown className="arrow-bottom-bar" />
             </button>
           )}
         </div>
