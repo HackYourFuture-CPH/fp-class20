@@ -1,8 +1,8 @@
 import React from 'react';
-import { ProductPage } from './ProductPage.component';
+import { ProductPage } from './ProductPage.Container';
 
 export default {
-  title: 'components/Product',
+  title: 'components/ProductPageComtainer',
   component: ProductPage.component,
 };
 
