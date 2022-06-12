@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ReactComponent as ArrowUp } from '../../../public/assets/vectors/vector_arrow_up.svg';
 import { ReactComponent as ArrowDown } from '../../../public/assets/vectors/vector_arrow_down.svg';
-import './Header.styles.css';
-import { BottomNavigation } from './Bottom-navigation/BottomNavigation.component';
+import './BottomNavBar.styles.css';
+import { BottomNavigation } from './Right-bottom-navigation/BottomNavigation.component';
 
 function Header() {
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
