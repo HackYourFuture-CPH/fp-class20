@@ -2,35 +2,30 @@ import React from 'react';
 
 import './AboutUs.styles.css';
 
-import logoStyle from '../../../public/assets/logoStyle.svg';
-
 export const AboutUs = () => {
   return (
-    <div className="aboutus-section">
+    <div className="about-us-container">
+      <div className="simple-spices-heading">Simply Spices</div>
+      <img
+        src="assets/vectors/vector_logo_underline.svg"
+        alt="logo style"
+        className="main-slogan-vector-style"
+      />
+      <h3 className="about-heading">About us</h3>
       <div>
-        <h1 className="simple-spices-heading">Simply Spices</h1>
-        <img
-          src={logoStyle}
-          alt="logo style"
-          className="main-slogan-vector-style"
-        />
-      </div>
-      <div className="aboutus-description">
-        <h3 className="aboutheading">About us</h3>
-        <div className="description">
-          <p>
-            Founded in 1990, the companty offers finest spices and herbs for
-            superstar chefs everywhere.
-          </p>{' '}
-          <p>
-            We are proud of our global network of farmers and distributors who
-            keep delivering unparallelled quality.
-          </p>{' '}
-          <p>
-            We are committed to sustaining our core values: quality,
-            sustainability and extraordinary flavour.
-          </p>
-        </div>
+        <p className="about-us-description">
+          Founded in 1990, the company offers finest spices and herbs
+          <br /> for superstar chefs everywhere.
+        </p>
+        <p className="about-us-description">
+          We are proud of our global network of farmers and distributors
+          <br /> who keep delivering unparalleled quality.
+        </p>
+        <p className="about-us-description">
+          We are committed to sustaining our core values:
+          <br />
+          quality, sustainability and extraordinary flavour.
+        </p>
       </div>
     </div>
   );

@@ -1,6 +1,9 @@
 const path = require('path');
 require('dotenv').config();
 
+const { attachPaginate } = require('knex-paginate');
+
+attachPaginate();
 /* based on .env */
 
 module.exports = {
