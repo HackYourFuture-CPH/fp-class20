@@ -88,13 +88,6 @@ div {
   }
 }
 
-/* @media screen and (max-width: 550px) {
-.text > span{
-  font-size: .9rem;
-}
-
-} */
-
 @media screen and (max-width: 550px) {
   .text > span {
     font-size: 0.8rem;

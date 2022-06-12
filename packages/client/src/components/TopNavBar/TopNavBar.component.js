@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import favouriteIcon from '../../../public/assets/vectors/vector_heart_empty.svg';
 import CartIcon from '../../../public/assets/vectors/vector_cart.svg';
 import signIn from '../../../public/assets/vectors/vector_sign_in.svg';
@@ -33,7 +32,6 @@ function TopNavBar() {
             </a>
           </div>
         </div>
-        {/* <div className="top-nav-right-container"> */}
 
         <div className={botton}>
           <div className="sign-in-container">
@@ -53,7 +51,6 @@ function TopNavBar() {
             <span className="number">0</span>
             <span className="cart-text">Cart</span>
           </div>
-          {/* // </div> */}
         </div>
       </div>
       {showMenu ? (

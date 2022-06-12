@@ -37,8 +37,6 @@
 .display {
   background: #342f2b;
   color: white;
-
-  /* margin-top: .3rem; */
 }
 
 .no-display {
@@ -173,13 +171,6 @@ p {
     padding-top: 2rem;
   }
 }
-
-/* @media screen and (max-width: 550px) {
-.spices-button{
-  font-size: 1rem;
-}
-
-} */
 
 @media screen and (max-width: 550px) {
   .up-container,

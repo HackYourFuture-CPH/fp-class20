@@ -153,10 +153,6 @@
     align-items: center;
   }
 
-  /* h2 {
-    display: flex;
-    right: 5rem;
-  } */
   .toggle-button {
     display: flex;
     right: 5rem;
@@ -170,8 +166,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* font-size: 2rem; */
   }
 
   .new .sign-in-icon,
@@ -195,11 +189,4 @@
   .top-nav-right-container-menu {
     display: none;
   }
-
-  /* .logo-media-query {
-    width: 30%;
-  }
-  .btn-media-query {
-    width: 30%;
-  } */
 }
