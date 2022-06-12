@@ -26,14 +26,14 @@ function TopNavBar() {
             <h2> Simply Spices</h2>
           </div>
           <div>
-            <a href="#" className="toggle-button" onClick={handleClick}>
+            {/* eslint-disable-next-line */}
+            <div className="toggle-button" onClick={handleClick}>
               <span className="bar" />
               <span className="bar" />
               <span className="bar" />
-            </a>
+            </div>
           </div>
         </div>
-        {/* <div className="top-nav-right-container"> */}
 
         <div className={botton}>
           <div className="sign-in-container">
@@ -53,11 +53,10 @@ function TopNavBar() {
             <span className="number">0</span>
             <span className="cart-text">Cart</span>
           </div>
-          {/* // </div> */}
         </div>
       </div>
       {showMenu ? (
-        <div className="new">
+        <div className="menu-mobile-layout">
           {' '}
           <div className="sign-in-container">
             <img className="sign-in-icon" src={signIn} alt="signin-icon" />

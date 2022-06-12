@@ -129,7 +129,7 @@
   border-radius: 10px;
 }
 
-.new {
+.menu-mobile-layout {
   display: none;
 }
 
@@ -153,10 +153,6 @@
     align-items: center;
   }
 
-  /* h2 {
-    display: flex;
-    right: 5rem;
-  } */
   .toggle-button {
     display: flex;
     right: 5rem;
@@ -166,21 +162,19 @@
     display: none;
   }
 
-  .new {
+  .menu-mobile-layout {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* font-size: 2rem; */
   }
 
-  .new .sign-in-icon,
+  .menu-mobile-layout .sign-in-icon,
   .favourite-icon,
   .cart-icon {
     width: 1.25rem;
   }
 
-  .new .sign-in-text,
+  .menu-mobile-layout .sign-in-text,
   .favourites-text,
   .cart-text {
     font-size: 0.9rem;
@@ -195,11 +189,4 @@
   .top-nav-right-container-menu {
     display: none;
   }
-
-  /* .logo-media-query {
-    width: 30%;
-  }
-  .btn-media-query {
-    width: 30%;
-  } */
 }
