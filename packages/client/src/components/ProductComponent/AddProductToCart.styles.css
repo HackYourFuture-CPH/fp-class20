@@ -38,7 +38,7 @@ body {
 
 .favorite-icon {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 1.25rem;
   color: white;
   font-size: 1.25rem;
