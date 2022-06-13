@@ -3,7 +3,7 @@ import React from 'react';
 import { SignupForm } from './SignupForm.component';
 
 export default {
-  title: 'components/Sign Up/Edit Form',
+  title: 'components/Form/SignupForm',
   component: SignupForm,
 };
 

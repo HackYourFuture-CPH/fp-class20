@@ -1,11 +1,10 @@
 import React from 'react';
 import './Address.styles.css';
-// import map from '../../../../public/assets/vectors/vector_location.svg';
 
 export const Address = () => {
   return (
     <div className="address-info">
-      <span className="simply-spices">Simply Spices</span>
+      <span className="simply-spices-text">Simply Spices</span>
       <div className="address-text-logo">
         <img
           className="small-map-icon"

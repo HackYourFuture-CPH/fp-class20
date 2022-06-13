@@ -1,20 +1,27 @@
 import React from 'react';
-import Header from '../../components/Navigation/Header/Header.component';
-import BottomNavigation from '../../components/Bottom-navigation/BottomNavigation.component';
-
+import LandingSortBy from './LandingPageSortByPart/LandingSortBy.component';
 import Footer from '../../components/Footer/Footer.component';
-import SortBy from '../../components/LandingPageSortByPart/LandingSortBy.component';
 import './CategoryPage.Style.css';
 
 export const CategoryPage = () => {
   return (
-    <div className="category-page-container">
-      <Header />
-      <BottomNavigation />
-      <SortBy />
-      <div className="category-footer">
-        <Footer />
+    <div className="category-page">
+      <div className="sort-by-background">
+        <LandingSortBy className="landing-sort-by-component-info select  text-big text-small" />
       </div>
+      <div className="category-middle-main-background">
+        <div className="category-middle-main-container">
+          <div className="category-product-card-items">
+            <div className="category-product-card-item">1</div>
+            <div className="category-product-card-item">2</div>
+          </div>
+          <div className="category-product-card-items">
+            <div className="category-product-card-item">1</div>
+            <div className="category-product-card-item">2</div>
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

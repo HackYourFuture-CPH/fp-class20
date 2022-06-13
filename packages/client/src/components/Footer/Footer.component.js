@@ -7,15 +7,20 @@ import { Address } from './Address/Address.component';
 
 const Footer = () => {
   return (
-    <div className="footer-container">
-      <div className="footer-info">
-        <Corporate />
-        <Contact />
-        <Map />
-        <Address />
+    <div className="whole-footer-container">
+      <div className="footer-up-background">
+        <div className="footer-up-container">
+          <Corporate />
+          <Contact />
+          <Map />
+          <Address />
+        </div>
       </div>
-      <div className="copyright">
-        <p>Copyright info...</p>
+
+      <div className="footer-down-background">
+        <div className="footer-down-container">
+          <p>Copyright info...</p>
+        </div>
       </div>
     </div>
   );
