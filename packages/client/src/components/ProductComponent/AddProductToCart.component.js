@@ -38,7 +38,7 @@ export const AddProductToCart = ({ product, variant }) => {
               <h2 className="product-name-variant"> {product.name}</h2>
             </div>
             <div>
-              <span className="product-size-variant">{product.size}g</span>
+              <span className="product-size-variant">{product.size}</span>
               <span className="product-size-variant">{product.price} DKK</span>
             </div>
             <div className="counter-cart-button-variant">

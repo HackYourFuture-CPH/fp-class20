@@ -10,11 +10,11 @@ body {
   width: 555px;
   height: 235px;
   padding-left: 1rem;
-  border-width: 1.75rem 2.25rem 1.25rem;
   background-color: #38332e;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  border-color: red;
 }
 
 .confirmation-modal-variant {
@@ -56,6 +56,7 @@ body {
   height: 150.25px;
   border-radius: 16rem;
   display: inline-block;
+  margin-top: 1.75rem;
 }
 
 .product-image-variant {
@@ -66,7 +67,7 @@ body {
 }
 
 .product-name-variant {
-  font-size: 1.1rem;
+  font-size: 2.1rem;
 }
 
 .product-information-variant {
@@ -86,12 +87,12 @@ body {
 }
 
 .product-size-variant {
-  font-size: 0.79rem;
-  padding-left: 1rem;
+  font-size: 1.2rem;
+  padding-right: 1.25rem;
 }
 
 .counter-cart-button-variant {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.25rem;
   display: flex;
 }
@@ -102,7 +103,7 @@ body {
 }
 
 .add-to-cart-button-variant {
-  width: 10rem;
+  width: 12rem;
   height: 2.4125rem;
   display: flex;
   font-weight: 500;
