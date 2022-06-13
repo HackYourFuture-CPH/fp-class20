@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
-import './SortBy.styles.css';
-import arrowDown from '../../../../public/assets/vectors/vector_arrow_down.svg';
-import arrowUp from '../../../../public/assets/vectors/vector_arrow_up.svg';
+import './Triangle.styles.css';
 
-const SortBy = () => {
+const Triangle = () => {
   const [arrow, setArrow] = useState(true);
   return (
     <div className="sort-by-select">
       <div>
         <select
           onClick={() => setArrow(!arrow)}
+          className="select-sort-by"
           style={
             arrow
               ? {
-                  backgroundImage: `url(${arrowDown})`,
+                  backgroundImage: `url('assets/vectors/vector_arrow_down.svg')`,
                 }
               : {
-                  backgroundImage: `url(${arrowUp})`,
+                  backgroundImage: `url('assets/vectors/vector_arrow_up.svg')`,
                 }
           }
         >
@@ -31,4 +30,4 @@ const SortBy = () => {
     </div>
   );
 };
-export default SortBy;
+export default Triangle;
