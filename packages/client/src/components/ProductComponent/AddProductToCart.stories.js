@@ -8,11 +8,11 @@ export default {
 
 const Template = (props) => (
   <>
-    <AddProductToCart {...props} isLarge={true} />
+    <AddProductToCart {...props} />
     <div style={{ display: 'flex', width: '100%' }}>
-      <AddProductToCart {...props} isLarge={false} />
-      <AddProductToCart {...props} isLarge={false} />
-      <AddProductToCart {...props} isLarge={false} />
+      <AddProductToCart {...props} variant="small" />
+      <AddProductToCart {...props} variant="small" />
+      <AddProductToCart {...props} variant="small" />
     </div>
   </>
 );

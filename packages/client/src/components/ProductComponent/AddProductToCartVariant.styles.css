@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
+
+body {
+  padding: 0 !important;
+  background: none !important;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+.product-container-variant {
+  width: 555px;
+  height: 235px;
+  padding-left: 1rem;
+  border-width: 1.75rem 2.25rem 1.25rem;
+  border-color: #4a443f;
+  border-style: solid;
+  background-color: #38332e;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.confirmation-modal-variant {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  max-width: 1224px;
+  opacity: 1;
+  background: rgb(0 0 0 / 32%);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.favorite-icon-variant {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.25rem;
+  color: white;
+  font-size: 0.25rem;
+}
+
+.favorite-icon-variant img {
+  padding-left: 0.25rem;
+  width: 25px;
+  height: 23px;
+}
+
+.product-details-variant {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.product-image-variant img {
+  width: 150px;
+  height: 150.25px;
+  border-radius: 16rem;
+  display: inline-block;
+}
+
+.product-image-variant {
+  display: flex;
+  width: 50%;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.product-name-variant {
+  font-size: 1.1rem;
+}
+
+.product-information-variant {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  color: white;
+}
+
+.product-title-variant {
+  font-size: 0.875rem;
+  font-weight: 200;
+  line-height: 1rem;
+  letter-spacing: 0;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.product-size-variant {
+  font-size: 0.79rem;
+}
+
+.counter-cart-button-variant {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+}
+
+.counter-button-variant {
+  margin-right: 1.5rem;
+  width: 10%;
+}
+
+.add-to-cart-button-variant {
+  width: 10rem;
+  height: 2.4125rem;
+  display: flex;
+  font-weight: 500;
+  margin-left: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
