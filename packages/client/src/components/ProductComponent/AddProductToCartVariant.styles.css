@@ -11,8 +11,6 @@ body {
   height: 235px;
   padding-left: 1rem;
   border-width: 1.75rem 2.25rem 1.25rem;
-  border-color: #4a443f;
-  border-style: solid;
   background-color: #38332e;
   display: flex;
   flex-direction: column;
@@ -89,6 +87,7 @@ body {
 
 .product-size-variant {
   font-size: 0.79rem;
+  padding-left: 1rem;
 }
 
 .counter-cart-button-variant {
