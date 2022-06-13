@@ -33,7 +33,7 @@ const getAllProducts = async (query) => {
       throw new HttpError('the data entery is incorrect', 400);
     }
   }
-  return getProducts(query.sortOrder, query.pageIndex, query.nameFilter);
+  return getProducts(query.sortOrder, query.pageIndex, query.name);
 };
 
 const getProductsByid = async (id) => {
