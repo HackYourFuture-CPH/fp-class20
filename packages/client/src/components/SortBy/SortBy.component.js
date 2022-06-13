@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import './SortBy.styles.css';
+import PropTypes from 'prop-types';
 
-const textObj = {
-  sidebar: 'Simply Spices / Spices by plant part / Berries and Fruit',
-  main: 'Berries and Fruit',
-};
-
-const SortBy = (props) => {
+const SortBy = ({ textObj }) => {
   const [arrow, setArrow] = useState(true);
 
   return (
@@ -46,3 +42,11 @@ const SortBy = (props) => {
 };
 
 export default SortBy;
+
+SortBy.propTypes = {
+  textObj: PropTypes.func,
+};
+
+SortBy.defaultProps = {
+  textObj: {},
+};
