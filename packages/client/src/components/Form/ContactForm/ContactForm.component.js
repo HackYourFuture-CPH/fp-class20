@@ -70,19 +70,17 @@ export const ContactForm = ({ text, label, handlePost }) => {
       };
 
       (async () => {
-        const postmm = await fetch('http://localhost:5000/api/messages', {
+        const postMessage = await fetch('http://localhost:5000/api/messages', {
           method: 'POST',
           headers: { 'Content-Type': 'Application/json' },
           body: JSON.stringify(inputObj),
         });
 
-        if (postmm) {
-          if (postmm.status === 200) {
-            setIsMessageSent(true);
-            setFetchStatus(postmm.statusText);
-          }
-          setFetchStatus(postmm.statusText);
+        if (postMessage.status === 200) {
+          setIsMessageSent(true);
+          setFetchStatus(postMessage.statusText);
         }
+        setFetchStatus(postMessage.statusText);
       })();
 
       setFormState({
