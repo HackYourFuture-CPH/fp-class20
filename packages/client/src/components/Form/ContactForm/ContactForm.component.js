@@ -70,7 +70,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
       };
 
       (async () => {
-        const postMessage = await fetch('http://localhost:5000/api/messages', {
+        const postMessage = await fetch('/api/messages', {
           method: 'POST',
           headers: { 'Content-Type': 'Application/json' },
           body: JSON.stringify(inputObj),
