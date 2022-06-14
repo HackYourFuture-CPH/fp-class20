@@ -21,11 +21,6 @@ div {
 
 .input-container {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-
-  /* border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: groove; */
   border: none;
   background-color: transparent;
   resize: none;

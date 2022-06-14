@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import './BottomNavBar.styles.css';
 import { BottomNavigation } from './Right-bottom-navigation/BottomNavigation.component';
 
