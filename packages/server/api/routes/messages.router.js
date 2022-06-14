@@ -9,7 +9,7 @@ const messageController = require('../controllers/messages.controller');
 
 /**
  * @swagger
- * /Products:
+ * /messages:
  *    get: All message
  *    tags:
  *    - message
@@ -32,7 +32,7 @@ const messageController = require('../controllers/messages.controller');
 
 router.get('/', async (req, res) => {
   try {
-    const result = await messageController.getAllmessage(req.query);
+    const result = await messageController.getAllmessages(req.query);
     res.json(result);
   } catch (error) {
     res.status(500).json({
@@ -42,13 +42,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-/* products by id
+/* messages by id
  */
 
 /**
  * @swagger
- * /message/{ID}:
- *  get:
+ * /messages/{ID}:
+ *  get: message by id
  *    tags:
  *    - message-ID
  *    summary: Get message by ID
@@ -72,7 +72,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const result = await messageController.getMessageById(req.params.id);
+    const result = await messageController.getMessageByID(req.params.id);
     res.json(result);
   } catch (error) {
     res.status(500).json({
@@ -88,7 +88,7 @@ router.get('/:id', async (req, res) => {
 /**
  * @swagger
  * /post/
- *  get:
+ *  post:
  *    tags:
  *    - message-post
  *    summary: post message
@@ -127,7 +127,7 @@ router.post('/', async (req, res) => {
 /**
  * @swagger
  * /message/{ID}:
- *  get:
+ *  put:
  *    tags:
  *    - post message-ID
  *    summary: update message by ID
@@ -151,7 +151,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const result = await messageController.updateMessageByid(
+    const result = await messageController.updateMessageByID(
       req.body,
       req.params.id,
     );
@@ -170,7 +170,7 @@ router.put('/:id', async (req, res) => {
 /**
  * @swagger
  * /delete/{ID}:
- *  get:
+ *  delete:
  *    tags:
  *    - deletemessage-ID
  *    summary: Get products by ID
@@ -194,7 +194,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const result = await messageController.deleteMessageById(
+    const result = await messageController.deleteMessageByID(
       req.body,
       req.params.id,
     );

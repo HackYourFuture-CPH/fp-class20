@@ -3,9 +3,9 @@ const knex = require('../../config/db');
 
 // Returns all messages
 // GET api/messages/
-const getAllmessage = async () => {
-  const allMessage = await knex('messages');
-  if (allMessage.length === 0) {
+const getAllmessages = async () => {
+  const allMessages = await knex('messages');
+  if (allMessages.length === 0) {
     return {
       code: '404',
       status: 'failed',
@@ -13,7 +13,7 @@ const getAllmessage = async () => {
       message: 'no message found in database',
     };
   }
-  return allMessage;
+  return allMessages;
 };
 
 // Adds a new message starts:
@@ -29,7 +29,7 @@ const postMessage = async (request) => {
 
 // Returns message by id
 // GET api/messages/2
-const getMessageById = async (id) => {
+const getMessageByID = async (id) => {
   if (isNaN(id)) {
     return 'id must contain number';
   }
@@ -47,7 +47,7 @@ const getMessageById = async (id) => {
 
 // Updates the message by id
 // PUT api/messages/id
-const updateMessageByid = async (request, idd) => {
+const updateMessageByID = async (request, idd) => {
   const messageUpdateByID = await knex('messages')
     .where({
       id: idd,
@@ -63,7 +63,7 @@ const updateMessageByid = async (request, idd) => {
 
 // Deletes the message by id
 // DELETE api/messages/id
-const deleteMessageById = async (request, reqId) => {
+const deleteMessageByID = async (request, reqId) => {
   const checkId = await knex('messages').where({ id: reqId });
 
   if (checkId.length === 0) {
@@ -85,9 +85,9 @@ const deleteMessageById = async (request, reqId) => {
 };
 
 module.exports = {
-  getAllmessage,
-  getMessageById,
+  getAllmessages,
+  getMessageByID,
   postMessage,
-  updateMessageByid,
-  deleteMessageById,
+  updateMessageByID,
+  deleteMessageByID,
 };
