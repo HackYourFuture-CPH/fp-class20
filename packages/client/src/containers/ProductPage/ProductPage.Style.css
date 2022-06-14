@@ -1,3 +1,20 @@
-.product-page-container {
-  color: rgb(42 91 133);
+.product-page-main-container {
+  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%);
+}
+
+.show-3 {
+  overflow: hidden;
+}
+
+.product-info-main-page {
+  color: #ffffff;
+}
+
+.product-category {
+  font-size: 1.563rem;
+}
+
+.product-title {
+  font-size: 4.375rem;
+  font-weight: 400;
 }
