@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductLists.css';
-import { AddProductToCart } from '../ProductComponent/AddProductToCart.component';
+import { ProductCard } from '../ProductComponent/ProductCard.component';
 
 export const ProductCards = ({ data }) => {
   return (
@@ -9,7 +9,7 @@ export const ProductCards = ({ data }) => {
       <ul>
         {data.map((d) => (
           <li>
-            <AddProductToCart product={d} variant="small" />
+            <ProductCard product={d} variant="small" />
           </li>
         ))}
       </ul>
