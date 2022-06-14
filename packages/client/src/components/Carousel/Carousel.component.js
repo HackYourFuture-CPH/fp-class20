@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './Carousel.styles.css';
 import PropTypes from 'prop-types';
-import { ReactComponent as ArrowLeftIcon } from '../../../public/assets/vectors/vector_carousel_left.svg';
-import { ReactComponent as ArrowRightIcon } from '../../../public/assets/vectors/vector_carousel_right.svg';
+import { ProductCard } from '../ProductComponent/ProductCard.component';
 
 export default function Carousel({ items, show }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,7 +14,7 @@ export default function Carousel({ items, show }) {
     }
   };
   const prev = () => {
-    if (currentIndex > 0) {
+    if (currentIndex > 0 && currentIndex >= show) {
       setCurrentIndex(currentIndex - show);
     } else {
       setCurrentIndex(items.length - show);
@@ -23,16 +22,41 @@ export default function Carousel({ items, show }) {
   };
 
   return (
-    <div className="carousel-container">
-      <ArrowLeftIcon className="left-arrow" onClick={prev} />
-      <div className="carousel-inner">
-        <div className={`show-${show} carousel`}>
-          {items.slice(currentIndex, currentIndex + show).map((item) => (
-            <span className="carousel-content">{item}</span>
-          ))}
+    <div className="test">
+      <div className="carousel-container">
+        <button
+          style={{ background: 'none', border: 'none' }}
+          type="button"
+          onClick={prev}
+          className="left-arrow"
+        >
+          <img src="assets/vectors/vector_carousel_left.svg" alt="left arrow" />
+        </button>
+        <div className="carousel-inner">
+          <div className={`show-${show} carousel`}>
+            {items.slice(currentIndex, currentIndex + show).map((item) => (
+              <span className="carousel-content">
+                <ProductCard
+                  product={item}
+                  variant="small"
+                  className="product-container-small"
+                />
+              </span>
+            ))}
+          </div>
         </div>
+        <button
+          style={{ background: 'none', border: 'none' }}
+          type="button"
+          onClick={next}
+          className="right-arrow"
+        >
+          <img
+            src="assets/vectors/vector_carousel_right.svg"
+            alt="right arrow"
+          />
+        </button>
       </div>
-      <ArrowRightIcon className="right-arrow" onClick={next} />
     </div>
   );
 }
