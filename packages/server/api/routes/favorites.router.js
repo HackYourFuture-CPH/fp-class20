@@ -4,55 +4,30 @@ const router = express.Router({ mergeParams: true });
 
 const favoritesController = require('../controllers/favorites.controller');
 
-/* all products
+/* all favorite products
  */
 
 /**
  * @swagger
- * /Products:
- *    get: All products
+ * /favorites:
+ *    get: All favorite products
  *    tags:
  *    - Products
- *    summary: Get all Products
+ *    summary: Get all favorite Products
  *    description:
- *      Will return all Products with a 10 page limit pagination.
+ *      Will return all favorite Products.
  *    produces: application/json
  *    parameters:
  *     - in: page
  *       name: query
  *       schema:
  *         type: Query Parameters
- *         description: The page of the product to be paginated
+ *         description: To get all the favorite products
  *    responses:
  *      200:
  *        description: Successful request
  *      5XX:
  *        description: Unexpected error.
- */
-
-/**
- * @swagger
- * /products?name={name}:
- *  get:
- *    tags:
- *    - search product
- *    summary: Search for products by partial name
- *    description:
- *      Will search for products with names that includes the searched phrase.
- *    produces: application/json
- *    parameters:
- *     - in: query
- *       name: name
- *       schema:
- *         type: string
- *         description: Partial name of the product
- *
- *    responses:
- *      200:
- *        description: Successful request
- *      5XX:
- *        description: Unexpected error.
- *
  */
 
 router.get('/', (req, res, next) => {
@@ -62,23 +37,16 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
-router.get('/:id', (req, res, next) => {
-  favoritesController
-    .getFavoritesById(req.params.id)
-    .then((result) => res.json(result))
-    .catch(next);
-});
-
-/* products by id
+/* favorites product by id
  */
 
 /**
  * @swagger
- * /products/{ID}:
+ * /favorites/{ID}:
  *  get:
  *    tags:
  *    - Products-ID
- *    summary: Get products by ID
+ *    summary: Get favorite products by ID
  *    description:
  *      Will return single products with a matching ID.
  *    produces: application/json
@@ -97,9 +65,41 @@ router.get('/:id', (req, res, next) => {
  *        description: Unexpected error.
  */
 
+router.get('/:id', (req, res, next) => {
+  favoritesController
+    .getFavoritesById(req.params.id)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+/**
+ * @swagger
+ * /favorites:
+ *  post:
+ *    tags:
+ *    - favorites
+ *    summary: Post favorite products
+ *    description:
+ *      Will post single product.
+ *    produces: application/json
+ *    parameters:
+ *     - in: body
+ *       name: id
+ *       schema:
+ *         type: object
+ *         required: true
+ *         description: save to favorites
+ *
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      5XX:
+ *        description: Unexpected error.
+ */
+
 router.post('/', (req, res, next) => {
   favoritesController
-    .postFavorites(req.body.userId, req.body.productId)
+    .postFavorites(req.body)
     .then((result) => res.json(result))
     .catch(next);
 });

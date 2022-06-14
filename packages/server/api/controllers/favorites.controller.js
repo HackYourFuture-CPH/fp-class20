@@ -1,8 +1,7 @@
 const knex = require('../../config/db');
-// const HttpError = require('../lib/utils/http-error');
 
-const postFavorites = async (req, a) => {
-  const favorites = await knex('Favorites').insert(req, a);
+const postFavorites = async (body) => {
+  const favorites = await knex('Favorites').insert(body);
   return favorites;
 };
 
