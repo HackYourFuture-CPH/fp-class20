@@ -1,5 +1,4 @@
 const knex = require('../../config/db');
-// const HttpError = require('../lib/utils/http-error');
 
 // Returns all messages
 // GET api/messages/
