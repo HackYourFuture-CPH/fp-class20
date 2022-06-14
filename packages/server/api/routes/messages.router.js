@@ -173,7 +173,7 @@ router.put('/:id', async (req, res) => {
  *  delete:
  *    tags:
  *    - deletemessage-ID
- *    summary: Get products by ID
+ *    summary: Get message by ID
  *    description:
  *      Will delete single message with a matching ID.
  *    produces: application/json
@@ -183,7 +183,7 @@ router.put('/:id', async (req, res) => {
  *       schema:
  *         type: integer
  *         required: true
- *         description: to delete the messate that matches the  given message
+ *         description: to delete the message that matches the  given message
  *
  *    responses:
  *      200:
