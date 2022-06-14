@@ -30,6 +30,31 @@ const productsController = require('../controllers/products.controller');
  *        description: Unexpected error.
  */
 
+/**
+ * @swagger
+ * /products?name={name}:
+ *  get:
+ *    tags:
+ *    - search product
+ *    summary: Search for products by partial name
+ *    description:
+ *      Will search for products with names that includes the searched phrase.
+ *    produces: application/json
+ *    parameters:
+ *     - in: query
+ *       name: name
+ *       schema:
+ *         type: string
+ *         description: Partial name of the product
+ *
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      5XX:
+ *        description: Unexpected error.
+ *
+ */
+
 router.get('/', (req, res, next) => {
   productsController
     .getAllProducts(req.query)
