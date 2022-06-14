@@ -23,6 +23,7 @@ function Header() {
               <img
                 src="assets/vectors/vector_arrow_up.svg"
                 alt="arrowup icon"
+                className="arrow-bottom-bar"
               />
             </button>
           ) : (
@@ -34,6 +35,7 @@ function Header() {
               <img
                 src="assets/vectors/vector_arrow_down.svg"
                 alt="arrow down icon"
+                className="arrow-bottom-bar"
               />
             </button>
           )}

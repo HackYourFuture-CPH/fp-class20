@@ -117,10 +117,6 @@ p {
     width: 1.5rem;
   }
 
-  .spices-button {
-    padding-top: 0.3rem;
-  }
-
   .display {
     padding-left: 1rem;
   }
@@ -156,6 +152,7 @@ p {
     font-size: 1rem;
     padding-right: 0.2rem;
     padding-left: 2rem;
+    padding-top: 0;
   }
 
   .main-heading {
@@ -169,6 +166,10 @@ p {
   .down-container {
     padding: 0;
     padding-top: 2rem;
+  }
+
+  .arrow-bottom-bar {
+    width: 1.25rem;
   }
 }
 
@@ -185,6 +186,10 @@ p {
   }
 
   .arrow-bottom-bar {
-    width: 1.25rem;
+    width: 1.125rem;
+  }
+
+  .toggle-button-bottom {
+    padding-top: 0.5rem;
   }
 }
