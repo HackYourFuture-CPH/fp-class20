@@ -4,8 +4,7 @@ import './AddProductToCartVariant.styles.css';
 import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
-import heartEmpty from '../../../public/assets/vectors/vector_heart_empty.svg';
-import heartFull from '../../../public/assets/vectors/vector_heart_full.svg';
+
 import { CartAdditionConfirmationModal } from './CartAdditionConfirmationModal.component';
 
 export const AddProductToCart = ({ product, variant }) => {
@@ -23,7 +22,11 @@ export const AddProductToCart = ({ product, variant }) => {
         <div className="favorite-icon-variant">
           <img
             onClick={onAddToFavorites}
-            src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
+            src={
+              isFavorite
+                ? `assets/vectors/vector_heart_full.svg`
+                : `assets/vectors/vector_heart_empty.svg`
+            }
             alt="heart-icon"
             aria-hidden="true"
           />
@@ -80,7 +83,11 @@ export const AddProductToCart = ({ product, variant }) => {
           Save to favorites
           <img
             onClick={onAddToFavorites}
-            src={isFavorite ? `${heartFull}` : `${heartEmpty}`}
+            src={
+              isFavorite
+                ? `assets/vectors/vector_heart_full.svg`
+                : `assets/vectors/vector_heart_empty.svg`
+            }
             alt="heart-icon"
             aria-hidden="true"
           />
