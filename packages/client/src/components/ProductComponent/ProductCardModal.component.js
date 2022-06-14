@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from '../Button/Button.component';
-import './CartAdditionConfirmationModal.styles.css';
+import './ProductCardModal.styles.css';
 import PropTypes from 'prop-types';
 
-export const CartAdditionConfirmationModal = ({
+export const ProductCardModal = ({
   onClose,
   productImage,
   productName,
@@ -47,7 +47,7 @@ export const CartAdditionConfirmationModal = ({
     </div>
   );
 };
-CartAdditionConfirmationModal.propTypes = {
+ProductCardModal.propTypes = {
   onClose: PropTypes.func,
   productImage: PropTypes.string,
   productName: PropTypes.string,
@@ -55,7 +55,7 @@ CartAdditionConfirmationModal.propTypes = {
   price: PropTypes.number,
 };
 
-CartAdditionConfirmationModal.defaultProps = {
+ProductCardModal.defaultProps = {
   onClose: () => {},
   productImage: null,
   price: 350,
