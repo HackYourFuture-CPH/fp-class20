@@ -13,7 +13,17 @@ export const ProductPage = () => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState();
+  const [isLoading, setLoading] = useState(true);
   const Id = 3;
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/products/${Id}`)
+      .then((response) => response.json())
+      .then((productTodisplay) => {
+        setProduct(productTodisplay[0]);
+        setLoading(false);
+      });
+  }, [id]);
 
   const fetchSimilarProducts = async () => {
     return fetch(`http://localhost:5000/api/category/${Id}`).then((response) =>
@@ -28,23 +38,28 @@ export const ProductPage = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/products/${Id}`)
-      .then((response) => response.json())
-      .then((productTodisplay) => setProduct(productTodisplay[0]));
-  }, [id]);
-
-  useEffect(() => {
     fetchSimilarProducts()
-      .then((data) => setSimilarProducts(data))
+      .then((data) => {
+        setSimilarProducts(data);
+        setLoading(false);
+      })
       .catch((err) => setError(err));
   }, [id]);
 
   useEffect(() => {
     fetchCategories()
-      .then((data) => setCategories(data))
+      .then((data) => {
+        setCategories(data);
+        setLoading(false);
+      })
       .catch((err) => setError(err));
-  }, []);
+  }, [id]);
 
+  console.log(categories);
+
+  if (isLoading || categories.length === 0) {
+    return <div className="App">Loading...</div>;
+  }
   return (
     <div className="product-page-main-container">
       <Header />
