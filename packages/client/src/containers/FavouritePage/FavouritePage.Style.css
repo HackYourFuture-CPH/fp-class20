@@ -12,6 +12,9 @@
   grid-auto-rows: 12.5rem;
   grid-gap: 3rem;
   box-sizing: border-box;
+  justify-content: center;
+
+  /* align-items: center; */
 }
 
 .favourite-item {
@@ -36,7 +39,8 @@
 
   .favourite-page-container-main {
     width: 800px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
 
@@ -62,5 +66,6 @@
     width: 375px;
     grid-template-columns: 1fr;
     padding: 0 1.5rem;
+    justify-content: center;
   }
 }
