@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-
-import favouriteIcon from '../../../public/assets/vectors/vector_heart_empty.svg';
-import CartIcon from '../../../public/assets/vectors/vector_cart.svg';
-import signIn from '../../../public/assets/vectors/vector_sign_in.svg';
 import './TopNavBar.styles.css';
 
 function TopNavBar() {
@@ -37,19 +33,27 @@ function TopNavBar() {
 
         <div className={botton}>
           <div className="sign-in-container">
-            <img className="sign-in-icon" src={signIn} alt="signin-icon" />
+            <img
+              className="sign-in-icon"
+              src="assets/vectors/vector_sign_in.svg"
+              alt="signin-icon"
+            />
             <span className="sign-in-text"> Sign in</span>
           </div>
           <div className="favourite-container">
             <img
               className="favourite-icon"
-              src={favouriteIcon}
+              src="assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
             <span className="favourites-text">Favourites </span>
           </div>
           <div className="cart-container">
-            <img className="cart-icon" src={CartIcon} alt="cart-icon" />
+            <img
+              className="cart-icon"
+              src="assets/vectors/vector_cart.svg"
+              alt="cart-icon"
+            />
             <span className="number">0</span>
             <span className="cart-text">Cart</span>
           </div>
@@ -59,19 +63,27 @@ function TopNavBar() {
         <div className="menu-mobile-layout">
           {' '}
           <div className="sign-in-container">
-            <img className="sign-in-icon" src={signIn} alt="signin-icon" />
+            <img
+              className="sign-in-icon"
+              src="assets/vectors/vector_sign_in.svg"
+              alt="signin-icon"
+            />
             <span className="sign-in-text"> Sign in</span>
           </div>
           <div className="favourite-container">
             <img
               className="favourite-icon"
-              src={favouriteIcon}
+              src="assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
             <span className="favourites-text">Favourites </span>
           </div>
           <div className="cart-container">
-            <img className="cart-icon" src={CartIcon} alt="cart-icon" />
+            <img
+              className="cart-icon"
+              src="assets/vectors/vector_cart.svg"
+              alt="cart-icon"
+            />
             <span className="number">0</span>
             <span className="cart-text">Cart</span>
           </div>

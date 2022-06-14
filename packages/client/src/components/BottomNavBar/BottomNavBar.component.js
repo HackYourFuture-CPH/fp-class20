@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ReactComponent as ArrowUp } from '../../../public/assets/vectors/vector_arrow_up.svg';
-import { ReactComponent as ArrowDown } from '../../../public/assets/vectors/vector_arrow_down.svg';
+
 import './BottomNavBar.styles.css';
 import { BottomNavigation } from './Right-bottom-navigation/BottomNavigation.component';
 
@@ -22,7 +21,10 @@ function Header() {
               type="button"
               onClick={toggleIcon}
             >
-              <ArrowUp className="arrow-bottom-bar" />
+              <img
+                src="assets/vectors/vector_arrow_up.svg"
+                alt="arrowup icon"
+              />
             </button>
           ) : (
             <button
@@ -30,7 +32,10 @@ function Header() {
               type="button"
               onClick={toggleIcon}
             >
-              <ArrowDown className="arrow-bottom-bar" />
+              <img
+                src="assets/vectors/vector_arrow_down.svg"
+                alt="arrow down icon"
+              />
             </button>
           )}
         </div>
