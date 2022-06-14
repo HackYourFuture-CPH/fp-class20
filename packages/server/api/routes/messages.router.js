@@ -9,11 +9,11 @@ const messageController = require('../controllers/messages.controller');
 
 /**
  * @swagger
- * /messages:
- *    get: All message
+ * /api/messages:
+ *  get:
  *    tags:
- *    - message
- *    summary: Get all Message
+ *    - messages
+ *    summary: get all Messages
  *    description:
  *      Will return all Message
  *    produces: application/json
@@ -22,7 +22,7 @@ const messageController = require('../controllers/messages.controller');
  *       name: query
  *       schema:
  *         type: Query Parameters
- *         description: message
+ *         description: get messages
  *    responses:
  *      200:
  *        description: Successful request
@@ -42,16 +42,55 @@ router.get('/', async (req, res) => {
   }
 });
 
+/* post message
+ */
+
+/**
+ * @swagger
+ * /api/messages:
+ *  post:
+ *    tags:
+ *    - messages
+ *    summary: post message
+ *    description:
+ *      Will post a message
+ *    produces: application/json
+ *    parameters:
+ *     - in: id
+ *       name: post message
+ *       schema:
+ *         type: integer
+ *         required: true
+ *         description: The post message
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      5XX:
+ *        description: Unexpected error.
+ */
+
+router.post('/', async (req, res) => {
+  try {
+    const result = await messageController.postMessage(req.body);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({
+      status: 'failed',
+      message: `internal server error in post message api/message/ ${error}`,
+    });
+  }
+});
+
 /* messages by id
  */
 
 /**
  * @swagger
- * /messages/{ID}:
- *  get: message by id
+ * /api/messages/{ID}:
+ *  get:
  *    tags:
- *    - message-ID
- *    summary: Get message by ID
+ *    - messages
+ *    summary: get message by ID
  *    description:
  *      Will return single message with a matching ID.
  *    produces: application/json
@@ -77,59 +116,20 @@ router.get('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: 'failed',
-      message: `internal server error in get all message api/message/:id ${error}`,
+      message: `internal server error in get message by id  api/message/:id ${error}`,
     });
   }
 });
 
-/* post message
+/* put message by id
  */
 
 /**
  * @swagger
- * /post/
- *  post:
- *    tags:
- *    - message-post
- *    summary: post message
- *    description:
- *      Will post a message .
- *    produces: application/json
- *    parameters:
- *     - in: id
- *       name: post message
- *       schema:
- *         type: integer
- *         required: true
- *         description: The post message
- *    responses:
- *      200:
- *        description: Successful request
- *      5XX:
- *        description: Unexpected error.
- */
-
-router.post('/', async (req, res) => {
-  try {
-    const result = await messageController.postMessage(req.body);
-    res.json(result);
-  } catch (error) {
-    res.status(500).json({
-      status: 'failed',
-      message: `internal server error in get all message api/message/ ${error}`,
-    });
-  }
-});
-
-/* put/update message by id
- */
-
-/**
- * @swagger
- * /message/{ID}:
+ * /api/message/{ID}:
  *  put:
  *    tags:
- *    - post message-ID
+ *    - messages
  *    summary: update message by ID
  *    description:
  *      Will edit message  with a matching ID.
@@ -159,7 +159,7 @@ router.put('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: 'failed',
-      message: `internal server error in get all message api/message/ ${error}`,
+      message: `internal server error in put message api/message/ ${error}`,
     });
   }
 });
@@ -169,11 +169,11 @@ router.put('/:id', async (req, res) => {
 
 /**
  * @swagger
- * /delete/{ID}:
+ * /api/message/{ID}:
  *  delete:
  *    tags:
- *    - deletemessage-ID
- *    summary: Get message by ID
+ *    - messages
+ *    summary: delete message by ID
  *    description:
  *      Will delete single message with a matching ID.
  *    produces: application/json
@@ -202,7 +202,7 @@ router.delete('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: 'failed',
-      message: `internal server error in delete reviews by id api/reviews/ ${error}`,
+      message: `internal server error in delete messages by id api/messages/ ${error}`,
     });
   }
 });
