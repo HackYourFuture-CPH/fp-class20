@@ -4,11 +4,11 @@ import './BottomNavigation.styles.css';
 
 export const BottomNavigation = () => {
   return (
-    <div className="main-container">
-      <div>
+    <>
+      <div className="text">
         <span>ABOUT US</span>
       </div>
-      <div>
+      <div className="text">
         <span>CONTACT</span>
       </div>
       <div className="search-container">
@@ -18,6 +18,6 @@ export const BottomNavigation = () => {
           placeholder="| Search spices"
         />
       </div>
-    </div>
+    </>
   );
 };
