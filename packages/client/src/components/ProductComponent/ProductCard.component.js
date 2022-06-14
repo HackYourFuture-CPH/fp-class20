@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import './AddProductToCart.styles.css';
-import './AddProductToCartVariant.styles.css';
+import './ProductCard.styles.css';
+import './ProductCardVariant.styles.css';
 import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 
-import { CartAdditionConfirmationModal } from './CartAdditionConfirmationModal.component';
+import { ProductCardModal } from './ProductCardModal.component';
 
-export const AddProductToCart = ({ product, variant }) => {
+export const ProductCard = ({ product, variant }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -62,7 +62,7 @@ export const AddProductToCart = ({ product, variant }) => {
         </div>
         {isModalOpen && (
           <div className="confirmation-modal-variant">
-            <CartAdditionConfirmationModal
+            <ProductCardModal
               onClose={() => toggleModal(false)}
               productImage={`assets/${product.pictureUrl}`}
               productName={product.name}
@@ -120,7 +120,7 @@ export const AddProductToCart = ({ product, variant }) => {
         </div>
         {isModalOpen && (
           <div className="confirmation-modal">
-            <CartAdditionConfirmationModal
+            <ProductCardModal
               onClose={() => toggleModal(false)}
               productImage={`assets/${product.pictureUrl}`}
               productName={product.name}
@@ -135,12 +135,12 @@ export const AddProductToCart = ({ product, variant }) => {
   );
 };
 
-AddProductToCart.propTypes = {
+ProductCard.propTypes = {
   product: PropTypes.func,
   variant: PropTypes.exact('small'),
 };
 
-AddProductToCart.defaultProps = {
+ProductCard.defaultProps = {
   product: {},
   variant: null,
 };
