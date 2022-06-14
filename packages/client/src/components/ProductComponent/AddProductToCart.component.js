@@ -16,17 +16,17 @@ export const AddProductToCart = ({ product, variant }) => {
     setIsFavorite(!isFavorite);
   };
 
+  const heartIcon = isFavorite
+    ? `assets/vectors/vector_heart_full.svg`
+    : `assets/vectors/vector_heart_empty.svg`;
+
   if (variant === 'small') {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
           <img
             onClick={onAddToFavorites}
-            src={
-              isFavorite
-                ? `assets/vectors/vector_heart_full.svg`
-                : `assets/vectors/vector_heart_empty.svg`
-            }
+            src={heartIcon}
             alt="heart-icon"
             aria-hidden="true"
           />
@@ -83,11 +83,7 @@ export const AddProductToCart = ({ product, variant }) => {
           Save to favorites
           <img
             onClick={onAddToFavorites}
-            src={
-              isFavorite
-                ? `assets/vectors/vector_heart_full.svg`
-                : `assets/vectors/vector_heart_empty.svg`
-            }
+            src={heartIcon}
             alt="heart-icon"
             aria-hidden="true"
           />
