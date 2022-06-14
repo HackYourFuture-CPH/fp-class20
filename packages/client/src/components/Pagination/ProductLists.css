@@ -1,46 +1,50 @@
-.product-pages{
-  
-     background: #403b37;;
-    width: 70%;
-    margin: 5em 5em;
-}
-.product-lists{
-    display: flex;
-    flex-direction: row;
-     flex-wrap: wrap; 
-    align-items: center; 
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
-}
-.list-page-number{
-    background-color: #403b37;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-   width: 30%;
-   
-}
-.product-cards{
-    background-color: #393430;
-    width: 20em;
-    height: 100px;
-    margin: 3%;
-    
-}
-.pagination-footer{
-    background-color: #403b37;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
+.product-pages {
+  background: #403b37;
+  margin: 5em;
 }
 
-.page-number{
-    color: white;
-    padding: 1em;
+.product-lists {
+  display: flex;
+  justify-content: center;
 }
-.arrow-icon{
-    cursor: pointer;
+
+.product-lists ul {
+  list-style: none;
+  width: 1224px;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  margin: 0 auto;
+  gap: 4em;
+}
+
+.list-page-number {
+  background-color: #403b37;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.pagination-footer {
+  background-color: #403b37;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-number {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 1em;
+  font-size: x-large;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  cursor: pointer;
 }

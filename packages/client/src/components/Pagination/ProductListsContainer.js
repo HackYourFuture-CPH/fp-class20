@@ -1,17 +1,31 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination.js';
 import { ProductCards } from './ProductCards.js';
+import getApiPath from '../../utils/getApiPath';
 import './ProductLists.css';
-import PropTypes from 'prop-types';
 
-function ProductListsContainer({ data, cardPerPage }) {
+function ProductListsContainer() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [info, setInfo] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  // get the current page data
-  const indexOfLastPost = currentPage * cardPerPage;
-  const indexOfFirstPost = indexOfLastPost - cardPerPage;
-  const currentInfos = data.slice(indexOfFirstPost, indexOfLastPost);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const response = await fetch(
+        //  `${getApiPath()}/api/products`
+        `http://localhost:5000/api/products?pageIndex=${currentPage - 1}`,
+      );
+
+      const spices = await response.json();
+
+      setInfo(spices);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [currentPage]);
 
   // change page
 
@@ -31,29 +45,26 @@ function ProductListsContainer({ data, cardPerPage }) {
     }
   };
 
+  /*  set page by clicking on number  */
+
+  const changePageByNumber = (num) => {
+    setCurrentPage(num);
+  };
+
   return (
     <div className="product-pages">
-      <ProductCards data={currentInfos} />
+      <ProductCards data={info} />
       <div className="pagination-footer">
         <Pagination
-          cardPerPage={cardPerPage}
-          totalCards={data.length}
+          totalCards={info.length}
           nextPage={nextPage}
           previousPage={previousPage}
           currentPage={currentPage}
+          changePageByNumber={changePageByNumber}
         />
       </div>
     </div>
   );
 }
-
-ProductListsContainer.propTypes = {
-  data: PropTypes.any,
-  cardPerPage: PropTypes.number,
-};
-ProductListsContainer.defaultProps = {
-  data: [],
-  cardPerPage: 10,
-};
 
 export default ProductListsContainer;
