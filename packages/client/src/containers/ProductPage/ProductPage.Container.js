@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import Carousel from '../../components/Carousel/Carousel.component';
-import { AddProductToCart } from '../../components/ProductComponent/AddProductToCart.component';
+import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
 import { Footer } from '../../components/Footer/Footer.component';
-import Header from '../../components/Navigation/Header/Header.component';
-import { BottomNavigation } from '../../components/Bottom-navigation/BottomNavigation.component';
+import Navigation from '../../components/Navigation/Navigation.component';
 import './ProductPage.Style.css';
 
 export const ProductPage = () => {
@@ -62,8 +61,7 @@ export const ProductPage = () => {
   }
   return (
     <div className="product-page-main-container">
-      <Header />
-      <BottomNavigation />
+      <Navigation />
       <div className="product-info-main-page">
         <div className="product-category">
           {
@@ -74,7 +72,7 @@ export const ProductPage = () => {
         </div>
         <div className="product-title">{product.name}</div>
       </div>
-      <AddProductToCart product={product} />
+      <ProductCard product={product} />
       <Carousel items={similarProducts} show={3} />
       <Footer />
     </div>
