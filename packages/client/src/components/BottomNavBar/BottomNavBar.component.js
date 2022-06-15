@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import './BottomNavBar.styles.css';
 import BottomNavigation from './Right-bottom-navigation/BottomNavigation.component';
 
-function Header() {
+function Header(prop) {
+  const { setSortProduct, setBreadcrumbs } = prop;
+
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
+
   const displayMode = dropDownExpanded ? 'display' : 'no-display';
   const displayContainer = !dropDownExpanded
     ? 'whole-container-margin'
@@ -11,6 +14,51 @@ function Header() {
   const toggleIcon = () => {
     setDropDownExpanded(!dropDownExpanded);
   };
+
+  const budFlower = () => {
+    setSortProduct(1);
+    setBreadcrumbs({
+      sidebar: 'Simply Spices / Spices by plant part / Flowers and Bud',
+      main: 'Flowers and Bud',
+    });
+  };
+  const seed = () => {
+    setSortProduct(1);
+    setBreadcrumbs({
+      sidebar: 'Simply Spices / Spices by plant part / seed',
+      main: 'Seed',
+    });
+  };
+  const fruitBerry = () => {
+    setSortProduct(1);
+    setBreadcrumbs({
+      sidebar: 'Simply Spices / Spices by plant part / Berry and Fruit',
+      main: 'Berry and Fruit',
+    });
+  };
+  const rootBark = () => {
+    setSortProduct(1);
+    setBreadcrumbs({
+      sidebar: 'Simply Spices / Spices by plant part / Root Rhizome and Bark',
+      main: 'Root Rhizome and Bark',
+    });
+  };
+  const leaf = () => {
+    setSortProduct(1);
+    setBreadcrumbs({
+      sidebar: 'Simply Spices / Spices by plant part / leaf',
+      main: 'Leaf',
+    });
+  };
+
+  const showAll = () => {
+    setSortProduct(1);
+    setBreadcrumbs({
+      sidebar: 'Simply Spices /All Spices',
+      main: 'All Spices',
+    });
+  };
+
   return (
     <div className={displayContainer}>
       <div className="up-container">
@@ -54,30 +102,60 @@ function Header() {
 
             <div className="items-container">
               <div className="left-container">
+                {/* onClick={budFlower} aria-hidden="true" */}
                 <div className="block-height">
-                  <span className="spice-names">BUD/FLOWER</span>
+                  <span className="spice-names">
+                    <button type="button" onClick={budFlower}>
+                      {' '}
+                      BUD/FLOWER
+                    </button>
+                  </span>
                   <p>(clove, caper, saffron and more)</p>
                 </div>
                 <div className="block-height">
-                  <span className="spice-names">SEED</span>
+                  <span className="spice-names">
+                    {' '}
+                    <button type="button" onClick={seed}>
+                      Seed{' '}
+                    </button>
+                  </span>
                   <p>(cummin, coriander,fennel, poppy and more)</p>
                 </div>
                 <div className="block-height">
-                  <span className="spice-names">FRUIT/BERRY</span>
+                  <span className="spice-names">
+                    {' '}
+                    <button type="button" onClick={fruitBerry}>
+                      FRUIT/BERRY{' '}
+                    </button>
+                  </span>
                   <p>(chili, cardamon, black pepper and more)</p>
                 </div>
               </div>
               <div className="right-container">
                 <div className="block-height">
-                  <span className="spice-names">ROOT/RHIZOME/BARK</span>
+                  <span className="spice-names">
+                    {' '}
+                    <button type="button" onClick={rootBark}>
+                      ROOT/RHIZOME/BARK{' '}
+                    </button>
+                  </span>
                   <p>(turmeric, ginger, cinnamon and more)</p>
                 </div>
                 <div className="block-height">
-                  <span className="spice-names">LEAF</span>
+                  <span className="spice-names">
+                    {' '}
+                    <button type="button" onClick={leaf}>
+                      LEAF{' '}
+                    </button>
+                  </span>
                   <p>(mint, oregano, thyme, bayleaf and more herbs)</p>
                 </div>
                 <div className="show-all-spices  block-height">
-                  <span>SHOW ALL SPICES</span>
+                  <span className="spice-names">
+                    <button type="button" onClick={showAll}>
+                      SHOW ALL SPICES{' '}
+                    </button>
+                  </span>
                 </div>
               </div>
             </div>

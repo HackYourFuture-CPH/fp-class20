@@ -2,11 +2,14 @@ import React from 'react';
 import TopNavBar from '../TopNavBar/TopNavBar.component';
 import BottomNavBar from '../BottomNavBar/BottomNavBar.component';
 
-function Navigation() {
+function Navigation(prop) {
   return (
     <div>
       <TopNavBar />
-      <BottomNavBar />
+      <BottomNavBar
+        setSortProduct={prop.setSortProduct}
+        setBreadcrumbs={prop.setBreadcrumbs}
+      />
     </div>
   );
 }

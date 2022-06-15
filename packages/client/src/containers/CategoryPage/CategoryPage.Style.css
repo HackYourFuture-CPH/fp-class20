@@ -1,5 +1,9 @@
-.category-page {
+.category-page-main-container {
+  width: 100vw;
   height: auto;
+  padding: 2rem 0;
+  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  background: #44403a;
 }
 
 .landing-sort-by-component-info {
@@ -8,9 +12,17 @@
   box-sizing: border-box;
 }
 
-.category-middle-main-background {
-  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
-  width: 100vw;
+.category-middle-main {
+  margin: 0 auto;
+  width: 1190px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.favorite-item {
+  margin-right: 1rem;
+  margin-bottom: 2rem;
 }
 
 .toggle-button-bottom {

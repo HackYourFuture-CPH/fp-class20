@@ -2,6 +2,7 @@
 
 .sort-by-component-background {
   background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  background: #342f2a;
   display: flex;
   width: 100vw;
 }
@@ -11,7 +12,7 @@
   color: white;
   align-items: center;
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 3rem;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -24,7 +25,7 @@
 
 .text-samll-sort-by {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 2rem;
   letter-spacing: 0;
