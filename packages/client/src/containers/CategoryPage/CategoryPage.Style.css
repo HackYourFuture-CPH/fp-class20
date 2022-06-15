@@ -13,6 +13,11 @@
   width: 100vw;
 }
 
+.toggle-button-bottom {
+  padding-left: 1.25rem;
+  margin-top: -0.5rem;
+}
+
 .category-middle-main-container {
   padding-top: 3rem;
   width: 1190px;
@@ -49,6 +54,11 @@
     box-sizing: border-box;
   }
 
+  .toggle-button-bottom {
+    padding-left: 1.25rem;
+    margin-top: -0.3rem;
+  }
+
   .category-product-card-item {
     width: 48%;
   }
@@ -57,6 +67,11 @@
 @media screen and (max-width: 800px) {
   .category-middle-main-container {
     width: 400px;
+  }
+
+  .toggle-button-bottom {
+    padding-left: 1.25rem;
+    margin-top: -0.3rem;
   }
 
   .category-product-card-items {
@@ -72,5 +87,10 @@
 @media screen and (max-width: 500px) {
   .category-middle-main-container {
     width: 375px;
+  }
+
+  .toggle-button-bottom {
+    padding-left: 1.25rem;
+    margin-top: 0;
   }
 }

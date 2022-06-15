@@ -1,8 +1,8 @@
 import React from 'react';
-
 import Footer from '../../components/Footer/Footer.component';
 import './CategoryPage.Style.css';
 import SortBy from '../../components/SortBy/SortBy.component';
+import Navigation from '../../components/Navigation/Navigation.component';
 
 const textObj = {
   sidebar: 'Simply Spices / Spices by plant part / Berries and Fruit',
@@ -12,6 +12,7 @@ const textObj = {
 export const CategoryPage = () => {
   return (
     <>
+      <Navigation className="toggle-button-bottom" />
       <SortBy textObj={textObj} />
       <div className="category-page">
         <div className="category-middle-main-background">
