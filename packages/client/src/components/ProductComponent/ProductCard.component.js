@@ -12,8 +12,31 @@ export const ProductCard = ({ product, variant }) => {
   const [isModalOpen, toggleModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const onAddToFavorites = () => {
+  const onAddToFavorites = async () => {
     setIsFavorite(!isFavorite);
+    if (isFavorite) {
+      const objToPost = {
+        productId: product[0].id,
+        userId: 12,
+      };
+
+      // POST request using fetch() to post in backend
+      try {
+        const config = {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(objToPost),
+        };
+        const response = await fetch('/api/favorites', config);
+        return response;
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log('catch:', error);
+      }
+    }
   };
 
   const heartIcon = isFavorite
