@@ -9,10 +9,10 @@ const favoritesController = require('../controllers/favorites.controller');
 
 /**
  * @swagger
- * /favorites:
- *    get: All favorite products
+ * /api/favorites:
+ *  get:
  *    tags:
- *    - Products
+ *    - favorites
  *    summary: Get all favorite Products
  *    description:
  *      Will return all favorite Products.
@@ -42,10 +42,10 @@ router.get('/', (req, res, next) => {
 
 /**
  * @swagger
- * /favorites/{ID}:
+ * /api/favorites/{ID}:
  *  get:
  *    tags:
- *    - Products-ID
+ *    - favorites
  *    summary: Get favorite products by ID
  *    description:
  *      Will return single products with a matching ID.
@@ -74,7 +74,7 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
- * /favorites:
+ * /api/favorites:
  *  post:
  *    tags:
  *    - favorites

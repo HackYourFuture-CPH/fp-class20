@@ -25,6 +25,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
   const [isMessageSent, setIsMessageSent] = useState(false);
   const [isAllInputFilledOut, setIsAllInputFilledOut] = useState(false);
   const [errorState, setErrorState] = useState([]);
+  const [fetchStatus, setFetchStatus] = useState();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +41,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
     }
   }, [formState]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let errors = [];
@@ -62,8 +63,25 @@ export const ContactForm = ({ text, label, handlePost }) => {
     });
 
     if (errors.filter((err) => err.message !== '').length === 0) {
-      handlePost(formState.name, formState.email, formState.message);
-      setIsMessageSent(true);
+      const inputObj = {
+        name: formState.name,
+        email: formState.email,
+        message: formState.message,
+      };
+
+      (async () => {
+        const postMessage = await fetch('/api/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'Application/json' },
+          body: JSON.stringify(inputObj),
+        });
+
+        if (postMessage.status === 200) {
+          setIsMessageSent(true);
+          setFetchStatus(postMessage.statusText);
+        }
+        setFetchStatus(postMessage.statusText);
+      })();
 
       setFormState({
         name: '',
@@ -71,6 +89,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
         message: '',
       });
     }
+
     setErrorState(errors);
   };
 
@@ -111,6 +130,8 @@ export const ContactForm = ({ text, label, handlePost }) => {
               ) : (
                 ''
               )}
+              {fetchStatus}
+
               <div className="form-row">
                 <label htmlFor="name">
                   Name <span className="required-star">*</span>
@@ -131,7 +152,6 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   placeholder="type your name"
                   onChange={handleChange}
                   required
-                  // size="75"
                 />
               </div>
               <span className="contact-error-span"> {errObj.name}</span>
@@ -156,7 +176,6 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   placeholder="type your email"
                   onChange={handleChange}
                   required
-                  // size="75"
                 />
               </div>
               <span className="contact-error-span"> {errObj.email}</span>
@@ -196,7 +215,8 @@ export const ContactForm = ({ text, label, handlePost }) => {
                   label={label}
                   onClick={handleSubmit}
                 >
-                  {text}
+                  {/* {text} */}
+                  SUBMIT
                 </button>
               </div>
             </div>

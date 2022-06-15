@@ -1,12 +1,21 @@
 import React from 'react';
-import { AddProductToCart } from './AddProductToCart.component';
+import { ProductCard } from './ProductCard.component';
 
 export default {
   title: 'components/Product',
-  component: AddProductToCart.component,
+  component: ProductCard.component,
 };
 
-const Template = (props) => <AddProductToCart {...props} />;
+const Template = (props) => (
+  <>
+    <ProductCard {...props} />
+    <div style={{ display: 'flex', width: '100%' }}>
+      <ProductCard {...props} variant="small" />
+      <ProductCard {...props} variant="small" />
+      <ProductCard {...props} variant="small" />
+    </div>
+  </>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

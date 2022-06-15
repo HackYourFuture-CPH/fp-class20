@@ -3,7 +3,7 @@ import React from 'react';
 import { BottomNavigation } from './BottomNavigation.component';
 
 export default {
-  title: 'components/Navigation/BottomNavigation',
+  title: 'components/BottomNavBar/BottomNavBar',
   component: BottomNavigation.component,
 };
-export const BottomNav = () => <BottomNavigation />;
+export const RightBottomNav = () => <BottomNavigation />;
