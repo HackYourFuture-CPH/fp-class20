@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
+
 .product-page-main-container {
   background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%);
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
 .show-3 {
@@ -7,7 +10,10 @@
 }
 
 .product-info-main-page {
-  color: #ffffff;
+  color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  text-align: center;
 }
 
 .product-category {
@@ -17,4 +23,63 @@
 .product-title {
   font-size: 4.375rem;
   font-weight: 400;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.display {
+  position: relative;
+}
+
+.product-whole-container {
+  background: none !important;
+  padding-bottom: 3rem;
+}
+
+.carousel-container {
+  padding-bottom: 3rem;
+}
+
+.product-whole-container .product-container {
+  border-bottom-width: 23px !important;
+  border-top-width: 23px;
+}
+
+.title-similar-products {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  text-align: center;
+}
+
+.footer-up-background {
+  padding-top: 3rem;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .title-similar-products {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .product-card-container .counter {
+    width: 4.938rem !important;
+  }
+
+  .carousel .counter {
+    width: 2.5rem !important;
+  }
+}
+
+@media screen and (max-width: 1204px) {
+  .title-similar-products {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .title-similar-products {
+    display: none !important;
+  }
 }

@@ -61,7 +61,7 @@ export const ProductPage = () => {
   }
   return (
     <div className="product-page-main-container">
-      <Navigation />
+      <Navigation className="display" />
       <div className="product-info-main-page">
         <div className="product-category">
           {
@@ -72,9 +72,10 @@ export const ProductPage = () => {
         </div>
         <div className="product-title">{product.name}</div>
       </div>
-      <ProductCard product={product} />
-      <Carousel items={similarProducts} show={3} />
-      <Footer />
+      <ProductCard product={product} className="product-card-container" />
+      <h1 className="title-similar-products">Similar products:</h1>
+      <Carousel items={similarProducts} show={3} className="carousel" />
+      <Footer className="footer" />
     </div>
   );
 };

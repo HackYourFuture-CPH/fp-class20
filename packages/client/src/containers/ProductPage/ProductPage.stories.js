@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductPage } from './ProductPage.Container';
 
 export default {
-  title: 'Containers/ProductPageContainer',
+  title: 'Containers/ProductPage',
   component: ProductPage.component,
 };
 
