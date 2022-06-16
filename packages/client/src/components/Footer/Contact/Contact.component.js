@@ -7,14 +7,14 @@ export const Contact = () => {
   return (
     <div className="contact-info">
       <span className="text-big ">Contact us</span>
-      <span className="text-small phone-text">
+      <div className="text-small phone-text">
         <img src={phone} alt="Canvas phone Logo" className="phone" />
         <span>+45 666 555</span>
-      </span>
-      <span className="text-small">
+      </div>
+      <div className="text-small">
         <img src={envelop} alt="Canvas envelop Logo" className="envelop" />
-        <span>spice@kbh.dk</span>
-      </span>
+        <span className="email-underline">spice @ kbh.dk</span>
+      </div>
     </div>
   );
 };

@@ -1,49 +1,70 @@
 .contact-info {
-  background-color: rgb(35 28 22 / 60%);
-  width: 20%;
-  padding-left: 1rem;
-  padding-bottom: 1.5rem;
-  padding-right: 0.5rem;
+  background-color: #ffffff05;
+  width: 22%;
+  box-sizing: border-box;
 }
 
 .contact-info img {
   padding-right: 0.5rem;
 }
 
+.email-underline {
+  text-decoration: underline;
+}
+
 .contact-info .text-big {
-  display: block;
-  margin-bottom: 2rem;
   padding-top: 2rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-style: semibold;
   line-height: 1rem;
   font-weight: 600;
   color: white;
+  text-align: left;
+  margin-bottom: 2rem;
+  padding-left: 0.5rem;
 }
 
 .contact-info .text-small {
   display: flex;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
   color: white;
-  align-items: center;
+  letter-spacing: 0.01rem;
+  text-align: left;
+  padding-left: 0.5rem;
 }
 
 .phone,
 .envelop {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.75rem;
+  height: 1.68rem;
 }
 
 .contact-info .phone-text {
   margin-bottom: 1rem;
 }
-@media screen and (max-width: 560px) {
+
+@media screen and (max-width: 1225px) {
+  .contact-info .text-small {
+    font-size: 0.8rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .contact-info {
-    width: 40%;
+    width: 80%;
     margin: 0 auto;
+    text-align: left;
+    padding-left: 16%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact-info .text-small {
+    padding-left: 3%;
   }
 }
