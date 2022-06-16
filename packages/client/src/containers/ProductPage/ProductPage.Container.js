@@ -13,6 +13,9 @@ export const ProductPage = () => {
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState();
   const [isLoading, setLoading] = useState(true);
+  const [isSimilarProductLoading, setisSimilarProductLoading] = useState(true);
+  const [isCategoryLoading, setCategoryLoading] = useState(true);
+
   const Id = 3;
 
   useEffect(() => {
@@ -40,7 +43,7 @@ export const ProductPage = () => {
     fetchSimilarProducts()
       .then((data) => {
         setSimilarProducts(data);
-        setLoading(false);
+        setisSimilarProductLoading(false);
       })
       .catch((err) => setError(err));
   }, [id]);
@@ -49,14 +52,19 @@ export const ProductPage = () => {
     fetchCategories()
       .then((data) => {
         setCategories(data);
-        setLoading(false);
+        setCategoryLoading(false);
       })
       .catch((err) => setError(err));
   }, [id]);
 
   console.log(categories);
 
-  if (isLoading || categories.length === 0) {
+  if (
+    isLoading ||
+    isSimilarProductLoading ||
+    isCategoryLoading ||
+    categories.length === 0
+  ) {
     return <div className="App">Loading...</div>;
   }
   return (
