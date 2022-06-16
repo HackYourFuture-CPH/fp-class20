@@ -151,13 +151,19 @@ export const ProductCard = ({ product, variant, bin }) => {
 };
 
 ProductCard.propTypes = {
-  product: PropTypes.func,
-  variant: PropTypes.exact('small'),
+  product: PropTypes.shape({
+    description: PropTypes.string,
+    pictureUrl: PropTypes.string,
+    price: PropTypes.string,
+    size: PropTypes.string,
+    name: PropTypes.string,
+  }),
+  variant: PropTypes.string,
   bin: PropTypes.bool,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
-  bin: true,
+  bin: false,
 };
