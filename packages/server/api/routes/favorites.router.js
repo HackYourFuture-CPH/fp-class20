@@ -104,4 +104,39 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
+/* delete favorite by id
+ */
+
+/**
+ * @swagger
+ * /api/favorites/{ID}:
+ *  delete:
+ *    tags:
+ *    - favorites
+ *    summary: delete favorite by ID
+ *    description:
+ *      Will delete single favorite with a matching ID.
+ *    produces: application/json
+ *    parameters:
+ *     - in: id
+ *       name: id
+ *       schema:
+ *         type: integer
+ *         required: true
+ *         description: to delete the favorite product that matches the  given product
+ *
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      5XX:
+ *        description: Unexpected error.
+ */
+
+router.delete('/:id', (req, res, next) => {
+  favoritesController
+    .deleteFavoritesById(req.params.id, req.body)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;

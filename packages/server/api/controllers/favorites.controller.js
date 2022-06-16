@@ -6,16 +6,28 @@ const postFavorites = async (body) => {
 };
 
 const getFavoritesById = async (id) => {
-  const favorites = await knex('Favorites').where({ userId: id });
+  const favorites = await knex('Favorites')
+    .join('Users', 'Users.id', 'Favorites.userId')
+    .where({ userId: id });
   return favorites;
 };
 
 const getFavorites = async () => {
-  const favorites = await knex('Favorites');
+  const favorites = await knex('Favorites')
+    .join('Users', 'Users.id', 'Favorites.userId')
+    .join('Products', 'Products.id', 'Favorites.productId');
+  return favorites;
+};
+
+const deleteFavoritesById = async (reqId, body) => {
+  const favorites = await knex('Favorites')
+    .where({ productId: reqId })
+    .delete(body);
   return favorites;
 };
 
 module.exports = {
+  deleteFavoritesById,
   postFavorites,
   getFavorites,
   getFavoritesById,
