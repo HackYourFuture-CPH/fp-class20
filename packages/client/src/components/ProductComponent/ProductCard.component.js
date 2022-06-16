@@ -7,14 +7,20 @@ import { Button } from '../Button/Button.component';
 
 import { ProductCardModal } from './ProductCardModal.component';
 
-export const ProductCard = ({ product, variant }) => {
+export const ProductCard = ({ product, variant, bin }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isDeleted, setDelteFav] = useState(false);
 
   const onAddToFavorites = () => {
     setIsFavorite(!isFavorite);
   };
+
+  const deleteFavouriteProduct = () => {
+    setDelteFav(!isDeleted);
+  };
+  const binIcon = 'assets/vectors/vector_rubbish_bin_white.svg';
 
   const heartIcon = isFavorite
     ? `assets/vectors/vector_heart_full.svg`
@@ -24,12 +30,21 @@ export const ProductCard = ({ product, variant }) => {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
-          <img
-            onClick={onAddToFavorites}
-            src={heartIcon}
-            alt="heart-icon"
-            aria-hidden="true"
-          />
+          {bin ? (
+            <img
+              onClick={deleteFavouriteProduct}
+              src={binIcon}
+              alt="bin-icon"
+              aria-hidden="true"
+            />
+          ) : (
+            <img
+              onClick={onAddToFavorites}
+              src={heartIcon}
+              alt="heart-icon"
+              aria-hidden="true"
+            />
+          )}
         </div>
         <div className="product-details-variant">
           <div className="product-image-variant">
@@ -41,7 +56,7 @@ export const ProductCard = ({ product, variant }) => {
               <h2 className="product-name-variant"> {product.name}</h2>
             </div>
             <div>
-              <span className="product-size-variant">{product.size}</span>
+              <span className="product-size-variant">{product.size}g</span>
               <span className="product-size-variant">{product.price} DKK</span>
             </div>
             <div className="counter-cart-button-variant">
@@ -138,9 +153,11 @@ export const ProductCard = ({ product, variant }) => {
 ProductCard.propTypes = {
   product: PropTypes.func,
   variant: PropTypes.exact('small'),
+  bin: PropTypes.bool,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
+  bin: true,
 };
