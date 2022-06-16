@@ -14,12 +14,14 @@ export const ProductCard = ({ product, variant }) => {
 
   const onAddToFavorites = async () => {
     setIsFavorite(!isFavorite);
-    if (isFavorite) {
+    if (!isFavorite) {
       const objToPost = {
-        productId: product[0].id,
+        productId: product.id,
         userId: 12,
       };
 
+      // eslint-disable-next-line no-console
+      console.log(objToPost);
       // POST request using fetch() to post in backend
       try {
         const config = {
@@ -30,7 +32,10 @@ export const ProductCard = ({ product, variant }) => {
           },
           body: JSON.stringify(objToPost),
         };
-        const response = await fetch('/api/favorites', config);
+        const response = await fetch(
+          'http://localhost:5000/api/favorites',
+          config,
+        );
         return response;
       } catch (error) {
         // eslint-disable-next-line no-console
@@ -56,7 +61,7 @@ export const ProductCard = ({ product, variant }) => {
         </div>
         <div className="product-details-variant">
           <div className="product-image-variant">
-            <img src={`assets/${product.pictureUrl}`} alt="product-img" />
+            <img src={product.pictureUrl} alt="product-img" />
           </div>
 
           <div className="product-information-variant">

@@ -10,7 +10,7 @@ export const ProductPage = () => {
   }, []);
 
   const fetchData = async () => {
-    const result = await fetch(`http://localhost:5000/api/products/1`);
+    const result = await fetch(`http://localhost:5000/api/products/5`);
     const fetchResult = await result.json();
     setProduct(fetchResult[0]);
     // eslint-disable-next-line no-console
