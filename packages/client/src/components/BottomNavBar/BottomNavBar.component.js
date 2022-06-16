@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import './BottomNavBar.styles.css';
 import BottomNavigation from './Right-bottom-navigation/BottomNavigation.component';
 
+// eslint-disable-next-line import/no-cycle
+import CategoryPage from '../../containers/CategoryPage/CategoryPage.Container';
+
+// export const ApiName = createContext();
+// export const ApiName = React.createContext();
+
 function Header(prop) {
   const { setSortProduct, setBreadcrumbs } = prop;
+  const [sortName, setSortName] = useState('friut');
 
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
 
@@ -28,6 +35,7 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / seed',
       main: 'Seed',
     });
+    setSortName('seed');
   };
   const fruitBerry = () => {
     setSortProduct(1);
@@ -35,6 +43,7 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / Berry and Fruit',
       main: 'Berry and Fruit',
     });
+    setSortName('fruit');
   };
   const rootBark = () => {
     setSortProduct(1);
@@ -42,6 +51,7 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / Root Rhizome and Bark',
       main: 'Root Rhizome and Bark',
     });
+    setSortName('root');
   };
   const leaf = () => {
     setSortProduct(1);
@@ -49,6 +59,7 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / leaf',
       main: 'Leaf',
     });
+    setSortName('leaf');
   };
 
   const showAll = () => {
@@ -57,10 +68,14 @@ function Header(prop) {
       sidebar: 'Simply Spices /All Spices',
       main: 'All Spices',
     });
+    setSortName('');
   };
 
   return (
     <div className={displayContainer}>
+      {/* <ApiName.Provider value={sortName}>
+        <CategoryPage />
+      </ApiName.Provider> */}
       <div className="up-container">
         <div className="button-for-spices">
           <span className="spices-button">SPICES</span>
@@ -93,7 +108,6 @@ function Header(prop) {
         </div>
         <BottomNavigation />
       </div>
-
       {/* this is the toggle part */}
       <div className={displayMode}>
         <div className="down-container">

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
-import { CategoryPage } from './containers/CategoryPage/CategoryPage.Container';
+import CategoryPage from './containers/CategoryPage/CategoryPage.Container';
 import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
 import { LandingPage } from './containers/LandingPage/LandingPage.Container';
 import { PageNotFound } from './containers/PageNotFound/PageNotFound.Container';
