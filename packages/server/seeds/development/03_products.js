@@ -15,7 +15,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/caraway.jpeg',
+      pictureUrl: 'assets/images/spices_square/chilipepper_powder.jpeg',
       stockAmount: 50,
     },
     {
