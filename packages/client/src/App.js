@@ -7,6 +7,7 @@ import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Containe
 import { LandingPage } from './containers/LandingPage/LandingPage.Container';
 import { PageNotFound } from './containers/PageNotFound/PageNotFound.Container';
 import { ProductPage } from './containers/ProductPage/ProductPage.Container';
+import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage';
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route
+            path="/contact-us-feedback"
+            element={<ContactUsFeedbackPage />}
+          />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
