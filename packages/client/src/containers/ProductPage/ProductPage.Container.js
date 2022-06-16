@@ -4,13 +4,14 @@ import './ProductPage.Style.css';
 
 export const ProductPage = () => {
   const [product, setProduct] = useState([]);
+  const id = 5;
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const result = await fetch(`http://localhost:5000/api/products/5`);
+    const result = await fetch(`http://localhost:5000/api/products/${id}`);
     const fetchResult = await result.json();
     setProduct(fetchResult[0]);
     // eslint-disable-next-line no-console

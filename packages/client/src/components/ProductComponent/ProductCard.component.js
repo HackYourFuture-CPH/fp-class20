@@ -4,25 +4,27 @@ import './ProductCardVariant.styles.css';
 import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
-
 import { ProductCardModal } from './ProductCardModal.component';
+import { useParams } from 'react-router-dom';
 
 export const ProductCard = ({ product, variant }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
+  const { id } = useParams();
+
   const onAddToFavorites = async () => {
     setIsFavorite(!isFavorite);
     if (!isFavorite) {
       const objToPost = {
         productId: product.id,
-        userId: 12,
+        userId: id,
       };
 
       // eslint-disable-next-line no-console
       console.log(objToPost);
-      // POST request using fetch() to post in backend
+
       try {
         const config = {
           method: 'POST',
@@ -32,10 +34,7 @@ export const ProductCard = ({ product, variant }) => {
           },
           body: JSON.stringify(objToPost),
         };
-        const response = await fetch(
-          'http://localhost:5000/api/favorites',
-          config,
-        );
+        const response = await fetch('/api/favorites', config);
         return response;
       } catch (error) {
         // eslint-disable-next-line no-console
