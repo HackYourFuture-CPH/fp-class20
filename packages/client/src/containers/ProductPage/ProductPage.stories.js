@@ -8,4 +8,8 @@ export default {
 
 const Template = (args) => <ProductPage {...args} />;
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  product: {},
+  saveToFavorites: 'save to favorites',
+  onClose: () => {},
+};
