@@ -10,9 +10,9 @@ const Template = (props) => (
   <>
     <ProductCard {...props} />
     <div style={{ display: 'flex', width: '100%' }}>
-      <ProductCard {...props} variant="small" bin={true} />
-      <ProductCard {...props} variant="small" bin={false} />
-      <ProductCard {...props} variant="small" bin={true} />
+      <ProductCard {...props} variant="small" favoriteProduct={true} />
+      <ProductCard {...props} variant="small" />
+      <ProductCard {...props} variant="small" />
     </div>
   </>
 );

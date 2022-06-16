@@ -7,18 +7,17 @@ import { Button } from '../Button/Button.component';
 
 import { ProductCardModal } from './ProductCardModal.component';
 
-export const ProductCard = ({ product, variant, bin }) => {
+export const ProductCard = ({ product, variant, favoriteProduct }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [isDeleted, setDelteFav] = useState(false);
 
   const onAddToFavorites = () => {
     setIsFavorite(!isFavorite);
   };
 
   const deleteFavouriteProduct = () => {
-    setDelteFav(!isDeleted);
+    setIsFavorite(false);
   };
   const binIcon = 'assets/vectors/vector_rubbish_bin_white.svg';
 
@@ -30,7 +29,7 @@ export const ProductCard = ({ product, variant, bin }) => {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
-          {bin ? (
+          {favoriteProduct ? (
             <img
               onClick={deleteFavouriteProduct}
               src={binIcon}
@@ -159,11 +158,11 @@ ProductCard.propTypes = {
     name: PropTypes.string,
   }),
   variant: PropTypes.string,
-  bin: PropTypes.bool,
+  favoriteProduct: PropTypes.bool,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
-  bin: false,
+  favoriteProduct: false,
 };
