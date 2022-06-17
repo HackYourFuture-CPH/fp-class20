@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer.component';
 import './CategoryPage.Style.css';
 import SortBy from '../../components/SortBy/SortBy.component';
@@ -19,20 +19,23 @@ const textObj = {
 const CategoryPage = () => {
   const [breadCrumbs, setBreadcrumbs] = useState(textObj);
   const [products, setProducts] = useState([]);
-  const [sortProduct, setSortProduct] = useState(3);
+  const [sortProduct, setSortProduct] = useState('');
 
   // const query = useContext(ApiName);
-
-  const api = `http://localhost:5000/api/category/fruit`;
+  // const api = `http://localhost:5000/api/category/fruit`;
 
   useEffect(() => {
-    categoryproducts();
-  });
+    categoryProducts();
 
-  const categoryproducts = async () => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sortProduct, products]);
+
+  const categoryProducts = async () => {
     try {
-      const dataJson = await fetch(api);
-      // `http://localhost:5000/api/category/${sortProduct}`,
+      // const dataJson = await fetch(api);
+      const dataJson = await fetch(
+        `http://localhost:5000/api/category${sortProduct}`,
+      );
 
       const productsCategory = await dataJson.json();
       setProducts(productsCategory);

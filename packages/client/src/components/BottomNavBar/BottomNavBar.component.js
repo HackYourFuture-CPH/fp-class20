@@ -1,16 +1,17 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState } from 'react';
 import './BottomNavBar.styles.css';
+import PropTypes from 'prop-types';
 import BottomNavigation from './Right-bottom-navigation/BottomNavigation.component';
 
 // eslint-disable-next-line import/no-cycle
-import CategoryPage from '../../containers/CategoryPage/CategoryPage.Container';
+// import CategoryPage from '../../containers/CategoryPage/CategoryPage.Container';
 
 // export const ApiName = createContext();
 // export const ApiName = React.createContext();
 
-function Header(prop) {
-  const { setSortProduct, setBreadcrumbs } = prop;
-  const [sortName, setSortName] = useState('friut');
+function Header(props) {
+  const { setSortProduct, setBreadcrumbs } = props;
+  // const [sortName, setSortName] = useState('friut');
 
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
 
@@ -28,6 +29,8 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / Flowers and Bud',
       main: 'Flowers and Bud',
     });
+    setSortProduct('/bud');
+    setDropDownExpanded(false);
   };
   const seed = () => {
     setSortProduct(1);
@@ -35,7 +38,8 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / seed',
       main: 'Seed',
     });
-    setSortName('seed');
+    setSortProduct('/seed');
+    setDropDownExpanded(false);
   };
   const fruitBerry = () => {
     setSortProduct(1);
@@ -43,7 +47,8 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / Berry and Fruit',
       main: 'Berry and Fruit',
     });
-    setSortName('fruit');
+    setSortProduct('/fruit');
+    setDropDownExpanded(false);
   };
   const rootBark = () => {
     setSortProduct(1);
@@ -51,7 +56,8 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / Root Rhizome and Bark',
       main: 'Root Rhizome and Bark',
     });
-    setSortName('root');
+    setSortProduct('/root');
+    setDropDownExpanded(false);
   };
   const leaf = () => {
     setSortProduct(1);
@@ -59,7 +65,8 @@ function Header(prop) {
       sidebar: 'Simply Spices / Spices by plant part / leaf',
       main: 'Leaf',
     });
-    setSortName('leaf');
+    setSortProduct('/leaf');
+    setDropDownExpanded(false);
   };
 
   const showAll = () => {
@@ -68,7 +75,8 @@ function Header(prop) {
       sidebar: 'Simply Spices /All Spices',
       main: 'All Spices',
     });
-    setSortName('');
+    setSortProduct('');
+    setDropDownExpanded(false);
   };
 
   return (
@@ -180,3 +188,13 @@ function Header(prop) {
   );
 }
 export default Header;
+
+Header.propTypes = {
+  setSortProduct: PropTypes.func,
+  setBreadcrumbs: PropTypes.func,
+};
+
+Header.defaultProps = {
+  setSortProduct: () => {},
+  setBreadcrumbs: () => {},
+};
