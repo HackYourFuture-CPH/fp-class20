@@ -30,7 +30,10 @@ export default function Carousel({ items, show }) {
           onClick={prev}
           className="left-arrow"
         >
-          <img src="assets/vectors/vector_carousel_left.svg" alt="left arrow" />
+          <img
+            src="/assets/vectors/vector_carousel_left.svg"
+            alt="left arrow"
+          />
         </button>
         <div className="carousel-inner">
           <div className={`show-${show} carousel`}>
@@ -52,7 +55,7 @@ export default function Carousel({ items, show }) {
           className="right-arrow"
         >
           <img
-            src="assets/vectors/vector_carousel_right.svg"
+            src="/assets/vectors/vector_carousel_right.svg"
             alt="right arrow"
           />
         </button>
