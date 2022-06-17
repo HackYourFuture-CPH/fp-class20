@@ -36,7 +36,7 @@ export const ProductCard = ({
         </div>
         <div className="product-details-variant">
           <div className="product-image-variant">
-            <img src={`assets/${product.pictureUrl}`} alt="product-img" />
+            <img src={product.pictureUrl} alt="product-img" />
           </div>
 
           <div className="product-information-variant">
@@ -67,7 +67,7 @@ export const ProductCard = ({
           <div className="confirmation-modal-variant">
             <ProductCardModal
               onClose={() => toggleModal(false)}
-              productImage={`assets/${product.pictureUrl}`}
+              productImage={product.pictureUrl}
               productName={product.name}
               count={count}
               setCount={setCount}
@@ -93,7 +93,7 @@ export const ProductCard = ({
         </div>
         <div className="product-details">
           <div className="product-image">
-            <img src={`assets/${product.pictureUrl}`} alt="product-img" />
+            <img src={product.pictureUrl} alt="product-img" />
           </div>
 
           <div className="product-information">
@@ -125,7 +125,7 @@ export const ProductCard = ({
           <div className="confirmation-modal">
             <ProductCardModal
               onClose={() => toggleModal(false)}
-              productImage={`assets/${product.pictureUrl}`}
+              productImage={product.pictureUrl}
               productName={product.name}
               count={count}
               setCount={setCount}
