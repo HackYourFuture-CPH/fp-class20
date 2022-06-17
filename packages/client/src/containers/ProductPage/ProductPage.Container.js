@@ -9,15 +9,24 @@ export const ProductPage = () => {
   const { id = 3 } = useParams();
   const [product, setProduct] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/products/${id}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('something went wrong');
+        }
+        return response.json();
+      })
       .then((productTodisplay) => {
         setProduct(productTodisplay[0]);
         setLoading(false);
-      });
+      })
+      .catch((err) => setError(err));
   }, [id]);
+
+  const handleClick = () => {};
 
   if (isLoading) {
     return <div className="App">Loading...</div>;
@@ -25,8 +34,12 @@ export const ProductPage = () => {
   return (
     <div className="product-page-main-container">
       <Navigation className="display" />
-      <SimilarProducts product={product} />
-      <Footer className="footer" />
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <SimilarProducts product={product} onClick={handleClick} />
+      )}
+      {/* <Footer className="footer" /> */}
     </div>
   );
 };

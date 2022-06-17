@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './ProductPage.Style.css';
 import Carousel from '../../components/Carousel/Carousel.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 export const SimilarProducts = ({ product }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
@@ -12,13 +13,13 @@ export const SimilarProducts = ({ product }) => {
   const [isCategoryLoading, setCategoryLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchUrl() {
-      const response = await fetch(
-        `http://localhost:5000/api/category/${product.categoryId}`,
-      );
-      return response.json();
-    }
-    fetchUrl()
+    fetch(`http://localhost:5000/api/category/${product.categoryId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('something went wrong');
+        }
+        return response.json();
+      })
       .then((data) => {
         setSimilarProducts(data);
         setisSimilarProductLoading(false);
@@ -26,14 +27,14 @@ export const SimilarProducts = ({ product }) => {
       .catch((err) => setError(err));
   }, [product.categoryId]);
 
-  const fetchCategories = async () => {
-    return fetch(`http://localhost:5000/api/category`).then((response) =>
-      response.json(),
-    );
-  };
-
   useEffect(() => {
-    fetchCategories()
+    fetch(`http://localhost:5000/api/category`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('something went wrong');
+        }
+        return response.json();
+      })
       .then((data) => {
         setCategories(data);
         setCategoryLoading(false);
@@ -56,14 +57,24 @@ export const SimilarProducts = ({ product }) => {
         </div>
         <div className="product-title">{product.name}</div>
       </div>
-      <ProductCard product={product} className="product-card-container" />
-      <h1 className="title-similar-products">Similar products:</h1>
-      <Carousel
-        key={product.id}
-        items={similarProducts.filter((item) => item.id !== product.id)}
-        show={3}
-        className="carousel"
-      />
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <>
+          <ProductCard product={product} className="product-card-container">
+            {/* <Routes>
+              <Route path="product-page" />
+            </Routes> */}
+          </ProductCard>
+          <h1 className="title-similar-products">Similar products:</h1>
+          <Carousel
+            key={product.id}
+            items={similarProducts.filter((item) => item.id !== product.id)}
+            show={3}
+            className="carousel"
+          />
+        </>
+      )}
     </>
   );
 };

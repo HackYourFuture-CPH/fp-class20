@@ -23,7 +23,7 @@
 .product-title {
   font-size: 4.375rem;
   font-weight: 400;
-  text-align: center;
+  text-align: center !important;
   padding-top: 2rem;
 }
 
@@ -55,6 +55,18 @@
 
 .footer-up-background {
   padding-top: 3rem;
+}
+
+.add-to-cart-button {
+  color: #fff;
+}
+
+.add-to-cart-button-variant {
+  color: #fff;
+}
+
+.product-card-link {
+  text-decoration: none;
 }
 
 @media (hover: none) and (pointer: coarse) {
