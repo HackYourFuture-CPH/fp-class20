@@ -6,12 +6,26 @@ export default {
   component: ProductCard.component,
 };
 
+let favoriteStatus = false;
+function updateFavoriteStatus(product, isFavorite) {
+  favoriteStatus = isFavorite;
+}
 const Template = (props) => (
   <>
     <ProductCard {...props} />
     <div style={{ display: 'flex', width: '100%' }}>
-      <ProductCard {...props} variant="small" favoriteProduct={true} />
-      <ProductCard {...props} variant="small" />
+      <ProductCard
+        {...props}
+        variant="small"
+        isFavorite={favoriteStatus}
+        updateFavoriteStatus={updateFavoriteStatus}
+      />
+      <ProductCard
+        {...props}
+        variant="small"
+        isFavorite={!favoriteStatus}
+        updateFavoriteStatus={updateFavoriteStatus}
+      />
       <ProductCard {...props} variant="small" />
     </div>
   </>
@@ -30,4 +44,5 @@ Primary.args = {
   },
   saveToFavorites: 'save to favorites',
   onClose: () => {},
+  isFavourite: favoriteStatus,
 };

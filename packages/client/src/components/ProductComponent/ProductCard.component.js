@@ -4,23 +4,21 @@ import './ProductCardVariant.styles.css';
 import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
-
 import { ProductCardModal } from './ProductCardModal.component';
 
-export const ProductCard = ({ product, variant, favoriteProduct }) => {
+const binIcon = 'assets/vectors/vector_rubbish_bin_white.svg';
+export const ProductCard = ({
+  product,
+  variant,
+  isFavorite,
+  updateFavoriteStatus,
+}) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
 
-  const onAddToFavorites = () => {
-    setIsFavorite(!isFavorite);
+  const toggleFavoriteStatus = () => {
+    updateFavoriteStatus(product, !isFavorite);
   };
-
-  const deleteFavouriteProduct = () => {
-    setIsFavorite(false);
-  };
-  const binIcon = 'assets/vectors/vector_rubbish_bin_white.svg';
-
   const heartIcon = isFavorite
     ? `assets/vectors/vector_heart_full.svg`
     : `assets/vectors/vector_heart_empty.svg`;
@@ -29,21 +27,12 @@ export const ProductCard = ({ product, variant, favoriteProduct }) => {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
-          {favoriteProduct ? (
+          <button type="button" onClick={toggleFavoriteStatus}>
             <img
-              onClick={deleteFavouriteProduct}
-              src={binIcon}
-              alt="bin-icon"
-              aria-hidden="true"
+              src={isFavorite ? binIcon : heartIcon}
+              alt={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             />
-          ) : (
-            <img
-              onClick={onAddToFavorites}
-              src={heartIcon}
-              alt="heart-icon"
-              aria-hidden="true"
-            />
-          )}
+          </button>
         </div>
         <div className="product-details-variant">
           <div className="product-image-variant">
@@ -96,7 +85,7 @@ export const ProductCard = ({ product, variant, favoriteProduct }) => {
         <div className="favorite-icon">
           Save to favorites
           <img
-            onClick={onAddToFavorites}
+            onClick={toggleFavoriteStatus}
             src={heartIcon}
             alt="heart-icon"
             aria-hidden="true"
@@ -158,11 +147,13 @@ ProductCard.propTypes = {
     name: PropTypes.string,
   }),
   variant: PropTypes.string,
-  favoriteProduct: PropTypes.bool,
+  isFavorite: PropTypes.bool,
+  updateFavoriteStatus: PropTypes.func,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
-  favoriteProduct: false,
+  isFavorite: false,
+  updateFavoriteStatus: () => {},
 };
