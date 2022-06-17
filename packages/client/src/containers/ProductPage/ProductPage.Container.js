@@ -39,7 +39,7 @@ export const ProductPage = () => {
       ) : (
         <SimilarProducts product={product} onClick={handleClick} />
       )}
-      {/* <Footer className="footer" /> */}
+      <Footer className="footer" />
     </div>
   );
 };

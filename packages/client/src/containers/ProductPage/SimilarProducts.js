@@ -61,11 +61,7 @@ export const SimilarProducts = ({ product }) => {
         <p>{error}</p>
       ) : (
         <>
-          <ProductCard product={product} className="product-card-container">
-            {/* <Routes>
-              <Route path="product-page" />
-            </Routes> */}
-          </ProductCard>
+          <ProductCard product={product} className="product-card-container" />
           <h1 className="title-similar-products">Similar products:</h1>
           <Carousel
             key={product.id}
