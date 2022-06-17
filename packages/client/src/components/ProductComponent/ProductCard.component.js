@@ -4,18 +4,21 @@ import './ProductCardVariant.styles.css';
 import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
-
 import { ProductCardModal } from './ProductCardModal.component';
 
-export const ProductCard = ({ product, variant }) => {
+const binIcon = 'assets/vectors/vector_rubbish_bin_white.svg';
+export const ProductCard = ({
+  product,
+  variant,
+  isFavorite,
+  updateFavoriteStatus,
+}) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
 
-  const onAddToFavorites = () => {
-    setIsFavorite(!isFavorite);
+  const toggleFavoriteStatus = () => {
+    updateFavoriteStatus(product, !isFavorite);
   };
-
   const heartIcon = isFavorite
     ? `assets/vectors/vector_heart_full.svg`
     : `assets/vectors/vector_heart_empty.svg`;
@@ -24,12 +27,12 @@ export const ProductCard = ({ product, variant }) => {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
-          <img
-            onClick={onAddToFavorites}
-            src={heartIcon}
-            alt="heart-icon"
-            aria-hidden="true"
-          />
+          <button type="button" onClick={toggleFavoriteStatus}>
+            <img
+              src={isFavorite ? binIcon : heartIcon}
+              alt={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+            />
+          </button>
         </div>
         <div className="product-details-variant">
           <div className="product-image-variant">
@@ -41,7 +44,7 @@ export const ProductCard = ({ product, variant }) => {
               <h2 className="product-name-variant"> {product.name}</h2>
             </div>
             <div>
-              <span className="product-size-variant">{product.size}</span>
+              <span className="product-size-variant">{product.size}g</span>
               <span className="product-size-variant">{product.price} DKK</span>
             </div>
             <div className="counter-cart-button-variant">
@@ -82,7 +85,7 @@ export const ProductCard = ({ product, variant }) => {
         <div className="favorite-icon">
           Save to favorites
           <img
-            onClick={onAddToFavorites}
+            onClick={toggleFavoriteStatus}
             src={heartIcon}
             alt="heart-icon"
             aria-hidden="true"
@@ -136,11 +139,21 @@ export const ProductCard = ({ product, variant }) => {
 };
 
 ProductCard.propTypes = {
-  product: PropTypes.func,
-  variant: PropTypes.exact('small'),
+  product: PropTypes.shape({
+    description: PropTypes.string,
+    pictureUrl: PropTypes.string,
+    price: PropTypes.string,
+    size: PropTypes.string,
+    name: PropTypes.string,
+  }),
+  variant: PropTypes.string,
+  isFavorite: PropTypes.bool,
+  updateFavoriteStatus: PropTypes.func,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
+  isFavorite: false,
+  updateFavoriteStatus: () => {},
 };
