@@ -29,6 +29,11 @@ body {
   color: white;
 }
 
+.favorite-icon-variant button {
+  background-color: #38332e;
+  border: #38332e;
+}
+
 .favorite-icon-variant {
   display: flex;
   justify-content: flex-end;
@@ -40,7 +45,7 @@ body {
 .favorite-icon-variant img {
   padding-left: 0.25rem;
   width: 25px;
-  height: 23px;
+  height: 25px;
 }
 
 .product-details-variant {
@@ -50,11 +55,13 @@ body {
 }
 
 .product-image-variant {
-  width: 100%;
+  width: 50%;
+  height: 50%;
 }
 
 .product-image-variant img {
-  width: 69%;
+  width: 140px;
+  height: 140px;
   margin-left: 3rem;
 }
 

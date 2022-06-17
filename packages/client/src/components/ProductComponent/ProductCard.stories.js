@@ -26,7 +26,12 @@ const Template = (props) => (
         isFavorite={!favoriteStatus}
         updateFavoriteStatus={updateFavoriteStatus}
       />
-      <ProductCard {...props} variant="small" />
+      <ProductCard
+        {...props}
+        variant="small"
+        isFavorite={!favoriteStatus}
+        updateFavoriteStatus={updateFavoriteStatus}
+      />
     </div>
   </>
 );
