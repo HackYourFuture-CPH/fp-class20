@@ -26,19 +26,13 @@ export const ProductPage = () => {
       .catch((err) => setError(err));
   }, [id]);
 
-  const handleClick = () => {};
-
   if (isLoading) {
     return <div className="App">Loading...</div>;
   }
   return (
     <div className="product-page-main-container">
       <Navigation className="display" />
-      {error ? (
-        <p>{error}</p>
-      ) : (
-        <SimilarProducts product={product} onClick={handleClick} />
-      )}
+      {error ? <p>{error}</p> : <SimilarProducts product={product} />}
       <Footer className="footer" />
     </div>
   );

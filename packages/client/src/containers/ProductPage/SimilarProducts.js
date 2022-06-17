@@ -61,13 +61,17 @@ export const SimilarProducts = ({ product }) => {
       ) : (
         <>
           <ProductCard product={product} className="product-card-container" />
-          <h1 className="title-similar-products">Similar products:</h1>
-          <Carousel
-            key={product.id}
-            items={similarProducts.filter((item) => item.id !== product.id)}
-            show={3}
-            className="carousel"
-          />
+          {similarProducts.length !== 1 && (
+            <>
+              <h1 className="title-similar-products">Similar products:</h1>
+              <Carousel
+                key={product.id}
+                items={similarProducts.filter((item) => item.id !== product.id)}
+                show={3}
+                className="carousel"
+              />
+            </>
+          )}
         </>
       )}
     </>

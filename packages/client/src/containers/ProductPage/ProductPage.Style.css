@@ -59,10 +59,14 @@
 
 .add-to-cart-button {
   color: #fff;
+  border-color: #fff;
+  border: 1px solid;
 }
 
 .add-to-cart-button-variant {
   color: #fff;
+  border-color: #fff;
+  border: 1px solid;
 }
 
 .product-card-link {
