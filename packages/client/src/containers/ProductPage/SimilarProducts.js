@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './ProductPage.Style.css';
 import Carousel from '../../components/Carousel/Carousel.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 export const SimilarProducts = ({ product }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
