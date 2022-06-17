@@ -3,9 +3,7 @@ import Counter from '../../Counter/Counter.component';
 import '../ShoppingCart.styles.css';
 import PropTypes from 'prop-types';
 
-function OrderProduct({ data, getPrice }) {
-  const [count, setCount] = useState(1);
-
+function OrderProduct({ data, onAdd, onRemove }) {
   return (
     <div className="order-product">
       <div className="order-product-img">
@@ -28,14 +26,17 @@ function OrderProduct({ data, getPrice }) {
       </div>
       <div className="order-product-quantity">
         <div className="order-product-counter">
-          <Counter count={count} setCount={setCount} />
+          <button type="button" onClick={onRemove}>
+            -
+          </button>
+          <span>{data.count}</span>
+          <button type="button" onClick={onAdd}>
+            +
+          </button>
         </div>
         <p className="order-product-price">{data.price} DKK</p>
-        <p
-          className="order-product-total bold"
-          onChange={(e) => getPrice(data.price * count)}
-        >
-          {data.price * count} DKK
+        <p className="order-product-total bold">
+          {data.price * data.count} DKK
         </p>
       </div>
     </div>
@@ -44,11 +45,13 @@ function OrderProduct({ data, getPrice }) {
 
 OrderProduct.defaultProps = {
   data: PropTypes.func,
-  getPrice: PropTypes.func,
+  onAdd: PropTypes.func,
+  onRemove: PropTypes.func,
 };
 
 OrderProduct.propTypes = {
   data: PropTypes.func,
-  getPrice: PropTypes.func,
+  onAdd: PropTypes.func,
+  onRemove: PropTypes.func,
 };
 export default OrderProduct;
