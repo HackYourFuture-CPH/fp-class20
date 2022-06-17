@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/category" element={<CategoryPage />} />
-          <Route path="/contact-us" element={<ContactUsPage />} /> *
+          <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
