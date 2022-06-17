@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.contact-header {
+  color: white;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(35 28 22 / 60%);
+}
+
+.contact-header-text {
+  color: white;
+  font-size: 2rem;
+}
+
+.contact-outlayer {
+  background-color: rgb(134 117 114);
+  display: flex;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin-top: 3%;
+  margin-inline: auto;
+  align-items: center;
+  background-color: rgb(35 28 22 / 60%);
+  padding: 3rem 0;
+}
+
+.contact div span:nth-child(1) {
+  margin-right: 1rem;
+  text-align: end;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.edit-btn {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  border: 1px solid #fff;
+  background-color: rgb(35 28 22 / 60%);
+}
+
+.review-btn {
+  background: #53742a;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 12rem;
+  border: 0, 16rem solid #fff;
+}
+
+.shopping-btn {
+  background-color: rgb(35 28 22 / 60%);
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 12rem;
+  border: 0, 16rem solid #fff;
+}
+
+.extra-btns {
+  display: grid !important;
+  justify-content: space-between;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  padding: 3rem 0;
+}
+
+.contact div .name {
+  color: white;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.contact div .result {
+  font-weight: 400;
+}
+
+.contact div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+  margin-inline: auto;
+  padding: 0.5rem;
+  font-weight: 400;
+}
+
+.contact-btn {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  border: 1px solid #fff;
+  background-color: rgb(35 28 22 / 60%);
+}
