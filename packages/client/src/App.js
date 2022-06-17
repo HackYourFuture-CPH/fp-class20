@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
 import { CategoryPage } from './containers/CategoryPage/CategoryPage.Container';
 import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
@@ -16,8 +15,8 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/category" element={<CategoryPage />} />
-          <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route path="/product" element={<ProductPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} /> *
+          <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>
