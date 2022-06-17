@@ -17,7 +17,7 @@ Total.defaultProps = {
 
 Total.propTypes = {
   title: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.string,
 };
 
 export default Total;

@@ -1,30 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import Total from './Total/Total';
-import { useParams } from 'react-router-dom';
 import './ShoppingCart.styles.css';
 import OrderProduct from './ProductComponent/OrderProduct.component';
 
 function ShoppingCart() {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
+  // const [count, setCount] = useState(1);
 
-  const getTotal = (price) => {
-    // eslint-disable-next-line no-console
-    console.log(price);
-  };
-  const { id } = useParams();
   useEffect(() => {
-    fetchUser(id);
-  }, [id]);
+    fetchUser();
+  }, []);
   // eslint-disable-next-line no-shadow
-  const fetchUser = (id) => {
-    fetch('http://localhost:5000/api/products', {
+  const fetchUser = () => {
+    fetch('http://localhost:5000/api/products/2', {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
       .then((res) => res.json())
-      .then((json) => {
-        setData(json);
+      .then((result) => {
+        setProducts(
+          result.map((data) => ({
+            ...data,
+            count: 1,
+          })),
+        );
       });
+  };
+
+  /* eslint-disable no-console */
+  console.log(products);
+
+  const addProductToCart = (productId) => {
+    setProducts(
+      products.map((product) => {
+        if (product.id === productId) {
+          return {
+            ...product,
+            count: product.count + 1,
+          };
+        }
+        return products;
+      }),
+    );
+  };
+
+  const removeProductFromCart = (productId) => {
+    setProducts(
+      products.map((product) => {
+        if (product.id === productId) {
+          return {
+            ...product,
+            count: product.count - 1,
+          };
+        }
+        return products;
+      }),
+    );
+  };
+
+  const calculateTotal = () => {
+    return products
+      .map((product) => product.price * product.count)
+      .reduce((a, b) => a + b, 0);
   };
 
   return (
@@ -39,17 +76,26 @@ function ShoppingCart() {
               <p className="bold">Total DKK</p>
             </div>
           </div>
-          {data.map((product) => (
-            <OrderProduct data={product} key={product.id} getPrice={getTotal} />
+          {products.map((product) => (
+            <OrderProduct
+              data={product}
+              key={product.id}
+              onAdd={() => {
+                addProductToCart(product.id);
+              }}
+              onRemove={() => {
+                removeProductFromCart(product.id);
+              }}
+            />
           ))}
           <div className="shopping-cart-total-btn">
             <button type="button" className="order-product-btn btn">
               CONTINUE SHOPPING
             </button>
             <div>
-              <Total title="Subtotal" price="1000.00" />
+              <Total title="Subtotal" price={calculateTotal()} />
               <Total title="Delivery" price="10.00" />
-              <Total title="Total" price="1000.00" />
+              <Total title="Total" price={calculateTotal() + 10} />
             </div>
           </div>
         </div>
