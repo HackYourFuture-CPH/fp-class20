@@ -21,7 +21,7 @@ function Header(props) {
       sidebar: 'Simply Spices / Spices by plant part / Flowers and Bud',
       main: 'Flowers and Bud',
     });
-    setSortProduct('/bud');
+    setSortProduct('/category/bud');
     setDropDownExpanded(false);
   };
   const seed = () => {
@@ -39,7 +39,7 @@ function Header(props) {
       sidebar: 'Simply Spices / Spices by plant part / Berry and Fruit',
       main: 'Berry and Fruit',
     });
-    setSortProduct('/fruit');
+    setSortProduct('/category/fruit');
     setDropDownExpanded(false);
   };
   const rootBark = () => {
@@ -48,7 +48,7 @@ function Header(props) {
       sidebar: 'Simply Spices / Spices by plant part / Root Rhizome and Bark',
       main: 'Root Rhizome and Bark',
     });
-    setSortProduct('/root');
+    setSortProduct('/category/root');
     setDropDownExpanded(false);
   };
   const leaf = () => {
@@ -57,7 +57,7 @@ function Header(props) {
       sidebar: 'Simply Spices / Spices by plant part / leaf',
       main: 'Leaf',
     });
-    setSortProduct('/leaf');
+    setSortProduct('/category/leaf');
     setDropDownExpanded(false);
   };
 
@@ -67,7 +67,7 @@ function Header(props) {
       sidebar: 'Simply Spices /All Spices',
       main: 'All Spices',
     });
-    setSortProduct('');
+    setSortProduct('/products');
     setDropDownExpanded(false);
   };
 

@@ -13,7 +13,7 @@ const textObj = {
 const CategoryPage = () => {
   const [breadCrumbs, setBreadcrumbs] = useState(textObj);
   const [products, setProducts] = useState([]);
-  const [sortProduct, setSortProduct] = useState('');
+  const [sortProduct, setSortProduct] = useState('/product');
 
   useEffect(() => {
     categoryProducts();
@@ -23,16 +23,10 @@ const CategoryPage = () => {
 
   const categoryProducts = async () => {
     try {
-      const dataJson = await fetch(
-        `http://localhost:5000/api/category${sortProduct}`,
-      );
-      // eslint-disable-next-line no-console
-      console.log(dataJson);
+      const dataJson = await fetch(`http://localhost:5000/api${sortProduct}`);
+
       const productsCategory = await dataJson.json();
       setProducts(productsCategory);
-
-      // eslint-disable-next-line no-console
-      console.log(products);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);

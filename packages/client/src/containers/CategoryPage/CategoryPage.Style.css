@@ -38,6 +38,7 @@
   .category-middle-main {
     width: 800px;
     box-sizing: border-box;
+    justify-content: center;
   }
 
   .toggle-button-bottom {
