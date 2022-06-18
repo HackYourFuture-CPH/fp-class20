@@ -1,7 +1,6 @@
 // Preloader.stories.js|jsx
 
-import React from 'react';
-
+import React, { useState } from 'react';
 import Preloader from './Preloader.component';
 
 export default {
@@ -10,10 +9,9 @@ export default {
 };
 
 // 👇 We create a “template”
-const Template = () => <Preloader />;
-// 👇 Each story then reuses that template
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Preloader',
+const Template = (args) => {
+  const [loading, setLoading] = useState(false);
+  return <Preloader {...args} loading={loading} setLoading={setLoading} />;
 };
+
+export const Primary = Template.bind({});

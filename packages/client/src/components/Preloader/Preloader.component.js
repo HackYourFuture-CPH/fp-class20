@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './Preloader.styles.css';
 
-function Preloader() {
-  const [loading, setLoading] = useState(false);
+function Preloader({ loading, setLoading }) {
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 10000);
-  }, []);
+    // eslint-disable-next-line
+  }, [loading]);
 
   return (
     <div>
@@ -33,4 +30,14 @@ function Preloader() {
     </div>
   );
 }
+
 export default Preloader;
+
+Preloader.defaultProps = {
+  loading: false,
+  setLoading: () => {},
+};
+Preloader.propTypes = {
+  loading: PropTypes.bool,
+  setLoading: PropTypes.func,
+};
