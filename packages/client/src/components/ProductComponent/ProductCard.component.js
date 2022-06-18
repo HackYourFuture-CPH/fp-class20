@@ -84,12 +84,14 @@ export const ProductCard = ({
       <div className="product-container">
         <div className="favorite-icon">
           Save to favorites
-          <img
-            onClick={toggleFavoriteStatus}
-            src={heartIcon}
-            alt="heart-icon"
-            aria-hidden="true"
-          />
+          <button type="button" onClick={toggleFavoriteStatus}>
+            <img
+              onClick={toggleFavoriteStatus}
+              src={heartIcon}
+              alt="heart-icon"
+              aria-hidden="true"
+            />
+          </button>
         </div>
         <div className="product-details">
           <div className="product-image">
