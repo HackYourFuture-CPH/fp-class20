@@ -46,7 +46,7 @@ router.get('/', (req, res, next) => {
  *  get:
  *    tags:
  *    - favorites
- *    summary: Get favorite products by ID
+ *    summary: Get favorite products by product ID
  *    description:
  *      Will return single products with a matching ID.
  *    produces: application/json
