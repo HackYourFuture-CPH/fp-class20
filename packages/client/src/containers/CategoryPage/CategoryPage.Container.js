@@ -2,14 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer.component';
 import './CategoryPage.Style.css';
 import SortBy from '../../components/SortBy/SortBy.component';
-
-// eslint-disable-next-line import/no-cycle
 import Navigation from '../../components/Navigation/Navigation.component';
-
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
-
-// eslint-disable-next-line import/no-cycle
-// import { ApiName } from '../../components/BottomNavBar/BottomNavBar.component';
 
 const textObj = {
   sidebar: 'Simply Spices / All Spices',
@@ -21,27 +15,24 @@ const CategoryPage = () => {
   const [products, setProducts] = useState([]);
   const [sortProduct, setSortProduct] = useState('');
 
-  // const query = useContext(ApiName);
-  // const api = `http://localhost:5000/api/category/fruit`;
-
   useEffect(() => {
     categoryProducts();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sortProduct, products]);
+  }, [sortProduct]);
 
   const categoryProducts = async () => {
     try {
-      // const dataJson = await fetch(api);
       const dataJson = await fetch(
         `http://localhost:5000/api/category${sortProduct}`,
       );
-
+      // eslint-disable-next-line no-console
+      console.log(dataJson);
       const productsCategory = await dataJson.json();
       setProducts(productsCategory);
 
       // eslint-disable-next-line no-console
-      console.log(productsCategory);
+      console.log(products);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
@@ -50,7 +41,7 @@ const CategoryPage = () => {
 
   const productItem = products.map((product) => (
     <div className="favorite-item" key={product.name}>
-      <ProductCard product={products} variant="small" />
+      <ProductCard product={product} variant="small" />
     </div>
   ));
   return (
@@ -61,7 +52,11 @@ const CategoryPage = () => {
         sortProduct={sortProduct}
         setBreadcrumbs={setBreadcrumbs}
       />
-      <SortBy textObj={breadCrumbs} setProducts={setProducts} />
+      <SortBy
+        textObj={breadCrumbs}
+        products={products}
+        setProducts={setProducts}
+      />
       <div className="category-page-main-container">
         <div className="category-middle-main">{productItem}</div>
       </div>

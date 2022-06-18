@@ -3,19 +3,11 @@ import './BottomNavBar.styles.css';
 import PropTypes from 'prop-types';
 import BottomNavigation from './Right-bottom-navigation/BottomNavigation.component';
 
-// eslint-disable-next-line import/no-cycle
-// import CategoryPage from '../../containers/CategoryPage/CategoryPage.Container';
-
-// export const ApiName = createContext();
-// export const ApiName = React.createContext();
-
 function Header(props) {
   const { setSortProduct, setBreadcrumbs } = props;
-  // const [sortName, setSortName] = useState('friut');
-
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
-
   const displayMode = dropDownExpanded ? 'display' : 'no-display';
+
   const displayContainer = !dropDownExpanded
     ? 'whole-container-margin'
     : 'whole-container-no-margin';
@@ -81,13 +73,9 @@ function Header(props) {
 
   return (
     <div className={displayContainer}>
-      {/* <ApiName.Provider value={sortName}>
-        <CategoryPage />
-      </ApiName.Provider> */}
       <div className="up-container">
         <div className="button-for-spices">
           <span className="spices-button">SPICES</span>
-
           {dropDownExpanded ? (
             <button
               className="toggle-button-bottom"
@@ -124,7 +112,6 @@ function Header(props) {
 
             <div className="items-container">
               <div className="left-container">
-                {/* onClick={budFlower} aria-hidden="true" */}
                 <div className="block-height">
                   <span className="spice-names">
                     <button type="button" onClick={budFlower}>

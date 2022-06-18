@@ -1,7 +1,6 @@
 import React from 'react';
 import TopNavBar from '../TopNavBar/TopNavBar.component';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-cycle
 import BottomNavBar from '../BottomNavBar/BottomNavBar.component';
 
 function Navigation(props) {

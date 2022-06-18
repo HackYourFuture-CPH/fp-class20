@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import './SortBy.styles.css';
 import PropTypes from 'prop-types';
 
-const SortBy = ({ textObj }) => {
+const SortBy = ({ textObj, setProducts, products }) => {
   const [arrow, setArrow] = useState(true);
-
+  const [sortState, setSortState] = useState('none');
+  const sortMethods = {
+    alphabetically: { method: (a, b) => (a.name > b.name ? 1 : -1) },
+    lowestPrice: { method: (a, b) => (a.price > b.price ? 1 : -1) },
+    newArrivals: { method: (a, b) => (a.createdAt > b.createdAt ? -1 : 1) },
+  };
   return (
     <div className="sort-by-component-background">
       <div className="sort-by-component-info">
@@ -14,7 +19,12 @@ const SortBy = ({ textObj }) => {
           <div className="sort-by-select">
             <div>
               <select
-                onClick={() => setArrow(!arrow)}
+                onClick={(e) => {
+                  setArrow(!arrow);
+                  setSortState(e.target.value);
+                  // eslint-disable-next-line react/prop-types
+                  setProducts(products.sort(sortMethods[sortState].method));
+                }}
                 className="select-sort-by"
                 style={
                   arrow
@@ -30,8 +40,8 @@ const SortBy = ({ textObj }) => {
                   SORT BY :
                 </option>
                 <option value="alphabetically">A - Z</option>
-                <option value="Lowest price">Lowest price</option>
-                <option value="New arrivals">New arrivals</option>
+                <option value="lowestPrice">Lowest price</option>
+                <option value="newArrivals">New arrivals</option>
               </select>
             </div>
           </div>
@@ -44,9 +54,15 @@ const SortBy = ({ textObj }) => {
 export default SortBy;
 
 SortBy.propTypes = {
-  textObj: PropTypes.func,
+  // eslint-disable-next-line react/forbid-prop-types
+  textObj: PropTypes.object,
+  setProducts: PropTypes.func,
+  // eslint-disable-next-line react/forbid-prop-types
+  products: PropTypes.array,
 };
 
 SortBy.defaultProps = {
   textObj: {},
+  setProducts: () => {},
+  products: [],
 };
