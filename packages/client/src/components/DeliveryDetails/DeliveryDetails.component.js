@@ -24,43 +24,45 @@ const DeliveryDetails = () => {
 
   return (
     <div>
-      <div className="contact-header">
-        <h1 className="contact-header-text">Contact and Delivary Details</h1>
-      </div>
+      {/* <div className="contact-header"></div> */}
       <div className="contact-outlayer">
+        <h1 className="contact-header-text">Contact and Delivary Details</h1>
+
         <div className="contact" key={data.id}>
-          <div>
-            <span className="name">name:</span>{' '}
-            <span className="result">{data.name}</span>
+          <div className="contact-items">
+            <div>
+              <span className="name">name:</span>{' '}
+              <span className="result">{data.name}</span>
+            </div>
+            <div>
+              <span className="email">email:</span>
+              <span className="result">{data.price}</span>
+            </div>
+            <div>
+              <span className="city">city:</span>
+              <span className="result">{data.size}</span>
+            </div>
+            <div>
+              <span className="delivery">delivery adress:</span>
+              <span className="result">{data.status}</span>
+            </div>
+            <div>
+              <button type="button" className="edit-btn">
+                Edit Details
+              </button>
+            </div>
           </div>
+        </div>
+        <div className="extra-btns">
           <div>
-            <span className="email">email:</span>
-            <span className="result">{data.price}</span>
-          </div>
-          <div>
-            <span className="city">city:</span>
-            <span className="result">{data.size}</span>
-          </div>
-          <div>
-            <span className="delivery">delivery adress:</span>
-            <span className="result">{data.status}</span>
-          </div>
-          <div>
-            <button type="button" className="edit-btn">
-              Edit Details
+            <button type="button" className="review-btn">
+              REVIEW ORDER
             </button>
           </div>
-          <div className="extra-btns">
-            <div>
-              <button type="button" className="review-btn">
-                REVIEW ORDER
-              </button>
-            </div>
-            <div>
-              <button type="button" className="shopping-btn">
-                CONTINUE SHOPPING
-              </button>
-            </div>
+          <div>
+            <button type="button" className="shopping-btn">
+              CONTINUE SHOPPING
+            </button>
           </div>
         </div>
       </div>
