@@ -11,14 +11,20 @@ const ordersController = require('../controllers/orders.controller');
 
 /**
  * @swagger
- * /orders:
+ * /api/orders:
  *  get:
  *    tags:
  *    - orders
- *    summary: Get all orders
+ *    summary: Get all orders Products
  *    description:
- *      Will return all orders.
+ *      Will return all orders Products.
  *    produces: application/json
+ *    parameters:
+ *     - in: page
+ *       name: query
+ *       schema:
+ *         type: Query Parameters
+ *         description: To get all the orders products
  *    responses:
  *      200:
  *        description: Successful request
@@ -39,21 +45,21 @@ router.get('/', async (req, res) => {
 
 /**
  * @swagger
- * /orders/{ID}:
+ * /api/orders/{ID}:
  *  get:
  *    tags:
  *    - orders
- *    summary: Get orders by ID
+ *    summary: Get orders products by product ID
  *    description:
- *      Will return single orders with a matching ID.
+ *      Will return single products with a matching ID.
  *    produces: application/json
  *    parameters:
- *     - in: path
- *       name: ID
+ *     - in: id
+ *       name: id
  *       schema:
  *         type: integer
  *         required: true
- *         description: The ID of the orders to get
+ *         description: The ID of the product to get
  *
  *    responses:
  *      200:
@@ -75,28 +81,25 @@ router.get('/:id', async (req, res) => {
 
 /**
  * @swagger
- * /orders:
+ * /api/orders:
  *  post:
  *    tags:
  *    - orders
- *    summary: Create a orders
+ *    summary: Post orders products
  *    description:
- *      Will create a orders.
+ *      Will post single product.
  *    produces: application/json
  *    parameters:
- *      - in: body
- *        name: orders
- *        description: The orders to create.
- *        schema:
- *          type: object
- *          required:
- *            - title
- *          properties:
- *            title:
- *              type: string
+ *     - in: body
+ *       name: id
+ *       schema:
+ *         type: object
+ *         required: true
+ *         description: save to orders
+ *
  *    responses:
- *      201:
- *        description: orders created
+ *      200:
+ *        description: Successful request
  *      5XX:
  *        description: Unexpected error.
  */
@@ -114,21 +117,25 @@ router.post('/', async (req, res) => {
 
 /**
  * @swagger
- * /orders/{ID}:
+ * /api/orders/{ID}:
  *  delete:
  *    tags:
  *    - orders
- *    summary: Delete an orders
+ *    summary: delete orders by ID
  *    description:
- *      Will delete a orders with a given ID.
+ *      Will delete single orders with a matching ID.
  *    produces: application/json
  *    parameters:
- *      - in: path
- *        name: ID
- *        description: ID of the orders to delete.
+ *     - in: id
+ *       name: id
+ *       schema:
+ *         type: integer
+ *         required: true
+ *         description: to delete the orders product that matches the  given product
+ *
  *    responses:
  *      200:
- *        description: orders deleted
+ *        description: Successful request
  *      5XX:
  *        description: Unexpected error.
  */
