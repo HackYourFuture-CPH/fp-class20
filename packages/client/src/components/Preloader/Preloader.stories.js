@@ -1,5 +1,3 @@
-// Preloader.stories.js|jsx
-
 import React, { useState } from 'react';
 import Preloader from './Preloader.component';
 
