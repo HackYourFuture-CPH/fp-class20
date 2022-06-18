@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import './LoadingPage.styles.css';
+import './Preloader.styles.css';
 
-function LoadingPage() {
+function Preloader() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -33,4 +33,4 @@ function LoadingPage() {
     </div>
   );
 }
-export default LoadingPage;
+export default Preloader;
