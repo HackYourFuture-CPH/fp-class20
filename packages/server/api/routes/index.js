@@ -6,7 +6,7 @@ const exampleResources = require('./exampleResources.router');
 const category = require('./category.router');
 const products = require('./products.router');
 const favorites = require('./favorites.router');
-const orders = require('./products.router');
+const orders = require('./orders.router');
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
