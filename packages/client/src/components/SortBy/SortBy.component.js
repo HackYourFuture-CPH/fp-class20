@@ -6,14 +6,23 @@ const SortBy = ({ textObj, setProducts, products }) => {
   const [arrow, setArrow] = useState(true);
   const [sortState, setSortState] = useState('none');
 
-  const sortMethods = {
-    none: { method: (a, b) => null },
-    alphabetically: { method: (a, b) => (a.name > b.name ? 1 : -1) },
-    lowestPrice: {
-      method: (a, b) => (Number(a.price) > Number(b.price) ? 1 : -1),
-    },
-    newArrivals: { method: (a, b) => (a.createdAt > b.createdAt ? -1 : 1) },
-  };
+  // const sortMethods = {
+  //   none: { method: (a, b) => null },
+  //   alphabetically: { method: (a, b) => (a.name > b.name ? 1 : -1) },
+  //   lowestPrice: {
+  //     method: (a, b) => (Number(a.price) > Number(b.price) ? 1 : -1),
+  //   },
+  //   newArrivals: { method: (a, b) => (a.createdAt > b.createdAt ? -1 : 1) },
+  // };
+
+  const alphabetically = products.map((a, b) => (a.name > b.name ? 1 : -1));
+  const lowestPrice = products.map((a, b) =>
+    Number(a.price) > Number(b.price) ? 1 : -1,
+  );
+  const newArrivals = products.map((a, b) =>
+    a.createdAt > b.createdAt ? -1 : 1,
+  );
+
   return (
     <div className="sort-by-component-background">
       <div className="sort-by-component-info">
@@ -40,13 +49,41 @@ const SortBy = ({ textObj, setProducts, products }) => {
                 }
               >
                 <option value="none">SORT BY :</option>
-                <option value="alphabetically">A - Z</option>
-                <option value="lowestPrice">Lowest price</option>
-                <option value="newArrivals">New arrivals</option>
+                <option
+                  value="alphabetically"
+                  onChange={() => {
+                    setProducts(alphabetically);
+
+                    // eslint-disable-next-line
+                    console.log(products);
+                  }}
+                >
+                  A - Z
+                </option>
+                <option
+                  value="lowestPrice"
+                  onChange={() => {
+                    setProducts(lowestPrice);
+                    // eslint-disable-next-line
+                    console.log(products);
+                  }}
+                >
+                  Lowest price
+                </option>
+                <option
+                  value="newArrivals"
+                  onChange={() => {
+                    setProducts(newArrivals);
+                    // eslint-disable-next-line
+                    console.log(products);
+                  }}
+                >
+                  New arrivals
+                </option>
               </select>
               {
                 // eslint-disable-next-line react/prop-types
-                setProducts(products.sort(sortMethods[sortState].method))
+                // setProducts(products.sort(sortMethods[sortState].method))
               }
 
               {/* <ul>

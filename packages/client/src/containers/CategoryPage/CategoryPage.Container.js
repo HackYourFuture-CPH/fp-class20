@@ -31,6 +31,8 @@ const CategoryPage = () => {
       const productsCategory = await dataJson.json();
       setProducts(productsCategory);
       setLoading(false);
+      // eslint-disable-next-line no-console
+      console.log(products);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
