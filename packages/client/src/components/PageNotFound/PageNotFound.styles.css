@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
 
 .error-page {
-  background: #867572;
+  background-color: #342f2b;
 }
 
 .ufo-pic {
@@ -10,7 +10,7 @@
 
 .error-details {
   width: 1190px;
-  background: linear-gradient(180deg, #231c16 0%, rgba(35 28 22/ 75%) 100%);
+  background: rgb(35 28 22 / 100%);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -29,7 +29,7 @@
 }
 
 .error-heading {
-  font-size: 4rem;
+  font-size: 5em;
   letter-spacing: 0.3em;
 }
 
@@ -38,6 +38,7 @@
   line-height: 1.2;
   text-align: center;
   margin-top: -8px;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 1225px) {
