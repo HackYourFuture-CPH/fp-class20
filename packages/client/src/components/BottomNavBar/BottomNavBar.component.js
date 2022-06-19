@@ -47,31 +47,31 @@ function Header() {
       <div className={displayMode}>
         <div className="down-container">
           <div>
-            <span className="main-heading">Browser spices by plant part</span>
+            <span className="main-heading">Browse spices by plant part</span>
 
             <div className="items-container">
               <div className="left-container">
                 <div className="block-height">
-                  <span className="spice-names">BUD/FLOWER</span>
+                  <span className="spice-names">BUD / FLOWER</span>
                   <p>(clove, caper, saffron and more)</p>
                 </div>
                 <div className="block-height">
                   <span className="spice-names">SEED</span>
-                  <p>(cummin, coriander,fennel, poppy and more)</p>
+                  <p>(cummin, coriander, fennel, poppy and more)</p>
                 </div>
                 <div className="block-height">
-                  <span className="spice-names">FRUIT/BERRY</span>
+                  <span className="spice-names">FRUIT / BERRY</span>
                   <p>(chili, cardamon, black pepper and more)</p>
                 </div>
               </div>
               <div className="right-container">
                 <div className="block-height">
-                  <span className="spice-names">ROOT/RHIZOME/BARK</span>
+                  <span className="spice-names">ROOT / RHIZOME / BARK</span>
                   <p>(turmeric, ginger, cinnamon and more)</p>
                 </div>
                 <div className="block-height">
                   <span className="spice-names">LEAF</span>
-                  <p>(mint, oregano, thyme, bayleaf and more herbs)</p>
+                  <p>(mint, oregano, thyme, bay leaf and more herbs)</p>
                 </div>
                 <div className="show-all-spices  block-height">
                   <span>SHOW ALL SPICES</span>
