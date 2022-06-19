@@ -114,6 +114,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  color: white;
+  border: solid 1px;
 }
 
 @media screen and (max-width: 1225px) {
@@ -160,10 +162,11 @@ body {
 
   .counter-button-variant {
     margin-right: 1.75rem;
+    background-color: transparent;
   }
 
   .add-to-cart-button-variant {
-    width: 9rem;
+    width: 8.5rem;
     height: 3em;
   }
 }
