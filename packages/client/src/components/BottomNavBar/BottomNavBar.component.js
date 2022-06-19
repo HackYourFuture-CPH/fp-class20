@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './BottomNavBar.styles.css';
-import PropTypes from 'prop-types';
 import BottomNavigation from './Right-bottom-navigation/BottomNavigation.component';
+import { Link } from 'react-router-dom';
 
-function Header(props) {
-  const { setSortProduct, setBreadcrumbs } = props;
+function BottomNavBar() {
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
   const displayMode = dropDownExpanded ? 'display' : 'no-display';
 
@@ -16,58 +15,22 @@ function Header(props) {
   };
 
   const budFlower = () => {
-    setSortProduct(1);
-    setBreadcrumbs({
-      sidebar: 'Simply Spices / Spices by plant part / Flowers and Bud',
-      main: 'Flowers and Bud',
-    });
-    setSortProduct('/category/bud');
     setDropDownExpanded(false);
   };
   const seed = () => {
-    setSortProduct(1);
-    setBreadcrumbs({
-      sidebar: 'Simply Spices / Spices by plant part / seed',
-      main: 'Seed',
-    });
-    setSortProduct('/seed');
     setDropDownExpanded(false);
   };
   const fruitBerry = () => {
-    setSortProduct(1);
-    setBreadcrumbs({
-      sidebar: 'Simply Spices / Spices by plant part / Berry and Fruit',
-      main: 'Berry and Fruit',
-    });
-    setSortProduct('/category/fruit');
     setDropDownExpanded(false);
   };
   const rootBark = () => {
-    setSortProduct(1);
-    setBreadcrumbs({
-      sidebar: 'Simply Spices / Spices by plant part / Root Rhizome and Bark',
-      main: 'Root Rhizome and Bark',
-    });
-    setSortProduct('/category/root');
     setDropDownExpanded(false);
   };
   const leaf = () => {
-    setSortProduct(1);
-    setBreadcrumbs({
-      sidebar: 'Simply Spices / Spices by plant part / leaf',
-      main: 'Leaf',
-    });
-    setSortProduct('/category/leaf');
     setDropDownExpanded(false);
   };
 
   const showAll = () => {
-    setSortProduct(1);
-    setBreadcrumbs({
-      sidebar: 'Simply Spices /All Spices',
-      main: 'All Spices',
-    });
-    setSortProduct('/products');
     setDropDownExpanded(false);
   };
 
@@ -114,28 +77,35 @@ function Header(props) {
               <div className="left-container">
                 <div className="block-height">
                   <span className="spice-names">
-                    <button type="button" onClick={budFlower}>
-                      {' '}
-                      BUD/FLOWER
-                    </button>
+                    <Link to="/category/budFlower">
+                      <button type="button" onClick={budFlower}>
+                        {' '}
+                        BUD/FLOWER
+                      </button>
+                    </Link>
                   </span>
                   <p>(clove, caper, saffron and more)</p>
                 </div>
+
                 <div className="block-height">
                   <span className="spice-names">
                     {' '}
-                    <button type="button" onClick={seed}>
-                      Seed{' '}
-                    </button>
+                    <Link to="/category/seed">
+                      <button type="button" onClick={seed}>
+                        Seed{' '}
+                      </button>
+                    </Link>
                   </span>
                   <p>(cummin, coriander,fennel, poppy and more)</p>
                 </div>
                 <div className="block-height">
                   <span className="spice-names">
-                    {' '}
-                    <button type="button" onClick={fruitBerry}>
-                      FRUIT/BERRY{' '}
-                    </button>
+                    <Link to="/category/fruitBerry">
+                      {' '}
+                      <button type="button" onClick={fruitBerry}>
+                        FRUIT/BERRY{' '}
+                      </button>
+                    </Link>
                   </span>
                   <p>(chili, cardamon, black pepper and more)</p>
                 </div>
@@ -143,27 +113,34 @@ function Header(props) {
               <div className="right-container">
                 <div className="block-height">
                   <span className="spice-names">
-                    {' '}
-                    <button type="button" onClick={rootBark}>
-                      ROOT/RHIZOME/BARK{' '}
-                    </button>
+                    <Link to="/category/rootBark">
+                      {' '}
+                      <button type="button" onClick={rootBark}>
+                        ROOT/RHIZOME/BARK{' '}
+                      </button>{' '}
+                    </Link>
                   </span>
                   <p>(turmeric, ginger, cinnamon and more)</p>
                 </div>
+
                 <div className="block-height">
                   <span className="spice-names">
                     {' '}
-                    <button type="button" onClick={leaf}>
-                      LEAF{' '}
-                    </button>
+                    <Link to="/category/leaf">
+                      <button type="button" onClick={leaf}>
+                        LEAF{' '}
+                      </button>
+                    </Link>
                   </span>
                   <p>(mint, oregano, thyme, bayleaf and more herbs)</p>
                 </div>
                 <div className="show-all-spices  block-height">
                   <span className="spice-names">
-                    <button type="button" onClick={showAll}>
-                      SHOW ALL SPICES{' '}
-                    </button>
+                    <Link to="/">
+                      <button type="button" onClick={showAll}>
+                        SHOW ALL SPICES{' '}
+                      </button>
+                    </Link>
                   </span>
                 </div>
               </div>
@@ -174,14 +151,4 @@ function Header(props) {
     </div>
   );
 }
-export default Header;
-
-Header.propTypes = {
-  setSortProduct: PropTypes.func,
-  setBreadcrumbs: PropTypes.func,
-};
-
-Header.defaultProps = {
-  setSortProduct: () => {},
-  setBreadcrumbs: () => {},
-};
+export default BottomNavBar;
