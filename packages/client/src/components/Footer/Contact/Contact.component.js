@@ -1,5 +1,7 @@
 import React from 'react';
 import './Contact.styles.css';
+// import phone from '../../../../public/assets/vectors/vector_receiver.svg';
+// import envelop from '../../../../public/assets/vectors/vector_envelope.svg';
 
 export const Contact = () => {
   return (
