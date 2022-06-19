@@ -9,7 +9,7 @@ export function PageNotFoundPage() {
     <div className="page-not-found-container">
       <Navigation className="toggle-button-bottom" />
       <PageNotFound />
-      <Footer className="text-big" />
+      <Footer className="pagenotfound-text-big" />
     </div>
   );
 }
