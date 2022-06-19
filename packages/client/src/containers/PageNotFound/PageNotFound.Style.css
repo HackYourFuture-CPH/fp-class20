@@ -1,8 +1,15 @@
-.page-not-found-container {
-  color: #232516;
+.pagenotfound-text-big {
+  display: inline-block;
 }
 
-.page-not-found-container > a,
-.page-not-found-container > a:visited {
-  color: rgb(249 11 11);
+.toggle-button-bottom {
+  padding-left: 1.25rem;
+  margin-top: -0.5rem;
+}
+
+@media screen and (max-width: 550px) {
+  .toggle-button-bottom {
+    padding-left: 1.25rem;
+    margin-top: 0;
+  }
 }
