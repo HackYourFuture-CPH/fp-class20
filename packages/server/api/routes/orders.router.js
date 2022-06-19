@@ -62,14 +62,49 @@ router.get('/', async (req, res) => {
  *      5XX:
  *        description: Unexpected error.
  */
-router.get('/:id', async (req, res) => {
+router.get('/:id/user', async (req, res) => {
   try {
     const result = await ordersController.getOrderByID(req.params.id);
     res.json(result);
   } catch (error) {
     res.status(500).json({
       status: 'failed',
-      message: `internal server error in get message by id  api/message/:id ${error}`,
+      message: `internal server error in get order by id  api/orders/:id ${error}`,
+    });
+  }
+});
+/**
+ * @swagger
+ * /api/orders/{ID}:
+ *  get:
+ *    tags:
+ *    - orders
+ *    summary: Get orders products by product ID
+ *    description:
+ *      Will return single products with a matching ID.
+ *    produces: application/json
+ *    parameters:
+ *     - in: id
+ *       name: id
+ *       schema:
+ *         type: integer
+ *         required: true
+ *         description: The ID of the product to get
+ *
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.get('/:id', async (req, res) => {
+  try {
+    const result = await ordersController.getProductsByOrderID(req.params.id);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({
+      status: 'failed',
+      message: `internal server error in get order by id  api/orders/:id ${error}`,
     });
   }
 });
@@ -105,7 +140,7 @@ router.post('/', async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: 'failed',
-      message: `internal server error in post message api/message/ ${error}`,
+      message: `internal server error in post order api/orders/ ${error}`,
     });
   }
 });
