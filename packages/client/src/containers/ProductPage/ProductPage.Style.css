@@ -73,6 +73,10 @@
   text-decoration: none;
 }
 
+.counter {
+  background: transparent;
+}
+
 @media (hover: none) and (pointer: coarse) {
   .title-similar-products {
     display: none;
@@ -82,10 +86,12 @@
 @media screen and (max-width: 1700px) {
   .product-card-container .counter {
     width: 4.938rem !important;
+    background-color: transparent !important;
   }
 
   .carousel .counter {
     width: 2.5rem !important;
+    background-color: transparent !important;
   }
 }
 
