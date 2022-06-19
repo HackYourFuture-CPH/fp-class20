@@ -6,11 +6,14 @@ import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Containe
 import { LandingPage } from './containers/LandingPage/LandingPage.Container';
 import { PageNotFoundPage } from './containers/PageNotFound/PageNotFound.Container';
 import { ProductPage } from './containers/ProductPage/ProductPage.Container';
+import Navigation from './components/Navigation/Navigation.component';
+import { Footer } from './components/Footer/Footer.component';
 
 function App() {
   return (
     <div className="app">
       <Router>
+        <Navigation />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
@@ -19,6 +22,7 @@ function App() {
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/*" element={<PageNotFoundPage />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
