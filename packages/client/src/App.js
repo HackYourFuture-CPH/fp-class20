@@ -20,7 +20,7 @@ function App() {
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/*" element={<PageNotFoundPage />} />
+          <Route path="*" element={<PageNotFoundPage />} />
         </Routes>
         <Footer />
       </Router>
