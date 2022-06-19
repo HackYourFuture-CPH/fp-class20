@@ -14,7 +14,7 @@ const textObj = {
 const CategoryPage = () => {
   const [breadCrumbs, setBreadcrumbs] = useState(textObj);
   const [products, setProducts] = useState([]);
-  const [sortProduct, setSortProduct] = useState('/product');
+  const [sortProduct, setSortProduct] = useState('/products');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -56,13 +56,14 @@ const CategoryPage = () => {
         setProducts={setProducts}
       />
 
-      <div className="category-page-main-container">
-        {loading ? (
-          <Preloader loading={loading} />
-        ) : (
+      {loading ? (
+        <Preloader loading={loading} />
+      ) : (
+        <div className="category-page-main-container">
           <div className="category-middle-main">{productItem}</div>
-        )}
-      </div>
+        </div>
+      )}
+
       <Footer className="text-big" />
     </>
   );

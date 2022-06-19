@@ -9,7 +9,7 @@ function Preloader({ loading, setLoading }) {
   }, [loading]);
 
   return (
-    <div>
+    <div className="loader-main-contanier">
       {loading && (
         <div className="loader">
           {}
