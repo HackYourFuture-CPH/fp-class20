@@ -6,31 +6,29 @@ import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
 
-const binIcon = 'assets/vectors/vector_rubbish_bin_white.svg';
-export const ProductCard = ({
-  product,
-  variant,
-  isFavorite,
-  updateFavoriteStatus,
-}) => {
+export const ProductCard = ({ product, variant }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  const toggleFavoriteStatus = () => {
-    updateFavoriteStatus(product, !isFavorite);
+  const onAddToFavorites = () => {
+    setIsFavorite(!isFavorite);
   };
-  const heartIcon = isFavorite
-    ? `assets/vectors/vector_heart_full.svg`
-    : `assets/vectors/vector_heart_empty.svg`;
 
   if (variant === 'small') {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
-          <button type="button" onClick={toggleFavoriteStatus}>
+          <button type="button" onClick={onAddToFavorites}>
             <img
-              src={isFavorite ? binIcon : heartIcon}
-              alt={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+              onClick={onAddToFavorites}
+              src={
+                isFavorite
+                  ? `/assets/vectors/vector_heart_full.svg`
+                  : `/assets/vectors/vector_heart_empty.svg`
+              }
+              alt="heart-icon"
+              aria-hidden="true"
             />
           </button>
         </div>
@@ -84,10 +82,14 @@ export const ProductCard = ({
       <div className="product-container">
         <div className="favorite-icon">
           Save to favorites
-          <button type="button" onClick={toggleFavoriteStatus}>
+          <button type="button" onClick={onAddToFavorites}>
             <img
-              onClick={toggleFavoriteStatus}
-              src={heartIcon}
+              onClick={onAddToFavorites}
+              src={
+                isFavorite
+                  ? `/assets/vectors/vector_heart_full.svg`
+                  : `/assets/vectors/vector_heart_empty.svg`
+              }
               alt="heart-icon"
               aria-hidden="true"
             />
@@ -149,13 +151,9 @@ ProductCard.propTypes = {
     name: PropTypes.string,
   }),
   variant: PropTypes.string,
-  isFavorite: PropTypes.bool,
-  updateFavoriteStatus: PropTypes.func,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
-  isFavorite: false,
-  updateFavoriteStatus: () => {},
 };
