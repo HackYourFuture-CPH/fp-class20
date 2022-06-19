@@ -4,6 +4,7 @@ import './CategoryPage.Style.css';
 import SortBy from '../../components/SortBy/SortBy.component';
 import Navigation from '../../components/Navigation/Navigation.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
+import Preloader from '../../components/Preloader/Preloader.component';
 
 const textObj = {
   sidebar: 'Simply Spices / All Spices',
@@ -14,6 +15,7 @@ const CategoryPage = () => {
   const [breadCrumbs, setBreadcrumbs] = useState(textObj);
   const [products, setProducts] = useState([]);
   const [sortProduct, setSortProduct] = useState('/product');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     categoryProducts();
@@ -23,10 +25,12 @@ const CategoryPage = () => {
 
   const categoryProducts = async () => {
     try {
+      setLoading(true);
       const dataJson = await fetch(`http://localhost:5000/api${sortProduct}`);
 
       const productsCategory = await dataJson.json();
       setProducts(productsCategory);
+      setLoading(false);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
@@ -51,8 +55,13 @@ const CategoryPage = () => {
         products={products}
         setProducts={setProducts}
       />
+
       <div className="category-page-main-container">
-        <div className="category-middle-main">{productItem}</div>
+        {loading ? (
+          <Preloader loading={loading} />
+        ) : (
+          <div className="category-middle-main">{productItem}</div>
+        )}
       </div>
       <Footer className="text-big" />
     </>
