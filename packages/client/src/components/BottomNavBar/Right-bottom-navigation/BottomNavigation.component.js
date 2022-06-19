@@ -2,7 +2,7 @@ import React from 'react';
 
 import './BottomNavigation.styles.css';
 
-export const BottomNavigation = () => {
+const BottomNavigation = () => {
   return (
     <>
       <div className="text">
@@ -21,3 +21,5 @@ export const BottomNavigation = () => {
     </>
   );
 };
+
+export default BottomNavigation;
