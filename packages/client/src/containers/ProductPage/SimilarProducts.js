@@ -3,16 +3,24 @@ import PropTypes from 'prop-types';
 import './ProductPage.Style.css';
 import Carousel from '../../components/Carousel/Carousel.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
+import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
 export const SimilarProducts = ({ product }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [error, setError] = useState();
   const [isSimilarProductLoading, setisSimilarProductLoading] = useState(true);
-  const [categories, setCategories] = useState([]);
-  const [isCategoryLoading, setCategoryLoading] = useState(true);
+  // const [categories, setCategories] = useState([]);
+  // const [isCategoryLoading, setCategoryLoading] = useState(true);
+
+  const fetchUrl = async () => {
+    const result = await fetch(
+      `${getApiBaseUrl()}/api/category/${product.categoryId}`,
+    );
+    return result;
+  };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/category/${product.categoryId}`)
+    fetchUrl()
       .then((response) => {
         if (!response.ok) {
           throw new Error('something went wrong');
@@ -24,36 +32,30 @@ export const SimilarProducts = ({ product }) => {
         setisSimilarProductLoading(false);
       })
       .catch((err) => setError(err));
-  }, [product.categoryId]);
+  });
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/category`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('something went wrong');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setCategories(data);
-        setCategoryLoading(false);
-      })
-      .catch((err) => setError(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${getApiBaseUrl()}/api/category/${product.categoryId}`)
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error('something went wrong');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setSimilarProducts(data);
+  //       setisSimilarProductLoading(false);
+  //     })
+  //     .catch((err) => setError(err));
+  // }, [product.categoryId, similarProducts]);
 
-  if (isSimilarProductLoading || isCategoryLoading) {
+  if (isSimilarProductLoading) {
     return <div className="App">Loading...</div>;
   }
   return (
     <>
       <div className="product-info-main-page">
-        <div className="product-category">
-          {
-            categories.filter(
-              (category) => category.id === product.categoryId,
-            )[0].name
-          }
-        </div>
+        <div className="product-category">{product.categoryName}</div>
         <div className="product-title">{product.name}</div>
       </div>
       {error ? (
@@ -83,6 +85,7 @@ SimilarProducts.propTypes = {
     categoryId: PropTypes.number,
     name: PropTypes.string,
     id: PropTypes.number,
+    categoryName: PropTypes.string,
   }),
 };
 
