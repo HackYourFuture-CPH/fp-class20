@@ -8,8 +8,6 @@ export const SimilarProducts = ({ product }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [error, setError] = useState();
   const [isSimilarProductLoading, setisSimilarProductLoading] = useState(true);
-  // const [categories, setCategories] = useState([]);
-  // const [isCategoryLoading, setCategoryLoading] = useState(true);
 
   useEffect(() => {
     const fetchUrl = async () => {
