@@ -4,6 +4,8 @@ import './ContactForm.styles.css';
 import { Button } from '../../Button/Button.component';
 import { useNavigate } from 'react-router-dom';
 
+import getApiBaseUrl from '../../../utils/getApiBaseUrl';
+
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
   email:
@@ -73,8 +75,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
       };
 
       (async () => {
-        // const postMessage = await fetch('/api/messages', {
-        const postMessage = await fetch('http://localhost:5000/api/messages', {
+        const postMessage = await fetch(`${getApiBaseUrl()}/api/messages`, {
           method: 'POST',
           headers: { 'Content-Type': 'Application/json' },
           body: JSON.stringify(inputObj),

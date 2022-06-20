@@ -1,13 +1,10 @@
-import { NavLink } from 'react-router-dom';
 import React from 'react';
-import './PageNotFound.Style.css';
+import PageNotFound from '../../components/PageNotFound/PageNoFound.component';
 
-export function PageNotFound() {
+export function PageNotFoundPage() {
   return (
     <div className="page-not-found-container">
-      <p>sorry !</p>
-      <p>This page can not be found !! </p>
-      <NavLink to="/"> go back to home page ... </NavLink>
+      <PageNotFound />
     </div>
   );
 }

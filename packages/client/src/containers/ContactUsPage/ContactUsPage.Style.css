@@ -1,31 +1,10 @@
-.contact-form-inpage {
+.contact-us-page-container {
   background-image: url('../../../public/assets/images/hero_image.png');
   mix-blend-mode: normal;
   background-size: contain;
   background-repeat: no-repeat;
-  padding-bottom: 2rem;
-}
-
-.contact-us-page-container {
   padding: 1rem 0;
-  background-color: #3b3733;
-  background-size: cover;
   background-position: top;
   text-align: center;
   color: rgb(255 255 255);
-}
-
-.text-big {
-  display: inline-block;
-}
-
-.toggle-button-bottom {
-  padding-left: 1.25rem;
-  margin-top: -0.5rem;
-}
-@media screen and (max-width: 550px) {
-  .toggle-button-bottom {
-    padding-left: 1.25rem;
-    margin-top: 0;
-  }
 }
