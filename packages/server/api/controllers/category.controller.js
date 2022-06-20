@@ -31,19 +31,7 @@ const getProductByCategory = async (category, query) => {
   return products;
 };
 
-const getCategoryById = async (id) => {
-  if (!Number(id)) {
-    throw new HttpError('ID input should be a number', 400);
-  }
-  const categories = await knex('Categories').where({ id });
-  if (getCategoryById.length === 0) {
-    throw new HttpError(`${id} is not found`, 404);
-  }
-  return categories;
-};
-
 module.exports = {
   getProductByCategory,
   getCategories,
-  getCategoryById,
 };
