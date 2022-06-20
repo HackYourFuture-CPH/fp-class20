@@ -41,7 +41,10 @@ const getProductsByid = async (id) => {
     throw new HttpError('ID input should be a number', 400);
   }
 
-  const productsByid = await knex('Products').select().where({ id });
+  const productsByid = await knex('Products', 'Categories')
+    .select('Products.*', 'Categories.name as categoryName', 'Categories.id')
+    .where({ 'Products.id': id })
+    .join('Categories', 'Products.categoryId', 'Categories.id');
   if (productsByid.length === 0) {
     throw new HttpError(`${id} is not found`, 404);
   }
