@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
 import './ProductPage.Style.css';
 
 export const ProductPage = () => {
+  const [isFavorite, setIsFavorite] = useState(false);
   const product = {
-    id: 1,
+    id: 2,
     size: '250g glass jar',
     price: 350,
     name: 'Juniper Berries  ',
@@ -15,7 +16,11 @@ export const ProductPage = () => {
   return (
     <div className="product-page-container">
       <span>Product Page </span>
-      <ProductCard product={product} variant="small" />
+      <ProductCard
+        product={product}
+        isFavorite={isFavorite}
+        setIsFavorite={setIsFavorite}
+      />
     </div>
   );
 };

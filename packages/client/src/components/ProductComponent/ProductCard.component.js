@@ -6,13 +6,71 @@ import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
 
-export const ProductCard = ({ product, variant }) => {
+export const ProductCard = ({
+  product,
+  variant,
+  isFavorite,
+  setIsFavorite,
+}) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
 
-  const onAddToFavorites = () => {
+  const userId = 1;
+  // eslint-disable-next-line
+  const productID = product.id;
+  const createdAt = new Date().toLocaleString();
+
+  const postFavorite = async () => {
+    const postFavoriteObj = {
+      // eslint-disable-next-line
+      userId: userId,
+      // eslint-disable-next-line
+      productID: productID,
+      // eslint-disable-next-line
+      createdAt: createdAt,
+    };
+    try {
+      const fetchPost = await fetch('http://localhost:5000/api/favorites', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postFavoriteObj),
+      });
+      await fetchPost.json();
+    } catch (error) {
+      // eslint-disable-next-line
+      console.log(error);
+    }
+  };
+
+  const deleteFavorite = async (e) => {
+    try {
+      const fetchDelete = await fetch(
+        `http://localhost:5000/api/favorites/${productID}`,
+        {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+      await fetchDelete.json();
+      // eslint-disable-next-line
+      console.log(fetchDelete.json());
+    } catch (error) {
+      // eslint-disable-next-line
+      console.log(error);
+    }
+  };
+
+  const onAddToFavorites = async () => {
     setIsFavorite(!isFavorite);
+    if (isFavorite) {
+      postFavorite();
+    } else {
+      deleteFavorite();
+    }
   };
 
   if (variant === 'small') {
@@ -151,9 +209,13 @@ ProductCard.propTypes = {
     name: PropTypes.string,
   }),
   variant: PropTypes.string,
+  isFavorite: PropTypes.bool,
+  setIsFavorite: PropTypes.func,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
+  setIsFavorite: {},
+  isFavorite: false,
 };
