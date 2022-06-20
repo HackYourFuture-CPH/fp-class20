@@ -6,7 +6,7 @@ export const LandingPageSlogan = () => {
   return (
     <div className="slogan-body">
       <div className="landing-page-slogan">
-        <p className="slogan-title">simply spices</p>
+        <p className="slogan-title">Simply Spices</p>
         <p className="slogan-p">Taste the joy of flavour ...</p>
         <img
           src="assets/vectors/vector_logo_underline.svg"
