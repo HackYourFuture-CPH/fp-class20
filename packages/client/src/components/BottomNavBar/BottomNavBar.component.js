@@ -77,7 +77,7 @@ function BottomNavBar() {
               <div className="left-container">
                 <div className="block-height">
                   <span className="spice-names">
-                    <Link to="/category/budFlower">
+                    <Link to="/category/bud">
                       <button type="button" onClick={budFlower}>
                         {' '}
                         BUD/FLOWER
@@ -100,7 +100,7 @@ function BottomNavBar() {
                 </div>
                 <div className="block-height">
                   <span className="spice-names">
-                    <Link to="/category/fruitBerry">
+                    <Link to="/category/fruit">
                       {' '}
                       <button type="button" onClick={fruitBerry}>
                         FRUIT/BERRY{' '}
@@ -113,7 +113,7 @@ function BottomNavBar() {
               <div className="right-container">
                 <div className="block-height">
                   <span className="spice-names">
-                    <Link to="/category/rootBark">
+                    <Link to="/category/root">
                       {' '}
                       <button type="button" onClick={rootBark}>
                         ROOT/RHIZOME/BARK{' '}

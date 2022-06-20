@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-// import Footer from '../../components/Footer/Footer.component';
+import './CategoryPage.Style.css';
 import SortBy from '../../components/SortBy/SortBy.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
 import Preloader from '../../components/Preloader/Preloader.component';
-import '../CategoryPageBud/CategoryPageBud.Style.css';
+import { useParams } from 'react-router-dom';
 
-const textObj = {
-  sidebar: 'Simply Spices / Spices by plant part / leaf',
-  main: 'Leaf',
-};
-
-const CategoryPageLeaf = () => {
+const CategoryPage = () => {
+  const { name } = useParams();
+  const textObj = {
+    sidebar: `Simply Spices / Spices by plant part / ${name}`,
+    main: `${name}`,
+  };
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -18,12 +18,14 @@ const CategoryPageLeaf = () => {
     categoryProducts();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [name]);
 
   const categoryProducts = async () => {
     try {
       setLoading(true);
-      const dataJson = await fetch(`http://localhost:5000/api/category/leaf`);
+      const dataJson = await fetch(
+        `http://localhost:5000/api/category/${name}`,
+      );
 
       const productsCategory = await dataJson.json();
       setProducts(productsCategory);
@@ -52,10 +54,8 @@ const CategoryPageLeaf = () => {
           <div className="category-middle-main">{productItem}</div>
         </div>
       )}
-
-      {/* <Footer className="text-big" /> */}
     </>
   );
 };
 
-export default CategoryPageLeaf;
+export default CategoryPage;
