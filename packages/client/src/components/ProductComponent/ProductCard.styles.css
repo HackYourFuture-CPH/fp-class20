@@ -44,6 +44,11 @@ body {
   font-size: 1.25rem;
 }
 
+.favorite-icon button {
+  background-color: #38332e;
+  border: #38332e;
+}
+
 .favorite-icon img {
   padding-left: 0.25rem;
 }
