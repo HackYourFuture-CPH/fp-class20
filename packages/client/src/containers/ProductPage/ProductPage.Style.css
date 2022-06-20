@@ -53,10 +53,6 @@
   text-align: center;
 }
 
-.footer-up-background {
-  padding-top: 3rem;
-}
-
 .add-to-cart-button {
   color: #fff;
   border-color: #fff;
@@ -75,6 +71,22 @@
 
 .counter {
   background: transparent;
+}
+
+.whole-container {
+  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%),
+    linear-gradient(180deg, #231c16e6 19.79%, #231c1673 78.65%);
+}
+
+.footer-up-background {
+  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%);
+  padding-top: 3rem;
+}
+
+body {
+  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%);
+  mix-blend-mode: normal;
+  opacity: 0.8;
 }
 
 @media (hover: none) and (pointer: coarse) {
