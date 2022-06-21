@@ -43,7 +43,7 @@ export const ProductCard = ({
   const removeFromFavorites = async (e) => {
     try {
       const response = await fetch(
-        `${getApiBaseUrl()}/api/favorites/${productID}/${userId}`,
+        `${getApiBaseUrl()}/api/favorites/${productID}`,
         {
           method: 'DELETE',
         },
@@ -85,7 +85,7 @@ export const ProductCard = ({
         </div>
         <div className="product-details-variant">
           <div className="product-image-variant">
-            <img src={product.pictureUrl} alt="product-img" />
+            <img src={`/${product.pictureUrl}`} alt="product-img" />
           </div>
 
           <div className="product-information-variant">
@@ -150,7 +150,7 @@ export const ProductCard = ({
         </div>
         <div className="product-details">
           <div className="product-image">
-            <img src={product.pictureUrl} alt="product-img" />
+            <img src={`/${product.pictureUrl}`} alt="product-img" />
           </div>
 
           <div className="product-information">
