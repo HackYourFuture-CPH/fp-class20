@@ -7,7 +7,7 @@ export const Contact = () => {
       <span className="text-big ">Contact us</span>
       <div className="text-small phone-text">
         <img
-          src="assets/vectors/vector_receiver.svg"
+          src="/assets/vectors/vector_receiver.svg"
           alt="Canvas phone Logo"
           className="phone"
         />
@@ -15,7 +15,7 @@ export const Contact = () => {
       </div>
       <div className="text-small">
         <img
-          src="assets/vectors/vector_envelope.svg"
+          src="/assets/vectors/vector_envelope.svg"
           alt="Canvas envelop Logo"
           className="envelop"
         />

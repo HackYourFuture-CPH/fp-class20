@@ -46,7 +46,7 @@ function BottomNavBar() {
               onClick={toggleIcon}
             >
               <img
-                src="assets/vectors/vector_arrow_up.svg"
+                src="/assets/vectors/vector_arrow_up.svg"
                 alt="arrowup icon"
                 className="arrow-bottom-bar"
               />
@@ -58,7 +58,7 @@ function BottomNavBar() {
               onClick={toggleIcon}
             >
               <img
-                src="assets/vectors/vector_arrow_down.svg"
+                src="/assets/vectors/vector_arrow_down.svg"
                 alt="arrow down icon"
                 className="arrow-bottom-bar"
               />

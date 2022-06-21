@@ -19,10 +19,10 @@ const SortBy = ({ textObj }) => {
                 style={
                   arrow
                     ? {
-                        backgroundImage: `url('assets/vectors/vector_arrow_down.svg')`,
+                        backgroundImage: `url(/assets/vectors/vector_arrow_down.svg')`,
                       }
                     : {
-                        backgroundImage: `url('assets/vectors/vector_arrow_up.svg')`,
+                        backgroundImage: `url(/assets/vectors/vector_arrow_up.svg')`,
                       }
                 }
               >
