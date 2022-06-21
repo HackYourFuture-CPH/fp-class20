@@ -14,30 +14,27 @@ const CategoryPage = () => {
   };
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    categoryProducts();
+    async function fetchProductsInCategory() {
+      try {
+        setLoading(true);
+        const response = await fetch(`${getApiBaseUrl()}/api/category/${name}`);
+        const productsJson = await response.json();
+        setProducts(productsJson);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    }
 
-    // eslint-disable-next-line
+    fetchProductsInCategory();
   }, [name]);
 
-  const categoryProducts = async () => {
-    try {
-      setLoading(true);
-      const dataJson = await fetch(`${getApiBaseUrl()}/api/category/${name}`);
-
-      const productsCategory = await dataJson.json();
-      setProducts(productsCategory);
-      setLoading(false);
-    } catch (error) {
-      // eslint-disable-next-line
-      console.log(error);
-      setLoading(false);
-    }
-  };
-
-  const productItem = products.map((product) => (
-    <div className="favorite-item" key={product.name}>
+  const productItems = products.map((product) => (
+    <div className="category-items" key={product.name}>
       <ProductCard product={product} variant="small" />
     </div>
   ));
@@ -49,7 +46,10 @@ const CategoryPage = () => {
         <Preloader loading={loading} />
       ) : (
         <div className="category-page-main-container">
-          <div className="category-middle-main">{productItem}</div>
+          <div className="category-middle-main">
+            {productItems}
+            {error}
+          </div>
         </div>
       )}
     </>

@@ -94,6 +94,7 @@
 .block-height {
   line-height: 0.01rem;
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .down-container {
