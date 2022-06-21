@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
+import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
 export const ProductCard = ({
   product,
@@ -17,16 +18,14 @@ export const ProductCard = ({
   const [isModalOpen, toggleModal] = useState(false);
   const productID = product.id;
   const userId = 1;
-  const createdAt = new Date().toLocaleString();
 
   const addAsFavorite = async () => {
     const body = {
       userId,
       productID,
-      createdAt,
     };
     try {
-      const response = await fetch('http://localhost:5000/api/favorites', {
+      const response = await fetch(`${getApiBaseUrl()}/api/favorites`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +43,7 @@ export const ProductCard = ({
   const removeFromFavorites = async (e) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/favorites/${productID}/${userId}`,
+        `${getApiBaseUrl()}/api/favorites/${productID}/${userId}`,
         {
           method: 'DELETE',
         },
@@ -160,7 +159,7 @@ export const ProductCard = ({
               <p className="product-info"> {product.description}</p>
             </div>
             <div>
-              <span className="product-size">{product.size}g</span>
+              <span className="product-size">{product.size}g glass jar</span>
               <span className="product-size">{product.price} DKK</span>
             </div>
             <div className="counter-cart-button">

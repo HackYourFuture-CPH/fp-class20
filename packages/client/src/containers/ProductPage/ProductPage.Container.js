@@ -10,6 +10,7 @@ export const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     fetch(`${getApiBaseUrl()}/api/products/${id}`)
@@ -38,7 +39,12 @@ export const ProductPage = () => {
         <div className="product-category">{product.categoryName}</div>
         <div className="product-title">{product.name}</div>
       </div>
-      <ProductCard product={product} className="product-card-container" />
+      <ProductCard
+        product={product}
+        className="product-card-container"
+        isFavorite={isFavorite}
+        setIsFavorite={setIsFavorite}
+      />
       <SimilarProducts product={product} />
     </div>
   );
