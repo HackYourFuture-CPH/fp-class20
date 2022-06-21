@@ -12,7 +12,8 @@
   height: 4rem;
   padding: 0;
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .whole-container-not-push-element-down {
@@ -25,7 +26,7 @@
   );
   height: 4rem;
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
   padding-bottom: 445px;
 }
 
@@ -118,6 +119,7 @@
   display: flex;
   flex-direction: row;
   padding-bottom: 1.25rem;
+  justify-content: space-evenly;
 }
 
 .left-container {
@@ -155,8 +157,21 @@ p {
 }
 
 @media screen and (max-width: 860px) {
+  .up-container,
+  .down-container {
+    width: 400px;
+    box-sizing: border-box;
+  }
+
   .whole-container-not-push-element-down {
-    padding-bottom: 500px;
+    padding-right: 1rem;
+    padding-bottom: 640px;
+    padding-left: 0;
+  }
+
+  .display {
+    padding-left: 0%;
+    padding-right: 2%;
   }
 }
 
@@ -167,7 +182,7 @@ p {
   }
 
   .whole-container-not-push-element-down {
-    padding-bottom: 550px;
+    padding-bottom: 300px;
   }
 
   .whole-container-push-element-down {
@@ -178,6 +193,7 @@ p {
 
   .display {
     padding-left: 10%;
+    padding-right: 5%;
   }
 
   .up-container,
@@ -186,8 +202,10 @@ p {
   }
 
   .items-container {
-    flex-direction: column;
+    flex-direction: row;
     box-sizing: border-box;
+    justify-content: space-evenly;
+    padding-right: 2rem;
   }
 
   .spices-button {
@@ -220,6 +238,10 @@ p {
   .down-container {
     width: 375px;
     box-sizing: border-box;
+  }
+
+  .items-container {
+    flex-direction: column;
   }
 
   .spices-button {
