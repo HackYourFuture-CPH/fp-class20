@@ -1,12 +1,9 @@
 import './DeliveryDetails.styles.css';
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
 const DeliveryDetails = () => {
   const [data, setData] = useState([]);
-  /*   const { id } = useParams();
-   */
 
   useEffect(() => {
     fetchUser();
@@ -22,9 +19,6 @@ const DeliveryDetails = () => {
         setData(json[0]);
       });
   };
-
-  /* eslint-disable no-console */
-  console.log(data);
 
   return (
     <div>
