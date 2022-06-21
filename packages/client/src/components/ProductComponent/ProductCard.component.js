@@ -27,14 +27,14 @@ export const ProductCard = ({ product, variant }) => {
                   ? `/assets/vectors/vector_heart_full.svg`
                   : `/assets/vectors/vector_heart_empty.svg`
               }
-              alt="changing the favorite status"
+              alt="heart-icon"
               aria-hidden="true"
             />
           </button>
         </div>
         <div className="product-details-variant">
           <div className="product-image-variant">
-            <img src={`/${product.pictureUrl}`} alt="product-img" />
+            <img src={product.pictureUrl} alt="product-img" />
           </div>
 
           <div className="product-information-variant">
@@ -42,47 +42,25 @@ export const ProductCard = ({ product, variant }) => {
               <h2 className="product-name-variant"> {product.name}</h2>
             </div>
             <div>
-              <span className="product-size-variant">
-                {product.size}g glass jar
-              </span>
+              <span className="product-size-variant">{product.size}g</span>
               <span className="product-size-variant">{product.price} DKK</span>
-        <a
-          href={`${product.id}`}
-          target="_blank"
-          rel="noreferrer"
-          className="product-card-link"
-        >
-          <div className="product-details-variant">
-            <div className="product-image-variant">
-              <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
             </div>
-            <div className="product-information-variant">
-              <div>
-                <h2 className="product-name-variant"> {product.name}</h2>
+            <div className="counter-cart-button-variant">
+              <div className="counter-button-variant">
+                <Counter count={count} setCount={setCount} />
               </div>
-              <div>
-                <span className="product-size-variant">{product.size}g</span>
-                <span className="product-size-variant">
-                  {product.price} DKK
-                </span>
-              </div>
-              <div className="counter-cart-button-variant">
-                <div className="counter-button-variant">
-                  <Counter count={count} setCount={setCount} />
-                </div>
-                <Button
-                  label="ADD TO CART "
-                  type="addToCart"
-                  backgroundColor="#53742A"
-                  className="add-to-cart-button-variant"
-                  onClick={() => {
-                    toggleModal(true);
-                  }}
-                />
-              </div>
+              <Button
+                label="ADD TO CART "
+                type="addToCart"
+                backgroundColor="#53742A"
+                className="add-to-cart-button-variant"
+                onClick={() => {
+                  toggleModal(true);
+                }}
+              />
             </div>
           </div>
-        </a>
+        </div>
         {isModalOpen && (
           <div className="confirmation-modal-variant">
             <ProductCardModal
@@ -112,15 +90,16 @@ export const ProductCard = ({ product, variant }) => {
                   ? `/assets/vectors/vector_heart_full.svg`
                   : `/assets/vectors/vector_heart_empty.svg`
               }
-              alt="changing the favorite status"
+              alt="heart-icon"
               aria-hidden="true"
             />
           </button>
         </div>
         <div className="product-details">
           <div className="product-image">
-            <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
+            <img src={product.pictureUrl} alt="product-img" />
           </div>
+
           <div className="product-information">
             <div>
               <h2 className="product-name"> {product.name}</h2>
@@ -150,7 +129,7 @@ export const ProductCard = ({ product, variant }) => {
           <div className="confirmation-modal">
             <ProductCardModal
               onClose={() => toggleModal(false)}
-              productImage={`/${product.pictureUrl}`}
+              productImage={product.pictureUrl}
               productName={product.name}
               count={count}
               setCount={setCount}
@@ -170,7 +149,6 @@ ProductCard.propTypes = {
     price: PropTypes.string,
     size: PropTypes.string,
     name: PropTypes.string,
-    id: PropTypes.number,
   }),
   variant: PropTypes.string,
 };
