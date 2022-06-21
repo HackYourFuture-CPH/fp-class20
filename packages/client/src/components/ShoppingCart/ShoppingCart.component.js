@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Total from './Total/Total';
 import './ShoppingCart.styles.css';
 import OrderProduct from './ProductComponent/OrderProduct.component';
+import { Link } from 'react-router-dom';
 
 function ShoppingCart() {
   const [products, setProducts] = useState([]);
@@ -72,9 +73,11 @@ function ShoppingCart() {
             />
           ))}
           <div className="shopping-cart-total-btn">
-            <button type="button" className="order-product-btn btn">
-              CONTINUE SHOPPING
-            </button>
+            <Link to="/">
+              <button type="button" className="order-product-btn btn">
+                CONTINUE SHOPPING
+              </button>{' '}
+            </Link>
             <div>
               <Total title="Subtotal" price={calculateTotal()} />
               <Total title="Delivery" price="10.00" />
