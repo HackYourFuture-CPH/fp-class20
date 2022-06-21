@@ -36,7 +36,10 @@ export const ProductPage = () => {
   return (
     <div className="product-page-main-container">
       <div className="product-info-main-page">
-        <div className="product-category">{product.categoryName}</div>
+        <div className="product-category">
+          Simply Spices / spices by plant part / {product.categoryName} /{' '}
+          {product.name}
+        </div>
         <div className="product-title">{product.name}</div>
       </div>
       <ProductCard
@@ -44,6 +47,7 @@ export const ProductPage = () => {
         className="product-card-container"
         isFavorite={isFavorite}
         setIsFavorite={setIsFavorite}
+        setError={setError}
       />
       <SimilarProducts product={product} />
     </div>
