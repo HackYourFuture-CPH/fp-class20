@@ -94,6 +94,7 @@
 .block-height {
   line-height: 0.01rem;
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .down-container {
@@ -163,6 +164,12 @@ p {
   body {
     padding: 0 !important;
     background: none !important;
+  }
+
+  .block-height {
+    line-height: 0.01rem;
+    margin-bottom: 2rem;
+    text-align: left;
   }
 
   .whole-container-not-push-element-down {
