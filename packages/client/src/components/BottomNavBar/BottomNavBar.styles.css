@@ -181,6 +181,12 @@ p {
     background: none !important;
   }
 
+  .block-height {
+    line-height: 0.01rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
   .whole-container-not-push-element-down {
     padding-bottom: 300px;
   }

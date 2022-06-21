@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
 
-.error-page {
-  background-color: #342f2b;
-}
-
 .ufo-pic {
   padding-top: 2rem;
 }
@@ -13,7 +9,7 @@
   background: rgb(35 28 22 / 100%);
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 1.5rem auto;
   mix-blend-mode: normal;
   opacity: 0.8;
   justify-content: space-evenly;
