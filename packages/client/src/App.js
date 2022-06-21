@@ -8,6 +8,7 @@ import { FavouritePage } from './containers/FavouritePage/FavouritePage.Containe
 import { LandingPage } from './containers/LandingPage/LandingPage.Container';
 import { PageNotFoundPage } from './containers/PageNotFound/PageNotFound.Container';
 import { ProductPage } from './containers/ProductPage/ProductPage.Container';
+import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage.Container';
 import Navigation from './components/Navigation/Navigation.component';
 import { Footer } from './components/Footer/Footer.component';
 
@@ -21,6 +22,11 @@ function App() {
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route
+            path="/contact-us-feedback"
+            element={<ContactUsFeedbackPage />}
+          />
+          <Route path="/product" element={<ProductPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/favourites" element={<FavouritePage />} />
           <Route path="*" element={<PageNotFoundPage />} />
