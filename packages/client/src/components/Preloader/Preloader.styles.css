@@ -1,11 +1,12 @@
-* {
-  background-color: #342f2b;
+.loader-main-contanier {
+  height: 50vh;
+  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
 }
 
 .loader {
   display: block;
   position: absolute;
-  top: 45%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 20rem;
