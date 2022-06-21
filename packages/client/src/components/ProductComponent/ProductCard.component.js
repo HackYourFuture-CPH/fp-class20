@@ -27,7 +27,7 @@ export const ProductCard = ({ product, variant }) => {
                   ? `/assets/vectors/vector_heart_full.svg`
                   : `/assets/vectors/vector_heart_empty.svg`
               }
-              alt="heart icon"
+              alt="changing the favorite status"
               aria-hidden="true"
             />
           </button>
@@ -40,7 +40,7 @@ export const ProductCard = ({ product, variant }) => {
         >
           <div className="product-details-variant">
             <div className="product-image-variant">
-              <img src={`/${product.pictureUrl}`} alt="product img" />
+              <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
             </div>
             <div className="product-information-variant">
               <div>
@@ -98,14 +98,14 @@ export const ProductCard = ({ product, variant }) => {
                   ? `/assets/vectors/vector_heart_full.svg`
                   : `/assets/vectors/vector_heart_empty.svg`
               }
-              alt="heart icon"
+              alt="changing the favorite status"
               aria-hidden="true"
             />
           </button>
         </div>
         <div className="product-details">
           <div className="product-image">
-            <img src={`/${product.pictureUrl}`} alt="product img" />
+            <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
           </div>
           <div className="product-information">
             <div>
