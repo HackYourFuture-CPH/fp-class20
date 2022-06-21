@@ -2,28 +2,34 @@ import React, { useState, useEffect } from 'react';
 import './FavouritePage.Style.css';
 import SortBy from '../../components/SortBy/SortBy.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
+import Preloader from '../../components/Preloader/Preloader.component';
+import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
 const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
 
 export const FavouritePage = () => {
   const [favourites, setFavourites] = useState([]);
+  const [loading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    async function fetchFavourites() {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`${getApiBaseUrl()}/api/favorites`);
+        const favoritesJson = await response.json();
+        setFavourites(favoritesJson);
+        setIsLoading(false);
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log(error);
+        setIsLoading(false);
+      }
+    }
+
     fetchFavourites();
   }, []);
 
-  const fetchFavourites = async () => {
-    try {
-      const favouriteJson = await fetch('http://localhost:5000/api/favorites');
-      const favoritesData = await favouriteJson.json();
-      setFavourites(favoritesData);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
-    }
-  };
-
-  const favouriteItem = favourites.map((favourite) => (
+  const favouriteItems = favourites.map((favourite) => (
     <ProductCard
       className="favourite-item"
       variant="small"
@@ -34,7 +40,8 @@ export const FavouritePage = () => {
     <>
       <SortBy textObj={textObj} />
       <div className="favourite-page-container">
-        <div className="favourite-page-container-main">{favouriteItem}</div>
+        {loading && <Preloader />}
+        <div className="favourite-page-container-main">{favouriteItems}</div>
       </div>
     </>
   );
