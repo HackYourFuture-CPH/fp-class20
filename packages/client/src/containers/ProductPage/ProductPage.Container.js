@@ -49,7 +49,12 @@ export const ProductPage = () => {
         setIsFavorite={setIsFavorite}
         setError={setError}
       />
-      <SimilarProducts product={product} />
+      <SimilarProducts
+        product={product}
+        isFavorite={isFavorite}
+        setIsFavorite={setIsFavorite}
+        setError={setError}
+      />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import './Carousel.styles.css';
 import PropTypes from 'prop-types';
 import { ProductCard } from '../ProductComponent/ProductCard.component';
 
-export default function Carousel({ items, show }) {
+export default function Carousel({ items, show, isFavorite, setIsFavorite }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => {
@@ -43,6 +43,8 @@ export default function Carousel({ items, show }) {
                   product={item}
                   variant="small"
                   className="product-container-small"
+                  isFavorite={isFavorite}
+                  setIsFavorite={setIsFavorite}
                 />
               </span>
             ))}
@@ -67,9 +69,13 @@ export default function Carousel({ items, show }) {
 Carousel.propTypes = {
   items: PropTypes.node,
   show: PropTypes.number,
+  isFavorite: PropTypes.bool,
+  setIsFavorite: PropTypes.func,
 };
 
 Carousel.defaultProps = {
   items: [],
   show: 1,
+  isFavorite: false,
+  setIsFavorite: () => {},
 };

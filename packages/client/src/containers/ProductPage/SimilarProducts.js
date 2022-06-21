@@ -4,7 +4,7 @@ import './ProductPage.Style.css';
 import Carousel from '../../components/Carousel/Carousel.component';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
-export const SimilarProducts = ({ product }) => {
+export const SimilarProducts = ({ product, isFavorite, setIsFavorite }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -51,7 +51,14 @@ export const SimilarProducts = ({ product }) => {
     similarProducts.length !== 1 && (
       <>
         <h1 className="title-similar-products">Similar products:</h1>
-        <Carousel items={similarProducts} show={3} className="carousel" />
+        <Carousel
+          items={similarProducts}
+          show={3}
+          className="carousel"
+          isFavorite={isFavorite}
+          setIsFavorite={setIsFavorite}
+          setError={setError}
+        />
       </>
     )
   );
@@ -64,8 +71,12 @@ SimilarProducts.propTypes = {
     id: PropTypes.number,
     categoryName: PropTypes.string,
   }),
+  isFavorite: PropTypes.bool,
+  setIsFavorite: PropTypes.func,
 };
 
 SimilarProducts.defaultProps = {
   product: {},
+  isFavorite: false,
+  setIsFavorite: () => {},
 };
