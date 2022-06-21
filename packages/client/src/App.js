@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
-import { CategoryPage } from './containers/CategoryPage/CategoryPage.Container';
+import CategoryPage from './containers/CategoryPage/CategoryPage.container';
 import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
 import { FavouritePage } from './containers/FavouritePage/FavouritePage.Container';
 import { LandingPage } from './containers/LandingPage/LandingPage.Container';
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/category" element={<CategoryPage />} />
+          <Route path="/category/:name" element={<CategoryPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route
             path="/contact-us-feedback"
