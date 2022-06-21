@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
-.whole-container-margin {
+.whole-container-push-element-down {
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -15,7 +15,7 @@
   width: 100vw;
 }
 
-.whole-container-no-margin {
+.whole-container-not-push-element-down {
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -140,9 +140,8 @@ p {
     box-sizing: border-box;
   }
 
-  .whole-container-no-margin {
+  .whole-container-not-push-element-down {
     padding-bottom: 520px;
-
   }
 
   .arrow-bottom-bar {
@@ -155,7 +154,7 @@ p {
 }
 
 @media screen and (max-width: 860px) {
-  .whole-container-no-margin {
+  .whole-container-not-push-element-down {
     padding-bottom: 500px;
   }
 }
@@ -166,12 +165,11 @@ p {
     background: none !important;
   }
 
-  .whole-container-no-margin {
+  .whole-container-not-push-element-down {
     padding-bottom: 550px;
-
   }
 
-  .whole-container-margin {
+  .whole-container-push-element-down {
     height: auto;
     width: 100%;
     box-sizing: border-box;

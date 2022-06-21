@@ -8,8 +8,8 @@ function BottomNavBar() {
   const displayMode = dropDownExpanded ? 'display' : 'no-display';
 
   const displayContainer = !dropDownExpanded
-    ? 'whole-container-margin'
-    : 'whole-container-no-margin';
+    ? 'whole-container-push-element-down'
+    : 'whole-container-not-push-element-down';
   const toggleIcon = () => {
     setDropDownExpanded(!dropDownExpanded);
   };
