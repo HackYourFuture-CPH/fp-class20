@@ -1,18 +1,19 @@
 import './DeliveryDetails.styles.css';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
 const DeliveryDetails = () => {
   const [data, setData] = useState([]);
-  const { id } = useParams();
+  /*   const { id } = useParams();
+   */
 
   useEffect(() => {
-    fetchUser(id);
-  }, [id]);
+    fetchUser();
+  }, []);
 
-  // eslint-disable-next-line no-shadow
-  const fetchUser = (id) => {
-    fetch(`http://localhost:5000/api/products/2`, {
+  const fetchUser = () => {
+    fetch(`${getApiBaseUrl()}/api/orders`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
@@ -21,6 +22,9 @@ const DeliveryDetails = () => {
         setData(json[0]);
       });
   };
+
+  /* eslint-disable no-console */
+  console.log(data);
 
   return (
     <div>
@@ -32,19 +36,19 @@ const DeliveryDetails = () => {
           <div className="contact-items">
             <div>
               <span className="name">name:</span>{' '}
-              <span className="result">{data.name}</span>
+              <span className="result">{data.fullName}</span>
             </div>
             <div>
               <span className="email">email:</span>
-              <span className="result">{data.price}</span>
+              <span className="result">{data.email}</span>
             </div>
             <div>
               <span className="city">city:</span>
-              <span className="result">{data.size}</span>
+              <span className="result">{data.city}</span>
             </div>
             <div>
               <span className="delivery">delivery adress:</span>
-              <span className="result">{data.status}</span>
+              <span className="result">{data.address}</span>
             </div>
             <div>
               <button type="button" className="edit-btn">
