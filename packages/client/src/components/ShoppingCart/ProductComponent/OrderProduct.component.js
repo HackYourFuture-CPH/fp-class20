@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Counter from '../../Counter/Counter.component';
+import React from 'react';
 import '../ShoppingCart.styles.css';
 import PropTypes from 'prop-types';
 
