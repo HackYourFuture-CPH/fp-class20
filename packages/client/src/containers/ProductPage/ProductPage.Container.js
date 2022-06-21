@@ -6,10 +6,10 @@ import getApiBaseUrl from '../../utils/getApiBaseUrl';
 import { SimilarProducts } from './SimilarProducts';
 
 export const ProductPage = () => {
-  const { id = 3 } = useParams();
-  const [product, setProduct] = useState([]);
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
   const [isLoading, setLoading] = useState(true);
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(`${getApiBaseUrl()}/api/products/${id}`)
@@ -29,20 +29,17 @@ export const ProductPage = () => {
   if (isLoading) {
     return <div className="App">Loading...</div>;
   }
+  if (error) {
+    return <p>{error}</p>;
+  }
   return (
     <div className="product-page-main-container">
-      {error ? (
-        <p>{error}</p>
-      ) : (
-        <>
-          <div className="product-info-main-page">
-            <div className="product-category">{product.categoryName}</div>
-            <div className="product-title">{product.name}</div>
-          </div>
-          <ProductCard product={product} className="product-card-container" />
-          <SimilarProducts product={product} />
-        </>
-      )}
+      <div className="product-info-main-page">
+        <div className="product-category">{product.categoryName}</div>
+        <div className="product-title">{product.name}</div>
+      </div>
+      <ProductCard product={product} className="product-card-container" />
+      <SimilarProducts product={product} />
     </div>
   );
 };

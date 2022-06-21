@@ -7,45 +7,51 @@ import getApiBaseUrl from '../../utils/getApiBaseUrl';
 export const SimilarProducts = ({ product }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [error, setError] = useState();
-  const [isSimilarProductLoading, setisSimilarProductLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchUrl = async () => {
-      const result = await fetch(
-        `${getApiBaseUrl()}/api/products?category=${product.categoryId}`,
-      );
-      return result;
-    };
+    async function fetchSimilarProducts() {
+      try {
+        const response = await fetch(
+          `${getApiBaseUrl()}/api/products?category=${product.categoryId}`,
+        );
 
-    fetchUrl()
-      .then((response) => {
         if (!response.ok) {
           throw new Error('something went wrong');
         }
-        return response.json();
-      })
-      .then((data) => {
-        setSimilarProducts(data);
-        setisSimilarProductLoading(false);
-      })
-      .catch((err) => setError(err));
-  }, [product.categoryId]);
+        return await response.json();
+      } catch (err) {
+        setError(err);
+        setIsLoading(false);
+      }
+    }
 
-  if (isSimilarProductLoading) {
+    async function getData() {
+      await fetchSimilarProducts()
+        .then((data) => {
+          const similarItems = data.filter(
+            (item) => item.name !== product.name,
+          );
+          setSimilarProducts(similarItems);
+          setIsLoading(false);
+        })
+        .catch((err) => setError(err));
+      setIsLoading(false);
+    }
+    getData();
+  }, [product.categoryId, product.name]);
+
+  if (isLoading) {
     return <div className="App">Loading...</div>;
   }
-  return error ? (
-    <p>{error}</p>
-  ) : (
+  if (error) {
+    return <p> {error} </p>;
+  }
+  return (
     similarProducts.length !== 1 && (
       <>
         <h1 className="title-similar-products">Similar products:</h1>
-        <Carousel
-          key={product.id}
-          items={similarProducts.filter((item) => item.id !== product.id)}
-          show={3}
-          className="carousel"
-        />
+        <Carousel items={similarProducts} show={3} className="carousel" />
       </>
     )
   );
