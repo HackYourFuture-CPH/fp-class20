@@ -4,6 +4,7 @@ import SortBy from '../../components/SortBy/SortBy.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
 import Preloader from '../../components/Preloader/Preloader.component';
 import { useParams } from 'react-router-dom';
+import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
 const CategoryPage = () => {
   const { name } = useParams();
@@ -17,24 +18,21 @@ const CategoryPage = () => {
   useEffect(() => {
     categoryProducts();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [name]);
 
   const categoryProducts = async () => {
     try {
       setLoading(true);
-      const dataJson = await fetch(
-        `http://localhost:5000/api/category/${name}`,
-      );
+      const dataJson = await fetch(`${getApiBaseUrl()}/api/category/${name}`);
 
       const productsCategory = await dataJson.json();
       setProducts(productsCategory);
       setLoading(false);
-      // eslint-disable-next-line no-console
-      console.log(products);
     } catch (error) {
-      // eslint-disable-next-line no-console
+      // eslint-disable-next-line
       console.log(error);
+      setLoading(false);
     }
   };
 
