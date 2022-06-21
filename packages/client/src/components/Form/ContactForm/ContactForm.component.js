@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.styles.css';
+import { Button } from '../../Button/Button.component';
+import { useNavigate } from 'react-router-dom';
+
+import getApiBaseUrl from '../../../utils/getApiBaseUrl';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
@@ -16,6 +20,7 @@ const errorMessage = {
 };
 
 export const ContactForm = ({ text, label, handlePost }) => {
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -25,7 +30,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
   const [isMessageSent, setIsMessageSent] = useState(false);
   const [isAllInputFilledOut, setIsAllInputFilledOut] = useState(false);
   const [errorState, setErrorState] = useState([]);
-  const [fetchStatus, setFetchStatus] = useState();
+  const [fetchStatus, setFetchStatus] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,7 +75,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
       };
 
       (async () => {
-        const postMessage = await fetch('/api/messages', {
+        const postMessage = await fetch(`${getApiBaseUrl()}/api/messages`, {
           method: 'POST',
           headers: { 'Content-Type': 'Application/json' },
           body: JSON.stringify(inputObj),
@@ -78,9 +83,12 @@ export const ContactForm = ({ text, label, handlePost }) => {
 
         if (postMessage.status === 200) {
           setIsMessageSent(true);
-          setFetchStatus(postMessage.statusText);
+          navigate('/contact-us-feedback');
         }
-        setFetchStatus(postMessage.statusText);
+        setFetchStatus({
+          status: postMessage.status,
+          message: postMessage.statusText,
+        });
       })();
 
       setFormState({
@@ -130,7 +138,8 @@ export const ContactForm = ({ text, label, handlePost }) => {
               ) : (
                 ''
               )}
-              {fetchStatus}
+              {fetchStatus.message}
+              {fetchStatus.status}
 
               <div className="form-row">
                 <label htmlFor="name">
@@ -206,18 +215,15 @@ export const ContactForm = ({ text, label, handlePost }) => {
               <span className="contact-error-span"> {errObj.message}</span>
 
               <div className="form-row">
-                {/* dummy button */}
-                <button
+                <Button
                   className={
                     isAllInputFilledOut ? 'ready-button' : 'normal-button'
                   }
-                  type="button"
-                  label={label}
+                  size="medium"
+                  label="SUBMIT"
+                  icon=""
                   onClick={handleSubmit}
-                >
-                  {/* {text} */}
-                  SUBMIT
-                </button>
+                />
               </div>
             </div>
           </form>
