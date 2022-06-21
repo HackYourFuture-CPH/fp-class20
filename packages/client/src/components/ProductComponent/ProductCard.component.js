@@ -58,11 +58,12 @@ export const ProductCard = ({
   };
 
   const onAddToFavorites = async () => {
-    setIsFavorite(!isFavorite);
-    if (isFavorite) {
+    if (!isFavorite) {
       addAsFavorite();
+      setIsFavorite(true);
     } else {
       removeFromFavorites();
+      setIsFavorite(false);
     }
   };
 
@@ -72,7 +73,6 @@ export const ProductCard = ({
         <div className="favorite-icon-variant">
           <button type="button" onClick={onAddToFavorites}>
             <img
-              onClick={onAddToFavorites}
               src={
                 isFavorite
                   ? `/assets/vectors/vector_heart_full.svg`
@@ -137,7 +137,6 @@ export const ProductCard = ({
           Save to favorites
           <button type="button" onClick={onAddToFavorites}>
             <img
-              onClick={onAddToFavorites}
               src={
                 isFavorite
                   ? `/assets/vectors/vector_heart_full.svg`
