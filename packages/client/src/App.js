@@ -1,8 +1,10 @@
 import React from 'react';
+import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
 import { CategoryPage } from './containers/CategoryPage/CategoryPage.Container';
 import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
+import { FavouritePage } from './containers/FavouritePage/FavouritePage.Container';
 import { LandingPage } from './containers/LandingPage/LandingPage.Container';
 import { PageNotFoundPage } from './containers/PageNotFound/PageNotFound.Container';
 import { ProductPage } from './containers/ProductPage/ProductPage.Container';
@@ -20,6 +22,7 @@ function App() {
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/favourites" element={<FavouritePage />} />
           <Route path="*" element={<PageNotFoundPage />} />
         </Routes>
         <Footer />

@@ -5,11 +5,14 @@ import { BottomNavigation } from './Right-bottom-navigation/BottomNavigation.com
 function Header() {
   const [dropDownExpanded, setDropDownExpanded] = useState(false);
   const displayMode = dropDownExpanded ? 'display' : 'no-display';
+  const displayContainer = !dropDownExpanded
+    ? 'whole-container-margin'
+    : 'whole-container-no-margin';
   const toggleIcon = () => {
     setDropDownExpanded(!dropDownExpanded);
   };
   return (
-    <div className="whole-container">
+    <div className={displayContainer}>
       <div className="up-container">
         <div className="button-for-spices">
           <span className="spices-button">SPICES</span>

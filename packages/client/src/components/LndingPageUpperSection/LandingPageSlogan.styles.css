@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat&display=swap');
+
+.slogan-body {
+  padding-bottom: 4em;
+}
+
+.landing-page-slogan {
+  background: rgb(13 13 13 / 79.1%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  padding: 3em;
+  margin-top: 8em auto 2em auto;
+  padding-bottom: 1em;
+}
+
+.landing-page-slogan img {
+  width: 75%;
+}
+
+.slogan-title {
+  font-size: 5rem;
+  font-family: 'Fredericka the Great', cursive;
+  margin-block-end: 0.5em;
+}
+
+.slogan-p {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-top: 1em;
+  color: white;
+  text-shadow: 2px 2px 2px #000;
+  margin-block: auto;
+}
+
+.slogan-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slogan-button button:hover {
+  background: #342f28;
+  border: 1px solid #fff;
+}
+
+.slogan-button a {
+  text-decoration: none;
+}
+
+.slogan-button button:active {
+  background: #342f28;
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 1225px) {
+  .landing-page-slogan {
+    width: 700px;
+  }
+
+  .slogan-p {
+    font-size: 1.5rem;
+  }
+
+  .landing-page-slogan img {
+    width: 700px;
+  }
+}
