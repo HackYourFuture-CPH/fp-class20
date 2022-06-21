@@ -7,14 +7,17 @@ const getProducts = async (
   nameFilter = '',
   categoryFilter = '',
 ) => {
-  let products = knex('Products').select(
-    'name',
-    'price',
-    'size',
-    'pictureUrl',
-    'id',
-    'categoryId',
-  );
+  let products = knex('Products')
+    .join('Categories', 'Products.categoryId', 'Categories.id')
+    .select(
+      'Products.name',
+      'Products.price',
+      'Products.size',
+      'Products.pictureUrl',
+      'Products.id',
+      'Products.categoryId',
+      'Categories.name as categoryName',
+    );
 
   if (sortOrder === 'name') {
     products = products.orderBy('name', 'asc');
@@ -29,11 +32,7 @@ const getProducts = async (
     products = products.where('name', 'like', `%${nameFilter}%`);
   }
   if (categoryFilter) {
-    products = knex('Products').where(
-      'Products.categoryId',
-      '=',
-      categoryFilter,
-    );
+    products = products.where('Products.categoryId', '=', categoryFilter);
   }
   const PAGE_SIZE = 10;
   return products.limit(PAGE_SIZE).offset(pageIndex * PAGE_SIZE);
