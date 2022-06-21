@@ -7,7 +7,6 @@ const category = require('./category.router');
 const products = require('./products.router');
 const favorites = require('./favorites.router');
 const orders = require('./orders.router');
-
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const messages = require('./messages.router');
