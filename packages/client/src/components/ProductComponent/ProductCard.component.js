@@ -11,65 +11,59 @@ export const ProductCard = ({
   variant,
   isFavorite,
   setIsFavorite,
+  setError,
 }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
-
-  const userId = 1;
-  // eslint-disable-next-line
   const productID = product.id;
+  const userId = 1;
   const createdAt = new Date().toLocaleString();
 
-  const postFavorite = async () => {
-    const postFavoriteObj = {
-      // eslint-disable-next-line
-      userId: userId,
-      // eslint-disable-next-line
-      productID: productID,
-      // eslint-disable-next-line
-      createdAt: createdAt,
+  const addAsFavorite = async () => {
+    const body = {
+      userId,
+      productID,
+      createdAt,
     };
     try {
-      const fetchPost = await fetch('http://localhost:5000/api/favorites', {
+      const response = await fetch('http://localhost:5000/api/favorites', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(postFavoriteObj),
+        body: JSON.stringify(body),
       });
-      await fetchPost.json();
+
+      if (!response.ok) {
+        throw new Error('Failed to add product as favorite');
+      }
     } catch (error) {
-      // eslint-disable-next-line
-      console.log(error);
+      setError(error);
     }
   };
-
-  const deleteFavorite = async (e) => {
+  const removeFromFavorites = async (e) => {
     try {
-      const fetchDelete = await fetch(
-        `http://localhost:5000/api/favorites/${productID}`,
+      const response = await fetch(
+        `http://localhost:5000/api/favorites/${productID}/${userId}`,
         {
           method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-          },
         },
       );
-      await fetchDelete.json();
-      // eslint-disable-next-line
-      console.log(fetchDelete.json());
+
+      if (!response.ok) {
+        throw new Error('Failed to remove product from favorites');
+      }
     } catch (error) {
-      // eslint-disable-next-line
-      console.log(error);
+      setError(error);
     }
   };
 
   const onAddToFavorites = async () => {
     setIsFavorite(!isFavorite);
     if (isFavorite) {
-      postFavorite();
+      addAsFavorite();
     } else {
-      deleteFavorite();
+      removeFromFavorites();
     }
   };
 
@@ -204,6 +198,7 @@ export const ProductCard = ({
 
 ProductCard.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.number,
     description: PropTypes.string,
     pictureUrl: PropTypes.string,
     price: PropTypes.string,
@@ -213,11 +208,13 @@ ProductCard.propTypes = {
   variant: PropTypes.string,
   isFavorite: PropTypes.bool,
   setIsFavorite: PropTypes.func,
+  setError: PropTypes.func,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
-  setIsFavorite: {},
+  setIsFavorite: () => {},
   isFavorite: false,
+  setError: () => {},
 };

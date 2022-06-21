@@ -30,4 +30,5 @@ Primary.args = {
   },
   saveToFavorites: 'save to favorites',
   onClose: () => {},
+  setError: () => {},
 };
