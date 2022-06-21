@@ -42,7 +42,6 @@ export const ProductCard = ({ product, variant }) => {
             <div className="product-image-variant">
               <img src={`/${product.pictureUrl}`} alt="product img" />
             </div>
-
             <div className="product-information-variant">
               <div>
                 <h2 className="product-name-variant"> {product.name}</h2>
