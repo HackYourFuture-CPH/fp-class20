@@ -5,8 +5,6 @@ import OrderProduct from './ProductComponent/OrderProduct.component';
 
 function ShoppingCart() {
   const [products, setProducts] = useState([]);
-  const [notes, setNotes] = useState([]);
-  // const [count, setCount] = useState(1);
 
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem('add-to-cart'));
@@ -14,25 +12,6 @@ function ShoppingCart() {
       setProducts(savedNotes);
     }
   }, []);
-  // eslint-disable-next-line no-shadow
-  // const fetchUser = () => {
-  //   fetch('http://localhost:5000/api/products/2', {
-  //     method: 'GET',
-  //     headers: { 'Content-Type': 'application/json' },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((result) => {
-  //       setProducts(
-  //         result.map((data) => ({
-  //           ...data,
-  //           count: 1,
-  //         })),
-  //       );
-  //     });
-  // };
-
-  /* eslint-disable no-console */
-  console.log(process.env.REACT_APP_API_BASE_URL);
 
   const addProductToCart = (productId) => {
     setProducts(
