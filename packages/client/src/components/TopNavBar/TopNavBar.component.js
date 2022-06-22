@@ -19,7 +19,7 @@ function TopNavBar() {
       <div className="top-nav-main-container">
         <div className="logo-container">
           <div>
-            <h2> Simply Spices</h2>
+            <h2>Simply Spices</h2>
           </div>
           <div>
             {/* eslint-disable-next-line */}

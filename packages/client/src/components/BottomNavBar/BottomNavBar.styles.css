@@ -3,12 +3,7 @@
 .whole-container-push-element-down {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    180deg,
-    rgb(35 28 22 / 90%) 19.79%,
-    rgba(35 28 22 /45%) 78.65%
-  );
-  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  background: linear-gradient(180deg, rgb(35 28 22 / 100%), rgb(40 28 22/ 90%));
   height: 4rem;
   padding: 0;
   margin: 0 auto;
