@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
 
 function TopNavBar() {
@@ -46,7 +47,9 @@ function TopNavBar() {
               src="/assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
-            <span className="favourites-text">Favourites </span>
+            <Link to="/favorites/1">
+              <span className="favourites-text">Favourites </span>
+            </Link>
           </div>
           <div className="cart-container">
             <img

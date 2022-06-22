@@ -1,25 +1,26 @@
-import React, { useState, useEffect, useId } from 'react';
+import React, { useState, useEffect } from 'react';
 import './FavouritePage.Style.css';
-import SortBy from '../../components/SortBy/SortBy.component';
+// import SortBy from '../../components/SortBy/SortBy.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
 import Preloader from '../../components/Preloader/Preloader.component';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 import { useParams } from 'react-router-dom';
 
-const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
+// const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
 
 export const FavouritePage = () => {
   const [favourites, setFavourites] = useState([]);
   const [loading, setIsLoading] = useState(false);
   const [isFavorite, setIsFavorite] = useState(true);
   const { userId } = useParams();
+  // eslint-disable-next-line no-console
+  console.log(userId);
+
   useEffect(() => {
     async function fetchFavourites() {
       try {
         setIsLoading(true);
-        const response = await fetch(
-          `${getApiBaseUrl()}/api/favorites/${userId}`,
-        );
+        const response = await fetch(`${getApiBaseUrl()}/api/favorites/${1}`);
         const favoritesJson = await response.json();
         setFavourites(favoritesJson);
         setIsLoading(false);
@@ -29,8 +30,8 @@ export const FavouritePage = () => {
         setIsLoading(false);
       }
     }
-
     fetchFavourites();
+    // eslint-disable-next-line
   }, [userId]);
 
   const favouriteItems = favourites.map((favourite) => (
@@ -44,7 +45,7 @@ export const FavouritePage = () => {
   ));
   return (
     <>
-      <SortBy textObj={textObj} />
+      {/* <SortBy textObj={textObj} /> */}
       <div className="favourite-page-container">
         {loading && <Preloader />}
         <div className="favourite-page-container-main">{favouriteItems}</div>
