@@ -83,6 +83,7 @@ export const ProductCard = ({
             />
           </button>
         </div>
+
         <a
           href={`${product.id}`}
           target="_blank"
@@ -92,6 +93,7 @@ export const ProductCard = ({
           <div className="product-details-variant">
             <div className="product-image-variant">
               <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
+    
             </div>
 
             <div className="product-information-variant">

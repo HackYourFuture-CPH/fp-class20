@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
 .product-page-main-container {
-  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%);
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
@@ -73,29 +72,13 @@
   background: transparent;
 }
 
-.whole-container {
-  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%),
-    linear-gradient(180deg, #231c16e6 19.79%, #231c1673 78.65%);
-}
-
-.footer-up-background {
-  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%);
-  padding-top: 3rem;
-}
-
-body {
-  background: linear-gradient(180deg, #231c16 0%, #231c16bf 100%);
-  mix-blend-mode: normal;
-  opacity: 0.8;
-}
-
 @media (hover: none) and (pointer: coarse) {
   .title-similar-products {
     display: none;
   }
 }
 
-@media screen and (max-width: 1700px) {
+@media (max-width: 1700px) and (min-width: 1225px) {
   .product-card-container .counter {
     width: 4.938rem !important;
     background-color: transparent !important;
@@ -107,14 +90,63 @@ body {
   }
 }
 
-@media screen and (max-width: 1204px) {
-  .title-similar-products {
-    margin-bottom: 1rem;
+@media (max-width: 1225px) and (min-width: 1024px) {
+  .carousel .add-to-cart-button-variant {
+    font-size: 0.4rem !important;
+    height: 2rem !important;
+  }
+
+  .carousel .counter {
+    height: 2rem !important;
+    width: 2rem !important;
   }
 }
 
-@media screen and (max-width: 790px) {
+@media (max-width: 1204px) and (min-width: 935px) {
+  .title-similar-products {
+    margin-bottom: 1rem;
+  }
+
+  .carousel .add-to-cart-button-variant {
+    font-size: 0;
+    height: 1.5rem !important;
+    width: 1rem !important;
+  }
+
+  .carousel .product-name-variant {
+    font-size: 0.75rem !important;
+  }
+
+  .product-size-variant {
+    font-size: 0.75rem !important;
+  }
+
+  .carousel .counter {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 935px) {
   .title-similar-products {
     display: none !important;
+  }
+
+  .carousel .add-to-cart-button-variant {
+    font-size: 0 !important;
+    height: 1.3rem;
+  }
+
+  .carousel .product-name-variant {
+    font-size: 0.75rem !important;
+  }
+
+  .product-size-variant {
+    font-size: 0.75rem !important;
+  }
+
+  .carousel .counter {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
   }
 }

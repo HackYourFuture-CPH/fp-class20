@@ -8,6 +8,8 @@ const postFavorites = async (body) => {
 const getFavoritesById = async (id) => {
   const favorites = await knex('Favorites')
     .join('Users', 'Users.id', 'Favorites.userId')
+    .join('Products', 'Products.id', 'Favorites.productId')
+    .select('productId', 'userId', 'name', 'price', 'size', 'pictureUrl')
     .where({ userId: id });
   return favorites;
 };
