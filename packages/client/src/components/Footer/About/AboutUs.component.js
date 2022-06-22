@@ -1,8 +1,8 @@
 import React from 'react';
-import './Corporate.styles.css';
+import './AboutUs.styles.css';
 import { Link } from 'react-router-dom';
 
-export const Corporate = () => {
+export const AboutUs = () => {
   return (
     <div className="corporate-info">
       <span className="text-big">

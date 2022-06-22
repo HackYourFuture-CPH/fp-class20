@@ -11,13 +11,15 @@ export const Address = () => {
           src="assets/vectors/vector_location.svg"
           alt="Canvas map Logo"
         />
-        <p className="address">
-          Norrebrogade 666
-          <br />
-          2200 Norrebro
-          <br />
-          Copenhagen
-        </p>
+        <a href="# ">
+          <p className="address">
+            Norrebrogade 666
+            <br />
+            2200 Norrebro
+            <br />
+            Copenhagen
+          </p>
+        </a>
       </div>
     </div>
   );

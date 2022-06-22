@@ -23,7 +23,10 @@ export const Contact = () => {
           alt="Canvas envelop Logo"
           className="envelop"
         />
-        <span className="email-underline">spice @ kbh.dk</span>
+        <a href="# ">
+          {' '}
+          <span className="email-underline">spice @ kbh.dk</span>{' '}
+        </a>
       </div>
     </div>
   );
