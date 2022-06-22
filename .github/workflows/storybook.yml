@@ -3,8 +3,9 @@ name: Storybook
 on:
   push:
     branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
+# commenting these lines to prevent the actions to ran out this month
+#  pull_request:
+#    branches: [main, develop]
 
 jobs:
   build:
