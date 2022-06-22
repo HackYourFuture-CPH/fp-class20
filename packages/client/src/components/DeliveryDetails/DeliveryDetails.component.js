@@ -22,7 +22,6 @@ const DeliveryDetails = () => {
 
   return (
     <div>
-      {/* <div className="contact-header"></div> */}
       <div className="contact-outlayer">
         <h1 className="contact-header-text">Contact and Delivary Details</h1>
 
