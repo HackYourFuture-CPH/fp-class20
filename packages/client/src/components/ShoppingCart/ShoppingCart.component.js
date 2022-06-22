@@ -8,11 +8,14 @@ function ShoppingCart() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem('add-to-cart'));
+    const savedNotes = JSON.parse(localStorage.getItem('fp-cart-state'));
     if (savedNotes) {
-      setProducts(savedNotes);
+      setProducts((prev) => [savedNotes]);
     }
   }, []);
+
+  // eslint-disable-next-line no-console
+  console.log(products);
 
   const addProductToCart = (productId) => {
     setProducts(
@@ -20,7 +23,7 @@ function ShoppingCart() {
         if (product.id === productId) {
           return {
             ...product,
-            count: product.count + 1,
+            quantity: product.quantity + 1,
           };
         }
         return products;
@@ -34,7 +37,7 @@ function ShoppingCart() {
         if (product.id === productId) {
           return {
             ...product,
-            count: product.count - 1,
+            quantity: Math.max(0, product.quantity - 1),
           };
         }
         return products;
@@ -44,7 +47,7 @@ function ShoppingCart() {
 
   const calculateTotal = () => {
     return products
-      .map((product) => product.price * product.count)
+      .map((product) => product.price * product.quantity)
       .reduce((a, b) => a + b, 0);
   };
 
@@ -60,7 +63,7 @@ function ShoppingCart() {
               <p className="bold">Total DKK</p>
             </div>
           </div>
-          {products.map((product) => (
+          {products?.map((product) => (
             <OrderProduct
               data={product}
               key={product.id}
