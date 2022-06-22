@@ -54,8 +54,6 @@
   width: 100%;
   margin: 0 auto;
   padding: 1rem 0;
-
-  /* font-size: 1.5rem; */
   font-size: 1.25rem;
   line-height: 1.7rem;
 }
@@ -133,8 +131,11 @@ input:focus {
 
 .ready-button {
   background: #53742a;
-  border: 1px solid #fff;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  color: #fff;
   width: 15rem;
+  border: 1px solid #fff;
 }
 
 .email-link {
@@ -164,7 +165,7 @@ input:focus {
   }
 
   .contact-form-simply-spices-text {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .contact-head > img {
@@ -206,6 +207,12 @@ input:focus {
     align-items: flex-start;
     font-size: x-small;
   }
+
+  .ready-button,
+  .normal-button {
+    height: 2.2rem;
+    font-size: x-small;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -219,5 +226,6 @@ input:focus {
     width: 70%;
     margin: 0 auto;
     word-wrap: break-word;
+    font-size: 2rem;
   }
 }
