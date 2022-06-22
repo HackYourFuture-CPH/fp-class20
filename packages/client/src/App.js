@@ -11,6 +11,7 @@ import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage.Container';
 import Navigation from './components/Navigation/Navigation.component';
 import { Footer } from './components/Footer/Footer.component';
+import OrderPage from './components/Order-Page/OrderPage.component';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/favourites" element={<FavouritePage />} />
+          <Route path="/order" element={<OrderPage />} />
           <Route path="*" element={<PageNotFoundPage />} />
         </Routes>
         <Footer />

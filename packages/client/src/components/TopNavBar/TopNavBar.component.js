@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
 
 function TopNavBar() {
@@ -85,7 +86,8 @@ function TopNavBar() {
               alt="cart-icon"
             />
             <span className="number">0</span>
-            <span className="cart-text">Cart</span>
+            <Link to="/order">Qais</Link>
+            {/* <span className="cart-text">Cart</span> */}
           </div>
         </div>
       ) : null}
