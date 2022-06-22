@@ -1,7 +1,5 @@
 import React from 'react';
 import './Contact.styles.css';
-// import phone from '../../../../public/assets/vectors/vector_receiver.svg';
-// import envelop from '../../../../public/assets/vectors/vector_envelope.svg';
 import { Link } from 'react-router-dom';
 
 export const Contact = () => {
@@ -9,11 +7,11 @@ export const Contact = () => {
     <div className="contact-info">
       <span className="text-big ">
         {' '}
-        <Link to="/contact-us"> Contact us</Link>
+        <Link to="/contact-us"> Contact Us</Link>
       </span>
       <div className="text-small phone-text">
         <img
-          src="assets/vectors/vector_receiver.svg"
+          src="/assets/vectors/vector_receiver.svg"
           alt="Canvas phone Logo"
           className="phone"
         />
@@ -21,7 +19,7 @@ export const Contact = () => {
       </div>
       <div className="text-small">
         <img
-          src="assets/vectors/vector_envelope.svg"
+          src="/assets/vectors/vector_envelope.svg"
           alt="Canvas envelop Logo"
           className="envelop"
         />

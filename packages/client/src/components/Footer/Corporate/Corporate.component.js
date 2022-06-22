@@ -7,7 +7,7 @@ export const Corporate = () => {
     <div className="corporate-info">
       <span className="text-big">
         {' '}
-        <Link to="/about-us"> AboutUs</Link>{' '}
+        <Link to="/about-us"> About Us </Link>{' '}
       </span>
 
       <a href="# ">
