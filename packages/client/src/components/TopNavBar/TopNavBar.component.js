@@ -35,7 +35,7 @@ function TopNavBar() {
           <div className="sign-in-container">
             <img
               className="sign-in-icon"
-              src="assets/vectors/vector_sign_in.svg"
+              src="/assets/vectors/vector_sign_in.svg"
               alt="signin-icon"
             />
             <span className="sign-in-text"> Sign in</span>
@@ -43,7 +43,7 @@ function TopNavBar() {
           <div className="favourite-container">
             <img
               className="favourite-icon"
-              src="assets/vectors/vector_heart_empty.svg"
+              src="/assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
             <span className="favourites-text">Favourites </span>
@@ -51,7 +51,7 @@ function TopNavBar() {
           <div className="cart-container">
             <img
               className="cart-icon"
-              src="assets/vectors/vector_cart.svg"
+              src="/assets/vectors/vector_cart.svg"
               alt="cart-icon"
             />
             <span className="number">0</span>
@@ -65,7 +65,7 @@ function TopNavBar() {
           <div className="sign-in-container">
             <img
               className="sign-in-icon"
-              src="assets/vectors/vector_sign_in.svg"
+              src="/assets/vectors/vector_sign_in.svg"
               alt="signin-icon"
             />
             <span className="sign-in-text"> Sign in</span>
@@ -73,7 +73,7 @@ function TopNavBar() {
           <div className="favourite-container">
             <img
               className="favourite-icon"
-              src="assets/vectors/vector_heart_empty.svg"
+              src="/assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
             <span className="favourites-text">Favourites </span>
@@ -81,7 +81,7 @@ function TopNavBar() {
           <div className="cart-container">
             <img
               className="cart-icon"
-              src="assets/vectors/vector_cart.svg"
+              src="/assets/vectors/vector_cart.svg"
               alt="cart-icon"
             />
             <span className="number">0</span>

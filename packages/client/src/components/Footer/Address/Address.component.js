@@ -8,7 +8,7 @@ export const Address = () => {
       <div className="address-text-logo">
         <img
           className="small-map-icon"
-          src="assets/vectors/vector_location.svg"
+          src="/assets/vectors/vector_location.svg"
           alt="Canvas map Logo"
         />
         <a href="# ">

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Contact.styles.css';
+
 import { Link } from 'react-router-dom';
 
 export const Contact = () => {

@@ -8,7 +8,7 @@ const getCategories = async () => {
 const getProducts = async (category, query) => {
   let productByCategory = knex('Categories')
     .join('Products', 'Categories.id', 'Products.categoryId')
-    .where('Categories.id', 'like', `${category}%`);
+    .where('Categories.name', 'like', `${category}%`);
 
   if (query.sort === 'name') {
     productByCategory = productByCategory.orderBy('Products.name', 'asc');

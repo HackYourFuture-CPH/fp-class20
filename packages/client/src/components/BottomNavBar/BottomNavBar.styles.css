@@ -1,12 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
-.whole-container {
+.whole-container-push-element-down {
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, rgb(35 28 22 / 100%), rgb(40 28 22/ 90%));
   height: 4rem;
   padding: 0;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.whole-container-not-push-element-down {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    rgb(35 28 22 / 90%) 19.79%,
+    rgba(35 28 22 /45%) 78.65%
+  );
+  height: 4rem;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 445px;
 }
 
 .up-container {
@@ -56,6 +72,17 @@
   line-height: 2rem;
 }
 
+.spice-names button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: inherit;
+  color: white;
+  font-size: 1.5rem;
+}
+
 .whole-down-container {
   background-color: rgba(35 28 22 85%);
 }
@@ -63,6 +90,7 @@
 .block-height {
   line-height: 0.01rem;
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .down-container {
@@ -86,6 +114,7 @@
   display: flex;
   flex-direction: row;
   padding-bottom: 1.25rem;
+  justify-content: space-evenly;
 }
 
 .left-container {
@@ -109,6 +138,10 @@ p {
     box-sizing: border-box;
   }
 
+  .whole-container-not-push-element-down {
+    padding-bottom: 520px;
+  }
+
   .arrow-bottom-bar {
     width: 1.5rem;
   }
@@ -118,13 +151,42 @@ p {
   }
 }
 
+@media screen and (max-width: 860px) {
+  .up-container,
+  .down-container {
+    width: 400px;
+    box-sizing: border-box;
+  }
+
+  .whole-container-not-push-element-down {
+    padding-right: 1rem;
+    padding-bottom: 640px;
+    padding-left: 0;
+  }
+
+  .display {
+    padding-left: 0%;
+    padding-right: 2%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
     padding: 0 !important;
     background: none !important;
   }
 
-  .whole-container {
+  .block-height {
+    line-height: 0.01rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .whole-container-not-push-element-down {
+    padding-bottom: 300px;
+  }
+
+  .whole-container-push-element-down {
     height: auto;
     width: 100%;
     box-sizing: border-box;
@@ -132,6 +194,7 @@ p {
 
   .display {
     padding-left: 10%;
+    padding-right: 5%;
   }
 
   .up-container,
@@ -140,8 +203,10 @@ p {
   }
 
   .items-container {
-    flex-direction: column;
+    flex-direction: row;
     box-sizing: border-box;
+    justify-content: space-evenly;
+    padding-right: 2rem;
   }
 
   .spices-button {
@@ -174,6 +239,10 @@ p {
   .down-container {
     width: 375px;
     box-sizing: border-box;
+  }
+
+  .items-container {
+    flex-direction: column;
   }
 
   .spices-button {

@@ -5,12 +5,8 @@ const exampleResources = require('./exampleResources.router');
 
 const category = require('./category.router');
 const products = require('./products.router');
-
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
+const favorites = require('./favorites.router');
+const orders = require('./orders.router');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const messages = require('./messages.router');
@@ -38,6 +34,8 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 router.use('/exampleResources', exampleResources);
 router.use('/category', category);
 router.use('/products', products);
+router.use('/favorites', favorites);
 router.use('/messages', messages);
+router.use('/orders', orders);
 
 module.exports = router;
