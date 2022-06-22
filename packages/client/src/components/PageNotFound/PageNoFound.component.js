@@ -8,7 +8,7 @@ const PageNotFound = () => {
       <div className="error-details">
         <div className="ufo-pic">
           <img
-            src="assets/images/drawing_ufo.png"
+            src="/assets/images/drawing_ufo.png"
             alt="error page icon"
             className="ufo-pic"
           />
