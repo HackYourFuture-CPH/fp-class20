@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './FavouritePage.Style.css';
-// import SortBy from '../../components/SortBy/SortBy.component';
+import SortBy from '../../components/SortBy/SortBy.component';
 import { ProductCard } from '../../components/ProductComponent/ProductCard.component';
 import Preloader from '../../components/Preloader/Preloader.component';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 import { useParams } from 'react-router-dom';
 
-// const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
+const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
 
 export const FavouritePage = () => {
   const [favourites, setFavourites] = useState([]);
@@ -45,7 +45,7 @@ export const FavouritePage = () => {
   ));
   return (
     <>
-      {/* <SortBy textObj={textObj} /> */}
+      <SortBy textObj={textObj} />
       <div className="favourite-page-container">
         {loading && <Preloader />}
         <div className="favourite-page-container-main">{favouriteItems}</div>
