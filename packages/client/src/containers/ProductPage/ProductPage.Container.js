@@ -37,8 +37,7 @@ export const ProductPage = () => {
     <div className="product-page-main-container">
       <div className="product-info-main-page">
         <div className="product-category">
-          Simply Spices / spices by plant part / {product.categoryName} /{' '}
-          {product.name}
+          Simply Spices / {product.categoryName} / {product.name}
         </div>
         <div className="product-title">{product.name}</div>
       </div>
