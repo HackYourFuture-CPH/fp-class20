@@ -9,7 +9,7 @@ export const LandingPageSlogan = () => {
         <p className="slogan-title">Simply Spices</p>
         <p className="slogan-p">Taste the joy of flavour ...</p>
         <img
-          src="assets/vectors/vector_logo_underline.svg"
+          src="/assets/vectors/vector_logo_underline.svg"
           alt="slogan-vector"
         />
       </div>
