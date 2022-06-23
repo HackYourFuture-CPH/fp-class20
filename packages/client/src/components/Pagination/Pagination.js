@@ -2,15 +2,12 @@ import React from 'react';
 import './ProductLists.css';
 import PropTypes from 'prop-types';
 
-
 function Pagination({ currentPage, pageCount, onPageChange }) {
-
   const pageNumbers = [];
 
   /* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 
-
-  for (let i = 1; i <= pageCount; i++) {
+  for (let i = 1; i <= 2; i++) {
     pageNumbers.push(i);
   }
 
