@@ -51,14 +51,7 @@ export const SimilarProducts = ({ product, isFavorite, setIsFavorite }) => {
     similarProducts.length !== 1 && (
       <>
         <h1 className="title-similar-products">Similar products:</h1>
-        <Carousel
-          items={similarProducts}
-          show={3}
-          className="carousel"
-          isFavorite={isFavorite}
-          setIsFavorite={setIsFavorite}
-          setError={setError}
-        />
+        <Carousel items={similarProducts} show={3} className="carousel" />
       </>
     )
   );

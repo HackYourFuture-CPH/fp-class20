@@ -43,8 +43,6 @@ export default function Carousel({ items, show, isFavorite, setIsFavorite }) {
                   product={item}
                   variant="small"
                   className="product-container-small"
-                  isFavorite={isFavorite}
-                  setIsFavorite={setIsFavorite}
                 />
               </span>
             ))}

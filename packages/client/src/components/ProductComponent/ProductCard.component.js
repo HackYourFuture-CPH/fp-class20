@@ -5,73 +5,22 @@ import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
-import getApiBaseUrl from '../../utils/getApiBaseUrl';
+// import getApiBaseUrl from '../../utils/getApiBaseUrl';
+import { useFavoriteService } from './use_favorite_service';
 
-export const ProductCard = ({
-  product,
-  variant,
-  isFavorite,
-  setIsFavorite,
-  setError,
-}) => {
+export const ProductCard = ({ product, variant }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
-  const productID = product.id;
-  const userId = 1;
+  const { isFavorite, updateFavoriteStatus } = useFavoriteService(product.id);
 
-  const addAsFavorite = async () => {
-    const body = {
-      userId,
-      productID,
-    };
-    try {
-      const response = await fetch(`${getApiBaseUrl()}/api/favorites`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to add product as favorite');
-      }
-    } catch (error) {
-      setError(error);
-    }
-  };
-  const removeFromFavorites = async (e) => {
-    try {
-      const response = await fetch(
-        `${getApiBaseUrl()}/api/favorites/${productID}`,
-        {
-          method: 'DELETE',
-        },
-      );
-
-      if (!response.ok) {
-        throw new Error('Failed to remove product from favorites');
-      }
-    } catch (error) {
-      setError(error);
-    }
-  };
-
-  const onAddToFavorites = async () => {
-    if (!isFavorite) {
-      addAsFavorite();
-      setIsFavorite(true);
-    } else {
-      removeFromFavorites();
-      setIsFavorite(false);
-    }
-  };
+  // eslint-disable-next-line no-console
+  console.log('product id= ', product.id);
 
   if (variant === 'small') {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
-          <button type="button" onClick={onAddToFavorites}>
+          <button type="button" onClick={updateFavoriteStatus}>
             <img
               src={
                 isFavorite
@@ -93,7 +42,6 @@ export const ProductCard = ({
           <div className="product-details-variant">
             <div className="product-image-variant">
               <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
-    
             </div>
 
             <div className="product-information-variant">
@@ -146,7 +94,7 @@ export const ProductCard = ({
       <div className="product-container">
         <div className="favorite-icon">
           Save to favorites
-          <button type="button" onClick={onAddToFavorites}>
+          <button type="button" onClick={updateFavoriteStatus}>
             <img
               src={
                 isFavorite
@@ -215,15 +163,9 @@ ProductCard.propTypes = {
     name: PropTypes.string,
   }),
   variant: PropTypes.string,
-  isFavorite: PropTypes.bool,
-  setIsFavorite: PropTypes.func,
-  setError: PropTypes.func,
 };
 
 ProductCard.defaultProps = {
   product: {},
   variant: null,
-  setIsFavorite: () => {},
-  isFavorite: false,
-  setError: () => {},
 };
