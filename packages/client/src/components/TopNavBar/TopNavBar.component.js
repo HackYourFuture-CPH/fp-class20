@@ -23,8 +23,12 @@ function TopNavBar() {
             <h2> Simply Spices</h2>
           </div>
           <div>
-            {/* eslint-disable-next-line */}
-            <div className="toggle-button" onClick={handleClick}>
+            <div
+              role="button"
+              onClick={handleClick}
+              className="toggle-button"
+              aria-hidden
+            >
               <span className="bar" />
               <span className="bar" />
               <span className="bar" />

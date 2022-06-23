@@ -13,25 +13,23 @@ export const FavouritePage = () => {
   const [loading, setIsLoading] = useState(false);
   const [isFavorite, setIsFavorite] = useState(true);
   const { userId } = useParams();
-  // eslint-disable-next-line no-console
-  console.log(userId);
 
   useEffect(() => {
     async function fetchFavourites() {
       try {
         setIsLoading(true);
-        const response = await fetch(`${getApiBaseUrl()}/api/favorites/${1}`);
+        const response = await fetch(
+          `${getApiBaseUrl()}/api/favorites/${userId}`,
+        );
         const favoritesJson = await response.json();
         setFavourites(favoritesJson);
         setIsLoading(false);
       } catch (error) {
-        // eslint-disable-next-line
-        console.log(error);
         setIsLoading(false);
+        throw error;
       }
     }
     fetchFavourites();
-    // eslint-disable-next-line
   }, [userId]);
 
   const favouriteItems = favourites.map((favourite) => (

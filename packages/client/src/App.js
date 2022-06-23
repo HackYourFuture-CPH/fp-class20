@@ -28,7 +28,7 @@ function App() {
           />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/favorites/:id" element={<FavouritePage />} />
+          <Route path="/favorites/:user_id" element={<FavouritePage />} />
           <Route path="*" element={<PageNotFoundPage />} />
         </Routes>
         <Footer />
