@@ -9,6 +9,7 @@ export const ProductCardModal = ({
   productName,
   count,
   price,
+  amountOfProducts,
 }) => {
   return (
     <div className="modal-whole-container">
@@ -28,7 +29,7 @@ export const ProductCardModal = ({
           <div>ADDED TO CART </div>
           <div>
             There are
-            <span className="count-item">{count}</span>
+            <span className="count-item">{amountOfProducts}</span>
             items in your Cart.
             <br />
             <span>Card subtotal: {count * price} DKK </span>
@@ -53,6 +54,7 @@ ProductCardModal.propTypes = {
   productName: PropTypes.string,
   count: PropTypes.number,
   price: PropTypes.number,
+  amountOfProducts: PropTypes.number,
 };
 
 ProductCardModal.defaultProps = {
@@ -61,4 +63,5 @@ ProductCardModal.defaultProps = {
   price: 350,
   productName: 'product name',
   count: 1,
+  amountOfProducts: 0,
 };

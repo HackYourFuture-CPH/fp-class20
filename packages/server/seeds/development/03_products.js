@@ -15,7 +15,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/chilipepper_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/chilipepper_powder.jpeg',
       stockAmount: 50,
     },
     {
@@ -29,7 +29,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/saffron_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/saffron_powder.jpeg',
       stockAmount: 50,
     },
     {
@@ -43,7 +43,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/caraway_seed.jpeg',
+      pictureUrl: '/assets/images/spices_square/caraway_seed.jpeg',
       stockAmount: 50,
     },
     {
@@ -57,7 +57,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/allspice.jpeg',
+      pictureUrl: '/assets/images/spices_square/allspice.jpeg',
       stockAmount: 50,
     },
     {
@@ -71,7 +71,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/black_cumin_seeds.jpeg',
+      pictureUrl: '/assets/images/spices_square/black_cumin_seeds.jpeg',
       stockAmount: 50,
     },
     {
@@ -85,7 +85,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/fenugreek_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/fenugreek_powder.jpeg',
       stockAmount: 50,
     },
     {
@@ -99,7 +99,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/goji_berry.jpeg',
+      pictureUrl: '/assets/images/spices_square/goji_berry.jpeg',
       stockAmount: 50,
     },
     {
@@ -113,7 +113,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/star_anise.jpeg',
+      pictureUrl: '/assets/images/spices_square/star_anise.jpeg',
       stockAmount: 50,
     },
     {
@@ -127,7 +127,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/dill_seed.jpeg',
+      pictureUrl: '/assets/images/spices_square/dill_seed.jpeg',
       stockAmount: 50,
     },
     {
@@ -141,7 +141,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/poppy_seed.jpeg',
+      pictureUrl: '/assets/images/spices_square/poppy_seed.jpeg',
       stockAmount: 50,
     },
     {
@@ -155,7 +155,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/dried_bay_leaves.jpeg',
+      pictureUrl: '/assets/images/spices_square/dried_bay_leaves.jpeg',
       stockAmount: 50,
     },
     {
@@ -169,7 +169,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/ginger_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/ginger_powder.jpeg',
       stockAmount: 50,
     },
     {
@@ -183,7 +183,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/cinnamon_sticks.jpeg',
+      pictureUrl: '/assets/images/spices_square/cinnamon_sticks.jpeg',
       stockAmount: 50,
     },
   ]);
