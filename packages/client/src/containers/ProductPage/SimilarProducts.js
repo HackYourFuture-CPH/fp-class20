@@ -4,7 +4,7 @@ import './ProductPage.Style.css';
 import Carousel from '../../components/Carousel/Carousel.component';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 
-export const SimilarProducts = ({ product, isFavorite, setIsFavorite }) => {
+export const SimilarProducts = ({ product }) => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -64,12 +64,8 @@ SimilarProducts.propTypes = {
     id: PropTypes.number,
     categoryName: PropTypes.string,
   }),
-  isFavorite: PropTypes.bool,
-  setIsFavorite: PropTypes.func,
 };
 
 SimilarProducts.defaultProps = {
   product: {},
-  isFavorite: false,
-  setIsFavorite: () => {},
 };

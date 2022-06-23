@@ -3,11 +3,20 @@ import { useState, useEffect, useCallback } from 'react';
 
 export function useFavoriteService(productId) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [error, setError] = useState('');
 
   // userId would be used if there was a login system
   const userId = 1;
 
-  const addAsFavorite1 = useCallback(async () => {
+  useEffect(() => {
+    fetch(`${getApiBaseUrl()}/api/favorites/1`)
+      .then((response) => response.json())
+      .then((data) => {
+        setIsFavorite(data.isFavorite);
+      });
+  }, [productId]);
+
+  const addAsFavorite = useCallback(async () => {
     const body = {
       userId,
       productId,
@@ -25,10 +34,9 @@ export function useFavoriteService(productId) {
         throw new Error('Failed to add product as favorite');
       }
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(err);
+      setError(err);
     }
-  }, [productId]); // Copy from current PR,
+  }, [productId]);
 
   const removeFromFavorite = useCallback(async () => {
     try {
@@ -43,38 +51,26 @@ export function useFavoriteService(productId) {
         throw new Error('Failed to remove product from favorites');
       }
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(err);
+      setError(err);
     }
-  }, [productId]); // Copy from current PR
-
-  useEffect(() => {
-    fetch(`${getApiBaseUrl()}/api/favorites/1`)
-      .then((response) => response.json())
-      .then((data) => {
-        setIsFavorite(data.isFavorite);
-        // eslint-disable-next-line no-console
-        console.log('this is hook data', data);
-      });
-    // eslint-disable-next-line no-console
-    console.log('this is own hook', productId);
   }, [productId]);
 
   const updateFavoriteStatus = useCallback(
     (shouldBeFavorite) => {
       if (shouldBeFavorite) {
-        addAsFavorite1();
-        setIsFavorite(false);
+        addAsFavorite();
+        setIsFavorite(true);
       } else {
         removeFromFavorite();
-        setIsFavorite(true);
+        setIsFavorite(false);
       }
     },
-    [addAsFavorite1, removeFromFavorite],
+    [addAsFavorite, removeFromFavorite],
   );
 
   return {
     isFavorite,
     updateFavoriteStatus,
+    error,
   };
 }
