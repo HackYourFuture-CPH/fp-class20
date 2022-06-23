@@ -33,10 +33,6 @@ export const LandingPage = () => {
     fetchData();
   }, [currentPage]);
 
-  const changePageByNumber = (num) => {
-    setCurrentPage(num);
-  };
-
   // Text object for sortBy( BreadCrumb).
   const bradCrumb = {
     sidebar: 'Simply Spices / All Spices ',
@@ -56,8 +52,7 @@ export const LandingPage = () => {
         <Pagination
           currentPage={currentPage}
           pageCount={numberOfPages}
-          onPageChange={changePageByNumber}
-          setCurrentPage={setCurrentPage}
+          onPageChange={setCurrentPage}
         />
       </div>
     </>
