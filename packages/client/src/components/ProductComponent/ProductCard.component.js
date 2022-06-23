@@ -38,7 +38,7 @@ export const ProductCard = ({ product, variant }) => {
           </button>
         </div>
         <a
-          href={`${product.id}`}
+          href={`/product/${product.id}`}
           target="_blank"
           rel="noreferrer"
           className="product-card-link"
