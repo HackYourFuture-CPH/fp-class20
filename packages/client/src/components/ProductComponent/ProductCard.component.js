@@ -22,16 +22,21 @@ export const ProductCard = ({ product, variant }) => {
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
           <button type="button" onClick={onAddToFavorites}>
-            <img
-              onClick={onAddToFavorites}
-              src={
-                isFavorite
-                  ? `/assets/vectors/vector_heart_full.svg`
-                  : `/assets/vectors/vector_heart_empty.svg`
-              }
-              alt="changing favourite status"
-              aria-hidden="true"
-            />
+            {isFavorite ? (
+              <img
+                onClick={onAddToFavorites}
+                src="/assets/vectors/vector_heart_full.svg"
+                alt="remove product from favorites"
+                aria-hidden="true"
+              />
+            ) : (
+              <img
+                onClick={onAddToFavorites}
+                src="/assets/vectors/vector_heart_empty.svg"
+                alt="add product to favorites"
+                aria-hidden="true"
+              />
+            )}
           </button>
         </div>
         <a
@@ -66,14 +71,17 @@ export const ProductCard = ({ product, variant }) => {
                   className="add-to-cart-button-variant"
                   onClick={() => {
                     toggleModal(true);
-                    updateCartState({
-                      id: product.id,
-                      quantity: count,
-                      img: product.pictureUrl,
-                      size: product.size,
-                      name: product.name,
-                      price: product.price,
-                    });
+                    updateCartState([
+                      ...cartState,
+                      {
+                        id: product.id,
+                        quantity: count,
+                        img: product.pictureUrl,
+                        size: product.size,
+                        name: product.name,
+                        price: product.price,
+                      },
+                    ]);
                   }}
                 />
               </div>
@@ -89,7 +97,6 @@ export const ProductCard = ({ product, variant }) => {
               productName={product.name}
               count={count}
               setCount={setCount}
-              cartState={cartState}
               price={product.price}
             />
           </div>
@@ -104,16 +111,21 @@ export const ProductCard = ({ product, variant }) => {
         <div className="favorite-icon">
           Save to favorites
           <button type="button" onClick={onAddToFavorites}>
-            <img
-              onClick={onAddToFavorites}
-              src={
-                isFavorite
-                  ? `/assets/vectors/vector_heart_full.svg`
-                  : `/assets/vectors/vector_heart_empty.svg`
-              }
-              alt="changing favourite status"
-              aria-hidden="true"
-            />
+            {isFavorite ? (
+              <img
+                onClick={onAddToFavorites}
+                src="/assets/vectors/vector_heart_full.svg"
+                alt="remove product from favorites"
+                aria-hidden="true"
+              />
+            ) : (
+              <img
+                onClick={onAddToFavorites}
+                src="/assets/vectors/vector_heart_empty.svg"
+                alt="add product to favorites"
+                aria-hidden="true"
+              />
+            )}
           </button>
         </div>
         <div className="product-details">
@@ -141,14 +153,17 @@ export const ProductCard = ({ product, variant }) => {
                 className="add-to-cart-button"
                 onClick={() => {
                   toggleModal(true);
-                  updateCartState({
-                    id: product.id,
-                    quantity: count,
-                    img: product.pictureUrl,
-                    size: product.size,
-                    name: product.name,
-                    price: product.price,
-                  });
+                  updateCartState([
+                    ...cartState,
+                    {
+                      id: product.id,
+                      quantity: count,
+                      img: product.pictureUrl,
+                      size: product.size,
+                      name: product.name,
+                      price: product.price,
+                    },
+                  ]);
                 }}
               />
             </div>
