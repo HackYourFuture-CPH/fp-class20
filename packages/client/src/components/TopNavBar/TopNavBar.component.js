@@ -49,15 +49,17 @@ function TopNavBar() {
             />{' '}
             <span className="favourites-text">Favourites </span>
           </div>
-          <div className="cart-container">
-            <img
-              className="cart-icon"
-              src="/assets/vectors/vector_cart.svg"
-              alt="cart-icon"
-            />
-            <span className="number">0</span>
-            <span className="cart-text">Cart</span>
-          </div>
+          <Link to="/order">
+            <div className="cart-container">
+              <img
+                className="cart-icon"
+                src="/assets/vectors/vector_cart.svg"
+                alt="cart-icon"
+              />
+              <span className="number">0</span>
+              <span className="cart-text">Cart</span>
+            </div>
+          </Link>
         </div>
       </div>
       {showMenu ? (

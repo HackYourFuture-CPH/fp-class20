@@ -1,8 +1,9 @@
 .shopping-cart {
   width: 60%;
   margin-inline: auto;
-  background: #867572;
+  background: #8675724d;
   color: #fff;
+  padding: 1rem 10px;
 }
 
 .shopping-cart > div {
@@ -106,8 +107,8 @@
   font-weight: bold;
 }
 
-.order-product-title {
-  margin: 0;
+.order-product-product-container .order-product-title {
+  text-align: start;
   font-size: 1.3rem;
 }
 

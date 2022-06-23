@@ -14,9 +14,6 @@ function ShoppingCart() {
     }
   }, []);
 
-  // eslint-disable-next-line no-console
-  console.log(products);
-
   const addProductToCart = (productId) => {
     setProducts(
       products.map((product) => {
@@ -55,7 +52,6 @@ function ShoppingCart() {
     <div className="shopping-cart">
       <div>
         <div className="shopping-cart-container">
-          <h1 className="shopping-cart-title">Shopping Cart</h1>
           <div className="shopping-cart-flex">
             <div>
               <p>Quantity</p>
