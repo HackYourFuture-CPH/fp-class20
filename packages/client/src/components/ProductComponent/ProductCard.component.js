@@ -9,7 +9,7 @@ import { ProductCardModal } from './ProductCardModal.component';
 export const ProductCard = ({ product, variant }) => {
   // CartStateContext should be imported when it is merged
   // I am just mockoing its value so it wont break things
-  const CartStateContext = 0;
+  const CartStateContext = React.createContext([]);
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
