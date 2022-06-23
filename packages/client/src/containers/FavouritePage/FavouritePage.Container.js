@@ -5,6 +5,7 @@ import { ProductCard } from '../../components/ProductComponent/ProductCard.compo
 import Preloader from '../../components/Preloader/Preloader.component';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 import { useParams } from 'react-router-dom';
+import { sortFunction } from '../../components/SortBy/Utils/sortFunction';
 
 const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
 
@@ -34,32 +35,15 @@ export const FavouritePage = () => {
     fetchFavourites();
   }, [userId]);
 
-  const favouriteItems = favourites
-    // eslint-disable-next-line
-    .sort((a, b) => {
-      if (sort === '') {
-        return 0;
-      }
-      if (sort === 'alphabetically') {
-        return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1;
-      }
-      if (sort === 'Lowest price') {
-        return Number(a.price) > Number(b.price) ? 1 : -1;
-      }
-      if (sort === 'New arrivals') {
-        return a.createdAt > b.createdAt ? -1 : 1;
-      }
-      return a.name < b.className ? -1 : 1;
-    })
-    .map((favourite) => (
-      <ProductCard
-        className="favourite-item"
-        variant="small"
-        product={favourite}
-        isFavorite={isFavorite}
-        setIsFavorite={setIsFavorite}
-      />
-    ));
+  const favouriteItems = sortFunction(favourites, sort).map((favourite) => (
+    <ProductCard
+      className="favourite-item"
+      variant="small"
+      product={favourite}
+      isFavorite={isFavorite}
+      setIsFavorite={setIsFavorite}
+    />
+  ));
   return (
     <>
       <SortBy textObj={textObj} sort={sort} setSort={setSort} />

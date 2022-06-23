@@ -23,16 +23,15 @@ function TopNavBar() {
             <h2> Simply Spices</h2>
           </div>
           <div>
-            <div
-              role="button"
+            <button
+              type="button"
               onClick={handleClick}
               className="toggle-button"
-              aria-hidden
             >
               <span className="bar" />
               <span className="bar" />
               <span className="bar" />
-            </div>
+            </button>
           </div>
         </div>
 
