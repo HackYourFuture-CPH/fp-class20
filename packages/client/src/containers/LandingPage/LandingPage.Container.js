@@ -14,14 +14,9 @@ export const LandingPage = () => {
 
   const [numberOfPages] = useState(2);
 
-
   /* Hard coded number, due to not receiving the total number of products from DB. 
    https://hackyourfuture-dk.atlassian.net/browse/CLASS20-120?atlOrigin=eyJpIjoiMzYzMTQ0MmFhZDNkNDk1OTgyYjE2M2Y2MTA4YTg2NWEiLCJwIjoiaiJ9
    */
-
-
-  const [numberOfPages] = useState(2);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,7 +37,6 @@ export const LandingPage = () => {
 
     fetchData();
   }, [currentPage]);
-
 
   // Text object for sortBy( BreadCrumb).
   const bradCrumb = {
