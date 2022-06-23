@@ -98,11 +98,13 @@ body {
   margin-top: 2rem;
   margin-bottom: 0.25rem;
   display: flex;
+  align-items: center;
 }
 
 .counter-button-variant {
   margin-right: 1.5rem;
   width: 10%;
+  padding: 1.5em;
 }
 
 .add-to-cart-button-variant {
@@ -132,6 +134,7 @@ body {
 
   .counter-cart-button-variant {
     margin-top: 1.25rem;
+    align-items: flex-start;
   }
 
   .favorite-icon-variant {
@@ -163,6 +166,7 @@ body {
   .counter-button-variant {
     margin-right: 1.75rem;
     background-color: transparent;
+    padding: 0;
   }
 
   .add-to-cart-button-variant {
