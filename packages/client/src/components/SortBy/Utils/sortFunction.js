@@ -1,5 +1,5 @@
 export const sortFunction = (products, sort) => {
-  return products.sort((a, b) => {
+  return [...products].sort((a, b) => {
     if (sort === '') {
       return 0;
     }
