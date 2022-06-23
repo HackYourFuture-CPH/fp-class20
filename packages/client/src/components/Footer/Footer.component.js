@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.styles.css';
-import { Corporate } from './Corporate/Corporate.component';
+import { AboutUs } from './About/AboutUs.component';
 import { Contact } from './Contact/Contact.component';
 import { Map } from './Map/Map.component';
 import { Address } from './Address/Address.component';
@@ -10,7 +10,7 @@ export const Footer = () => {
     <div className="whole-footer-container">
       <div className="footer-up-background">
         <div className="footer-up-container">
-          <Corporate />
+          <AboutUs />
           <Contact />
           <Map />
           <Address />

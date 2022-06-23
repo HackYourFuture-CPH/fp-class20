@@ -47,13 +47,13 @@ export const SimilarProducts = ({ product }) => {
   if (error) {
     return <p> {error} </p>;
   }
-  return (
-    similarProducts.length !== 1 && (
-      <>
-        <h1 className="title-similar-products">Similar products:</h1>
-        <Carousel items={similarProducts} show={3} className="carousel" />
-      </>
-    )
+  return similarProducts.length > 0 ? (
+    <>
+      <h1 className="title-similar-products">Similar products:</h1>
+      <Carousel items={similarProducts} show={3} className="carousel" />
+    </>
+  ) : (
+    <div />
   );
 };
 

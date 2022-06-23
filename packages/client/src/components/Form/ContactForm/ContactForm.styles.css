@@ -34,12 +34,13 @@
 .contact-form-simply-spices-text {
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
-  font-size: 3rem;
+  font-size: 4.5rem;
   letter-spacing: -0.02em;
   color: rgba(255 255 255 / 80%);
   margin-top: 1.4rem;
   margin-bottom: 0.2rem;
-  transform: scale(2.2);
+
+  /* transform: scale(2.2); */
   font-weight: 100;
 }
 
@@ -54,8 +55,6 @@
   width: 100%;
   margin: 0 auto;
   padding: 1rem 0;
-
-  /* font-size: 1.5rem; */
   font-size: 1.25rem;
   line-height: 1.7rem;
 }
@@ -133,8 +132,11 @@ input:focus {
 
 .ready-button {
   background: #53742a;
-  border: 1px solid #fff;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  color: #fff;
   width: 15rem;
+  border: 1px solid #fff;
 }
 
 .email-link {
@@ -164,11 +166,11 @@ input:focus {
   }
 
   .contact-form-simply-spices-text {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 
   .contact-head > img {
-    width: 70%;
+    width: 60%;
   }
 
   .form-row {
@@ -206,6 +208,12 @@ input:focus {
     align-items: flex-start;
     font-size: x-small;
   }
+
+  .ready-button,
+  .normal-button {
+    height: 2.2rem;
+    font-size: x-small;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -216,8 +224,12 @@ input:focus {
   }
 
   .contact-form-simply-spices-text {
-    width: 70%;
     margin: 0 auto;
     word-wrap: break-word;
+    font-size: 3rem;
+  }
+
+  .contact-head > img {
+    width: 50%;
   }
 }
