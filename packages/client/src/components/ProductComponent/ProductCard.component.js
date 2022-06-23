@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
-import { CartStateContext } from '../../context/CartStateContext';
+import { CartStateContext } from '../context/CartStateContext';
 
 export const ProductCard = ({ product, variant }) => {
   const [count, setCount] = useState(1);
@@ -24,14 +24,12 @@ export const ProductCard = ({ product, variant }) => {
           <button type="button" onClick={onAddToFavorites}>
             {isFavorite ? (
               <img
-                onClick={onAddToFavorites}
                 src="/assets/vectors/vector_heart_full.svg"
                 alt="remove product from favorites"
                 aria-hidden="true"
               />
             ) : (
               <img
-                onClick={onAddToFavorites}
                 src="/assets/vectors/vector_heart_empty.svg"
                 alt="add product to favorites"
                 aria-hidden="true"
@@ -96,6 +94,7 @@ export const ProductCard = ({ product, variant }) => {
               productImage={product.pictureUrl}
               productName={product.name}
               count={count}
+              amountOfProducts={cartState.length}
               setCount={setCount}
               price={product.price}
             />
@@ -113,14 +112,11 @@ export const ProductCard = ({ product, variant }) => {
           <button type="button" onClick={onAddToFavorites}>
             {isFavorite ? (
               <img
-                onClick={onAddToFavorites}
                 src="/assets/vectors/vector_heart_full.svg"
                 alt="remove product from favorites"
-                aria-hidden="true"
               />
             ) : (
               <img
-                onClick={onAddToFavorites}
                 src="/assets/vectors/vector_heart_empty.svg"
                 alt="add product to favorites"
                 aria-hidden="true"
@@ -178,6 +174,7 @@ export const ProductCard = ({ product, variant }) => {
               count={count}
               setCount={setCount}
               price={product.price}
+              amountOfProducts={cartState.length}
             />
           </div>
         )}
