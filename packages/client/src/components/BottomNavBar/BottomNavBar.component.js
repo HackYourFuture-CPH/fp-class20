@@ -71,7 +71,7 @@ function BottomNavBar() {
       <div className={displayMode}>
         <div className="down-container">
           <div>
-            <span className="main-heading">Browser spices by plant part</span>
+            <span className="main-heading">Browse spices by plant part</span>
 
             <div className="items-container">
               <div className="left-container">
@@ -84,7 +84,9 @@ function BottomNavBar() {
                       </button>
                     </Link>
                   </span>
-                  <p>(clove, caper, saffron and more)</p>
+                  <p className="spices-menu-text">
+                    (clove, caper, saffron and more)
+                  </p>
                 </div>
 
                 <div className="block-height">
@@ -92,11 +94,13 @@ function BottomNavBar() {
                     {' '}
                     <Link to="/category/seed">
                       <button type="button" onClick={seed}>
-                        Seed{' '}
+                        SEED{' '}
                       </button>
                     </Link>
                   </span>
-                  <p>(cummin, coriander,fennel, poppy and more)</p>
+                  <p className="spices-menu-text">
+                    (cummin, coriander,fennel, poppy and more)
+                  </p>
                 </div>
                 <div className="block-height">
                   <span className="spice-names">
@@ -107,7 +111,9 @@ function BottomNavBar() {
                       </button>
                     </Link>
                   </span>
-                  <p>(chili, cardamon, black pepper and more)</p>
+                  <p className="spices-menu-text">
+                    (chili, cardamon, black pepper and more)
+                  </p>
                 </div>
               </div>
               <div className="right-container">
@@ -120,7 +126,9 @@ function BottomNavBar() {
                       </button>{' '}
                     </Link>
                   </span>
-                  <p>(turmeric, ginger, cinnamon and more)</p>
+                  <p className="spices-menu-text">
+                    (turmeric, ginger, cinnamon and more)
+                  </p>
                 </div>
 
                 <div className="block-height">
@@ -132,7 +140,9 @@ function BottomNavBar() {
                       </button>
                     </Link>
                   </span>
-                  <p>(mint, oregano, thyme, bayleaf and more herbs)</p>
+                  <p className="spices-menu-text">
+                    (mint, oregano, thyme, bayleaf and more herbs)
+                  </p>
                 </div>
                 <div className="show-all-spices  block-height">
                   <span className="spice-names">

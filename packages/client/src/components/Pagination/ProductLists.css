@@ -8,7 +8,6 @@
 .product-lists {
   list-style: none;
   background-color: #403b37;
-  width: 1224px;
   display: flex;
   justify-content: center;
   flex-flow: wrap;

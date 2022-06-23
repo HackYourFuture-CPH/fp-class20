@@ -34,12 +34,13 @@
 .contact-form-simply-spices-text {
   text-align: center;
   font-family: 'Fredericka the Great', cursive;
-  font-size: 3rem;
+  font-size: 4.5rem;
   letter-spacing: -0.02em;
   color: rgba(255 255 255 / 80%);
   margin-top: 1.4rem;
   margin-bottom: 0.2rem;
-  transform: scale(2.2);
+
+  /* transform: scale(2.2); */
   font-weight: 100;
 }
 
@@ -165,11 +166,11 @@ input:focus {
   }
 
   .contact-form-simply-spices-text {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .contact-head > img {
-    width: 70%;
+    width: 60%;
   }
 
   .form-row {
@@ -223,9 +224,12 @@ input:focus {
   }
 
   .contact-form-simply-spices-text {
-    width: 70%;
     margin: 0 auto;
     word-wrap: break-word;
-    font-size: 2rem;
+    font-size: 3rem;
+  }
+
+  .contact-head > img {
+    width: 50%;
   }
 }

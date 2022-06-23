@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
 
 function TopNavBar() {
@@ -22,12 +23,15 @@ function TopNavBar() {
             <h2>Simply Spices</h2>
           </div>
           <div>
-            {/* eslint-disable-next-line */}
-            <div className="toggle-button" onClick={handleClick}>
+            <button
+              type="button"
+              onClick={handleClick}
+              className="toggle-button"
+            >
               <span className="bar" />
               <span className="bar" />
               <span className="bar" />
-            </div>
+            </button>
           </div>
         </div>
 
@@ -46,7 +50,9 @@ function TopNavBar() {
               src="/assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
-            <span className="favourites-text">Favourites </span>
+            <Link to="/favorites/1">
+              <span className="favourites-text">Favourites </span>
+            </Link>
           </div>
           <div className="cart-container">
             <img
