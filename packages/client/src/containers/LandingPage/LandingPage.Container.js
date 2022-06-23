@@ -6,11 +6,13 @@ import Preloader from '../../components/Preloader/Preloader.component';
 import { LandingPageSlogan } from '../../components/LandingPageUpperSection/LandingPageSlogan';
 import SortBy from '../../components/SortBy/SortBy.component';
 import { ProductsList } from './ProductsList';
+import { sortFunction } from '../../components/SortBy/Utils/sortFunction';
 
 export const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [sort, setSort] = useState('');
   const numberOfPages = 2;
 
   /* Hard coded number, due to not receiving the total number of products from DB. 
@@ -50,9 +52,9 @@ export const LandingPage = () => {
       <div className="landing-page-header">
         <LandingPageSlogan />
       </div>
-      <SortBy textObj={bradCrumb} />
+      <SortBy textObj={bradCrumb} sort={sort} setSort={setSort} />
       <div id="listed-products">
-        <ProductsList products={products} />
+        <ProductsList products={sortFunction(products, sort)} />
         <Pagination
           currentPage={currentPage}
           pageCount={numberOfPages}
