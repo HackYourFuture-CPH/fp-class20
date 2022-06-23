@@ -11,11 +11,14 @@ export const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const numberOfPages = 2;
 
   /* Hard coded number, due to not receiving the total number of products from DB. 
    https://hackyourfuture-dk.atlassian.net/browse/CLASS20-120?atlOrigin=eyJpIjoiMzYzMTQ0MmFhZDNkNDk1OTgyYjE2M2Y2MTA4YTg2NWEiLCJwIjoiaiJ9
    */
+
+
+  const [numberOfPages] = useState(2);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +26,10 @@ export const LandingPage = () => {
       const response = await fetch(
         `${getApiBaseUrl()}/api/products?pageIndex=${currentPage - 1}`,
       );
+
+      if (!response.ok) {
+        throw Error('something went wrong, please try again later');
+      }
 
       const fetchedProducts = await response.json();
 
@@ -36,6 +43,7 @@ export const LandingPage = () => {
   const changePageByNumber = (num) => {
     setCurrentPage(num);
   };
+
 
   // Text object for sortBy( BreadCrumb).
   const bradCrumb = {
