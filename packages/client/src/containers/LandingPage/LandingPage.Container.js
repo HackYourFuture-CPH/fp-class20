@@ -12,6 +12,9 @@ export const LandingPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const [numberOfPages] = useState(2);
+
+
   /* Hard coded number, due to not receiving the total number of products from DB. 
    https://hackyourfuture-dk.atlassian.net/browse/CLASS20-120?atlOrigin=eyJpIjoiMzYzMTQ0MmFhZDNkNDk1OTgyYjE2M2Y2MTA4YTg2NWEiLCJwIjoiaiJ9
    */
@@ -40,15 +43,11 @@ export const LandingPage = () => {
     fetchData();
   }, [currentPage]);
 
-  const changePageByNumber = (num) => {
-    setCurrentPage(num);
-  };
-
 
   // Text object for sortBy( BreadCrumb).
   const bradCrumb = {
-    sidebar: 'Simply Spices / Spices by plant part / Berries and Fruit',
-    main: 'Berries and Fruit',
+    sidebar: 'Simply Spices / All Spices ',
+    main: 'All Spices',
   };
 
   if (loading) return <Preloader />;
@@ -64,7 +63,7 @@ export const LandingPage = () => {
         <Pagination
           currentPage={currentPage}
           pageCount={numberOfPages}
-          onPageChange={changePageByNumber}
+          onPageChange={setCurrentPage}
         />
       </div>
     </>
