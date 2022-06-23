@@ -11,7 +11,7 @@ export const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [numberOfPages, setNumberOfPages] = useState(2);
+  const numberOfPages = 2;
 
   /* Hard coded number, due to not receiving the total number of products from DB. 
    https://hackyourfuture-dk.atlassian.net/browse/CLASS20-120?atlOrigin=eyJpIjoiMzYzMTQ0MmFhZDNkNDk1OTgyYjE2M2Y2MTA4YTg2NWEiLCJwIjoiaiJ9
