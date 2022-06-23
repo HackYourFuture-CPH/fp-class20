@@ -1,3 +1,37 @@
-.landing-page-container {
-  color: #687808;
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+.landing-page-header {
+  background: url('../../../public/assets/images/hero_image.png');
+  background-size: cover;
+  min-height: fit-content;
+  color: antiquewhite;
+  padding: 3em;
+}
+
+/* .slogan-title {
+  font-size: 5rem;
+  font-family: 'Fredericka the Great', cursive;
+  margin-block-end: 0.5em;
+} */
+
+/* .slogan-p {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-top: 1em;
+  color: white;
+  text-shadow: 2px 2px 2px #000;
+  margin-block: auto;
+} */
+
+/* .slogan-button {
+  display: flex;
+  justify-content: center;
+} */
