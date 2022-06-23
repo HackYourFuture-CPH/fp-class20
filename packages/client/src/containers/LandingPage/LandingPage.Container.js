@@ -13,7 +13,7 @@ export const LandingPage = () => {
    https://hackyourfuture-dk.atlassian.net/browse/CLASS20-120?atlOrigin=eyJpIjoiMzYzMTQ0MmFhZDNkNDk1OTgyYjE2M2Y2MTA4YTg2NWEiLCJwIjoiaiJ9
    */
 
-  const [numberOfPages, setNumberOfPages] = useState(2);
+  const [numberOfPages] = useState(2);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,9 @@ export const LandingPage = () => {
       const response = await fetch(
         `${getApiBaseUrl()}/api/products?pageIndex=${currentPage - 1}`,
       );
-
+      if (!response.ok) {
+        throw Error('something went wrong, please try again later');
+      }
       const fetchedProducts = await response.json();
 
       setProducts(fetchedProducts);
@@ -43,6 +45,7 @@ export const LandingPage = () => {
         currentPage={currentPage}
         pageCount={numberOfPages}
         onPageChange={changePageByNumber}
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );

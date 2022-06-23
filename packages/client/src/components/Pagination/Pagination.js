@@ -2,12 +2,12 @@ import React from 'react';
 import './ProductLists.css';
 import PropTypes from 'prop-types';
 
-function Pagination({ currentPage, pageCount, onPageChange }) {
+function Pagination({ currentPage, pageCount, onPageChange, setCurrentPage }) {
   const pageNumbers = [];
 
   /* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 
-  for (let i = 1; i <= 2; i++) {
+  for (let i = 1; i <= pageCount; i++) {
     pageNumbers.push(i);
   }
 
@@ -37,7 +37,7 @@ function Pagination({ currentPage, pageCount, onPageChange }) {
         />
       </button>
       {pageNumbers.map((number) => (
-        <button type="button" onClick={() => onPageChange(number)}>
+        <button type="button" onClick={() => setCurrentPage(number)}>
           <p
             key={number}
             className={
@@ -63,12 +63,14 @@ Pagination.propTypes = {
   pageCount: PropTypes.number,
   onPageChange: PropTypes.func,
   currentPage: PropTypes.number,
+  setCurrentPage: PropTypes.func,
 };
 
 Pagination.defaultProps = {
   pageCount: 2,
   currentPage: 1,
   onPageChange: undefined,
+  setCurrentPage: undefined,
 };
 
 export default Pagination;
