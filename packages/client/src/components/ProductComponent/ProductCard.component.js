@@ -26,13 +26,11 @@ export const ProductCard = ({ product, variant }) => {
               <img
                 src="/assets/vectors/vector_heart_full.svg"
                 alt="remove product from favorites"
-                aria-hidden="true"
               />
             ) : (
               <img
                 src="/assets/vectors/vector_heart_empty.svg"
                 alt="add product to favorites"
-                aria-hidden="true"
               />
             )}
           </button>
@@ -119,7 +117,6 @@ export const ProductCard = ({ product, variant }) => {
               <img
                 src="/assets/vectors/vector_heart_empty.svg"
                 alt="add product to favorites"
-                aria-hidden="true"
               />
             )}
           </button>
