@@ -16,14 +16,22 @@
   text-align: center;
 }
 
-.simple-spices-heading {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 3rem;
+.heading-section > img {
+  width: 60%;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+.simple-spices-heading-feedback {
   font-style: normal;
+  text-align: center;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 4.5rem;
   letter-spacing: -0.02em;
   color: rgba(255 255 255 / 80%);
   margin-top: 1.4rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.2rem;
+  font-weight: 100;
 }
 
 .main-slogan-vector-style {
@@ -60,6 +68,12 @@
   * {
     font-size: 1rem;
   }
+
+  .heading-section > img {
+    width: 50%;
+    padding: 1rem 0;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -67,6 +81,10 @@
     box-sizing: border-box;
     width: 400px;
     margin: 0 auto;
+  }
+
+  .simple-spices-heading-feedback {
+    font-size: 4rem;
   }
 
   body {
@@ -78,8 +96,25 @@
     font-size: 0.5rem;
   }
 
-  .vector-logo-underline {
-    transform: scale(1.8);
+  .heading-section > img {
+    width: 40%;
+    padding: 1rem 0;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .feedback-message-section {
+    width: 90%;
+  }
+
+  .simple-spices-heading-feedback {
+    font-size: 2rem;
+  }
+
+  .heading-section > img {
+    width: 40%;
+    padding: 1rem 0;
     margin: 0 auto;
   }
 }

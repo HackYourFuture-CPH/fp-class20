@@ -7,7 +7,7 @@ export const ContactUsFeedback = () => {
     <div className="feedback-section">
       <div className="feedback-message-section">
         <div className="heading-section">
-          <h1 className="simple-spices-heading">Simply Spices</h1>
+          <h1 className="simple-spices-heading-feedback">Simply Spices</h1>
           <img
             src="assets/vectors/vector_logo_underline.svg"
             alt="logo style"

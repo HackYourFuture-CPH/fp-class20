@@ -8,20 +8,20 @@ exports.seed = async function (knex) {
     {
       id: 1,
       categoryId: 2,
-      name: 'chili pepper powder',
+      name: 'Chili Pepper powder',
       description:
         'Ancho chile powder is made from sweet and earthy chilies, that are mildly hot.',
       price: 50.0,
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/chilipepper_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/chilipepper_powder.jpeg',
       stockAmount: 50,
     },
     {
       id: 2,
       categoryId: 1,
-      name: 'saffron powder',
+      name: 'Saffron powder',
       description:
         'Our Superior Grade Spanish Saffron is grown in La Mancha, Spain. Saffron is expensive because it must be harvested by hand.',
 
@@ -29,13 +29,13 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/saffron_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/saffron_powder.jpeg',
       stockAmount: 50,
     },
     {
       id: 3,
       categoryId: 2,
-      name: 'caraway seed',
+      name: 'Caraway seed',
       description:
         'The Dutch love Caraway Seeds in Leyden cheese. Danes love them in akvavit.',
 
@@ -43,13 +43,13 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/caraway_seed.jpeg',
+      pictureUrl: '/assets/images/spices_square/caraway_seed.jpeg',
       stockAmount: 50,
     },
     {
       id: 4,
       categoryId: 2,
-      name: 'allspice',
+      name: 'Allspice',
       description:
         'Jamaicans take great pride in their world-famous allspice, harvested from 40-foot pimenta trees.',
 
@@ -57,13 +57,13 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/allspice.jpeg',
+      pictureUrl: '/assets/images/spices_square/allspice.jpeg',
       stockAmount: 50,
     },
     {
       id: 5,
       categoryId: 3,
-      name: 'black cumin seeds',
+      name: 'Black Cumin seeds',
       description:
         'Whole cumin seeds are perfect on top of salads or steamed rice. The true flavors come out.',
 
@@ -71,7 +71,7 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/black_cumin_seeds.jpeg',
+      pictureUrl: '/assets/images/spices_square/black_cumin_seeds.jpeg',
       stockAmount: 50,
     },
     {
@@ -85,13 +85,13 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/fenugreek_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/fenugreek_powder.jpeg',
       stockAmount: 50,
     },
     {
       id: 7,
       categoryId: 2,
-      name: 'goji berry',
+      name: 'Goji Berry',
       description:
         'Goji berry is made from sweet and earthy chilies, that are mildly hot.',
 
@@ -99,13 +99,13 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/goji_berry.jpeg',
+      pictureUrl: '/assets/images/spices_square/goji_berry.jpeg',
       stockAmount: 50,
     },
     {
       id: 8,
       categoryId: 3,
-      name: 'star anise',
+      name: 'Star Anise',
       description:
         'Gathered at their peak under the Andalusian sun, our Anise Seeds lend a fleeting and floral scent reminiscent.',
 
@@ -113,13 +113,13 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/star_anise.jpeg',
+      pictureUrl: '/assets/images/spices_square/star_anise.jpeg',
       stockAmount: 50,
     },
     {
       id: 9,
       categoryId: 3,
-      name: 'dill seed',
+      name: 'Dill seed',
       description:
         'The grassy flavor of Dill Seeds accent Russian and Caucasian dishes.',
 
@@ -127,13 +127,13 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/dill_seed.jpeg',
+      pictureUrl: '/assets/images/spices_square/dill_seed.jpeg',
       stockAmount: 50,
     },
     {
       id: 10,
       categoryId: 3,
-      name: 'poppy seeds',
+      name: 'Poppy seeds',
       description:
         'Mixed into muffins or ground into paste for strudel, dough and blue poppy seeds have worked.',
 
@@ -141,13 +141,13 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/poppy_seed.jpeg',
+      pictureUrl: '/assets/images/spices_square/poppy_seed.jpeg',
       stockAmount: 50,
     },
     {
       id: 11,
       categoryId: 5,
-      name: 'dried bay leaves',
+      name: 'Dried Bay leaves',
       description:
         'The Oracle of Delphi chewed fresh laurel leaves for divine inspiration. When dried.',
 
@@ -155,13 +155,13 @@ exports.seed = async function (knex) {
       size: '100',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/dried_bay_leaves.jpeg',
+      pictureUrl: '/assets/images/spices_square/dried_bay_leaves.jpeg',
       stockAmount: 50,
     },
     {
       id: 12,
       categoryId: 4,
-      name: 'powdered ginger',
+      name: 'Ginger powder',
       description:
         'Ginger adds zing to almost anything. Most dried ginger in the U.S. comes from India.',
 
@@ -169,13 +169,13 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/ginger_powder.jpeg',
+      pictureUrl: '/assets/images/spices_square/ginger_powder.jpeg',
       stockAmount: 50,
     },
     {
       id: 13,
       categoryId: 4,
-      name: 'cinnamon sticks',
+      name: 'Cinnamon sticks',
       description:
         'If there’s one spice you must try from The Spice House, it’s cinnamon.',
 
@@ -183,7 +183,7 @@ exports.seed = async function (knex) {
       size: '250',
       status: 'inStock',
       createdAt: knex.fn.now(),
-      pictureUrl: 'assets/images/spices_square/cinnamon_sticks.jpeg',
+      pictureUrl: '/assets/images/spices_square/cinnamon_sticks.jpeg',
       stockAmount: 50,
     },
   ]);

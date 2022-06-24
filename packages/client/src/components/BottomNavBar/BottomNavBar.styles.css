@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Work+Sans:wght@100&display=swap');
 
-.whole-container {
+.whole-container-push-element-down {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgb(35 28 22 / 100%), rgb(40 28 22/ 90%));
+  height: 4rem;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.whole-container-not-push-element-down {
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -9,8 +20,9 @@
     rgba(35 28 22 /45%) 78.65%
   );
   height: 4rem;
-  padding: 0;
   margin: 0 auto;
+  width: 100%;
+  padding-bottom: 445px;
 }
 
 .up-container {
@@ -60,6 +72,21 @@
   line-height: 2rem;
 }
 
+.spice-names button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: inherit;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.spices-menu-text {
+  margin-top: 0.5rem;
+}
+
 .whole-down-container {
   background-color: rgba(35 28 22 85%);
 }
@@ -67,6 +94,7 @@
 .block-height {
   line-height: 0.01rem;
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .down-container {
@@ -84,12 +112,14 @@
   display: inline-block;
   line-height: 1.5rem;
   text-align: left;
+  margin-left: -62%;
 }
 
 .items-container {
   display: flex;
   flex-direction: row;
   padding-bottom: 1.25rem;
+  justify-content: space-evenly;
 }
 
 .left-container {
@@ -97,7 +127,6 @@
 }
 
 p {
-  padding-bottom: 0.5rem;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   font-weight: 300;
@@ -113,6 +142,14 @@ p {
     box-sizing: border-box;
   }
 
+  .whole-container-not-push-element-down {
+    padding-bottom: 520px;
+  }
+
+  .main-heading {
+    margin-left: -45%;
+  }
+
   .arrow-bottom-bar {
     width: 1.5rem;
   }
@@ -122,13 +159,45 @@ p {
   }
 }
 
+@media screen and (max-width: 860px) {
+  .up-container,
+  .down-container {
+    width: 400px;
+    box-sizing: border-box;
+  }
+
+  .main-heading {
+    margin-left: -30%;
+  }
+
+  .whole-container-not-push-element-down {
+    padding-right: 1rem;
+    padding-bottom: 640px;
+    padding-left: 0;
+  }
+
+  .display {
+    padding-left: 0%;
+    padding-right: 2%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
     padding: 0 !important;
     background: none !important;
   }
 
-  .whole-container {
+  .main-heading {
+    margin-left: 0;
+    font-size: 1.25rem;
+  }
+
+  .whole-container-not-push-element-down {
+    padding-bottom: 300px;
+  }
+
+  .whole-container-push-element-down {
     height: auto;
     width: 100%;
     box-sizing: border-box;
@@ -136,6 +205,7 @@ p {
 
   .display {
     padding-left: 10%;
+    padding-right: 5%;
   }
 
   .up-container,
@@ -144,8 +214,10 @@ p {
   }
 
   .items-container {
-    flex-direction: column;
+    flex-direction: row;
     box-sizing: border-box;
+    justify-content: space-evenly;
+    padding-right: 2rem;
   }
 
   .spices-button {
@@ -153,10 +225,6 @@ p {
     padding-right: 0.2rem;
     padding-left: 2rem;
     padding-top: 0;
-  }
-
-  .main-heading {
-    font-size: 1.25rem;
   }
 
   p {
@@ -178,6 +246,10 @@ p {
   .down-container {
     width: 375px;
     box-sizing: border-box;
+  }
+
+  .items-container {
+    flex-direction: column;
   }
 
   .spices-button {

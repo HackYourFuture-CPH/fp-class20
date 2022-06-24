@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
 
 function TopNavBar() {
@@ -19,15 +20,20 @@ function TopNavBar() {
       <div className="top-nav-main-container">
         <div className="logo-container">
           <div>
-            <h2> Simply Spices</h2>
+            <Link to="/">
+              <h2>Simply Spices</h2>
+            </Link>
           </div>
           <div>
-            {/* eslint-disable-next-line */}
-            <div className="toggle-button" onClick={handleClick}>
+            <button
+              type="button"
+              onClick={handleClick}
+              className="toggle-button"
+            >
               <span className="bar" />
               <span className="bar" />
               <span className="bar" />
-            </div>
+            </button>
           </div>
         </div>
 
@@ -35,7 +41,7 @@ function TopNavBar() {
           <div className="sign-in-container">
             <img
               className="sign-in-icon"
-              src="assets/vectors/vector_sign_in.svg"
+              src="/assets/vectors/vector_sign_in.svg"
               alt="signin-icon"
             />
             <span className="sign-in-text"> Sign in</span>
@@ -43,15 +49,17 @@ function TopNavBar() {
           <div className="favourite-container">
             <img
               className="favourite-icon"
-              src="assets/vectors/vector_heart_empty.svg"
+              src="/assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
-            <span className="favourites-text">Favourites </span>
+            <Link to="/favorites/1">
+              <span className="favourites-text">Favourites </span>
+            </Link>
           </div>
           <div className="cart-container">
             <img
               className="cart-icon"
-              src="assets/vectors/vector_cart.svg"
+              src="/assets/vectors/vector_cart.svg"
               alt="cart-icon"
             />
             <span className="number">0</span>
@@ -65,7 +73,7 @@ function TopNavBar() {
           <div className="sign-in-container">
             <img
               className="sign-in-icon"
-              src="assets/vectors/vector_sign_in.svg"
+              src="/assets/vectors/vector_sign_in.svg"
               alt="signin-icon"
             />
             <span className="sign-in-text"> Sign in</span>
@@ -73,7 +81,7 @@ function TopNavBar() {
           <div className="favourite-container">
             <img
               className="favourite-icon"
-              src="assets/vectors/vector_heart_empty.svg"
+              src="/assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
             />{' '}
             <span className="favourites-text">Favourites </span>
@@ -81,7 +89,7 @@ function TopNavBar() {
           <div className="cart-container">
             <img
               className="cart-icon"
-              src="assets/vectors/vector_cart.svg"
+              src="/assets/vectors/vector_cart.svg"
               alt="cart-icon"
             />
             <span className="number">0</span>

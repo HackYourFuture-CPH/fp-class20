@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SortBy.styles.css';
 import PropTypes from 'prop-types';
 
-const SortBy = ({ textObj }) => {
+const SortBy = ({ textObj, setSort, sort }) => {
   const [arrow, setArrow] = useState(true);
 
   return (
@@ -14,19 +14,21 @@ const SortBy = ({ textObj }) => {
           <div className="sort-by-select">
             <div>
               <select
+                value={sort}
                 onClick={() => setArrow(!arrow)}
+                onChange={(e) => setSort(e.target.value)}
                 className="select-sort-by"
                 style={
                   arrow
                     ? {
-                        backgroundImage: `url('assets/vectors/vector_arrow_down.svg')`,
+                        backgroundImage: `url(/assets/vectors/vector_arrow_down.svg')`,
                       }
                     : {
-                        backgroundImage: `url('assets/vectors/vector_arrow_up.svg')`,
+                        backgroundImage: `url(/assets/vectors/vector_arrow_up.svg')`,
                       }
                 }
               >
-                <option disabled selected>
+                <option value="" disabled selected>
                   SORT BY :
                 </option>
                 <option value="alphabetically">A - Z</option>
@@ -45,8 +47,12 @@ export default SortBy;
 
 SortBy.propTypes = {
   textObj: PropTypes.func,
+  setSort: PropTypes.func,
+  sort: PropTypes.string,
 };
 
 SortBy.defaultProps = {
   textObj: {},
+  setSort: () => {},
+  sort: '',
 };

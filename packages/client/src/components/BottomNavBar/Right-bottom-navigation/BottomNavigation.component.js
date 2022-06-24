@@ -1,15 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './BottomNavigation.styles.css';
 
-export const BottomNavigation = () => {
+const BottomNavigation = () => {
   return (
     <>
       <div className="text">
-        <span>ABOUT US</span>
+        <span>
+          {' '}
+          <Link to="/about-us"> ABOUT US </Link>
+        </span>
       </div>
       <div className="text">
-        <span>CONTACT</span>
+        <span>
+          {' '}
+          <Link to="/contact-us"> CONTACT </Link>{' '}
+        </span>
       </div>
       <div className="search-container">
         <input
@@ -21,3 +28,5 @@ export const BottomNavigation = () => {
     </>
   );
 };
+
+export default BottomNavigation;

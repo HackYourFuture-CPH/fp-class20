@@ -4,7 +4,7 @@
 
 .top-nav-background {
   background-color: #000;
-  width: 100%;
+  width: 100vw;
   padding: 0;
   margin: 0 auto;
 }
@@ -19,6 +19,10 @@
   align-items: center;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 .logo-container h2 {
@@ -120,6 +124,7 @@
   justify-content: space-between;
   width: 30px;
   height: 21px;
+  cursor: pointer;
 }
 
 .toggle-button .bar {
