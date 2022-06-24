@@ -96,8 +96,9 @@ body {
 
 .counter-button-variant {
   margin-right: 1.5rem;
-  width: 10%;
   padding: 1.5em;
+  width: 10%;
+  padding-right: 3rem;
 }
 
 .add-to-cart-button-variant {
