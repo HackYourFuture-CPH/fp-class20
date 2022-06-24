@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
-import './Login.styles.css';
+import './SigninForm.Styles.css';
 
 import { auth } from '../../firebase.config';
 
-export function Login() {
+export function SigninForm() {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [user, setUser] = useState({});
-  const [address, setAddress] = useState('');
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
@@ -27,7 +27,6 @@ export function Login() {
         auth,
         registerEmail,
         registerPassword,
-        address,
       );
       // eslint-disable-next-line no-console
       console.log(userr);
@@ -61,6 +60,7 @@ export function Login() {
       <div className="register">
         <h3> Register User </h3>
 
+        {/* 
         <input
           placeholder="Email..."
           onChange={(event) => {
@@ -73,12 +73,7 @@ export function Login() {
             setRegisterPassword(event.target.value);
           }}
         />
-        <input
-          placeholder="address..."
-          onChange={(event) => {
-            setAddress(event.target.value);
-          }}
-        />
+       */}
 
         <button type="button" onClick={register}>
           {' '}
@@ -102,7 +97,6 @@ export function Login() {
         />
 
         <button type="button" onClick={login}>
-          {' '}
           Login
         </button>
       </div>
@@ -111,8 +105,7 @@ export function Login() {
         {user?.email}
 
         <button type="button" onClick={logout}>
-          {' '}
-          Sign Out{' '}
+          Sign Out
         </button>
       </div>
     </div>
