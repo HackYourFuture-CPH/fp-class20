@@ -1,113 +1,122 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from 'firebase/auth';
-import './SigninForm.Styles.css';
+// import {
+//   createUserWithEmailAndPassword,
+//   signInWithEmailAndPassword,
+//   onAuthStateChanged,
+//   signOut,
+// } from 'firebase/auth';
+// import './SigninForm.Styles.css';
 
-import { auth } from '../../firebase.config';
+// // import { auth } from '../../../firebase.config';
 
-export function SigninForm() {
-  const [registerEmail, setRegisterEmail] = useState('');
-  const [registerPassword, setRegisterPassword] = useState('');
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
-  const [user, setUser] = useState({});
+// export function SigninForm() {
+//   const [registerEmail, setRegisterEmail] = useState('');
+//   const [registerPassword, setRegisterPassword] = useState('');
+//   const [retypeRegisterPassword, setRetypeRegisterPassword] = useState('');
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+//   const [loginEmail, setLoginEmail] = useState('');
+//   const [loginPassword, setLoginPassword] = useState('');
+//   const [user, setUser] = useState({});
+//   const [message, setMessage] = useState('');
 
-  const register = async () => {
-    try {
-      const userr = await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword,
-      );
-      // eslint-disable-next-line no-console
-      console.log(userr);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error.message);
-    }
-  };
+//   onAuthStateChanged(auth, (currentUser) => {
+//     setUser(currentUser);
+//   });
 
-  const login = async () => {
-    try {
-      const userrr = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword,
-      );
-      // eslint-disable-next-line no-console
-      console.log(userrr);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error.message);
-    }
-  };
+//   const register = async () => {
+//     try {
+//       if (retypeRegisterPassword !== registerPassword) {
+//         setMessage('password not matched');
+//       } else {
+//         const userr = await createUserWithEmailAndPassword(
+//           auth,
+//           registerEmail,
+//           registerPassword,
+//         );
+//       }
+//     } catch (error) {
+//       // eslint-disable-next-line no-console
+//       console.log(error.message);
+//     }
+//   };
 
-  const logout = async () => {
-    await signOut(auth);
-  };
+//   const login = async () => {
+//     try {
+//       const userrr = await signInWithEmailAndPassword(
+//         auth,
+//         loginEmail,
+//         loginPassword,
+//       );
+//     } catch (error) {
+//       // eslint-disable-next-line no-console
+//       console.log(error.message);
+//     }
+//   };
 
-  return (
-    <div className="login-component">
-      <div className="register">
-        <h3> Register User </h3>
+//   const logout = async () => {
+//     await signOut(auth);
+//   };
 
-        {/* 
-        <input
-          placeholder="Email..."
-          onChange={(event) => {
-            setRegisterEmail(event.target.value);
-          }}
-        />
-        <input
-          placeholder="Password..."
-          onChange={(event) => {
-            setRegisterPassword(event.target.value);
-          }}
-        />
-       */}
+//   return (
+//     <div className="login-component">
+//       {/* register */}
+//       <div className="register">
+//         <h3> Register User </h3>
+//         <input
+//           placeholder="Email..."
+//           onChange={(event) => {
+//             setRegisterEmail(event.target.value);
+//           }}
+//         />
+//         <input
+//           type="password"
+//           placeholder="Password..."
+//           onChange={(event) => {
+//             setRegisterPassword(event.target.value);
+//           }}
+//         />
+//         <input
+//           type="password"
+//           placeholder="Retype Password..."
+//           onChange={(event) => {
+//             setRetypeRegisterPassword(event.target.value);
+//           }}
+//         />
+//         {message}
+//         <button type="button" onClick={register}>
+//           Create User
+//         </button>
+//       </div>
+//       {/* login */}
+//       <div className="login">
+//         <h3> Login </h3>
+//         <input
+//           placeholder="Email..."
+//           onChange={(event) => {
+//             setLoginEmail(event.target.value);
+//           }}
+//         />
+//         <input
+//           type="password"
+//           placeholder="Password..."
+//           onChange={(event) => {
+//             setLoginPassword(event.target.value);
+//           }}
+//         />
 
-        <button type="button" onClick={register}>
-          {' '}
-          Create User
-        </button>
-      </div>
-
-      <div className="login">
-        <h3> Login </h3>
-        <input
-          placeholder="Email..."
-          onChange={(event) => {
-            setLoginEmail(event.target.value);
-          }}
-        />
-        <input
-          placeholder="Password..."
-          onChange={(event) => {
-            setLoginPassword(event.target.value);
-          }}
-        />
-
-        <button type="button" onClick={login}>
-          Login
-        </button>
-      </div>
-      <div className="logout">
-        <h4> User Logged In: </h4>
-        {user?.email}
-
-        <button type="button" onClick={logout}>
-          Sign Out
-        </button>
-      </div>
-    </div>
-  );
-}
+//         <button type="button" onClick={login}>
+//           Login
+//         </button>
+//       </div>
+//       {/* logout */}
+//       <div className="logout">
+//         <h4> User Logged In: </h4>
+//         {user?.email}
+//         <button type="button" onClick={logout}>
+//           Sign Out
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }

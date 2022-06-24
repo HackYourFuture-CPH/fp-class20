@@ -39,12 +39,14 @@ function TopNavBar() {
 
         <div className={botton}>
           <div className="sign-in-container">
-            <img
-              className="sign-in-icon"
-              src="/assets/vectors/vector_sign_in.svg"
-              alt="signin-icon"
-            />
-            <span className="sign-in-text"> Sign in</span>
+            <Link to="login">
+              <img
+                className="sign-in-icon"
+                src="/assets/vectors/vector_sign_in.svg"
+                alt="signin-icon"
+              />
+              <span className="sign-in-text"> Sign in</span>
+            </Link>
           </div>
           <div className="favourite-container">
             <img
