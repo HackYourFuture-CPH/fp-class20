@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+}
+
+.login-logout-container-backgorund {
+  background: url(' ../../../public/assets/images/hero_image.png');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.login-logout-container {
+  background: #231c16e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 1190px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding-top: 100px;
+}
+
+.input-div {
+  width: 700px;
+  padding: 1rem;
+  font-size: 2rem;
+  align-items: center;
+  display: flex;
+  justify-content: end;
+}
+
+.input-div-last-child {
+  align-items: center;
+  display: flex;
+  justify-content: end;
+  margin-top: 3rem;
+  margin-right: 1rem;
+}
+
+.input-div > input {
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.login-succees-notice {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 1225px) {
+  .login-logout-container {
+    width: 800px;
+  }
+
+  .input-div {
+    width: 400px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .login-logout-container {
+    width: 500px;
+  }
+
+  .input-div {
+    width: 400px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login-logout-container {
+    width: 375px;
+  }
+
+  .input-div {
+    width: 350px;
+    font-size: 1.5rem;
+  }
+}

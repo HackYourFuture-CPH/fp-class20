@@ -9,6 +9,17 @@
   margin: 0 auto;
 }
 
+.logout-button-design {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 2rem;
+}
+
 .top-nav-main-container {
   background-color: #000;
   display: flex;

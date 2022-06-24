@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
+
+export const LoginState = createContext();
 
 function TopNavBar() {
   const [botton, setBotton] = useState('top-nav-right-container');
   const [showMenu, setShowMenu] = useState(false);
+  const [signIn, setSignIn] = useState(false);
 
   const handleClick = () => {
     setShowMenu(!showMenu);
@@ -13,6 +16,10 @@ function TopNavBar() {
     } else {
       setBotton('top-nav-right-container');
     }
+  };
+
+  const changeToLogOut = () => {
+    setSignIn(!signIn);
   };
 
   return (
@@ -42,7 +49,25 @@ function TopNavBar() {
               src="/assets/vectors/vector_sign_in.svg"
               alt="signin-icon"
             />
-            <span className="sign-in-text"> Sign in</span>
+            {/* <span className="sign-in-text"> */}
+            {signIn ? (
+              <button
+                type="submit"
+                onClick={changeToLogOut}
+                className="logout-button-design"
+              >
+                <Link to="/login/1">Sign out</Link>
+              </button>
+            ) : (
+              <button
+                type="submit"
+                onClick={changeToLogOut}
+                className="logout-button-design"
+              >
+                <Link to="/about-us"> Sign in</Link>
+              </button>
+            )}
+            {/* </span> */}
           </div>
           <div className="favourite-container">
             <img
