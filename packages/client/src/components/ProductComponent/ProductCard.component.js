@@ -38,14 +38,14 @@ export const ProductCard = ({ product, variant }) => {
           </button>
         </div>
         <a
-          href={`${product.id}`}
+          href={`/product/${product.id}`}
           target="_blank"
           rel="noreferrer"
           className="product-card-link"
         >
           <div className="product-details-variant">
             <div className="product-image-variant">
-              <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
+              <img src={product.pictureUrl} alt={`${product.name}`} />
             </div>
 
             <div className="product-information-variant">
@@ -124,6 +124,7 @@ export const ProductCard = ({ product, variant }) => {
           </button>
         </div>
         <div className="product-details">
+
           <div className="product-image-large">
             <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
           </div>
