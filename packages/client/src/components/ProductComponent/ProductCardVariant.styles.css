@@ -71,6 +71,7 @@ body {
 
 .product-name-variant {
   font-size: 2rem;
+  padding-bottom: 1rem;
 }
 
 .product-information-variant {
@@ -81,21 +82,13 @@ body {
   margin-right: 0.5rem;
 }
 
-.product-title-variant {
-  font-size: 1.8rem;
-  line-height: 1rem;
-  letter-spacing: 0;
-  text-align: left;
-  margin-bottom: 0;
-}
-
 .product-size-variant {
   font-size: 0.9rem;
   padding-right: 1.25rem;
 }
 
 .counter-cart-button-variant {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
