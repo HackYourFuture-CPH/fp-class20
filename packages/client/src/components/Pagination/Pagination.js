@@ -7,7 +7,7 @@ function Pagination({ currentPage, pageCount, onPageChange }) {
 
   /* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 
-  for (let i = 1; i <= 2; i++) {
+  for (let i = 1; i <= pageCount; i++) {
     pageNumbers.push(i);
   }
 

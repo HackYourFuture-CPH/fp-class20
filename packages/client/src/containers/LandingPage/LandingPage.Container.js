@@ -15,12 +15,18 @@ export const LandingPage = () => {
   const [sort, setSort] = useState('');
   const numberOfPages = 2;
 
+  const [numberOfPages] = useState(2);
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       const response = await fetch(
         `${getApiBaseUrl()}/api/products?pageIndex=${currentPage - 1}`,
       );
+
+      if (!response.ok) {
+        throw Error('something went wrong, please try again later');
+      }
 
       const fetchedProducts = await response.json();
 
@@ -31,14 +37,10 @@ export const LandingPage = () => {
     fetchData();
   }, [currentPage]);
 
-  const changePageByNumber = (num) => {
-    setCurrentPage(num);
-  };
-
   // Text object for sortBy( BreadCrumb).
   const bradCrumb = {
-    sidebar: 'Simply Spices / Spices by plant part / Berries and Fruit',
-    main: 'Berries and Fruit',
+    sidebar: 'Simply Spices / All Spices ',
+    main: 'All Spices',
   };
 
   if (loading) return <Preloader />;
@@ -54,7 +56,7 @@ export const LandingPage = () => {
         <Pagination
           currentPage={currentPage}
           pageCount={numberOfPages}
-          onPageChange={changePageByNumber}
+          onPageChange={setCurrentPage}
         />
       </div>
     </>

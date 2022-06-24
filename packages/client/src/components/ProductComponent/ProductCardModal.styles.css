@@ -25,7 +25,9 @@
 }
 
 .cancel-butt-container {
-  padding-left: 70.2rem;
+  display: flex;
+  width: inherit;
+  justify-content: flex-end;
 }
 
 .cancel-button {
