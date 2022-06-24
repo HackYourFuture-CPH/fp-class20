@@ -3,12 +3,7 @@
 .whole-container-push-element-down {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    180deg,
-    rgb(35 28 22 / 90%) 19.79%,
-    rgba(35 28 22 /45%) 78.65%
-  );
-  background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  background: linear-gradient(180deg, rgb(35 28 22 / 100%), rgb(40 28 22/ 90%));
   height: 4rem;
   padding: 0;
   margin: 0 auto;
@@ -88,6 +83,10 @@
   font-size: 1.5rem;
 }
 
+.spices-menu-text {
+  margin-top: 0.5rem;
+}
+
 .whole-down-container {
   background-color: rgba(35 28 22 85%);
 }
@@ -113,6 +112,7 @@
   display: inline-block;
   line-height: 1.5rem;
   text-align: left;
+  margin-left: -62%;
 }
 
 .items-container {
@@ -127,7 +127,6 @@
 }
 
 p {
-  padding-bottom: 0.5rem;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   font-weight: 300;
@@ -147,6 +146,10 @@ p {
     padding-bottom: 520px;
   }
 
+  .main-heading {
+    margin-left: -45%;
+  }
+
   .arrow-bottom-bar {
     width: 1.5rem;
   }
@@ -161,6 +164,10 @@ p {
   .down-container {
     width: 400px;
     box-sizing: border-box;
+  }
+
+  .main-heading {
+    margin-left: -30%;
   }
 
   .whole-container-not-push-element-down {
@@ -181,10 +188,9 @@ p {
     background: none !important;
   }
 
-  .block-height {
-    line-height: 0.01rem;
-    margin-bottom: 2rem;
-    text-align: left;
+  .main-heading {
+    margin-left: 0;
+    font-size: 1.25rem;
   }
 
   .whole-container-not-push-element-down {
@@ -219,10 +225,6 @@ p {
     padding-right: 0.2rem;
     padding-left: 2rem;
     padding-top: 0;
-  }
-
-  .main-heading {
-    font-size: 1.25rem;
   }
 
   p {

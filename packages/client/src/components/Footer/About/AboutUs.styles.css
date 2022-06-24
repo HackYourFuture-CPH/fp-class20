@@ -30,6 +30,13 @@
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 1225px) {
   .corporate-info .text-small {
     font-size: 0.8rem;
