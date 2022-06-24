@@ -5,7 +5,6 @@ export function useFavoriteService(productId) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [error, setError] = useState('');
 
-  // userId would be used if there was a login system
   const userId = 1;
 
   useEffect(() => {
