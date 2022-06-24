@@ -13,8 +13,6 @@ export const LandingPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [sort, setSort] = useState('');
-  const numberOfPages = 2;
-
   const [numberOfPages] = useState(2);
 
   useEffect(() => {
