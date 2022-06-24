@@ -21,7 +21,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   product: {
     id: 1,
-    size: '250g glass jar',
+    size: '250',
     price: 350,
     name: 'Testing long name',
     description:
@@ -30,4 +30,5 @@ Primary.args = {
   },
   saveToFavorites: 'save to favorites',
   onClose: () => {},
+  setError: () => {},
 };
