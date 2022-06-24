@@ -35,7 +35,9 @@ export const ProductPage = () => {
   return (
     <div className="product-page-main-container">
       <div className="product-info-main-page">
-        <div className="product-category">{product.categoryName}</div>
+        <div className="product-category">
+          Simply Spices / {product.categoryName} / {product.name}
+        </div>
         <div className="product-title">{product.name}</div>
       </div>
       <ProductCard product={product} className="product-card-container" />
