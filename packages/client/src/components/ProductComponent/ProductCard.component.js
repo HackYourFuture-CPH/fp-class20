@@ -45,7 +45,7 @@ export const ProductCard = ({ product, variant }) => {
         >
           <div className="product-details-variant">
             <div className="product-image-variant">
-              <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
+              <img src={product.pictureUrl} alt={`${product.name}`} />
             </div>
 
             <div className="product-information-variant">
@@ -125,7 +125,7 @@ export const ProductCard = ({ product, variant }) => {
         </div>
         <div className="product-details">
           <div className="product-image">
-            <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
+            <img src={product.pictureUrl} alt={`${product.name}`} />
           </div>
 
           <div className="product-information">
