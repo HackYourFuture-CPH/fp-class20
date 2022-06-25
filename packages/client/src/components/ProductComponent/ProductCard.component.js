@@ -131,28 +131,31 @@ export const ProductCard = ({ product, variant }) => {
           </button>
         </div>
         <div className="product-details">
-          <div className="product-image">
-            <img src={product.pictureUrl} alt={`${product.name}`} />
+
+          <div className="product-image-large">
+            <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
           </div>
 
-          <div className="product-information">
+          <div className="product-information-large">
             <div>
-              <h2 className="product-name"> {product.name}</h2>
-              <p className="product-info"> {product.description}</p>
+              <h2 className="product-name-large"> {product.name}</h2>
+              <p className="product-info-large"> {product.description}</p>
             </div>
-            <div>
-              <span className="product-size">{product.size}g glass jar</span>
-              <span className="product-size">{product.price} DKK</span>
+
+            <div className="product-size-price">
+              <span className="product-size-large">{product.size}g glass jar</span>
+              <span className="product-size-large">{product.price} DKK</span>
+
             </div>
-            <div className="counter-cart-button">
-              <div className="counter-button">
+            <div className="counter-cart-button-large">
+              <div className="counter-button-large">
                 <Counter count={count} setCount={setCount} />
               </div>
               <Button
                 label="ADD TO CART "
                 type="addToCart"
                 backgroundColor="#53742A"
-                className="add-to-cart-button"
+                className="add-to-cart-button-large"
                 onClick={() => {
                   toggleModal(true);
                   updateCartState([
