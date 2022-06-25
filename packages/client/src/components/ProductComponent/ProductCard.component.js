@@ -5,38 +5,39 @@ import PropTypes from 'prop-types';
 import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
+import { useFavoriteService } from './use_favorite_service';
 
 export const ProductCard = ({ product, variant }) => {
-  // CartStateContext should be imported when it is merged
-  // I am just mockoing its value so it wont break things
   const CartStateContext = React.createContext([]);
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
-  const { cartState, updateCartState } = useContext(CartStateContext);
 
-  const onAddToFavorites = () => {
-    setIsFavorite(!isFavorite);
-  };
+  const { isFavorite, updateFavoriteStatus, error } = useFavoriteService(
+    product.id,
+  );
+
+  const { cartState, updateCartState } = useContext(CartStateContext);
 
   if (variant === 'small') {
     return (
       <div className="product-container-variant">
         <div className="favorite-icon-variant">
-          <button type="button" onClick={onAddToFavorites}>
-            {isFavorite ? (
-              <img
-                src="/assets/vectors/vector_heart_full.svg"
-                alt="remove product from favorites"
-              />
-            ) : (
-              <img
-                src="/assets/vectors/vector_heart_empty.svg"
-                alt="add product to favorites"
-              />
-            )}
+          <button
+            type="button"
+            onClick={() => updateFavoriteStatus(!isFavorite)}
+          >
+            <img
+              src={
+                isFavorite
+                  ? `/assets/vectors/vector_heart_full.svg`
+                  : `/assets/vectors/vector_heart_empty.svg`
+              }
+              alt="changing the favorite status"
+              aria-hidden="true"
+            />
           </button>
         </div>
+
         <a
           href={`/product/${product.id}`}
           target="_blank"
@@ -53,7 +54,10 @@ export const ProductCard = ({ product, variant }) => {
                 <h2 className="product-name-variant"> {product.name}</h2>
               </div>
               <div>
-                <span className="product-size-variant">{product.size}g</span>
+                <span className="product-size-variant">
+                  {product.size}g glass jar
+                </span>
+
                 <span className="product-size-variant">
                   {product.price} DKK
                 </span>
@@ -69,6 +73,7 @@ export const ProductCard = ({ product, variant }) => {
                   className="add-to-cart-button-variant"
                   onClick={() => {
                     toggleModal(true);
+
                     updateCartState([
                       ...cartState,
                       {
@@ -100,6 +105,7 @@ export const ProductCard = ({ product, variant }) => {
             />
           </div>
         )}
+        {error && <p>{error}</p>}
       </div>
     );
   }
@@ -109,18 +115,19 @@ export const ProductCard = ({ product, variant }) => {
       <div className="product-container">
         <div className="favorite-icon">
           Save to favorites
-          <button type="button" onClick={onAddToFavorites}>
-            {isFavorite ? (
-              <img
-                src="/assets/vectors/vector_heart_full.svg"
-                alt="remove product from favorites"
-              />
-            ) : (
-              <img
-                src="/assets/vectors/vector_heart_empty.svg"
-                alt="add product to favorites"
-              />
-            )}
+          <button
+            type="button"
+            onClick={() => updateFavoriteStatus(!isFavorite)}
+          >
+            <img
+              src={
+                isFavorite
+                  ? `/assets/vectors/vector_heart_full.svg`
+                  : `/assets/vectors/vector_heart_empty.svg`
+              }
+              alt="changing the favorite status"
+              aria-hidden="true"
+            />
           </button>
         </div>
         <div className="product-details">
@@ -134,9 +141,11 @@ export const ProductCard = ({ product, variant }) => {
               <h2 className="product-name-large"> {product.name}</h2>
               <p className="product-info-large"> {product.description}</p>
             </div>
+
             <div className="product-size-price">
-              <span className="product-size-large">{product.size}g</span>
+              <span className="product-size-large">{product.size}g glass jar</span>
               <span className="product-size-large">{product.price} DKK</span>
+
             </div>
             <div className="counter-cart-button-large">
               <div className="counter-button-large">
@@ -179,6 +188,7 @@ export const ProductCard = ({ product, variant }) => {
           </div>
         )}
       </div>
+      {error && <p>{error}</p>}
     </div>
   );
 };
