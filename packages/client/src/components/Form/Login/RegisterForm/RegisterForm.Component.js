@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './RegisterForm.styles.css';
-import { Button } from '../../Button/Button.component';
+import { Button } from '../../../Button/Button.component';
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -8,8 +9,8 @@ import {
   signOut,
 } from 'firebase/auth';
 
-import { auth } from '../../../firebase.config';
-import getApiBaseUrl from '../../../utils/getApiBaseUrl';
+import { auth } from '../../../../firebase.config';
+import getApiBaseUrl from '../../../../utils/getApiBaseUrl';
 import { useNavigate } from 'react-router-dom';
 
 const validationPatterns = {
@@ -55,7 +56,7 @@ export const RegisterForm = () => {
   const [message, setMessage] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const [fetchStatus, setFetchStatus] = useState({});
+
   const navigate = useNavigate();
 
   onAuthStateChanged(auth, (currentUser) => {
@@ -163,20 +164,14 @@ export const RegisterForm = () => {
       };
 
       (async () => {
-        const postMessage = await fetch(`${getApiBaseUrl()}/api/users`, {
+        await fetch(`${getApiBaseUrl()}/api/users`, {
           method: 'POST',
           headers: { 'Content-Type': 'Application/json' },
           body: JSON.stringify(inputObj),
         });
 
-        if (postMessage.status === 200) {
-          setIsMessageSent(true);
-          navigate('/');
-        }
-        setFetchStatus({
-          status: postMessage.status,
-          message: postMessage.statusText,
-        });
+        setIsMessageSent(true);
+        navigate('/');
       })();
 
       // register();
@@ -184,7 +179,8 @@ export const RegisterForm = () => {
       setFormState({
         name: '',
         email: '',
-        mobile: '',
+        // mobile: '',
+        country: '',
         streetName: '',
         city: '',
         zipCode: '',
@@ -222,7 +218,7 @@ export const RegisterForm = () => {
             ) : (
               ''
             )}
-            {fetchStatus}
+
             <div className="signup-form-row">
               <label className="signup-label " htmlFor="name">
                 name

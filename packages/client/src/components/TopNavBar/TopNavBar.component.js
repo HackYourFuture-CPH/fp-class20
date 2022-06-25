@@ -73,20 +73,24 @@ function TopNavBar() {
         <div className="menu-mobile-layout">
           {' '}
           <div className="sign-in-container">
-            <img
-              className="sign-in-icon"
-              src="/assets/vectors/vector_sign_in.svg"
-              alt="signin-icon"
-            />
-            <span className="sign-in-text"> Sign in</span>
+            <Link to="login">
+              <img
+                className="sign-in-icon"
+                src="/assets/vectors/vector_sign_in.svg"
+                alt="signin-icon"
+              />
+              <span className="sign-in-text"> Sign in</span>
+            </Link>
           </div>
           <div className="favourite-container">
-            <img
-              className="favourite-icon"
-              src="/assets/vectors/vector_heart_empty.svg"
-              alt="favourite-icon"
-            />{' '}
-            <span className="favourites-text">Favourites </span>
+            <Link to="/favorites/1">
+              <img
+                className="favourite-icon"
+                src="/assets/vectors/vector_heart_empty.svg"
+                alt="favourite-icon"
+              />{' '}
+              <span className="favourites-text">Favourites </span>
+            </Link>
           </div>
           <div className="cart-container">
             <img
