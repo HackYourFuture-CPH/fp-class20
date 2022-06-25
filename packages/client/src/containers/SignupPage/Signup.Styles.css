@@ -1,7 +1,3 @@
-* {
-  padding: 0;
-}
-
 .signup-container-background {
   background: url(' ../../../public/assets/images/hero_image.png');
   height: 100vh;
@@ -11,7 +7,7 @@
 }
 
 .signup-container-main-form {
-  background: #231c16e5;
+  background: url(' ../../../public/assets/images/hero_image.png');
   display: flex;
   flex-direction: column;
   align-items: flex-end;

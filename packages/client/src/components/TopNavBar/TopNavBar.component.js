@@ -1,9 +1,9 @@
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
 import PropTypes from 'prop-types';
 
-export const LoginState = createContext();
+// export const LoginState = createContext();
 
 function TopNavBar(props) {
   const [botton, setBotton] = useState('top-nav-right-container');

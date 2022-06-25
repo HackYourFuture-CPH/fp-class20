@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 export const Login = (props) => {
   // global state from App.js
   const { logedIn, setLogedIn } = props;
+
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -15,6 +16,8 @@ export const Login = (props) => {
   const [errorName, setErrorName] = useState('');
   const [errorPassword, setErrorPassword] = useState('');
   const [userinfo, setUserinfo] = useState([]);
+  const [usermatch, setUserMatch] = useState(false);
+
   const { user_id: userId } = useParams();
 
   function isValidEmail(a) {
@@ -60,38 +63,35 @@ export const Login = (props) => {
     try {
       if (!errorEmail && !errorName && !errorPassword) {
         const response = await fetch(`${getApiBaseUrl()}/api/users/${userId}`);
-        // eslint-disable-next-line no-console
-        console.log(response);
+
         const usersinfo = await response.json();
         setUserinfo(usersinfo);
-        const userData = userinfo.find((user) => user.fullName === name);
-        // eslint-disable-next-line no-console
-        console.log(usersinfo);
-        // eslint-disable-next-line no-console
-        console.log(userData);
-        if (userData) {
-          // alert("true");
+
+        if (
+          userinfo[0].fullName.toLowerCase().includes(name.toLowerCase()) &&
+          password === '666666'
+        ) {
           setLogedIn(true);
+          setUserMatch(true);
         } else {
           setLogedIn(false);
-          // alert('false');
+          setUserMatch(true);
         }
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      throw error;
     }
   };
 
   return (
     <>
-      {!logedIn ? (
+      {!logedIn && !usermatch && (
         <div className="login-logout-container-backgorund">
           <div className="login-logout-container">
             <form onSubmit={(e) => onHandleLogin(e)}>
               <div className="input-div">
                 <label>
-                  Full name :
+                  User name :
                   <input
                     style={{ fontSize: 24 }}
                     type="text"
@@ -139,16 +139,19 @@ export const Login = (props) => {
               </div>
 
               <div className="input-div-last-child">
-                <Button icon="" label="Log In" type="submit" />
+                <Button icon="" label="Log In" type="Log in" />
               </div>
             </form>
           </div>
         </div>
-      ) : (
+      )}
+      {usermatch && logedIn && (
         <div className="login-logout-container">
           <h3 className="login-succees-notice">
-            Congratuations !
+            welcome back !
+            <br />
             <br /> {name}
+            <br />
             <br /> Enjoy your shopping time
           </h3>
 
@@ -158,19 +161,7 @@ export const Login = (props) => {
         </div>
       )}
 
-      {/* {logedIn ? (
-        <div className="login-logout-container">
-          <h3 className="login-succees-notice">
-            Congratuations !
-            <br /> {name}
-            <br /> Enjoy your shopping time
-          </h3>
-
-          <Link to="/">
-            <Button icon="" label="SHOP" type="shop" />
-          </Link>
-        </div>
-      ) : (
+      {!logedIn && usermatch && (
         <div className="login-logout-container">
           <h3 className="login-succees-notice">plese signup first !</h3>
 
@@ -178,7 +169,7 @@ export const Login = (props) => {
             <Button icon="" label="Sign up" type="shop" />
           </Link>
         </div>
-      )} */}
+      )}
     </>
   );
 };
