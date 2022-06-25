@@ -1,15 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ProductCard } from '../ProductComponent/ProductCard.component';
-// eslint-disable-next-line import/no-cycle
-import { searchContext } from '../../App';
 
-export const SearchedProducts = () => {
-  const {
-    foo: searchedProducts,
-    searchedProductIsLoading,
-    searchedProductsError,
-  } = useContext(searchContext);
+export const SearchedProducts = ({
+  searchedProducts,
+  searchedProductIsLoading,
+  searchedProductsError,
+}) => {
   // eslint-disable-next-line no-console
   console.log(searchedProducts);
   return (
@@ -21,4 +18,16 @@ export const SearchedProducts = () => {
       ))}
     </ul>
   );
+};
+
+SearchedProducts.propTypes = {
+  searchedProducts: PropTypes.node,
+  searchedProductIsLoading: PropTypes.bool,
+  searchedProductsError: PropTypes.string,
+};
+
+SearchedProducts.defaultProps = {
+  searchedProducts: [],
+  searchedProductIsLoading: false,
+  searchedProductsError: null,
 };

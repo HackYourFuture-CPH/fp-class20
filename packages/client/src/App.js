@@ -1,4 +1,4 @@
-import React, { createContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
@@ -14,41 +14,50 @@ import { Footer } from './components/Footer/Footer.component';
 import { SearchedProducts } from './components/SearchedProducts/SearchedProducts';
 import PropTypes from 'prop-types';
 
-export const searchContext = createContext();
+// export const searchContext = createContext();
 
 function App({
   searchedProducts,
   searchedProductIsLoading,
   searchedProductsError,
 }) {
-  const foo = useMemo(
-    () => ({
-      foo: searchedProducts,
-      searchedProductIsLoading,
-      searchedProductsError,
-    }),
-    [searchedProductIsLoading, searchedProducts, searchedProductsError],
-  );
+  // const foo = useMemo(
+  //   () => ({
+  //     foo: searchedProducts,
+  //     searchedProductIsLoading,
+  //     searchedProductsError,
+  //   }),
+  //   [searchedProductIsLoading, searchedProducts, searchedProductsError],
+  // );
 
   return (
     <div className="app">
       <Router>
         <Navigation />
         <Routes>
-          <searchContext.Provider value={foo}>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/about-us" element={<AboutUsPage />} />
-            <Route path="/category/:name" element={<CategoryPage />} />
-            <Route path="/contact-us" element={<ContactUsPage />} />
-            <Route
-              path="/contact-us-feedback"
-              element={<ContactUsFeedbackPage />}
-            />
-            <Route path="/product/:id" element={<ProductPage />} />
-            <Route path="/SearchedProducts" element={<SearchedProducts />} />
-            <Route path="/favorites/:user_id" element={<FavouritePage />} />
-            <Route path="*" element={<PageNotFoundPage />} />
-          </searchContext.Provider>
+          {/* <searchContext.Provider value={foo}> */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/category/:name" element={<CategoryPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route
+            path="/contact-us-feedback"
+            element={<ContactUsFeedbackPage />}
+          />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route
+            path="/SearchedProducts"
+            element={
+              <SearchedProducts
+                searchedProducts={searchedProducts}
+                searchedProductIsLoading={searchedProductIsLoading}
+                searchedProductsError={searchedProductsError}
+              />
+            }
+          />
+          <Route path="/favorites/:user_id" element={<FavouritePage />} />
+          <Route path="*" element={<PageNotFoundPage />} />
+          {/* </searchContext.Provider> */}
         </Routes>
         <Footer />
       </Router>

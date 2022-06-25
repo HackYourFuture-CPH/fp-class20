@@ -2,7 +2,6 @@ import React, { createContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './BottomNavigation.styles.css';
 import getApiBaseUrl from '../../../utils/getApiBaseUrl';
-// import { SearchedProducts } from '../../SearchedProducts/SearchedProducts';
 
 export const searchContext = createContext();
 
@@ -30,6 +29,9 @@ const BottomNavigation = () => {
         .catch((err) => setError(err));
     }
   }, [fetchUrl]);
+
+  // eslint-disable-next-line no-console
+  console.log(searchedProducts);
 
   function handleSearchInput(e) {
     e.preventDefault();
