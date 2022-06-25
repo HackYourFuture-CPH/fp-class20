@@ -121,7 +121,7 @@ export const ContactForm = ({ text, label, handlePost }) => {
           <img
             className="contact-form-vector_logo_underline"
             alt="simply spices text"
-            src="assets/vectors/vector_logo_underline.svg"
+            src="/assets/vectors/vector_logo_underline.svg"
           />
         </div>
 
