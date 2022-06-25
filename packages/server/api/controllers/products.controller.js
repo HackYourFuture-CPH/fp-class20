@@ -29,7 +29,7 @@ const getProducts = async (
     products = products.orderBy('newest', 'asc');
   }
   if (nameFilter) {
-    products = products.where('name', 'like', `%${nameFilter}%`);
+    products = products.where('Products.name', 'like', `%${nameFilter}%`);
   }
   if (categoryFilter) {
     products = products.where('Products.categoryId', '=', categoryFilter);

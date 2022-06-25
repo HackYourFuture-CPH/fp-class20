@@ -1,9 +1,52 @@
-import React from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import './BottomNavigation.styles.css';
+import getApiBaseUrl from '../../../utils/getApiBaseUrl';
+// import { SearchedProducts } from '../../SearchedProducts/SearchedProducts';
+
+export const searchContext = createContext();
 
 const BottomNavigation = () => {
+  const [searchInputValue, setSearchInputValue] = useState('| Search spices');
+  const [searchedProducts, setSearchedProducts] = useState([]);
+  const [fetchUrl, setFetchUrl] = useState();
+  const [searchedProductIsLoading, setLoading] = useState(true);
+  const [searchedProductsError, setError] = useState(null);
+
+  useEffect(() => {
+    const nameReg = /^[A-Za-z]*$/;
+    if (fetchUrl !== undefined && nameReg.test(fetchUrl)) {
+      fetch(`${getApiBaseUrl()}/api/products?name=${fetchUrl}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('something went wrong');
+          }
+          return response.json();
+        })
+        .then((productTodisplay) => {
+          setSearchedProducts(productTodisplay);
+          setLoading(false);
+        })
+        .catch((err) => setError(err));
+    }
+  }, [fetchUrl]);
+
+  function handleSearchInput(e) {
+    e.preventDefault();
+    setSearchInputValue(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (e.key === 'Enter') {
+      setFetchUrl(searchInputValue);
+      window.open('/SearchedProducts');
+    }
+    if (e.key !== 'BackSpace' && e.key !== 'Enter') {
+      setSearchInputValue(searchInputValue + e.key);
+    }
+  };
+
   return (
     <>
       <div className="text">
@@ -20,9 +63,11 @@ const BottomNavigation = () => {
       </div>
       <div className="search-container">
         <input
+          onChange={handleSearchInput}
           className="input-container"
           type="text"
-          placeholder="| Search spices"
+          value={searchInputValue}
+          onKeyPress={handleSubmit}
         />
       </div>
     </>
