@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
@@ -11,13 +11,15 @@ import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage.Container';
 import Navigation from './components/Navigation/Navigation.component';
 import { Footer } from './components/Footer/Footer.component';
-import { Login } from './containers/Login/Login.Container';
+import { Login } from './containers/LoginPage/Login.Container';
+import { Signup } from './containers/SignupPage/Signup.Container';
 
 function App() {
+  const [logedIn, setLogedIn] = useState(false);
   return (
     <div className="app">
       <Router>
-        <Navigation />
+        <Navigation ligedIn={logedIn} />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
@@ -29,7 +31,11 @@ function App() {
           />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/favorites/:user_id" element={<FavouritePage />} />
-          <Route path="/login/:user_id" element={<Login />} />
+          <Route
+            path="/login/:user_id"
+            element={<Login logedIn={logedIn} setLogedIn={setLogedIn} />}
+          />
+          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<PageNotFoundPage />} />
         </Routes>
         <Footer />

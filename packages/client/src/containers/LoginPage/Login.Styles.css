@@ -29,13 +29,17 @@
   font-size: 2rem;
   align-items: center;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
+}
+
+.input-div label {
+  font-size: 2rem;
 }
 
 .input-div-last-child {
   align-items: center;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: 3rem;
   margin-right: 1rem;
 }

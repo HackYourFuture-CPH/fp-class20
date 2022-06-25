@@ -131,7 +131,6 @@ export const ProductCard = ({ product, variant }) => {
           </button>
         </div>
         <div className="product-details">
-
           <div className="product-image-large">
             <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
           </div>
@@ -143,9 +142,10 @@ export const ProductCard = ({ product, variant }) => {
             </div>
 
             <div className="product-size-price">
-              <span className="product-size-large">{product.size}g glass jar</span>
+              <span className="product-size-large">
+                {product.size}g glass jar
+              </span>
               <span className="product-size-large">{product.price} DKK</span>
-
             </div>
             <div className="counter-cart-button-large">
               <div className="counter-button-large">

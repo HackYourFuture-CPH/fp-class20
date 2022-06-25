@@ -63,6 +63,10 @@ h2 {
   align-items: center;
 }
 
+.sign-in-container a {
+  font-size: 1.125rem;
+}
+
 .sign-in-icon {
   height: 1.5rem;
   margin: 0 0.3rem 0 0;
@@ -196,6 +200,10 @@ h2 {
     font-size: 0.9rem;
     padding: 0;
     margin: 0;
+  }
+
+  .sign-in-container a {
+    font-size: 0.9rem;
   }
 
   .cart-container {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './SignupForm.styles.css';
+import { Button } from '../../Button/Button.component';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
@@ -285,7 +286,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
             <span className="signup-error-span"> {errObj.zipCode}</span>
 
             <div className="signup-form-row">
-              {/* dummy button */}
+              {/* dummy button
               <button
                 className={
                   isAllInputProvided
@@ -297,7 +298,18 @@ export const SignupForm = ({ text, label, handlePost }) => {
                 onClick={handleSubmit}
               >
                 {text}
-              </button>
+              </button> */}
+              <Button
+                className={
+                  isAllInputProvided
+                    ? 'all-input-provided-button'
+                    : 'all-input-notprovided-button'
+                }
+                icon=""
+                label="Sign Up"
+                type="shop"
+                onClick={handleSubmit}
+              />
             </div>
           </div>
         </div>

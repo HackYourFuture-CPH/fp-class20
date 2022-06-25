@@ -1,13 +1,15 @@
 import React, { useState, createContext } from 'react';
 import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
+import PropTypes from 'prop-types';
 
 export const LoginState = createContext();
 
-function TopNavBar() {
+function TopNavBar(props) {
   const [botton, setBotton] = useState('top-nav-right-container');
   const [showMenu, setShowMenu] = useState(false);
-  const [signIn, setSignIn] = useState(false);
+  const { logedIn } = props;
+  // const [signIn, setSignIn] = useState(false);
 
   const handleClick = () => {
     setShowMenu(!showMenu);
@@ -18,9 +20,9 @@ function TopNavBar() {
     }
   };
 
-  const changeToLogOut = () => {
-    setSignIn(!signIn);
-  };
+  // const changeToLogOut = () => {
+  //   setSignIn(!signIn);
+  // };
 
   return (
     <div className="top-nav-background">
@@ -52,21 +54,21 @@ function TopNavBar() {
               alt="signin-icon"
             />
             {/* <span className="sign-in-text"> */}
-            {signIn ? (
+            {logedIn ? (
               <button
                 type="submit"
-                onClick={changeToLogOut}
+                // onClick={changeToLogOut}
                 className="logout-button-design"
               >
-                <Link to="/login/1">Sign out</Link>
+                <Link to="/signup">Sign out</Link>
               </button>
             ) : (
               <button
                 type="submit"
-                onClick={changeToLogOut}
+                // onClick={changeToLogOut}
                 className="logout-button-design"
               >
-                <Link to="/about-us"> Sign in</Link>
+                <Link to="/login/1"> Sign in</Link>
               </button>
             )}
             {/* </span> */}
@@ -126,3 +128,11 @@ function TopNavBar() {
   );
 }
 export default TopNavBar;
+
+TopNavBar.propTypes = {
+  logedIn: PropTypes.string,
+};
+
+TopNavBar.defaultProps = {
+  logedIn: false,
+};
