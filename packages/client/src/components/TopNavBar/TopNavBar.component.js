@@ -27,7 +27,9 @@ function TopNavBar() {
       <div className="top-nav-main-container">
         <div className="logo-container">
           <div>
-            <h2>Simply Spices</h2>
+            <Link to="/">
+              <h2>Simply Spices</h2>
+            </Link>
           </div>
           <div>
             <button
