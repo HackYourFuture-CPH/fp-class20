@@ -15,8 +15,8 @@ const PageNotFound = () => {
         </div>
         <div className="error-message">
           <h1 className="error-heading">404</h1>
-          <p className="error-description">Oooops!</p>
-          <p className="error-description">
+          <p className="error-description1">Oooops!</p>
+          <p className="error-description2">
             The page was <br />
             intercepted by UFO!
           </p>
