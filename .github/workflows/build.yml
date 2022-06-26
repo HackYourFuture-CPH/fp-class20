@@ -3,8 +3,9 @@ name: Build
 on:
   push:
     branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
+# commenting these lines to prevent the actions to ran out this month
+#  pull_request:
+#    branches: [main, develop]
 
 jobs:
   build:
@@ -20,8 +21,8 @@ jobs:
         env:
           CI: true
       - run: |
-          cp .env.example .env
+          cp ./packages/server/.env.example ./packages/server/.env
       - name: Build client
-        run: yarn build
-      - name: Run tests
-        run: yarn run test
+        run: yarn workspace client build
+      - name: Run client tests
+        run: echo Skipping client tests for now

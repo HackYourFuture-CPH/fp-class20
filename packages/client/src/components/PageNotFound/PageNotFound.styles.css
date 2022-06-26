@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@400;500&display=swap');
+
+.ufo-pic {
+  padding-top: 2rem;
+}
+
+.error-details {
+  width: 1190px;
+  background: rgb(35 28 22 / 100%);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1.5rem auto;
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  justify-content: space-evenly;
+}
+
+.error-message {
+  font-family: Montserrat, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem;
+}
+
+.error-heading {
+  font-size: 6em;
+  letter-spacing: 0.3em;
+}
+
+.error-description1 {
+  font-size: 2rem;
+  line-height: 2;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+.error-description2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1225px) {
+  .error-details {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .error-details {
+    box-sizing: border-box;
+    width: 375px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .error-message {
+    text-align: center;
+    margin-top: -5rem;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .error-description1,
+  .error-description2 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  body {
+    padding: 0 !important;
+    background: none !important;
+  }
+}
