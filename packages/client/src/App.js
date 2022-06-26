@@ -15,7 +15,6 @@ import { Footer } from './components/Footer/Footer.component';
 
 function App() {
   return (
-functionality-to-add-to-cart
     <CartStateProvider>
       <div className="app">
         <Router>
@@ -37,8 +36,6 @@ functionality-to-add-to-cart
         </Router>
       </div>
     </CartStateProvider>
-
-   
   );
 }
 
