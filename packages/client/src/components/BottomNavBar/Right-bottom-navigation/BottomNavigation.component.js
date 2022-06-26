@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './BottomNavigation.styles.css';
 import getApiBaseUrl from '../../../utils/getApiBaseUrl';
 
@@ -12,23 +12,25 @@ const BottomNavigation = () => {
   const [searchedProductIsLoading, setLoading] = useState(true);
   const [searchedProductsError, setError] = useState(null);
 
-  useEffect(() => {
-    const nameReg = /^[A-Za-z]*$/;
-    if (fetchUrl !== undefined && nameReg.test(fetchUrl)) {
-      fetch(`${getApiBaseUrl()}/api/products?name=${fetchUrl}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('something went wrong');
-          }
-          return response.json();
-        })
-        .then((productTodisplay) => {
-          setSearchedProducts(productTodisplay);
-          setLoading(false);
-        })
-        .catch((err) => setError(err));
-    }
-  }, [fetchUrl]);
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const nameReg = /^[A-Za-z]*$/;
+  //   if (fetchUrl !== undefined && nameReg.test(fetchUrl)) {
+  //     fetch(`${getApiBaseUrl()}/api/products?name=${fetchUrl}`)
+  //       .then((response) => {
+  //         if (!response.ok) {
+  //           throw new Error('something went wrong');
+  //         }
+  //         return response.json();
+  //       })
+  //       .then((productTodisplay) => {
+  //         setSearchedProducts(productTodisplay);
+  //         setLoading(false);
+  //       })
+  //       .catch((err) => setError(err));
+  //   }
+  // }, [fetchUrl]);
 
   // eslint-disable-next-line no-console
   console.log(searchedProducts);
@@ -41,8 +43,9 @@ const BottomNavigation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.key === 'Enter') {
-      setFetchUrl(searchInputValue);
-      window.open('/SearchedProducts');
+      // setFetchUrl(searchInputValue);
+      // window.open('/SearchedProducts');
+      navigate(`/search/?name=${searchInputValue}`);
     }
     if (e.key !== 'BackSpace' && e.key !== 'Enter') {
       setSearchInputValue(searchInputValue + e.key);
