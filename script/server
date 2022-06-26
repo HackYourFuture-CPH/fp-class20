@@ -44,4 +44,4 @@ yarn workspace server knex seed:run &> /dev/null || true
 echo
 echo "=== Starting API server and React client ==="
 npm ls concurrently &> /dev/null || npm install --no-save --no-package-lock concurrently@7.2.2 &> /dev/null
-$(npm bin)/concurrently --names "api:server,react:client" "yarn workspace server dev" "yarn workspace client start"
+$(npm bin)/concurrently --names "api,client" "yarn workspace server dev" "yarn workspace client start"
