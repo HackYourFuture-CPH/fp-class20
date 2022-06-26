@@ -12,26 +12,22 @@ function Pagination({ currentPage, pageCount, onPageChange }) {
   }
 
   const nextPage = () => {
-    if (currentPage === pageCount) {
-      onPageChange(1);
-    } else {
+    if (currentPage !== pageCount) {
       onPageChange(currentPage + 1);
     }
   };
 
   const previousPage = () => {
-    if (currentPage === 1) {
-      onPageChange(pageCount);
-    } else {
+    if (currentPage !== 1) {
       onPageChange(currentPage - 1);
     }
   };
 
   return (
     <div className="list-page-number">
-      <button type="button" onClick={previousPage}>
+      <button type="button" onClick={previousPage} disabled={currentPage === 1}>
         <img
-          className="arrow-icon"
+          className={currentPage === 1 ? 'arrow-icon-disabled' : 'arrow-icon'}
           src="/assets/vectors/vector_pagination_left.svg"
           alt="Go to previous page"
         />
@@ -48,9 +44,15 @@ function Pagination({ currentPage, pageCount, onPageChange }) {
           </p>
         </button>
       ))}
-      <button type="button" onClick={nextPage}>
+      <button
+        type="button"
+        onClick={nextPage}
+        disabled={currentPage === pageCount}
+      >
         <img
-          className="arrow-icon"
+          className={
+            currentPage === pageCount ? 'arrow-icon-disabled' : 'arrow-icon'
+          }
           src="/assets/vectors/vector_pagination_right.svg"
           alt="Go to next page"
         />
