@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 function TopNavBar(props) {
   const [botton, setBotton] = useState('top-nav-right-container');
   const [showMenu, setShowMenu] = useState(false);
-  const { logedIn, setLogedIn } = props;
+  const { signedIn, setSignedIn } = props;
   // const [signIn, setSignIn] = useState(false);
 
   const handleClick = () => {
@@ -21,7 +21,7 @@ function TopNavBar(props) {
   };
 
   const changeToLogOut = () => {
-    setLogedIn(!logedIn);
+    setSignedIn(!signedIn);
   };
 
   return (
@@ -54,7 +54,7 @@ function TopNavBar(props) {
               alt="signin-icon"
             />
             {/* <span className="sign-in-text"> */}
-            {logedIn ? (
+            {signedIn ? (
               <button
                 type="submit"
                 onClick={changeToLogOut}
@@ -103,7 +103,7 @@ function TopNavBar(props) {
               src="/assets/vectors/vector_sign_in.svg"
               alt="signin-icon"
             />
-            {logedIn ? (
+            {signedIn ? (
               <button
                 type="submit"
                 onClick={changeToLogOut}
@@ -146,11 +146,11 @@ function TopNavBar(props) {
 export default TopNavBar;
 
 TopNavBar.propTypes = {
-  logedIn: PropTypes.string,
-  setLogedIn: PropTypes.func,
+  signedIn: PropTypes.string,
+  setSignedIn: PropTypes.func,
 };
 
 TopNavBar.defaultProps = {
-  logedIn: false,
-  setLogedIn: () => {},
+  signedIn: false,
+  setSignedIn: () => {},
 };

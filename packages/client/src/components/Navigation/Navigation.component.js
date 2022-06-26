@@ -4,10 +4,10 @@ import BottomNavBar from '../BottomNavBar/BottomNavBar.component';
 import PropTypes from 'prop-types';
 
 function Navigation(props) {
-  const { logedIn, setLogedIn } = props;
+  const { signedIn, setSignedIn } = props;
   return (
     <div>
-      <TopNavBar logedIn={logedIn} setLogedIn={setLogedIn} />
+      <TopNavBar signedIn={signedIn} setSignedIn={setSignedIn} />
       <BottomNavBar />
     </div>
   );
@@ -16,11 +16,11 @@ function Navigation(props) {
 export default Navigation;
 
 Navigation.propTypes = {
-  logedIn: PropTypes.string,
-  setLogedIn: PropTypes.func,
+  signedIn: PropTypes.string,
+  setSignedIn: PropTypes.func,
 };
 
 Navigation.defaultProps = {
-  logedIn: false,
-  setLogedIn: () => {},
+  signedIn: false,
+  setSignedIn: () => {},
 };

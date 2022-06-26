@@ -15,11 +15,11 @@ import { Login } from './containers/LoginPage/Login.Container';
 import { Signup } from './containers/SignupPage/Signup.Container';
 
 function App() {
-  const [logedIn, setLogedIn] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
   return (
     <div className="app">
       <Router>
-        <Navigation logedIn={logedIn} setLogedIn={setLogedIn} />
+        <Navigation signedIn={signedIn} setSignedIn={setSignedIn} />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
@@ -33,7 +33,7 @@ function App() {
           <Route path="/favorites/:user_id" element={<FavouritePage />} />
           <Route
             path="/login/:user_id"
-            element={<Login logedIn={logedIn} setLogedIn={setLogedIn} />}
+            element={<Login signedIn={signedIn} setsignedIn={setSignedIn} />}
           />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<PageNotFoundPage />} />
