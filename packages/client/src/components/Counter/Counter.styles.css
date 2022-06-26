@@ -23,6 +23,7 @@
   color: #fff;
   text-shadow: 0.125rem 0.125rem 0.25rem #231016;
   margin-top: 0.313rem;
+  cursor: pointer;
 }
 
 .quantity-button {
@@ -56,4 +57,5 @@
   color: #fff;
   text-shadow: 0.125rem 0.125rem 0.25rem #231016;
   margin-top: 0.313rem;
+  cursor: pointer;
 }
