@@ -7,7 +7,7 @@ export const AboutUs = () => {
     <div className="about-us-container">
       <div className="simple-spices-heading">Simply Spices</div>
       <img
-        src="assets/vectors/vector_logo_underline.svg"
+        src="/assets/vectors/vector_logo_underline.svg"
         alt="logo style"
         className="main-slogan-vector-style"
       />

@@ -10,6 +10,7 @@ const orders = require('./orders.router');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const messages = require('./messages.router');
+const users = require('./users.router');
 
 const swaggerOptions = {
   swaggerDefinition: {
@@ -37,5 +38,6 @@ router.use('/products', products);
 router.use('/favorites', favorites);
 router.use('/messages', messages);
 router.use('/orders', orders);
+router.use('/users', users);
 
 module.exports = router;
