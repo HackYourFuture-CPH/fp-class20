@@ -11,7 +11,7 @@ function OrderProduct({ data, onAdd, onRemove }) {
     <div className="order-product">
       <div className="order-product-img">
         <img
-          src="assets/images/spices_square/dried_juniper_berries.jpeg"
+          src="/assets/images/spices_square/dried_juniper_berries.jpeg"
           alt="product"
         />
       </div>

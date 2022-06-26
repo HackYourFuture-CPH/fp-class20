@@ -9,7 +9,7 @@ export const ContactUsFeedback = () => {
         <div className="heading-section">
           <h1 className="simple-spices-heading-feedback">Simply Spices</h1>
           <img
-            src="assets/vectors/vector_logo_underline.svg"
+            src="/assets/vectors/vector_logo_underline.svg"
             alt="logo style"
             className="main-slogan-vector-style"
           />
