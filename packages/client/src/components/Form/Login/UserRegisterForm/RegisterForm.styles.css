@@ -61,30 +61,28 @@
 
 .all-input-provided-button {
   background: #53742a;
-  border: 1px solid #fff;
-  width: 15rem;
 }
 
 .all-input-notprovided-button {
-  padding: 0.4rem 1rem;
-  margin-top: 1rem;
-  background: #191818;
+  background: rgb(25 24 24);
   color: #fff;
-  width: 15rem;
-  border: 1px solid #fff;
+}
+
+.login-logout-button {
+  display: flex;
 }
 
 #delivery {
   color: white;
 }
 
-button {
-  padding: 0.4rem 1rem;
-  background: rgb(25 24 24);
+.all-input-provided-button,
+.all-input-notprovided-button {
   color: #fff;
   border: 0.1rem solid white;
   width: 5rem;
   align-items: flex-end;
+  height: 2rem;
 }
 
 .signup-input {
@@ -110,27 +108,17 @@ button {
 }
 
 .signup-success-msg {
-  color: #06ff06;
+  color: #0f0;
 }
 
-.login-form {
-  background-color: green;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: right;
-  margin-bottom: 2%;
-  align-items: flex-end;
+.signup-success-msg-notyet {
+  color: #ffea00;
 }
 
-.register-form {
-  background-color: blue;
-  width: 90%;
-  margin: 0 auto;
+.login-register-button-div {
   display: flex;
-  justify-content: right;
-  margin-bottom: 2%;
-  align-items: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 @media screen and (max-width: 1225px) {
@@ -155,6 +143,12 @@ button {
     width: 90%;
     margin: 0 auto;
     height: 2.5rem;
+  }
+
+  .login-logout-button {
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .signup-label {
@@ -195,5 +189,25 @@ button {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .signup-container {
+    background-color: #231c16;
+    width: 100%;
+  }
+
+  .signup-form-row {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    height: 2.5rem;
+  }
+
+  .login-logout-button {
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
 }

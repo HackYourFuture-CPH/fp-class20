@@ -1,23 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './RegisterForm.styles.css';
 import { Button } from '../../../Button/Button.component';
-
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from 'firebase/auth';
-
-import { auth } from '../../../../firebase.config';
+import { Link, useNavigate } from 'react-router-dom';
 import getApiBaseUrl from '../../../../utils/getApiBaseUrl';
-import { useNavigate } from 'react-router-dom';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
   email:
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-  mobile: /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/,
+  // mobile: /^((\(?\+45\)?)?)(\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/,
   street: /^((.){1,}(\d){1,}(.){0,})$/,
   zipCode: /^[D-d][K-k]( |-)[1-9]{1}[0-9]{3}$/,
 };
@@ -26,8 +17,7 @@ const errorMessage = {
   required: 'is required',
   name: 'Name can not include Number',
   email: 'Please enter a valid email address: example@domain.com',
-  // mobile:
-  //   'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535',
+  // mobile: 'Please enter a valid mobile number:  (+45) 35 35 35 35 ||| +45 35 35 35 35 ||| 35 35 35 35 ||| 35353535',
   streetName:
     'Please enter a valid address: Teststreet 32 | Tørststræde 4 | Tørststræde 24 1. tv',
   city: 'City name is required',
@@ -35,80 +25,31 @@ const errorMessage = {
 };
 
 export const RegisterForm = () => {
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     // mobile: '',
-    country: '',
     streetName: '',
     city: '',
     zipCode: '',
+    country: '',
   });
 
   const [isMessageSent, setIsMessageSent] = useState(false);
   const [isAllInputProvided, setIsAllInputProvided] = useState(false);
   const [errorState, setErrorState] = useState([]);
-
-  const [registerEmail, setRegisterEmail] = useState('');
-  const [registerPassword, setRegisterPassword] = useState('');
-  const [retypeRegisterPassword, setRetypeRegisterPassword] = useState('');
-  const [user, setUser] = useState({});
-  const [message, setMessage] = useState('');
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
-
-  const navigate = useNavigate();
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
-  const register = async () => {
-    try {
-      if (retypeRegisterPassword !== registerPassword) {
-        setMessage('password not matched');
-      } else {
-        const userr = await createUserWithEmailAndPassword(
-          auth,
-          registerEmail,
-          // formState.email,
-          registerPassword,
-        );
-        // eslint-disable-next-line no-console
-        console.log(userr);
-      }
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error.message);
-    }
-  };
-  const login = async () => {
-    try {
-      const userrr = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword,
-      );
-      // eslint-disable-next-line no-console
-      console.log(userrr);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error.message);
-    }
-  };
-
-  const logout = async () => {
-    await signOut(auth);
-  };
+  const [fetchStatus, setFetchStatus] = useState({});
 
   useEffect(() => {
     if (
       formState.name &&
       formState.email &&
       // formState.mobile &&
-      formState.country &&
       formState.streetName &&
       formState.city &&
-      formState.zipCode
+      formState.zipCode &&
+      formState.country
     ) {
       setIsAllInputProvided(true);
     } else {
@@ -145,18 +86,20 @@ export const RegisterForm = () => {
     setErrorState(errors);
 
     if (errors.filter((err) => err.message !== '').length === 0) {
-      // handlePost(
-      //   formState.name,
-      //   formState.email,
-      //   formState.mobile,
-      //   formState.streetName,
-      //   formState.city,
-      //   formState.zipCode,
-      // );
+      // handlePost({
+      //   fullName: formState.name,
+      //   email: formState.email,
+      //   // formState.mobile,
+      //   address: formState.streetName,
+      //   city: formState.city,
+      //   zipCode: formState.zipCode,
+      //   country: formState.country,
+      // });
 
       const inputObj = {
         fullName: formState.name,
         email: formState.email,
+        // formState.mobile,
         address: formState.streetName,
         city: formState.city,
         zipCode: formState.zipCode,
@@ -164,26 +107,34 @@ export const RegisterForm = () => {
       };
 
       (async () => {
-        await fetch(`${getApiBaseUrl()}/api/users`, {
+        const postMessage = await fetch(`${getApiBaseUrl()}/api/users`, {
           method: 'POST',
           headers: { 'Content-Type': 'Application/json' },
           body: JSON.stringify(inputObj),
         });
 
-        setIsMessageSent(true);
-        navigate('/');
+        if (postMessage.status === 200) {
+          setIsMessageSent(true);
+          // navigate('/contact-us-feedback');
+          setTimeout(() => {
+            navigate('/login');
+          }, 3000);
+        }
+        setFetchStatus({
+          status: postMessage.status,
+          message: postMessage.statusText,
+        });
       })();
 
-      // register();
-      setIsMessageSent(true);
+      // setIsMessageSent(true);
       setFormState({
         name: '',
         email: '',
         // mobile: '',
-        country: '',
         streetName: '',
         city: '',
         zipCode: '',
+        country: '',
       });
     }
   };
@@ -214,10 +165,15 @@ export const RegisterForm = () => {
         <div className="signup-wrapper-outer">
           <div className="signup-wrapper">
             {isMessageSent ? (
-              <p className="signup-success-msg">Your data submitted</p>
+              <p className="signup-success-msg">
+                Your data registered in database now
+              </p>
             ) : (
-              ''
+              <p className="signup-success-msg-notyet">
+                You are not registered yet !
+              </p>
             )}
+            {fetchStatus.message}
 
             <div className="signup-form-row">
               <label className="signup-label " htmlFor="name">
@@ -243,7 +199,6 @@ export const RegisterForm = () => {
               />
             </div>
             <span className="signup-error-span"> {errObj.name}</span>
-
             <div className="signup-form-row">
               <label className="signup-label" htmlFor="email">
                 email <span className="signup-required-star">*</span>
@@ -266,9 +221,7 @@ export const RegisterForm = () => {
                 required
               />
             </div>
-
             <span className="signup-error-span"> {errObj.email}</span>
-
             {/* <div className="signup-form-row">
               <label className="signup-label" htmlFor="mobile">
                 mobile <span className="signup-required-star">*</span>
@@ -291,27 +244,8 @@ export const RegisterForm = () => {
                 required
               />
             </div> */}
-
-            <div className="signup-form-row">
-              <label className="signup-label" htmlFor="country">
-                Country <span className="signup-required-star">*</span>
-              </label>
-
-              <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                value={formState.country}
-                placeholder="type your country"
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <span className="signup-error-span"> {errObj.mobile}</span>
-
-            <p id="delivery"> DELIVERY ADDRESS</p>
-
+            {/* <span className="signup-error-span"> {errObj.mobile}</span> */}
+            {/* <p id="delivery"> DELIVERY ADDRESS</p> */}
             <div className="signup-form-row">
               <label className="signup-label" htmlFor="streetName">
                 street name <span className="signup-required-star">*</span>
@@ -334,9 +268,7 @@ export const RegisterForm = () => {
                 required
               />
             </div>
-
             <span className="signup-error-span"> {errObj.streetName}</span>
-
             <div className="signup-form-row">
               <label className="signup-label" htmlFor="city">
                 city <span className="signup-required-star">*</span>
@@ -359,9 +291,7 @@ export const RegisterForm = () => {
                 required
               />
             </div>
-
             <span className="signup-error-span"> {errObj.city}</span>
-
             <div className="signup-form-row ">
               <label className="signup-label" htmlFor="zipCode">
                 zip code <span className="signup-required-star">*</span>
@@ -385,83 +315,52 @@ export const RegisterForm = () => {
                 required
               />
             </div>
-
             <span className="signup-error-span"> {errObj.zipCode}</span>
+            <div className="signup-form-row ">
+              <label className="signup-label" htmlFor="country">
+                country <span className="signup-required-star">*</span>
+              </label>
 
-            <div className="signup-form-row">
+              <input
+                className="signup-input"
+                type="text"
+                id="country"
+                name="country"
+                value={formState.country}
+                placeholder="type your country"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="signup-form-row login-logout-button">
               <Button
                 className={
                   isAllInputProvided
                     ? 'all-input-provided-button'
                     : 'all-input-notprovided-button'
                 }
-                onClick={handleSubmit}
                 size="large"
                 label="Register"
                 icon=""
+                onClick={handleSubmit}
               />
+
+              <Link to="/login">
+                <Button
+                  className={
+                    isAllInputProvided
+                      ? 'all-input-notprovided-button'
+                      : 'all-input-notprovided-button'
+                  }
+                  size="medium"
+                  label="login"
+                  icon=""
+                />
+              </Link>
             </div>
           </div>
         </div>
       </form>
-      <form id="register-form">
-        <h3> Register User </h3>
-        <input
-          value={registerEmail}
-          placeholder="Email..."
-          onChange={(event) => {
-            setRegisterEmail(event.target.value);
-          }}
-        />
-        <input
-          value={registerPassword}
-          type="password"
-          placeholder="Password..."
-          onChange={(event) => {
-            setRegisterPassword(event.target.value);
-          }}
-        />
-        <input
-          value={retypeRegisterPassword}
-          type="password"
-          placeholder="Retype Password..."
-          onChange={(e) => {
-            setRetypeRegisterPassword(e.target.value);
-          }}
-        />
-      </form>
-      {message}
-      <button type="button" onClick={register}>
-        register
-      </button>
-      <form id="login-form">
-        <div className="login">
-          <input
-            placeholder="Email..."
-            onChange={(e) => {
-              setLoginEmail(e.target.value);
-            }}
-          />
-          <input
-            type="password"
-            placeholder="Password..."
-            onChange={(e) => {
-              setLoginPassword(e.target.value);
-            }}
-          />
-        </div>
-      </form>
-
-      <button type="button" onClick={login}>
-        Login
-      </button>
-      <div className="logout">
-        <h4> User Logged In: </h4>
-        {user?.email}
-        <button type="button" onClick={logout}>
-          Sign Out
-        </button>
-      </div>
     </div>
   );
 };

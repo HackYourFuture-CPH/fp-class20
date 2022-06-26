@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
+import { LoginlogoutContext } from '../Form/Login/UserLoginForm/UserLoginForm';
 
 function TopNavBar() {
   const [botton, setBotton] = useState('top-nav-right-container');
   const [showMenu, setShowMenu] = useState(false);
+  const { name, email } = LoginlogoutContext;
 
   const handleClick = () => {
     setShowMenu(!showMenu);
@@ -14,6 +16,10 @@ function TopNavBar() {
       setBotton('top-nav-right-container');
     }
   };
+
+  // const loggedUserDerilized = JSON.parse(localStorage.getItem('loggedUser'));
+  // eslint-disable-next-line
+  console.log('in nav', name, email);
 
   return (
     <div className="top-nav-background">
@@ -36,9 +42,37 @@ function TopNavBar() {
             </button>
           </div>
         </div>
-
+        {name && <span> logged in as {name} </span>}
         <div className={botton}>
-          <div className="sign-in-container">
+          {name ? (
+            <div className="sign-in-container">
+              <Link to="login">
+                <img
+                  className="sign-in-icon"
+                  src="/assets/vectors/vector_sign_in.svg"
+                  alt="signin-icon"
+                />
+                <span className="sign-in-text">
+                  <button type="button" onClick={localStorage.clear()}>
+                    Log out
+                  </button>
+                </span>
+              </Link>
+            </div>
+          ) : (
+            <div className="sign-in-container">
+              <Link to="login">
+                <img
+                  className="sign-in-icon"
+                  src="/assets/vectors/vector_sign_in.svg"
+                  alt="signin-icon"
+                />
+                <span className="sign-in-text"> Sign in</span>
+              </Link>
+            </div>
+          )}
+
+          {/* <div className="sign-in-container">
             <Link to="login">
               <img
                 className="sign-in-icon"
@@ -47,13 +81,14 @@ function TopNavBar() {
               />
               <span className="sign-in-text"> Sign in</span>
             </Link>
-          </div>
+          </div> */}
+
           <div className="favourite-container">
             <img
               className="favourite-icon"
               src="/assets/vectors/vector_heart_empty.svg"
               alt="favourite-icon"
-            />{' '}
+            />
             <Link to="/favorites/1">
               <span className="favourites-text">Favourites </span>
             </Link>

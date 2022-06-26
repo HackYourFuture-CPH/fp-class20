@@ -11,7 +11,8 @@ import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage.Container';
 import Navigation from './components/Navigation/Navigation.component';
 import { Footer } from './components/Footer/Footer.component';
-import { Login } from './containers/LoginPage/Login.Container';
+import { LoginPage } from './containers/LoginPage/LoginPage.Container';
+import { RegisterPage } from './containers/LoginPage/RegisterPage.Container';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
           />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/favorites/:user_id" element={<FavouritePage />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<PageNotFoundPage />} />
         </Routes>
         <Footer />

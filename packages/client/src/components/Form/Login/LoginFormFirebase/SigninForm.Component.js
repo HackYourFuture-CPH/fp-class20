@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../../../Button/Button.component';
+import './SigninForm.Styles.css';
 
 import {
   createUserWithEmailAndPassword,
@@ -7,11 +8,9 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
-import './SigninForm.Styles.css';
-
 import { auth } from '../../../../firebase.config';
 
-export function SigninForm() {
+export function SigninFormFirebase() {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [retypeRegisterPassword, setRetypeRegisterPassword] = useState('');
