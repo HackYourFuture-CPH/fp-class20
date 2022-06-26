@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 function TopNavBar(props) {
   const [botton, setBotton] = useState('top-nav-right-container');
   const [showMenu, setShowMenu] = useState(false);
-  const { logedIn } = props;
+  const { logedIn, setLogedIn } = props;
   // const [signIn, setSignIn] = useState(false);
 
   const handleClick = () => {
@@ -20,9 +20,9 @@ function TopNavBar(props) {
     }
   };
 
-  // const changeToLogOut = () => {
-  //   setSignIn(!signIn);
-  // };
+  const changeToLogOut = () => {
+    setLogedIn(!logedIn);
+  };
 
   return (
     <div className="top-nav-background">
@@ -57,18 +57,18 @@ function TopNavBar(props) {
             {logedIn ? (
               <button
                 type="submit"
-                // onClick={changeToLogOut}
+                onClick={changeToLogOut}
                 className="logout-button-design"
               >
-                <Link to="/signup">Sign out</Link>
+                hi,Violetta
               </button>
             ) : (
               <button
                 type="submit"
-                // onClick={changeToLogOut}
+                onClick={changeToLogOut}
                 className="logout-button-design"
               >
-                <Link to="/login/1"> Sign in</Link>
+                Sign in
               </button>
             )}
             {/* </span> */}
@@ -103,7 +103,23 @@ function TopNavBar(props) {
               src="/assets/vectors/vector_sign_in.svg"
               alt="signin-icon"
             />
-            <span className="sign-in-text"> Sign in</span>
+            {logedIn ? (
+              <button
+                type="submit"
+                onClick={changeToLogOut}
+                className="logout-button-design"
+              >
+                hi,Violetta
+              </button>
+            ) : (
+              <button
+                type="submit"
+                onClick={changeToLogOut}
+                className="logout-button-design"
+              >
+                Sign in
+              </button>
+            )}
           </div>
           <div className="favourite-container">
             <img
@@ -131,8 +147,10 @@ export default TopNavBar;
 
 TopNavBar.propTypes = {
   logedIn: PropTypes.string,
+  setLogedIn: PropTypes.func,
 };
 
 TopNavBar.defaultProps = {
   logedIn: false,
+  setLogedIn: () => {},
 };

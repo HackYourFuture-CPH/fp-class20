@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <Navigation ligedIn={logedIn} />
+        <Navigation logedIn={logedIn} setLogedIn={setLogedIn} />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />

@@ -55,33 +55,48 @@ export const Login = (props) => {
   useEffect(() => {
     onHandleLogin();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId]);
+  }, []);
 
   const onHandleLogin = async (e) => {
-    e.preventDefault();
     // eslint-disable-next-line no-useless-catch
     try {
-      if (!errorEmail && !errorName && !errorPassword) {
-        const response = await fetch(`${getApiBaseUrl()}/api/users/${userId}`);
+      const response = await fetch(`${getApiBaseUrl()}/api/users/${userId}`);
 
-        const usersinfo = await response.json();
-        setUserinfo(usersinfo);
+      const usersinfo = await response.json();
+      setUserinfo(usersinfo);
+      setName(usersinfo[0].fullName);
 
-        if (
-          userinfo[0].fullName.toLowerCase().includes(name.toLowerCase()) &&
-          password === '666666'
-        ) {
-          setLogedIn(true);
-          setUserMatch(true);
-        } else {
-          setLogedIn(false);
-          setUserMatch(true);
-        }
-      }
+      setLogedIn(!logedIn);
     } catch (error) {
       throw error;
     }
   };
+
+  // const onHandleLogin = async (e) => {
+  //   e.preventDefault();
+  //   // eslint-disable-next-line no-useless-catch
+  //   try {
+  //     if (!errorEmail && !errorName && !errorPassword) {
+  //       const response = await fetch(`${getApiBaseUrl()}/api/users/${userId}`);
+
+  //       const usersinfo = await response.json();
+  //       setUserinfo(usersinfo);
+
+  //       if (
+  //         userinfo[0].fullName.toLowerCase().includes(name.toLowerCase()) &&
+  //         password === '666666'
+  //       ) {
+  //         setLogedIn(true);
+  //         setUserMatch(true);
+  //       } else {
+  //         setLogedIn(false);
+  //         setUserMatch(true);
+  //       }
+  //     }
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // };
 
   return (
     <>
@@ -145,7 +160,7 @@ export const Login = (props) => {
           </div>
         </div>
       )}
-      {usermatch && logedIn && (
+      {logedIn && (
         <div className="login-logout-container">
           <h3 className="login-succees-notice">
             welcome back !

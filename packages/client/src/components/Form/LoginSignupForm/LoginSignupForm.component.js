@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import './SignupForm.styles.css';
+import './LoginSignupForm.styles.css';
+import { Button } from '../../Button/Button.component';
 
 const validationPatterns = {
   name: /^[a-zA-Z\s]+$/,
@@ -23,7 +23,7 @@ const errorMessage = {
   zipCode: 'Please enter a valid zipCode: DK-1234|||dk 1234|||Dk-1234',
 };
 
-export const SignupForm = ({ text, label, handlePost }) => {
+export const LoginSignupForm = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -81,14 +81,6 @@ export const SignupForm = ({ text, label, handlePost }) => {
     setErrorState(errors);
 
     if (errors.filter((err) => err.message !== '').length === 0) {
-      handlePost(
-        formState.name,
-        formState.email,
-        formState.mobile,
-        formState.streetName,
-        formState.city,
-        formState.zipCode,
-      );
       setIsMessageSent(true);
       setFormState({
         name: '',
@@ -206,8 +198,6 @@ export const SignupForm = ({ text, label, handlePost }) => {
 
             <span className="signup-error-span"> {errObj.mobile}</span>
 
-            <p id="delivery"> DELIVERY ADDRESS</p>
-
             <div className="signup-form-row">
               <label className="signup-label" htmlFor="streetName">
                 street name <span className="signup-required-star">*</span>
@@ -285,7 +275,7 @@ export const SignupForm = ({ text, label, handlePost }) => {
             <span className="signup-error-span"> {errObj.zipCode}</span>
 
             <div className="signup-form-row">
-              {/* dummy button */}
+              {/* dummy button
               <button
                 className={
                   isAllInputProvided
@@ -297,22 +287,22 @@ export const SignupForm = ({ text, label, handlePost }) => {
                 onClick={handleSubmit}
               >
                 {text}
-              </button>
+              </button> */}
+              <Button
+                className={
+                  isAllInputProvided
+                    ? 'all-input-provided-button'
+                    : 'all-input-notprovided-button'
+                }
+                icon=""
+                label="Sign Up"
+                type="shop"
+                onClick={handleSubmit}
+              />
             </div>
           </div>
         </div>
       </form>
     </div>
   );
-};
-
-SignupForm.propTypes = {
-  text: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  handlePost: PropTypes.func,
-};
-
-SignupForm.defaultProps = {
-  text: null,
-  handlePost: () => {},
 };
