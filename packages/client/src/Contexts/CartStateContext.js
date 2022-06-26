@@ -10,17 +10,6 @@ export const CartStateProvider = ({ children }) => {
     return JSON.parse(localStorage.getItem(CART_STATE_KEY) ?? '[]');
   });
 
-  // const updateCartState = useCallback((newCartState) => {
-  //   // eslint-disable-next-line
-  //   // console.log(newCartState);
-
-  //   // newCartState.reduce((a,b) => a.id === b.id ?)
-
-  //   setCartState(newCartState);
-  //   localStorage.setItem(CART_STATE_KEY, JSON.stringify(newCartState));
-  //   // return localStorageValue ? JSON.parse(localStorageValue) : [];
-  // }, []);
-
   const addToCart = useCallback(
     (newProduct) => {
       let productIsNew = true;
