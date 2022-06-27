@@ -69,7 +69,10 @@ export const ProductCard = ({ product, variant }) => {
                 type="addToCart"
                 backgroundColor="#53742A"
                 className="add-to-cart-button-variant"
-                onClick={() => addToCart({ ...product, quantity: count })}
+                onClick={() => {
+                  toggleModal(true);
+                  addToCart({ ...product, quantity: count });
+                }}
               />
             </div>
           </div>
@@ -144,7 +147,10 @@ export const ProductCard = ({ product, variant }) => {
                 type="addToCart"
                 backgroundColor="#53742A"
                 className="add-to-cart-button-large"
-                onClick={() => addToCart({ ...product, quantity: count })}
+                onClick={() => {
+                  toggleModal(true);
+                  addToCart({ ...product, quantity: count });
+                }}
               />
             </div>
           </div>
