@@ -16,7 +16,7 @@
   display: grid;
   grid-template-columns: 20% 30% 1fr;
   background: #00000062;
-  padding: 0.5em;
+  padding: 1rem 10px;
 }
 
 .order-product-quantity {
@@ -43,7 +43,7 @@
   background: #00000062;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem;
   margin: 0.7rem 0;
 }
 
@@ -110,6 +110,15 @@
 .order-product-product-container .order-product-title {
   text-align: start;
   font-size: 1.3rem;
+}
+
+.order-product-product-container p {
+  margin: 0.7rem 0;
+  font-size: 0.9rem;
+}
+
+.order-product-product-container span {
+  margin-right: 0.5rem;
 }
 
 @media screen and (max-width: 1184px) {

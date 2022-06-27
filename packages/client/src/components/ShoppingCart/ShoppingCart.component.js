@@ -10,7 +10,7 @@ function ShoppingCart() {
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem('fp-cart-state'));
     if (savedNotes) {
-      setProducts((prev) => [savedNotes]);
+      setProducts(savedNotes);
     }
   }, []);
 
@@ -18,6 +18,9 @@ function ShoppingCart() {
     setProducts(
       products.map((product) => {
         if (product.id === productId) {
+          // eslint-disable-next-line
+          console.log({ ...product });
+
           return {
             ...product,
             quantity: product.quantity + 1,
@@ -48,6 +51,9 @@ function ShoppingCart() {
       .reduce((a, b) => a + b, 0);
   };
 
+  // eslint-disable-next-line no-console
+  console.log(products.flat());
+
   return (
     <div className="shopping-cart">
       <div>
@@ -59,7 +65,7 @@ function ShoppingCart() {
               <p className="bold">Total DKK</p>
             </div>
           </div>
-          {products?.map((product) => (
+          {products.map((product) => (
             <OrderProduct
               data={product}
               key={product.id}
@@ -79,7 +85,7 @@ function ShoppingCart() {
             </Link>
             <div>
               <Total title="Subtotal" price={calculateTotal()} />
-              <Total title="Delivery" price="10.00" />
+              <Total title="Delivery" price={10.0} />
               <Total title="Total" price={calculateTotal() + 10} />
             </div>
           </div>

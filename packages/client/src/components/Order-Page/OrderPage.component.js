@@ -34,6 +34,7 @@ function OrderPage() {
       <ShoppingCart />
       <h1 className="order-page-title">Contact and Delivary Details</h1>
       <DeliveryDetails />
+      <h1 className="order-page-title">Similar Products</h1>
       <Carousel items={data} show={3} className="carousel" />{' '}
     </div>
   );
