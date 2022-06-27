@@ -47,8 +47,8 @@
 }
 
 .select-sort-by {
-  appearance: none;
   background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
+  background-image: url('../../../public/assets/vectors/vector_arrow_down.svg');
   color: white;
   background-repeat: no-repeat;
   background-position-x: 100%;
@@ -56,7 +56,6 @@
   border: none;
   margin-right: 2rem;
   padding: 0.25rem;
-  padding-right: 1.55rem;
   cursor: pointer;
   font-size: 1.125rem;
   font-family: Inter, Arial, Helvetica, sans-serif;
