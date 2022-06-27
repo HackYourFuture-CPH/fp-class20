@@ -15,7 +15,7 @@ const BottomNavigation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (e.key === 'Enter' && searchInputValue.length !== 0) {
+    if (e.key === 'Enter' && /^\s*$/.test(searchInputValue) === false) {
       navigate(`/search/?name=${searchInputValue}`);
     }
     if (e.key !== 'BackSpace' && e.key !== 'Enter') {
