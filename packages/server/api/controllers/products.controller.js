@@ -40,7 +40,7 @@ const getProducts = async (
 
 const getAllProducts = async (query) => {
   if ('name' in query) {
-    const nameReg = /^[A-Za-z]*$/;
+    const nameReg = /^[A-Za-z ]*$/;
     if (!nameReg.test(query.name)) {
       throw new HttpError('the data entery is incorrect', 400);
     }

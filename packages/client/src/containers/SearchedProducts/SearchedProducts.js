@@ -13,7 +13,7 @@ export const SearchedProducts = () => {
   const searchedName = searchParams.get('name');
 
   useEffect(() => {
-    const nameReg = /^[A-Za-z]*$/;
+    const nameReg = /^[A-Za-z ]*$/;
     if (searchedName !== undefined && nameReg.test(searchedName)) {
       fetch(`${getApiBaseUrl()}/api/products?name=${searchedName}`)
         .then((response) => {
@@ -26,7 +26,10 @@ export const SearchedProducts = () => {
           setSearchedProducts(productTodisplay);
           setLoading(false);
         })
-        .catch((err) => setError(err));
+        .catch((err) => {
+          setLoading(false);
+          setError(err);
+        });
     }
   }, [searchedName]);
 
@@ -34,7 +37,10 @@ export const SearchedProducts = () => {
     return <Preloader />;
   }
   if (searchedProductsError) {
-    <div>{searchedProductsError}</div>;
+    return <div>{searchedProductsError}</div>;
+  }
+  if (searchedProducts.length === 0) {
+    return <div className="empty-search">The search result is empty</div>;
   }
   return (
     <ul className="product-lists searched-products-list">

@@ -5,7 +5,7 @@ import './BottomNavigation.styles.css';
 export const searchContext = createContext();
 
 const BottomNavigation = () => {
-  const [searchInputValue, setSearchInputValue] = useState('| Search spices');
+  const [searchInputValue, setSearchInputValue] = useState('');
   const navigate = useNavigate();
 
   function handleSearchInput(e) {
@@ -15,7 +15,7 @@ const BottomNavigation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && searchInputValue.length !== 0) {
       navigate(`/search/?name=${searchInputValue}`);
     }
     if (e.key !== 'BackSpace' && e.key !== 'Enter') {
@@ -43,6 +43,7 @@ const BottomNavigation = () => {
           className="input-container"
           type="text"
           value={searchInputValue}
+          placeholder="| Search spices"
           onKeyPress={handleSubmit}
         />
       </div>
