@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartStateProvider } from './Contexts/CartStateContext';
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
 import CategoryPage from './containers/CategoryPage/CategoryPage.container';
 import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
@@ -15,26 +16,28 @@ import OrderPage from './components/Order-Page/OrderPage.component';
 
 function App() {
   return (
-    <div className="app">
-      <Router>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/category/:name" element={<CategoryPage />} />
-          <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route
-            path="/contact-us-feedback"
-            element={<ContactUsFeedbackPage />}
-          />
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/favourites" element={<FavouritePage />} />
-          <Route path="/order" element={<OrderPage />} />
-          <Route path="*" element={<PageNotFoundPage />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <CartStateProvider>
+      <div className="app">
+        <Router>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
+            <Route path="/category/:name" element={<CategoryPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/order" element={<OrderPage />} />
+            <Route
+              path="/contact-us-feedback"
+              element={<ContactUsFeedbackPage />}
+            />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/favourites" element={<FavouritePage />} />
+            <Route path="*" element={<PageNotFoundPage />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
+    </CartStateProvider>
   );
 }
 
