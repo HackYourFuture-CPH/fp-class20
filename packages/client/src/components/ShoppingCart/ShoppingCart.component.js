@@ -15,15 +15,12 @@ function ShoppingCart() {
           // eslint-disable-next-line
           console.log({ ...product });
 
-          return [
-            cartState.filter((prod) => product.id !== productId),
-            {
-              ...product,
-              quantity: product.quantity + 1,
-            },
-          ];
+          return {
+            ...product,
+            quantity: product.quantity + 1,
+          };
         }
-        return cartState;
+        return product;
       }),
     );
   };
@@ -37,7 +34,7 @@ function ShoppingCart() {
             quantity: Math.max(0, product.quantity - 1),
           };
         }
-        return cartState;
+        return product;
       }),
     );
   };

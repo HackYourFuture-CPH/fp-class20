@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartStateContext } from '../../Contexts/CartStateContext';
 import './TopNavBar.styles.css';
 
 function TopNavBar() {
   const [botton, setBotton] = useState('top-nav-right-container');
   const [showMenu, setShowMenu] = useState(false);
+  const { cartState } = useContext(CartStateContext);
 
   const handleClick = () => {
     setShowMenu(!showMenu);
@@ -63,7 +65,7 @@ function TopNavBar() {
                 src="/assets/vectors/vector_cart.svg"
                 alt="cart-icon"
               />
-              <span className="number">0</span>
+              <span className="number">{cartState.length}</span>
               <span className="cart-text">Cart</span>
             </div>
           </Link>
