@@ -50,6 +50,7 @@
   background: linear-gradient(180deg, #231c16 0%, rgb(35 28 22 / 75%) 100%);
   background-image: url('../../../public/assets/vectors/vector_arrow_down.svg');
   color: white;
+  appearance: none;
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 70%;
@@ -62,6 +63,7 @@
   font-weight: 500;
   letter-spacing: 0;
   text-align: left;
+  padding-right: 1.5em;
 }
 
 .select-sort-by option {

@@ -20,7 +20,7 @@ const SortBy = ({ textObj, setSort, sort }) => {
                 className="select-sort-by"
               >
                 <option value="" disabled selected>
-                  SORT BY :
+                  SORT BY
                 </option>
                 <option value="alphabetically">A - Z</option>
                 <option value="Lowest price">Lowest price</option>
