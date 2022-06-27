@@ -3,6 +3,7 @@ import { ProductCard } from '../../components/ProductComponent/ProductCard.compo
 import { useSearchParams } from 'react-router-dom';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 import Preloader from '../../components/Preloader/Preloader.component';
+import './SearchedProducts.Style.css';
 
 export const SearchedProducts = () => {
   const [searchedProducts, setSearchedProducts] = useState([]);
@@ -36,7 +37,7 @@ export const SearchedProducts = () => {
     <div>{searchedProductsError}</div>;
   }
   return (
-    <ul className="product-lists">
+    <ul className="product-lists searched-products-list">
       {searchedProducts.map((product) => (
         <li>
           <ProductCard product={product} variant="small" />
