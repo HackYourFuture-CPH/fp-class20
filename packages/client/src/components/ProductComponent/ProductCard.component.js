@@ -81,7 +81,7 @@ export const ProductCard = ({ product, variant }) => {
               productImage={product.pictureUrl}
               productName={product.name}
               count={count}
-              // amountOfProducts={cartState.length} // TODO: fix when cartState is fixed
+              amountOfProducts={CartStateContext.length}
               setCount={setCount}
               price={product.price}
             />
@@ -158,7 +158,7 @@ export const ProductCard = ({ product, variant }) => {
               count={count}
               setCount={setCount}
               price={product.price}
-              // amountOfProducts={cartState.length} // TODO: fix when cartstate is fixed
+              amountOfProducts={CartStateContext.length}
             />
           </div>
         )}
