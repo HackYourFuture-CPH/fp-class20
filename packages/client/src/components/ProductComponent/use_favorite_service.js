@@ -10,8 +10,13 @@ export function useFavoriteService(productId) {
   useEffect(() => {
     fetch(`${getApiBaseUrl()}/api/favorites/1`)
       .then((response) => response.json())
-      .then((data) => {
-        setIsFavorite(data.isFavorite);
+      .then((favorites) => {
+        const product = favorites.find((f) => {
+          return f.id === productId;
+        });
+        if (product) {
+          setIsFavorite(true);
+        }
       });
   }, [productId]);
 

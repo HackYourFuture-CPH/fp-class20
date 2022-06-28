@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartStateContext } from '../../Contexts/CartStateContext';
 import './TopNavBar.styles.css';
 import PropTypes from 'prop-types';
 
@@ -10,6 +11,7 @@ function TopNavBar(props) {
   const [showMenu, setShowMenu] = useState(false);
   const { signedIn, setSignedIn } = props;
   // const [signIn, setSignIn] = useState(false);
+  const { cartState } = useContext(CartStateContext);
 
   const handleClick = () => {
     setShowMenu(!showMenu);
@@ -83,15 +85,17 @@ function TopNavBar(props) {
               <span className="favourites-text">Favourites </span>
             </Link>
           </div>
-          <div className="cart-container">
-            <img
-              className="cart-icon"
-              src="/assets/vectors/vector_cart.svg"
-              alt="cart-icon"
-            />
-            <span className="number">0</span>
-            <span className="cart-text">Cart</span>
-          </div>
+          <Link to="/order">
+            <div className="cart-container">
+              <img
+                className="cart-icon"
+                src="/assets/vectors/vector_cart.svg"
+                alt="cart-icon"
+              />
+              <span className="number">{cartState.length}</span>
+              <span className="cart-text">Cart</span>
+            </div>
+          </Link>
         </div>
       </div>
       {showMenu ? (
@@ -136,7 +140,8 @@ function TopNavBar(props) {
               alt="cart-icon"
             />
             <span className="number">0</span>
-            <span className="cart-text">Cart</span>
+            <Link to="/order">Qais</Link>
+            {/* <span className="cart-text">Cart</span> */}
           </div>
         </div>
       ) : null}
@@ -146,7 +151,7 @@ function TopNavBar(props) {
 export default TopNavBar;
 
 TopNavBar.propTypes = {
-  signedIn: PropTypes.string,
+  signedIn: PropTypes.bool,
   setSignedIn: PropTypes.func,
 };
 
