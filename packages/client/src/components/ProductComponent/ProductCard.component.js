@@ -6,9 +6,9 @@ import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
 import { useFavoriteService } from './use_favorite_service';
+import { CartStateContext } from '../../Contexts/CartStateContext';
 
 export const ProductCard = ({ product, variant }) => {
-  const CartStateContext = React.createContext([]);
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
 
@@ -16,7 +16,7 @@ export const ProductCard = ({ product, variant }) => {
     product.id,
   );
 
-  const { cartState, updateCartState } = useContext(CartStateContext);
+  const { addToCart } = useContext(CartStateContext);
 
   if (variant === 'small') {
     return (
@@ -37,61 +37,45 @@ export const ProductCard = ({ product, variant }) => {
             />
           </button>
         </div>
+        <div className="product-details-variant">
+          <div className="product-image-variant">
+            <img src={product.pictureUrl} alt={`${product.name}`} />
+          </div>
 
-        <a
-          href={`/product/${product.id}`}
-          target="_blank"
-          rel="noreferrer"
-          className="product-card-link"
-        >
-          <div className="product-details-variant">
-            <div className="product-image-variant">
-              <img src={product.pictureUrl} alt={`${product.name}`} />
-            </div>
-
-            <div className="product-information-variant">
-              <div>
+          <div className="product-information-variant">
+            <div>
+              <a
+                href={`/product/${product.id}`}
+                rel="noreferrer"
+                className="product-card-link"
+              >
                 <h2 className="product-name-variant"> {product.name}</h2>
-              </div>
-              <div>
-                <span className="product-size-variant">
-                  {product.size}g glass jar
-                </span>
+              </a>
+            </div>
+            <div>
+              <span className="product-size-variant">
+                {product.size}g glass jar
+              </span>
 
-                <span className="product-size-variant">
-                  {product.price} DKK
-                </span>
+              <span className="product-size-variant">{product.price} DKK</span>
+            </div>
+            <div className="counter-cart-button-variant">
+              <div className="counter-button-variant">
+                <Counter count={count} setCount={setCount} />
               </div>
-              <div className="counter-cart-button-variant">
-                <div className="counter-button-variant">
-                  <Counter count={count} setCount={setCount} />
-                </div>
-                <Button
-                  label="ADD TO CART "
-                  type="addToCart"
-                  backgroundColor="#53742A"
-                  className="add-to-cart-button-variant"
-                  onClick={() => {
-                    toggleModal(true);
-
-                    updateCartState([
-                      ...cartState,
-                      {
-                        id: product.id,
-                        quantity: count,
-                        img: product.pictureUrl,
-                        size: product.size,
-                        name: product.name,
-                        price: product.price,
-                      },
-                    ]);
-                  }}
-                />
-              </div>
+              <Button
+                label="ADD TO CART "
+                type="addToCart"
+                backgroundColor="#53742A"
+                className="add-to-cart-button-variant"
+                onClick={() => {
+                  toggleModal(true);
+                  addToCart({ ...product, quantity: count });
+                }}
+              />
             </div>
           </div>
-        </a>
-
+        </div>
         {isModalOpen && (
           <div className="confirmation-modal-variant">
             <ProductCardModal
@@ -99,7 +83,7 @@ export const ProductCard = ({ product, variant }) => {
               productImage={product.pictureUrl}
               productName={product.name}
               count={count}
-              amountOfProducts={cartState.length}
+              amountOfProducts={CartStateContext.length}
               setCount={setCount}
               price={product.price}
             />
@@ -132,12 +116,18 @@ export const ProductCard = ({ product, variant }) => {
         </div>
         <div className="product-details">
           <div className="product-image-large">
-            <img src={`/${product.pictureUrl}`} alt={`${product.name}`} />
+            <img src={product.pictureUrl} alt={`${product.name}`} />
           </div>
 
           <div className="product-information-large">
             <div>
-              <h2 className="product-name-large"> {product.name}</h2>
+              <a
+                href={`/product/${product.id}`}
+                rel="noreferrer"
+                className="product-card-link"
+              >
+                <h2 className="product-name-large"> {product.name}</h2>
+              </a>
               <p className="product-info-large"> {product.description}</p>
             </div>
 
@@ -158,17 +148,7 @@ export const ProductCard = ({ product, variant }) => {
                 className="add-to-cart-button-large"
                 onClick={() => {
                   toggleModal(true);
-                  updateCartState([
-                    ...cartState,
-                    {
-                      id: product.id,
-                      quantity: count,
-                      img: product.pictureUrl,
-                      size: product.size,
-                      name: product.name,
-                      price: product.price,
-                    },
-                  ]);
+                  addToCart({ ...product, quantity: count });
                 }}
               />
             </div>
@@ -183,7 +163,7 @@ export const ProductCard = ({ product, variant }) => {
               count={count}
               setCount={setCount}
               price={product.price}
-              amountOfProducts={cartState.length}
+              amountOfProducts={CartStateContext.length}
             />
           </div>
         )}
