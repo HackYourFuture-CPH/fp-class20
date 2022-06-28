@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartStateProvider } from './components/Context/CartStateContext';
+import { CartStateProvider } from './Contexts/CartStateContext';
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
 import CategoryPage from './containers/CategoryPage/CategoryPage.container';
 import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
@@ -15,7 +15,6 @@ import { Footer } from './components/Footer/Footer.component';
 
 function App() {
   return (
-functionality-to-add-to-cart
     <CartStateProvider>
       <div className="app">
         <Router>
@@ -30,15 +29,13 @@ functionality-to-add-to-cart
               element={<ContactUsFeedbackPage />}
             />
             <Route path="/product/:id" element={<ProductPage />} />
-            <Route path="/favourites" element={<FavouritePage />} />
+            <Route path="/favorites/:id" element={<FavouritePage />} />
             <Route path="*" element={<PageNotFoundPage />} />
           </Routes>
           <Footer />
         </Router>
       </div>
     </CartStateProvider>
-
-   
   );
 }
 
