@@ -32,7 +32,7 @@ function OrderPage() {
         <h1 className="order-page-title">Shopping Cart</h1>
       </div>
       <ShoppingCart />
-      <h1 className="order-page-title">Contact and Delivary Details</h1>
+      <h1 className="order-page-title">Contact and Delivery Details</h1>
       <DeliveryDetails />
       <h1 className="order-page-title">Similar Products</h1>
       <Carousel items={data} show={3} className="carousel" />{' '}
