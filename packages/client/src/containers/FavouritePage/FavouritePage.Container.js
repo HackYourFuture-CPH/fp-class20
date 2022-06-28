@@ -12,8 +12,8 @@ const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
 export const FavouritePage = () => {
   const [favourites, setFavourites] = useState([]);
   const [loading, setIsLoading] = useState(false);
-  const { isFavorite, updateFavoriteStatus } = useFavoriteService(true);
   const [sort, setSort] = useState('');
+  const { isFavorite, updateFavoriteStatus } = useFavoriteService();
 
   useEffect(() => {
     async function fetchFavourites() {
@@ -36,8 +36,6 @@ export const FavouritePage = () => {
       className="favourite-item"
       variant="small"
       product={favourite}
-      isFavorite={isFavorite}
-      updateFavoriteStatus={updateFavoriteStatus}
     />
   ));
   return (
