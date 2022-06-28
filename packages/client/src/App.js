@@ -12,7 +12,9 @@ import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage.Container';
 import Navigation from './components/Navigation/Navigation.component';
 import { Footer } from './components/Footer/Footer.component';
+import { SearchedProducts } from './containers/SearchedProducts/SearchedProducts';
 import OrderPage from './components/Order-Page/OrderPage.component';
+
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
               element={<ContactUsFeedbackPage />}
             />
             <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/search" element={<SearchedProducts />} />
+            <Route path="/favorites/:user_id" element={<FavouritePage />} />
             <Route path="/favorites/:id" element={<FavouritePage />} />
             <Route path="*" element={<PageNotFoundPage />} />
           </Routes>
