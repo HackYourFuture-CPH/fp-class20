@@ -12,9 +12,9 @@
   justify-content: center;
   flex-flow: wrap;
   flex-direction: row;
-  padding: 5em;
+  padding: 2em;
   margin: 0 auto;
-  gap: 4em;
+  gap: 2em;
 }
 
 .list-page-number {

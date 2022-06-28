@@ -162,7 +162,7 @@
 
 @media (max-width: 1225px) and (min-width: 1181px) {
   .product-container-variant {
-    width: 900px !important;
+    width: 375px;
     margin: 0 auto;
     box-sizing: border-box;
     height: auto !important;

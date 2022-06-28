@@ -15,7 +15,6 @@ import { Footer } from './components/Footer/Footer.component';
 import { SearchedProducts } from './containers/SearchedProducts/SearchedProducts';
 import OrderPage from './components/Order-Page/OrderPage.component';
 
-
 function App() {
   return (
     <CartStateProvider>
