@@ -5,6 +5,8 @@ import getApiBaseUrl from '../../utils/getApiBaseUrl';
 import Preloader from '../../components/Preloader/Preloader.component';
 import './SearchedProducts.Style.css';
 
+const nameReg = /^[A-Za-z ]*$/;
+
 export const SearchedProducts = () => {
   const [searchedProducts, setSearchedProducts] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -13,8 +15,6 @@ export const SearchedProducts = () => {
   const searchedName = searchParams.get('name');
 
   useEffect(() => {
-    const nameReg = /^[A-Za-z ]*$/;
-
     if (searchedName === undefined && !nameReg.test(searchedName)) {
       return;
     }

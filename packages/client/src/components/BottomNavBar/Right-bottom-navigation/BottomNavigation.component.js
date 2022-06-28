@@ -11,7 +11,7 @@ const BottomNavigation = () => {
     setSearchInputValue(e.target.value);
   }
 
-  const handleSubmit = (e) => {
+  const keyPressHandler = (e) => {
     e.preventDefault();
     if (e.key === 'Enter' && /^\s*$/.test(searchInputValue) === false) {
       // const history = JSON.parse(localStorage.getItem('history'));
@@ -19,12 +19,17 @@ const BottomNavigation = () => {
       // localStorage.setItem('history', JSON.stringify(history));
       // // eslint-disable-next-line no-console
       // console.log(localStorage.getItem('history'));
-      navigate(`/search/?name=${searchInputValue}`);
+      submitHandler();
     }
     if (e.key !== 'BackSpace' && e.key !== 'Enter') {
       setSearchInputValue(searchInputValue + e.key);
     }
   };
+
+  function submitHandler() {
+    navigate(`/search/?name=${searchInputValue}`);
+    setSearchInputValue('');
+  }
 
   return (
     <>
@@ -41,14 +46,14 @@ const BottomNavigation = () => {
         </span>
       </div>
       <div className="search-container">
-        <form>
+        <form onSubmit={submitHandler}>
           <input
             onChange={handleSearchInput}
             className="input-container"
             type="text"
             value={searchInputValue}
             placeholder="| Search spices"
-            onKeyPress={handleSubmit}
+            onKeyPress={keyPressHandler}
           />
         </form>
       </div>
