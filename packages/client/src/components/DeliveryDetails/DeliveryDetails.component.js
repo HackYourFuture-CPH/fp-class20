@@ -23,8 +23,6 @@ const DeliveryDetails = () => {
   return (
     <div>
       <div className="contact-outlayer">
-        <h1 className="contact-header-text">Contact and Delivary Details</h1>
-
         <div className="contact" key={data.id}>
           <div className="contact-items">
             <div>

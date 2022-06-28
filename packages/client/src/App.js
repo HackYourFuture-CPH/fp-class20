@@ -12,6 +12,7 @@ import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage.Container';
 import Navigation from './components/Navigation/Navigation.component';
 import { Footer } from './components/Footer/Footer.component';
+import OrderPage from './components/Order-Page/OrderPage.component';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/category/:name" element={<CategoryPage />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/order" element={<OrderPage />} />
             <Route
               path="/contact-us-feedback"
               element={<ContactUsFeedbackPage />}

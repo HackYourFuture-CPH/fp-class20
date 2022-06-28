@@ -38,6 +38,7 @@ export const CartStateProvider = ({ children }) => {
     () => ({
       cartState,
       addToCart,
+      setCartState,
     }),
     [cartState, addToCart],
   );
