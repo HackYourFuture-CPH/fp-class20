@@ -5,7 +5,6 @@ import { ProductCard } from '../../components/ProductComponent/ProductCard.compo
 import Preloader from '../../components/Preloader/Preloader.component';
 import getApiBaseUrl from '../../utils/getApiBaseUrl';
 import { sortFunction } from '../../components/SortBy/Utils/sortFunction';
-import { useFavoriteService } from '../../components/ProductComponent/use_favorite_service';
 
 const textObj = { sidebar: 'Simply Spices / Favourites', main: 'Favourites' };
 
@@ -13,7 +12,6 @@ export const FavouritePage = () => {
   const [favourites, setFavourites] = useState([]);
   const [loading, setIsLoading] = useState(false);
   const [sort, setSort] = useState('');
-  const { isFavorite, updateFavoriteStatus } = useFavoriteService();
 
   useEffect(() => {
     async function fetchFavourites() {
