@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useContext, useState } from 'react';
 import './ProductCard.styles.css';
 import './ProductCardVariant.styles.css';
