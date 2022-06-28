@@ -3,26 +3,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../../../Button/Button.component';
 import './UserLogin.Styles.css';
 import getApiBaseUrl from '../../../../utils/getApiBaseUrl';
-// import TopNavBar from '../../TopNavBar/TopNavBar.component';
 
-// import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
-// import { auth } from '../../../../firebase.config';
 export const LoginlogoutContext = createContext();
 export const UserLoginForm = () => {
   const navigate = useNavigate();
 
-  // React States
   const [messages, setMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isAllInputProvided, setIsAllInputProvided] = useState(false);
   const [userFetched, setUserFetched] = useState([]);
   const [user, setUSer] = useState({ email: '', name: '' });
-  // const [loggedUser, setLoggedUser] = useState('');
-  // const [signoutText, setSignoutText] = useState('');
-
-  // onAuthStateChanged(auth, (currentUser) => {
-  //   setUSer(currentUser);
-  // });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +29,7 @@ export const UserLoginForm = () => {
     email: 'invalid email',
     name: 'invalid name',
   };
-  // Generate JSX code for error message
+  //  for error message
   const renderErrorMessage = (errorargument) =>
     errorargument === messages.name && (
       <div className="error">{messages.message}</div>
@@ -56,21 +46,15 @@ export const UserLoginForm = () => {
   }, []);
 
   const handleLogin = (e) => {
-    // Prevent page reload
     e.preventDefault();
 
     // Find user login info
     const userData = userFetched.find((userdb) => {
-      // eslint-disable-next-line
-      console.log(userdb.email);
       return userdb.email === user.email;
     });
 
     localStorage.setItem('email', userData.value);
-    // eslint-disable-next-line
-    console.log(user.email);
-    // eslint-disable-next-line
-    console.log(userData);
+
     // Compare user info
     if (userData) {
       if (userData.fullName !== user.name) {
@@ -78,34 +62,18 @@ export const UserLoginForm = () => {
         setMessages({ name: 'name', message: messageLog.name });
       } else {
         setIsSubmitted(true);
-        // setLoggedUser(userData);
+
         const loggedUser = {
           name: userData.fullName,
           email: userData.email,
         };
         const loggedUserSerilized = JSON.stringify(loggedUser);
         localStorage.setItem('loggedUser', loggedUserSerilized);
-        const loggedUserDerilized = JSON.parse(
-          localStorage.getItem('loggedUser'),
-        );
-        // eslint-disable-next-line
-        console.log(loggedUserDerilized);
-        <LoginlogoutContext.Provider value={loggedUserDerilized} />;
       }
     } else {
       // email not found
       setMessages({ name: 'email', message: messageLog.email });
     }
-
-    //   const login = async () => {
-    //     try {
-    //       await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-    //     } catch (error) {
-    //       // eslint-disable-next-line no-console
-    //       console.log(error.message);
-    //     }
-    //   };
-    //   login();
   };
 
   const renderFormLogin = (
@@ -181,15 +149,14 @@ export const UserLoginForm = () => {
     <div className="submit-form-css">
       {isSubmitted ? (
         <div>
-          {/* <h1> Congratulation {loggedUser}</h1> */}
           <h1> Congratulation {}</h1>
           <h1> Login Success !</h1>
           <h3> Enjoy shopping</h3>
-          {/* {setSignoutText('Sig nout')}; */}
-          {/* <TopNavBar signoutText={signoutText} /> */}
+
           {setTimeout(() => {
             navigate('/');
-          }, 5000)}
+            window.location.reload(false);
+          }, 3000)}
         </div>
       ) : (
         renderFormLogin

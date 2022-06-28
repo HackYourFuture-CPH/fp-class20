@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './TopNavBar.styles.css';
-import { LoginlogoutContext } from '../Form/Login/UserLoginForm/UserLoginForm';
 
 function TopNavBar() {
   const [botton, setBotton] = useState('top-nav-right-container');
   const [showMenu, setShowMenu] = useState(false);
-  const { name, email } = LoginlogoutContext;
 
   const handleClick = () => {
     setShowMenu(!showMenu);
@@ -17,9 +15,7 @@ function TopNavBar() {
     }
   };
 
-  // const loggedUserDerilized = JSON.parse(localStorage.getItem('loggedUser'));
-  // eslint-disable-next-line
-  console.log('in nav', name, email);
+  const loggedUserDerilized = JSON.parse(localStorage.getItem('loggedUser'));
 
   return (
     <div className="top-nav-background">
@@ -42,46 +38,35 @@ function TopNavBar() {
             </button>
           </div>
         </div>
-        {name && <span> logged in as {name} </span>}
+        {loggedUserDerilized && (
+          <span> Logged in as {loggedUserDerilized.name} </span>
+        )}
         <div className={botton}>
-          {name ? (
-            <div className="sign-in-container">
-              <Link to="login">
-                <img
-                  className="sign-in-icon"
-                  src="/assets/vectors/vector_sign_in.svg"
-                  alt="signin-icon"
-                />
-                <span className="sign-in-text">
-                  <button type="button" onClick={localStorage.clear()}>
-                    Log out
+          <div className="sign-in-container">
+            <img
+              className="sign-in-icon"
+              src="/assets/vectors/vector_sign_in.svg"
+              alt="signin-icon"
+            />
+            <span className="sign-in-text">
+              {loggedUserDerilized ? (
+                <Link to="login">
+                  <button
+                    className="sign-out-button"
+                    type="button"
+                    onClick={() => {
+                      localStorage.clear();
+                      window.location.reload(false);
+                    }}
+                  >
+                    Sign Out
                   </button>
-                </span>
-              </Link>
-            </div>
-          ) : (
-            <div className="sign-in-container">
-              <Link to="login">
-                <img
-                  className="sign-in-icon"
-                  src="/assets/vectors/vector_sign_in.svg"
-                  alt="signin-icon"
-                />
-                <span className="sign-in-text"> Sign in</span>
-              </Link>
-            </div>
-          )}
-
-          {/* <div className="sign-in-container">
-            <Link to="login">
-              <img
-                className="sign-in-icon"
-                src="/assets/vectors/vector_sign_in.svg"
-                alt="signin-icon"
-              />
-              <span className="sign-in-text"> Sign in</span>
-            </Link>
-          </div> */}
+                </Link>
+              ) : (
+                <Link to="login">Sign in</Link>
+              )}
+            </span>
+          </div>
 
           <div className="favourite-container">
             <img
@@ -106,16 +91,30 @@ function TopNavBar() {
       </div>
       {showMenu ? (
         <div className="menu-mobile-layout">
-          {' '}
           <div className="sign-in-container">
-            <Link to="login">
-              <img
-                className="sign-in-icon"
-                src="/assets/vectors/vector_sign_in.svg"
-                alt="signin-icon"
-              />
-              <span className="sign-in-text"> Sign in</span>
-            </Link>
+            <img
+              className="sign-in-icon"
+              src="/assets/vectors/vector_sign_in.svg"
+              alt="signin-icon"
+            />
+            <span className="sign-in-text">
+              {loggedUserDerilized ? (
+                <Link to="login">
+                  <button
+                    className="sign-out-button"
+                    type="button"
+                    onClick={() => {
+                      localStorage.clear();
+                      window.location.reload(false);
+                    }}
+                  >
+                    Sign Out
+                  </button>
+                </Link>
+              ) : (
+                <Link to="login">Sign in</Link>
+              )}
+            </span>
           </div>
           <div className="favourite-container">
             <Link to="/favorites/1">

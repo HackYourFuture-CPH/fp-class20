@@ -134,6 +134,13 @@ h2 {
   border-radius: 10px;
 }
 
+.sign-out-button {
+  opacity: 1;
+  background-color: #000;
+  border: none;
+  color: #fff;
+}
+
 .menu-mobile-layout {
   display: none;
 }
