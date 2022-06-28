@@ -3,17 +3,11 @@ import '../ShoppingCart.styles.css';
 import PropTypes from 'prop-types';
 
 function OrderProduct({ data, onAdd, onRemove }) {
-  // eslint-disable-next-line no-console
-  console.log(data);
-
   const count = data.count ?? data.quantity;
   return (
     <div className="order-product">
       <div className="order-product-img">
-        <img
-          src="/assets/images/spices_square/dried_juniper_berries.jpeg"
-          alt="product"
-        />
+        <img src={data.pictureUrl} alt="product" />
       </div>
       <div className="order-product-product-container">
         <h2 className="order-product-title">{data.name}</h2>

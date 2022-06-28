@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(35 28 22 / 60%);
+  background: #8675724d;
 }
 
 .contact-header-text {
@@ -16,9 +16,12 @@
 }
 
 .contact-outlayer {
-  background-color: rgba(134 117 114);
+  background: #8675724d;
   display: flex;
   flex-direction: column;
+  width: 60%;
+  margin: 2rem auto;
+  padding: 1rem 10px;
 }
 
 .header h1 {
@@ -31,43 +34,37 @@
   margin-inline: auto;
   background-color: rgba(35 28 22 / 60%);
   padding: 3rem 0;
+  border-radius: 5px;
 }
 
-.edit-btn {
+.contact .edit-btn {
   font-family: Montserrat, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  width: fit-content;
+  padding: 8px 2.6rem;
   border: 1px solid #fff;
   background-color: rgba(35 28 22 / 60%);
   cursor: pointer;
+  margin: 1rem 0;
+  color: white;
 }
 
 .review-btn {
   background: #53742a;
   font-family: Montserrat, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
   width: 12rem;
-  border: 0, 16rem solid #fff;
   margin-bottom: 10px;
   cursor: pointer;
+  color: white;
+  padding: 7px 1rem;
+  border: 1px solid #fff;
 }
 
 .shopping-btn {
   background-color: rgba(35 28 22 / 60%);
   font-family: Montserrat, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
   width: 12rem;
-  border: 0, 16rem solid #fff;
+  color: white;
+  padding: 7px 1rem;
+  border: 1px solid #fff;
   cursor: pointer;
 }
 
@@ -91,9 +88,8 @@
 }
 
 .contact-items {
-  width: 30%;
+  width: 60%;
   margin-inline: auto;
-  border: 1px solid #fff;
 }
 
 .contact-items > div {

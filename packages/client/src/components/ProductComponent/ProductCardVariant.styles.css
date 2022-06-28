@@ -44,6 +44,7 @@ body {
 
 .favorite-icon-variant img {
   padding-left: 0.25rem;
+  cursor: pointer;
 }
 
 .product-details-variant {
@@ -103,6 +104,7 @@ body {
   flex-wrap: nowrap;
   color: white;
   border: solid 1px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1225px) {
@@ -157,5 +159,6 @@ body {
   .add-to-cart-button-variant {
     width: 8.5rem;
     height: 2.4rem;
+    cursor: pointer;
   }
 }

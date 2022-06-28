@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useContext, useState } from 'react';
 import './ProductCard.styles.css';
 import './ProductCardVariant.styles.css';
@@ -7,9 +6,9 @@ import Counter from '../Counter/Counter.component';
 import { Button } from '../Button/Button.component';
 import { ProductCardModal } from './ProductCardModal.component';
 import { useFavoriteService } from './use_favorite_service';
+import { CartStateContext } from '../../Contexts/CartStateContext';
 
 export const ProductCard = ({ product, variant }) => {
-  const CartStateContext = React.createContext([]);
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
 
@@ -17,27 +16,7 @@ export const ProductCard = ({ product, variant }) => {
     product.id,
   );
 
-  const { cartState, updateCartState } = useContext(CartStateContext);
-
-  const addToCart = (e) => {
-    e.preventDefault();
-
-    console.log('add to cart');
-    console.log('isModalOpen', isModalOpen);
-
-    // updateCartState([
-    //   ...cartState,
-    //   {
-    //     id: product.id,
-    //     quantity: count,
-    //     img: product.pictureUrl,
-    //     size: product.size,
-    //     name: product.name,
-    //     price: product.price,
-    //   },
-    // ]); // TODO: fix when cartstate is fixed
-    toggleModal(true);
-  };
+  const { addToCart } = useContext(CartStateContext);
 
   if (variant === 'small') {
     return (
@@ -89,7 +68,10 @@ export const ProductCard = ({ product, variant }) => {
                 type="addToCart"
                 backgroundColor="#53742A"
                 className="add-to-cart-button-variant"
-                onClick={addToCart}
+                onClick={() => {
+                  toggleModal(true);
+                  addToCart({ ...product, quantity: count });
+                }}
               />
             </div>
           </div>
@@ -101,7 +83,7 @@ export const ProductCard = ({ product, variant }) => {
               productImage={product.pictureUrl}
               productName={product.name}
               count={count}
-              // amountOfProducts={cartState.length} // TODO: fix when cartState is fixed
+              amountOfProducts={CartStateContext.length}
               setCount={setCount}
               price={product.price}
             />
@@ -164,7 +146,10 @@ export const ProductCard = ({ product, variant }) => {
                 type="addToCart"
                 backgroundColor="#53742A"
                 className="add-to-cart-button-large"
-                onClick={addToCart}
+                onClick={() => {
+                  toggleModal(true);
+                  addToCart({ ...product, quantity: count });
+                }}
               />
             </div>
           </div>
@@ -178,7 +163,7 @@ export const ProductCard = ({ product, variant }) => {
               count={count}
               setCount={setCount}
               price={product.price}
-              // amountOfProducts={cartState.length} // TODO: fix when cartstate is fixed
+              amountOfProducts={CartStateContext.length}
             />
           </div>
         )}
