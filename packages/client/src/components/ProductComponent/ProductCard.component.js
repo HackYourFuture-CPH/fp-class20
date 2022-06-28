@@ -11,6 +11,7 @@ import { CartStateContext } from '../../Contexts/CartStateContext';
 export const ProductCard = ({ product, variant }) => {
   const [count, setCount] = useState(1);
   const [isModalOpen, toggleModal] = useState(false);
+  const { cartState } = useContext(CartStateContext);
 
   const { isFavorite, updateFavoriteStatus, error } = useFavoriteService(
     product.id,
@@ -83,7 +84,7 @@ export const ProductCard = ({ product, variant }) => {
               productImage={product.pictureUrl}
               productName={product.name}
               count={count}
-              amountOfProducts={CartStateContext.length}
+              amountOfProducts={cartState.length}
               setCount={setCount}
               price={product.price}
             />
@@ -163,7 +164,7 @@ export const ProductCard = ({ product, variant }) => {
               count={count}
               setCount={setCount}
               price={product.price}
-              amountOfProducts={CartStateContext.length}
+              amountOfProducts={cartState.length}
             />
           </div>
         )}
