@@ -11,16 +11,12 @@ export function useFavoriteService(productId) {
     fetch(`${getApiBaseUrl()}/api/favorites/1`)
       .then((response) => response.json())
       .then((favorites) => {
-        const favoriteItem = favorites.filter((f) => {
-          // eslint-disable-next-line no-console
-          console.log(f.id, '==', productId);
-          if (f.id === productId) {
-            setIsFavorite(favorites.isFavorite);
-          } else {
-            setIsFavorite(!favorites.isFavorite);
-          }
-          return favoriteItem;
+        const product = favorites.find((f) => {
+          return f.id === productId;
         });
+        if (product) {
+          setIsFavorite(true);
+        }
       });
   }, [productId]);
 
