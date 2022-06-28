@@ -16,7 +16,7 @@ function Navigation(props) {
 export default Navigation;
 
 Navigation.propTypes = {
-  signedIn: PropTypes.string,
+  signedIn: PropTypes.bool,
   setSignedIn: PropTypes.func,
 };
 

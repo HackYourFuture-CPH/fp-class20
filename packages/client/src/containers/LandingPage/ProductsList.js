@@ -16,7 +16,16 @@ export const ProductsList = ({ products }) => {
 };
 
 ProductsList.propTypes = {
-  products: PropTypes.arrayOf,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      description: PropTypes.string,
+      pictureUrl: PropTypes.string,
+      price: PropTypes.string,
+      size: PropTypes.string,
+      name: PropTypes.string,
+    }),
+  ),
 };
 ProductsList.defaultProps = {
   products: [],

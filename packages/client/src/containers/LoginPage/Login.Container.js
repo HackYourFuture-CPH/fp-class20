@@ -190,7 +190,7 @@ export const Login = (props) => {
 };
 
 Login.propTypes = {
-  logedIn: PropTypes.string,
+  logedIn: PropTypes.bool,
   setLogedIn: PropTypes.func,
 };
 

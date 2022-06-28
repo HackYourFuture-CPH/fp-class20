@@ -19,7 +19,7 @@ const SortBy = ({ textObj, setSort, sort }) => {
                 onChange={(e) => setSort(e.target.value)}
                 className="select-sort-by"
               >
-                <option value="" disabled selected>
+                <option value="" disabled defaultValue>
                   SORT BY
                 </option>
                 <option value="alphabetically">A - Z</option>
@@ -37,7 +37,10 @@ const SortBy = ({ textObj, setSort, sort }) => {
 export default SortBy;
 
 SortBy.propTypes = {
-  textObj: PropTypes.func,
+  textObj: PropTypes.shape({
+    sidebar: PropTypes.string,
+    main: PropTypes.string,
+  }),
   setSort: PropTypes.func,
   sort: PropTypes.string,
 };
