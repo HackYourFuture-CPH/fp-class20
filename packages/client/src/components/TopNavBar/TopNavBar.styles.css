@@ -9,6 +9,17 @@
   margin: 0 auto;
 }
 
+.logout-button-design {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 1.2rem;
+}
+
 .top-nav-main-container {
   background-color: #000;
   display: flex;
@@ -50,6 +61,10 @@ h2 {
   padding: 0;
   display: flex;
   align-items: center;
+}
+
+.sign-in-container a {
+  font-size: 1.125rem;
 }
 
 .sign-in-icon {
@@ -185,6 +200,10 @@ h2 {
     font-size: 0.9rem;
     padding: 0;
     margin: 0;
+  }
+
+  .sign-in-container a {
+    font-size: 0.9rem;
   }
 
   .cart-container {

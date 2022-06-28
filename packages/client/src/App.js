@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartStateProvider } from './Contexts/CartStateContext';
@@ -12,16 +12,18 @@ import { ProductPage } from './containers/ProductPage/ProductPage.Container';
 import { ContactUsFeedbackPage } from './containers/ContactUsPage/ContactUsFeedbackPage.Container';
 import Navigation from './components/Navigation/Navigation.component';
 import { Footer } from './components/Footer/Footer.component';
+import { Login } from './containers/LoginPage/Login.Container';
+import { Signup } from './containers/SignupPage/Signup.Container';
 import { SearchedProducts } from './containers/SearchedProducts/SearchedProducts';
 import OrderPage from './components/Order-Page/OrderPage.component';
 
-
 function App() {
+  const [signedIn, setSignedIn] = useState(false);
   return (
     <CartStateProvider>
       <div className="app">
         <Router>
-          <Navigation />
+          <Navigation signedIn={signedIn} setSignedIn={setSignedIn} />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
@@ -35,7 +37,11 @@ function App() {
             <Route path="/product/:id" element={<ProductPage />} />
             <Route path="/search" element={<SearchedProducts />} />
             <Route path="/favorites/:user_id" element={<FavouritePage />} />
-            <Route path="/favorites/:id" element={<FavouritePage />} />
+            <Route
+              path="/login/:user_id"
+              element={<Login signedIn={signedIn} setsignedIn={setSignedIn} />}
+            />
+            <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<PageNotFoundPage />} />
           </Routes>
           <Footer />
