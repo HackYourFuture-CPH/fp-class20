@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartStateProvider } from './Contexts/CartStateContext';
 import { AboutUsPage } from './containers/AboutUsPage/AboutUsPage.Container';
 import CategoryPage from './containers/CategoryPage/CategoryPage.container';
 import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.Container';
