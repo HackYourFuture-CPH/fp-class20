@@ -7,40 +7,43 @@ import './SearchedProducts.Style.css';
 
 export const SearchedProducts = () => {
   const [searchedProducts, setSearchedProducts] = useState([]);
-  const [searchedProductIsLoading, setLoading] = useState(true);
-  const [searchedProductsError, setError] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [searchParams] = useSearchParams();
   const searchedName = searchParams.get('name');
 
   useEffect(() => {
     const nameReg = /^[A-Za-z ]*$/;
-    if (searchedName !== undefined && nameReg.test(searchedName)) {
-      fetch(`${getApiBaseUrl()}/api/products?name=${searchedName}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('something went wrong');
-          }
-          return response.json();
-        })
-        .then((productTodisplay) => {
-          setSearchedProducts(productTodisplay);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setLoading(false);
-          setError(err);
-        });
+
+    if (searchedName === undefined && !nameReg.test(searchedName)) {
+      return;
     }
+
+    fetch(`${getApiBaseUrl()}/api/products?name=${searchedName}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('something went wrong');
+        }
+        return response.json();
+      })
+      .then((productTodisplay) => {
+        setSearchedProducts(productTodisplay);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError(err);
+      });
   }, [searchedName]);
 
-  if (searchedProductIsLoading) {
+  if (isLoading) {
     return <Preloader />;
   }
-  if (searchedProductsError) {
-    return <div>{searchedProductsError}</div>;
+  if (error) {
+    return <div>{error}</div>;
   }
   if (searchedProducts.length === 0) {
-    return <div className="empty-search">The search result is empty</div>;
+    return <div className="empty-search">No products found</div>;
   }
   return (
     <ul className="product-lists searched-products-list">

@@ -1,8 +1,6 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './BottomNavigation.styles.css';
-
-export const searchContext = createContext();
 
 const BottomNavigation = () => {
   const [searchInputValue, setSearchInputValue] = useState('');
@@ -16,6 +14,11 @@ const BottomNavigation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.key === 'Enter' && /^\s*$/.test(searchInputValue) === false) {
+      // const history = JSON.parse(localStorage.getItem('history'));
+      // history.push({ [JSON.stringify(searchInputValue)]: searchInputValue });
+      // localStorage.setItem('history', JSON.stringify(history));
+      // // eslint-disable-next-line no-console
+      // console.log(localStorage.getItem('history'));
       navigate(`/search/?name=${searchInputValue}`);
     }
     if (e.key !== 'BackSpace' && e.key !== 'Enter') {
@@ -38,14 +41,16 @@ const BottomNavigation = () => {
         </span>
       </div>
       <div className="search-container">
-        <input
-          onChange={handleSearchInput}
-          className="input-container"
-          type="text"
-          value={searchInputValue}
-          placeholder="| Search spices"
-          onKeyPress={handleSubmit}
-        />
+        <form>
+          <input
+            onChange={handleSearchInput}
+            className="input-container"
+            type="text"
+            value={searchInputValue}
+            placeholder="| Search spices"
+            onKeyPress={handleSubmit}
+          />
+        </form>
       </div>
     </>
   );

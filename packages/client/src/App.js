@@ -16,26 +16,28 @@ import { SearchedProducts } from './containers/SearchedProducts/SearchedProducts
 
 function App() {
   return (
-    <div className="app">
-      <Router>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/category/:name" element={<CategoryPage />} />
-          <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route
-            path="/contact-us-feedback"
-            element={<ContactUsFeedbackPage />}
-          />
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/search" element={<SearchedProducts />} />
-          <Route path="/favorites/:user_id" element={<FavouritePage />} />
-          <Route path="*" element={<PageNotFoundPage />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <CartStateProvider>
+      <div className="app">
+        <Router>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
+            <Route path="/category/:name" element={<CategoryPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route
+              path="/contact-us-feedback"
+              element={<ContactUsFeedbackPage />}
+            />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/search" element={<SearchedProducts />} />
+            <Route path="/favorites/:user_id" element={<FavouritePage />} />
+            <Route path="*" element={<PageNotFoundPage />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
+    </CartStateProvider>
   );
 }
 
