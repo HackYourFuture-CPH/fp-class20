@@ -11,7 +11,6 @@
   border-width: 1.75rem 2.25rem 1.25rem;
   border-color: #4a443f;
   border-style: solid;
-  margin-left: 35%;
 }
 
 .modal-footer {
@@ -71,7 +70,7 @@
 
 @media screen and (max-width: 1225px) {
   .modal-container {
-    width: 800px;
+    width: 700px;
     margin: 0 auto;
   }
 }
