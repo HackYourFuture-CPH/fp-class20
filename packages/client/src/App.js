@@ -29,7 +29,7 @@ function App() {
               element={<ContactUsFeedbackPage />}
             />
             <Route path="/product/:id" element={<ProductPage />} />
-            <Route path="/favourites" element={<FavouritePage />} />
+            <Route path="/favorites/:id" element={<FavouritePage />} />
             <Route path="*" element={<PageNotFoundPage />} />
           </Routes>
           <Footer />
