@@ -1,7 +1,3 @@
-.modal-whole-container {
-  background: linear-gradient(180deg, #231c16 0%, rgba(35 28 22 / 75%));
-}
-
 .modal-container {
   width: 1190px;
   margin: 0 auto;
@@ -74,7 +70,7 @@
 
 @media screen and (max-width: 1225px) {
   .modal-container {
-    width: 800px;
+    width: 700px;
     margin: 0 auto;
   }
 }

@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -e
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT_DIR=$(readlink -f $SCRIPT_DIR/..)
+SERVER_DIR=$(readlink -f $ROOT_DIR/packages/server)
+CLIENT_DIR=$(readlink -f $ROOT_DIR/packages/client)
+
+cp -n $SERVER_DIR/{.env.example,.env} || true
+cp -n $CLIENT_DIR/{.env.example,.env} || true
+
+docker_compose_env_path=$(readlink -f $SERVER_DIR/.env)
+docker_compose_yml_path=$(readlink -f $SERVER_DIR/docker-compose.yml)
+
+cd $ROOT_DIR
+
+# TODO: Potential improvement to fully automate starting the project but `yarn set` was not working for some reason.
+#       Also not sure if we want to depend on NVM.
+# . $HOME/.nvm/nvm.sh # Load nvm
+# nvm install
+# corepack enable
+# yarn --version
+# yarn set version 1.19.1
+
+echo "=== Installing yarn dependencies ==="
+yarn --non-interactive --no-progress
+
+echo
+echo "=== Starting Docker Compose services ==="
+docker compose --env-file $docker_compose_env_path --file $docker_compose_yml_path up -d
+
+until yarn workspace server knex migrate:status &> /dev/null
+do
+	echo "Failed to verify DB connection! Retrying..."
+	sleep 5
+done
+
+echo
+echo "=== Performing database migrations ==="
+yarn workspace server knex migrate:latest
+yarn workspace server knex seed:run &> /dev/null || true
+
+echo
+echo "=== Starting API server and React client ==="
+npm ls concurrently &> /dev/null || npm install --no-save --no-package-lock concurrently@7.2.2 &> /dev/null
+$(npm bin)/concurrently --names "api,client" "yarn workspace server dev" "yarn workspace client start"

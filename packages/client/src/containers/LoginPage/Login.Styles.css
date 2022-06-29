@@ -1,0 +1,97 @@
+/* * {
+  padding: 0;
+}
+
+.login-logout-container-backgorund {
+  background: url(' ../../../public/assets/images/hero_image.png');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.login-logout-container {
+  background: url(' ../../../public/assets/images/hero_image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 1190px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding-top: 100px;
+}
+
+.input-div {
+  width: 700px;
+  padding: 1rem;
+  font-size: 2rem;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input-div label {
+  font-size: 2rem;
+}
+
+.input-div-last-child {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rem;
+  margin-right: 1rem;
+}
+
+.login-succees-notice {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.input-div > p {
+  color: red;
+  background-color: black;
+  padding: 0.5rem;
+}
+
+.input-div > input {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 1225px) {
+  .login-logout-container {
+    width: 800px;
+  }
+
+  .input-div {
+    width: 400px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .login-logout-container {
+    width: 500px;
+  }
+
+  .input-div {
+    width: 400px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login-logout-container {
+    width: 375px;
+  }
+
+  .input-div {
+    width: 350px;
+    font-size: 1.5rem;
+  }
+} */

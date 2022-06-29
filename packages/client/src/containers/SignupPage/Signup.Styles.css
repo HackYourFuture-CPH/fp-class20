@@ -1,0 +1,24 @@
+.signup-container-background {
+  background: url(' ../../../public/assets/images/hero_image.png');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.signup-container-main-form {
+  background: url(' ../../../public/assets/images/hero_image.png');
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
+  width: 1190px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding-top: 100px;
+}
+
+.signup-container-button {
+  padding-right: 20rem;
+}

@@ -18,18 +18,9 @@ const SortBy = ({ textObj, setSort, sort }) => {
                 onClick={() => setArrow(!arrow)}
                 onChange={(e) => setSort(e.target.value)}
                 className="select-sort-by"
-                style={
-                  arrow
-                    ? {
-                        backgroundImage: `url(/assets/vectors/vector_arrow_down.svg')`,
-                      }
-                    : {
-                        backgroundImage: `url(/assets/vectors/vector_arrow_up.svg')`,
-                      }
-                }
               >
-                <option value="" disabled selected>
-                  SORT BY :
+                <option value="" disabled defaultValue>
+                  SORT BY
                 </option>
                 <option value="alphabetically">A - Z</option>
                 <option value="Lowest price">Lowest price</option>
@@ -46,7 +37,10 @@ const SortBy = ({ textObj, setSort, sort }) => {
 export default SortBy;
 
 SortBy.propTypes = {
-  textObj: PropTypes.func,
+  textObj: PropTypes.shape({
+    sidebar: PropTypes.string,
+    main: PropTypes.string,
+  }),
   setSort: PropTypes.func,
   sort: PropTypes.string,
 };

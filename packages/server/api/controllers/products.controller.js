@@ -29,7 +29,7 @@ const getProducts = async (
     products = products.orderBy('newest', 'asc');
   }
   if (nameFilter) {
-    products = products.where('name', 'like', `%${nameFilter}%`);
+    products = products.where('Products.name', 'like', `%${nameFilter}%`);
   }
   if (categoryFilter) {
     products = products.where('Products.categoryId', '=', categoryFilter);
@@ -40,7 +40,7 @@ const getProducts = async (
 
 const getAllProducts = async (query) => {
   if ('name' in query) {
-    const nameReg = /^[A-Za-z]*$/;
+    const nameReg = /^[A-Za-z ]*$/;
     if (!nameReg.test(query.name)) {
       throw new HttpError('the data entery is incorrect', 400);
     }

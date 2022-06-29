@@ -147,7 +147,11 @@ function BottomNavBar() {
                 <div className="show-all-spices  block-height">
                   <span className="spice-names">
                     <Link to="/">
-                      <button type="button" onClick={showAll}>
+                      <button
+                        type="button"
+                        onClick={showAll}
+                        style={{ width: '15rem' }}
+                      >
                         SHOW ALL SPICES{' '}
                       </button>
                     </Link>

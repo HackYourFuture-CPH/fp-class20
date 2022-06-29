@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from '../Button/Button.component';
 import './ProductCardModal.styles.css';
 import PropTypes from 'prop-types';
+import { CartStateContext } from '../../Contexts/CartStateContext';
 
 export const ProductCardModal = ({
   onClose,
@@ -11,6 +12,8 @@ export const ProductCardModal = ({
   price,
   amountOfProducts,
 }) => {
+  const { cartState } = useContext(CartStateContext);
+
   return (
     <div className="modal-whole-container">
       <div className="modal-container">
@@ -29,7 +32,7 @@ export const ProductCardModal = ({
           <div>ADDED TO CART </div>
           <div>
             There are
-            <span className="count-item">{amountOfProducts}</span>
+            <span className="count-item">{cartState.length}</span>
             items in your Cart.
             <br />
             <span>Card subtotal: {count * price} DKK </span>
